@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="MEU">
+  <Package name="EX2mod0">
+    <Key ID="STR_MEU_EX2mod0_Green">
+		<English>EX2 Mod. 0 (Green)</English>
+		<Spanish>EX2 Mod. 0 (Verde)</Spanish>
+    </Key>
+	<Key ID="STR_MEU_EX2mod0_Green_short">
+		<English>EX2 Mod0 (Green)</English>
+		<Spanish>EX2 Mod0 (Verde)</Spanish>
+    </Key>
+	<Key ID="STR_MEU_EX2mod0_Red">
+		<English>EX2 Mod. 0 (Red)</English>
+		<Spanish>EX2 Mod. 0 (Rojo)</Spanish>
+    </Key>
+	<Key ID="STR_MEU_EX2mod0_Red_short">
+		<English>EX2 Mod0 (Red)</English>
+		<Spanish>EX2 Mod0 (Rojo)</Spanish>
+    </Key>
+	<Key ID="STR_MEU_EX2mod0_Yellow">
+		<English>EX2 Mod. 0 (Yellow)</English>
+		<Spanish>EX2 Mod. 0 (Amarillo)</Spanish>
+    </Key>
+	<Key ID="STR_MEU_EX2mod0_Yellow_short">
+		<English>EX2 Mod0 (Yellow)</English>
+		<Spanish>EX2 Mod0 (Amarillo)</Spanish>
+    </Key>
+  </Package>
+</Project>
