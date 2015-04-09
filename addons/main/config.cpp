@@ -553,7 +553,7 @@ class CfgPatches {
 class CfgMods {
       class PREFIX {
         dir = "@11thmeu";
-        name = "11th Marine Expeditionary Unit;
+        name = "11th Marine Expeditionary Unit";
         picture = "A3\Ui_f\data\Logos\arma3_expansion_alpha_ca";
         hidePicture = "true";
         hideName = "true";
