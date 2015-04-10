@@ -1,0 +1,12 @@
+name = "11thMEU Addons";
+picture = "logo_meu_ca.paa";
+actionName = "Website";
+action = "http://11thmeu.es";
+description = "11thMEU Addons - Version 2.0.0-dev";
+logo = "logo_meu_ca.paa";
+logoOver = "logo_meu_ca.paa";
+tooltip = "11th MEU Addons";
+tooltipOwned = "11th MEU Addons Owned";
+overview = "Custom Mods for 11th MEU";
+author = "11th MEU Dev Team";
+overviewPicture = "logo_meu_ca.paa";
