@@ -1,7 +1,7 @@
 // COMPONENT should be defined in the script_component.hpp and included BEFORE this hpp
 
 #define MAINPREFIX z
-#define PREFIX meu
+#define PREFIX MEU
 
 #define MAJOR 2
 #define MINOR 0
