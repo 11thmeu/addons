@@ -1,4 +1,4 @@
-# 11thMEU_Addons #
+# 11thMEU Addons #
 #####Current version: 2.0.0-dev
 This is the 11th Marine Expeditionary Unit addons, Based on original addons from 11thMEU Thrax
 
