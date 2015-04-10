@@ -2,7 +2,7 @@ class Extended_PreInit_EventHandlers
 {
 	class 11th_main
 	{
-		init = QUOTE(call COMPILE_FILE(XEH_preInit))
+		init = QUOTE(call COMPILE_FILE(XEH_preInit));
 	};
 };
 
