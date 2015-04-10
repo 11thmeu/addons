@@ -1,0 +1,1 @@
+#include "\z\meu\addons\hearing_protectors\script_component.hpp"

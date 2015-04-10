@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Project name="MEU">
+	<Package name="HearingProtectors">
+		<Key ID="STR_MEU_HearingProtectors_Activate">
+			<English>Turn On ASP</English>
+			<Spanish>Encender PSA</Spanish>
+		</Key>
+		<Key ID="STR_MEU_HearingProtectors_Deactivate">
+			<English>Turn Off ASP</English>
+			<Spanish>Apagar PSA</Spanish>
+		</Key>
+		<Key ID="STR_MEU_HearingProtectors_Activated">
+			<English>Active Sound Protector Activated!</English>
+			<Spanish>Proteccion de sonido activa Activada!</Spanish>
+		</Key>
+		<Key ID="STR_MEU_HearingProtectors_Deactivated">
+			<English>Active Sound Protector Deactivated!</English>
+			<Spanish>Proteccion de sonido activa Desactivada!</Spanish>
+		</Key>
+	</Package>
+</Project>

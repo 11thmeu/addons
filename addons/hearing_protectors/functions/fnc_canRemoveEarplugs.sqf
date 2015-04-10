@@ -1,0 +1,1 @@
+(([ACE_Player] call ACE_hearing_fnc_hasEarPlugsIn) && !(ACE_Player getVariable ["MEU_hasEarProtectorsIn", false]));
