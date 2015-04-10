@@ -541,7 +541,8 @@ class CfgPatches {
             "a3_weapons_f_vests",
             "a3data",
             "map_vr",
-            "extended_eventhandlers", "CBA_UI", "CBA_XEH", "CBA_XEH_A3"
+            "extended_eventhandlers", "CBA_UI", "CBA_XEH", "CBA_XEH_A3",
+            "ace_common"
         };
         author[] = {"11thMEU Dev Team"};
         authorUrl = "http://11thmeu.es";

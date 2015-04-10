@@ -5,7 +5,11 @@ class CfgPatches {
         units[] = {};
         weapons[] = {};
         requiredVersion = REQUIRED_VERSION;
-        requiredAddons[] = {"ace_common"};
+        requiredAddons[] = {
+        	"cba_main", "extended_eventhandlers", "CBA_UI", "CBA_XEH", "CBA_XEH_A3",
+            "ace_common",
+            "meu_main"
+        };
         author[] = {"11thMEU Dev Team"};
         authorUrl = "http://11thmeu.es";
         VERSION_CONFIG;
@@ -13,3 +17,5 @@ class CfgPatches {
 };
 
 #include "CfgEventHandlers.hpp"
+#include "CfgVehicles.hpp"
+#include "RscDialog.hpp"
