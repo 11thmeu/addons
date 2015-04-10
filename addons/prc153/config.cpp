@@ -16,3 +16,10 @@ class CfgPatches {
         VERSION_CONFIG;
     };
 };
+
+#include "CfgEventHandlers.hpp"
+#include "CfgFontFamilies.hpp"
+#include "CfgSounds.hpp"
+#include "CfgWeapons.hpp"
+
+#include "RadioDialog.hpp"
