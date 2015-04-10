@@ -2,8 +2,8 @@
 
 ADDON = false;
 
-PREP(drawMap);
+/*PREP(drawMap);
 PREP(mapLight);
-PREP(dashLight);
+PREP(dashLight);*/
 
 ADDON = true;
