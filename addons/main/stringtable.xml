@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Edited with tabler - 2015-04-11 -->
+<Project name="MEU">
+  <Package name="Main">
+    <Key ID="STR_MEU_Main_MEUTeam">
+      <English>11th MEU Team</English>
+      <Spanish>Equipo 11th MEU</Spanish>
+    </Key>
+    <Key ID="STR_MEU_Main_Yes">
+      <English>Yes</English>
+      <Spanish>Si</Spanish>
+    </Key>
+    <Key ID="STR_MEU_Main_No">
+      <English>No</English>
+      <Spanish>No</Spanish>
+    </Key>
+  </Package>
+</Project>
