@@ -1,6 +1,14 @@
 #include "\x\cba\addons\main\script_macros_common.hpp"
 #include "\x\cba\addons\xeh\script_xeh.hpp"
 
+// Addaction defines for colored text
+#define MEU_TEXT_ORANGE(Text) ("<t color='#ffa500'>" + ##Text + "</t>")
+#define MEU_TEXT_RED(Text) ("<t color='#FF0000'>" + ##Text + "</t>")
+#define MEU_TEXT_GREEN(Text) ("<t color='#00FF00'>" + ##Text + "</t>")
+#define MEU_TEXT_YELLOW(Text) ("<t color='#FFFF00'>" + ##Text + "</t>")
+
+#define ACEFUNC(var1,var2) TRIPLES(DOUBLES(ace,var1),fnc,var2)
+
 #define EGVAR(module,var) TRIPLES(PREFIX,module,var)
 #define QEGVAR(module,var) QUOTE(EGVAR(module,var))
 
