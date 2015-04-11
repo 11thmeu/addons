@@ -25,16 +25,16 @@ if(_classname == "") exitWith {[]};
 
 _configType = if (_configType == "") then
 {
-	switch (true) do
-	{
-		case (isClass (configFile >> "CfgMagazines" >> _classname)) : {"CfgMagazines";};
-		case (isClass (configFile >> "CfgWeapons" >> _classname)) : {"CfgWeapons";};
-		case (isClass (configFile >> "CfgVehicles" >> _classname)) : {"CfgVehicles";};
-		case (isClass (configFile >> "CfgGlasses" >> _classname)) : {"CfgGlasses";};
-		default {"";};
-	};
+    switch (true) do
+    {
+        case (isClass (configFile >> "CfgMagazines" >> _classname)) : {"CfgMagazines";};
+        case (isClass (configFile >> "CfgWeapons" >> _classname)) : {"CfgWeapons";};
+        case (isClass (configFile >> "CfgVehicles" >> _classname)) : {"CfgVehicles";};
+        case (isClass (configFile >> "CfgGlasses" >> _classname)) : {"CfgGlasses";};
+        default {"";};
+    };
 } else {
-	_configType;
+    _configType;
 };
 
 if(typeName _configType != "STRING") exitWith {[]};
