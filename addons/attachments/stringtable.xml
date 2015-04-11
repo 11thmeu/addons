@@ -138,5 +138,25 @@
       <English>Exit</English>
       <Spanish>Salir</Spanish>
     </Key>
+    <Key ID="STR_MEU_Attachments_Flashlight">
+      <English>Switched to Flashlight mode</English>
+      <Spanish>Cambiado a modo linterna</Spanish>
+    </Key>
+    <Key ID="STR_MEU_Attachments_IRLaser">
+      <English>Switched to IR laser mode</English>
+      <Spanish>Cambiado a modo laser IR</Spanish>
+    </Key>
+    <Key ID="STR_MEU_Attachments_Optics">
+      <English>Switched Optics mode</English>
+      <Spanish>Cambiado modo de mira</Spanish>
+    </Key>
+    <Key ID="STR_MEU_Attachments_SwitchPointer">
+      <English>Switch Pointer mode</English>
+      <Spanish>Cambiar modo de puntero</Spanish>
+    </Key>
+    <Key ID="STR_MEU_Attachments_SwitchOptics">
+      <English>Switch optics mode</English>
+      <Spanish>Cambiar modo de mira</Spanish>
+    </Key>
   </Package>
 </Project>

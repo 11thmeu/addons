@@ -7,6 +7,13 @@ Adds different functionalities for weapon attachments. Including:
 - Switch weapon sights mode when available
 
 
+## Requirements
+
+List of addons required to use this component.
+
+- ASDG Joint Rails (http://www.armaholic.com/page.php?id=23242)
+
+
 ## Maintainers
 
 The people responsible for merging changes to this component or answering potential questions.
