@@ -7,6 +7,9 @@ This addons contains all ammunitions used by [11th Marine Expeditionary Unit (SO
 
 ### Ammo
 
+* MEU_B_9x19_M882
+* MEU_B_9x19_HPP
+* MEU_B_9x19_HP_S
 * MEU_B_556x45_M855A1EPR
 * MEU_B_556x45_Mk262Mod1
 * MEU_B_556x45_Mk318Mod0SOST
