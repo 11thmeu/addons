@@ -15,6 +15,8 @@ GVAR(InterfaceVisible) 	= false;
 	[DIK_M, false, true, false]
 ] call CBA_fnc_addKeybind;
 
+/*
+2.1 baby
 [
 	CBA_KEYBIDING_CATEGORY,
 	QGVAR(open_display),
@@ -25,8 +27,11 @@ GVAR(InterfaceVisible) 	= false;
 	{}, // up action
 	[DIK_M, false, false, true]
 ] call CBA_fnc_addKeybind;
+*/
 
-
+//////////////////////////////////////////////////
+// CALCULATE THE MAP COORDINATE SYSTEM
+//////////////////////////////////////////////////
 _gridOrigin = mapGridPosition [0,0];
 _xOrigin = [_gridOrigin,0,2] call BIS_fnc_trimString;
 _yOrigin = [_gridOrigin,3,5] call BIS_fnc_trimString;
@@ -51,3 +56,8 @@ _xOffset = (parseNumber _xOrigin) * 100 + _j; //Assume X is never inverted
 missionNamespace setVariable [QGVAR(MapOriginX), _xOffset];
 missionNamespace setVariable [QGVAR(MapOriginY), _yOffset];
 missionNamespace setVariable [QGVAR(MapOriginYInverted), _yInverted];
+//////////////////////////////////////////////////
+// END CALCULATE THE MAP COORDINATE SYSTEM
+//////////////////////////////////////////////////
+
+// entering vehicle/leaving vehicle eventhandler to check if  is needed to hide the display
