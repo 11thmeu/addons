@@ -7,6 +7,9 @@ This addons contains all weapon magazines used by [11th Marine Expeditionary Uni
 
 ### Magazines
 
+* MEU_30Rnd_MP5_M882
+* MEU_30Rnd_MP5_HPP
+* MEU_30Rnd_MP5_HP_S
 * MEU_30Rnd_STANAG4179_M855A1
 * MEU_30Rnd_STANAG4179_M856A1
 * MEU_30Rnd_STANAG4179_Mk262Mod1
