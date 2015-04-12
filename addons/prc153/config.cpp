@@ -18,7 +18,6 @@ class CfgPatches {
 };
 
 #include "CfgEventHandlers.hpp"
-#include "CfgFontFamilies.hpp"
 #include "CfgSounds.hpp"
 #include "CfgWeapons.hpp"
 
