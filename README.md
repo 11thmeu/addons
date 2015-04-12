@@ -1,9 +1,13 @@
-# 11thMEU Addons #
+<h1 align="center">11th Marine Expeditionary Unit Addons</h1>
+<p align="center">
+	<img src="https://raw.githubusercontent.com/11thmeu/addons/master/extras/logo-transparent.png" width="250px" />
+</p>
+
 #####Current version: 2.0.0-dev
 This is the 11th Marine Expeditionary Unit addons, Based on original addons from 11thMEU Thrax
 
 _This source is under heavy refactoring due to ACE Integration_
 
-## Authors
- * 11th Thrax
- * 11th Kavinsky
+## Authors@
+ * [Thrax](https://github.com/Thraxs/)
+ * [Kavinsky](https://github.com/kavinsky/)
