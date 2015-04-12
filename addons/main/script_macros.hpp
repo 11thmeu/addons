@@ -3,6 +3,8 @@
 
 #define MEU_AUTHORS author = "11th MEU"
 
+#define CBA_KEYBIDING_CATEGORY QUOTE(11th MEU Addons);
+
 // Addaction defines for colored text
 #define MEU_TEXT_ORANGE(Text) ("<t color='#ffa500'>" + ##Text + "</t>")
 #define MEU_TEXT_RED(Text) ("<t color='#FF0000'>" + ##Text + "</t>")
