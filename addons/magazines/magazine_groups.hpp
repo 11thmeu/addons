@@ -1,0 +1,2 @@
+
+#define MAGAZINE_GROUP_STANAG4179 magazineGroup[] = {"MEU_STANAG4179"}
