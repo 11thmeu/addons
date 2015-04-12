@@ -16,6 +16,8 @@ This addons contains all weapon magazines used by [11th Marine Expeditionary Uni
 * MEU_200Rnd_M249_M856A1
 * MEU_100Rnd_M249_M855A1
 * MEU_100Rnd_M249_M856A1
+* MEU_29_STANAG300_OTM
+* MEU_29_STANAG300_OTM_S
 
 ## Requirements
 
