@@ -9,6 +9,8 @@ PREP(getItemDetails);
 PREP(hideObjectServer);
 PREP(isThermalAttachment);
 PREP(replace);
+PREP(formatTime12);
+PREP(formatTime24);
 
 if (!isServer) exitWith {ADDON = true;};
 
