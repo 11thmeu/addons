@@ -1,6 +1,8 @@
 #include "\x\cba\addons\main\script_macros_common.hpp"
 #include "\x\cba\addons\xeh\script_xeh.hpp"
 
+#define MEU_AUTHORS author = "11th MEU"
+
 // Addaction defines for colored text
 #define MEU_TEXT_ORANGE(Text) ("<t color='#ffa500'>" + ##Text + "</t>")
 #define MEU_TEXT_RED(Text) ("<t color='#FF0000'>" + ##Text + "</t>")
