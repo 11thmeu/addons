@@ -6,6 +6,7 @@ ADDON = false;
 if (isNil QUOTE(GVARMAIN(DebugModule))) then { GVARMAIN(DebugModule) = false; };
 
 PREP(getItemDetails);
+PREP(hideObjectServer);
 PREP(isThermalAttachment);
 PREP(replace);
 
