@@ -43,7 +43,5 @@ PREP(inputButtonPTT);
 PREP(playSoundButton);
 PREP(playSoundConnector);
 PREP(playSoundKnob);
-PREP(formatTime12);
-PREP(formatTime24);
 
 ADDON = true;

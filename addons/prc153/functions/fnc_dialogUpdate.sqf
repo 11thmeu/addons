@@ -26,7 +26,7 @@ _channelId = _settings select 0; // ACTIVE_CHANNEL_OFFSET
 _channelNames = _settings select PRC153_OFFSET_CHANNELNAMES;
 
 // update time
-ctrlSetText [IDC_LCD_TIME, [] call FUNC(formatTime12)];
+ctrlSetText [IDC_LCD_TIME, [] call EFUNC(main,formatTime12)];
 
 switch GVAR(RadioMode) do {
 	case "main":
