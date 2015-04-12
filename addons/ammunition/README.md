@@ -1,0 +1,31 @@
+meu_ammunition
+=================
+
+This addons contains all ammunitions used by [11th Marine Expeditionary Unit (SOC)](http://11thmeu.es)
+
+## Classlist
+
+### Ammo
+
+* MEU_B_556x45_M855A1EPR
+* MEU_B_556x45_Mk262Mod1
+* MEU_B_556x45_Mk318Mod0SOST
+* MEU_B_556x45_SimunitionFX
+
+## Requirements
+
+List of addons required to use this component.
+
+- Community Base Addons
+
+
+## Maintainers
+
+The people responsible for merging changes to this component or answering potential questions.
+
+- [Kavinsky](https://github.com/kavinsky/)
+
+## Credits
+
+Thanks to [Spartan0536](http://forums.bistudio.com/member.php?76875-Spartan0536) for his awesome work on getting all these [ballistics data](
+http://forums.bistudio.com/showthread.php?173466-ArmA-III-Ballistics-Overhaul)!
