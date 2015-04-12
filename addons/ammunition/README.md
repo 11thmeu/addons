@@ -11,6 +11,11 @@ This addons contains all ammunitions used by [11th Marine Expeditionary Unit (SO
 * MEU_B_556x45_Mk262Mod1
 * MEU_B_556x45_Mk318Mod0SOST
 * MEU_B_556x45_SimunitionFX
+* MEU_B_300BO_OTM
+* MEU_B_300BO_OTM_S
+* MEU_B_762x51_M80A1
+* MEU_B_762x51_Mk316Mod0
+* MEU_B_762x51_LapuaFMJBTSub
 
 ## Requirements
 
