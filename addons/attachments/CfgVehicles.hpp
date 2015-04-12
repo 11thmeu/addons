@@ -15,7 +15,7 @@ class CfgVehicles {
         scope = 2;
         displayName = "$STR_MEU_Attachments_Name";
         icon = PATHTOF(UI\Icon_Module_Attachments_ca.paa);
-        category = "MEU_modules";
+        category = "MEU_Modules";
         function = QFUNC(moduleAttachments);
         functionPriority = 0;    
         isGlobal = 1; 
