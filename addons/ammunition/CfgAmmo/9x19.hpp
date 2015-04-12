@@ -23,6 +23,11 @@ class MEU_B_9x19_M882: B_9x21_Ball {
 	AB_dragModel = 1;
 	AB_muzzleVelocities[] = {747,807,850,868,884,905,911,923,953,962,970,985};
 	AB_barrelLengths[] = {7,9,11,12,13,14,15,16,19,20,21,23,24};*/
+
+		// UW thingies
+	timeToLive = 0.40; // that's enough for 45 meters underwater
+	waterFriction = -0.00345426; // nearly direct line underwater
+	effectFly = "AmmoUnderwater";
 };
 
 class MEU_B_9x19_HPP : MEU_B_9x19_M882 {
@@ -37,6 +42,11 @@ class MEU_B_9x19_HPP : MEU_B_9x19_M882 {
 	deflecting = 25;
 	visibleFire = 1.3;
 	audibleFire = 4;
+
+	// UW thingies
+	timeToLive = 0.40; // that's enough for 45 meters underwater
+	waterFriction = -0.00345426; // nearly direct line underwater
+	effectFly = "AmmoUnderwater";
 };
 
 class MEU_B_9x19_HP_S : MEU_B_9x19_HPP {
