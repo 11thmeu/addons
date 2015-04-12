@@ -1,0 +1,162 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Edited with tabler - 2015-04-11 -->
+<Project name="MEU">
+  <Package name="Attachments">
+    <Key ID="STR_MEU_Attachments_Primary">
+      <English>Primary</English>
+      <Spanish>Primaria</Spanish>
+    </Key>
+    <Key ID="STR_MEU_Attachments_Secondary">
+      <English>Secondary</English>
+      <Spanish>Secundaria</Spanish>
+    </Key>
+    <Key ID="STR_MEU_Attachments_Handgun">
+      <English>Handgun</English>
+      <Spanish>Pistola</Spanish>
+    </Key>
+    <Key ID="STR_MEU_Attachments_Sights">
+      <English>Sights</English>
+      <Spanish>Mira</Spanish>
+    </Key>
+    <Key ID="STR_MEU_Attachments_Pointer">
+      <English>Pointer</English>
+      <Spanish>Lateral</Spanish>
+    </Key>
+    <Key ID="STR_MEU_Attachments_Muzzle">
+      <English>Muzzle</English>
+      <Spanish>Bocacha</Spanish>
+    </Key>
+    <Key ID="STR_MEU_Attachments_Bipod">
+      <English>Bipod</English>
+      <Spanish>Bipode</Spanish>
+    </Key>
+    <Key ID="STR_MEU_Attachments_Title">
+      <English>Attachments</English>
+      <Spanish>Accesorios</Spanish>
+    </Key>
+    <Key ID="STR_MEU_Attachments_List">
+      <English>List of compatible attachments</English>
+      <Spanish>Lista de accesorios compatibles</Spanish>
+    </Key>
+    <Key ID="STR_MEU_Attachments_Weapon">
+      <English>Weapon</English>
+      <Spanish>Arma</Spanish>
+    </Key>
+    <Key ID="STR_MEU_Attachments_Type">
+      <English>Type</English>
+      <Spanish>Tipo</Spanish>
+    </Key>
+    <Key ID="STR_MEU_Attachments_Add">
+      <English>Equip</English>
+      <Spanish>Equipar</Spanish>
+    </Key>
+    <Key ID="STR_MEU_Attachments_ActionName">
+      <English>Action name</English>
+      <Spanish>Nombre de la accion</Spanish>
+    </Key>
+    <Key ID="STR_MEU_Attachments_ActionDesc">
+      <English>Text that will appear in the object menu to open the attachments interface</English>
+      <Spanish>El texto que aparecera en el menu del objeto para abrir la interfaz de accesorios</Spanish>
+    </Key>
+    <Key ID="STR_MEU_Attachments_ActionDefault">
+      <English>Attachments</English>
+      <Spanish>Accesorios</Spanish>
+    </Key>
+    <Key ID="STR_MEU_Attachments_DescriptionName">
+      <English>Description</English>
+      <Spanish>Descripcion</Spanish>
+    </Key>
+    <Key ID="STR_MEU_Attachments_DescriptionDesc">
+      <English>Show objects descriptions</English>
+      <Spanish>Mostrar la descripcion de los objetos</Spanish>
+    </Key>
+    <Key ID="STR_MEU_Attachments_TooltipName">
+      <English>Classnames</English>
+      <Spanish>Nombres de clase</Spanish>
+    </Key>
+    <Key ID="STR_MEU_Attachments_TooltipDesc">
+      <English>Show in the item descriptions the classnames</English>
+      <Spanish>Mostrar en la descripcion de cada objeto el nombre de clase</Spanish>
+    </Key>
+    <Key ID="STR_MEU_Attachments_EnableBlacklistName">
+      <English>Disabled attachments</English>
+      <Spanish>Accesorios prohibidos</Spanish>
+    </Key>
+    <Key ID="STR_MEU_Attachments_EnableBlacklistDesc">
+      <English>Ban the attachments from the blacklist</English>
+      <Spanish>Prohibir los accesorios indicados en la lista negra</Spanish>
+    </Key>
+    <Key ID="STR_MEU_Attachments_BlacklistName">
+      <English>Blacklist</English>
+      <Spanish>Lista negra</Spanish>
+    </Key>
+    <Key ID="STR_MEU_Attachments_BlacklistDesc">
+      <English>Array with the list of banned attachments in the form ['attachment', 'attachment']</English>
+      <Spanish>Array con la lista de accesorios prohibidos en la forma ['accesorio', 'accesorio']</Spanish>
+    </Key>
+    <Key ID="STR_MEU_Attachments_ThermalName">
+      <English>Allow thermal sights</English>
+      <Spanish>Permitir miras termicas</Spanish>
+    </Key>
+    <Key ID="STR_MEU_Attachments_ThermalDesc">
+      <English>Show thermal sights for the weapons</English>
+      <Spanish>Mostrar miras termicas para las armas</Spanish>
+    </Key>
+    <Key ID="STR_MEU_Attachments_EnableWhitelistName">
+      <English>Allowed attachments</English>
+      <Spanish>Accesorios permitidos</Spanish>
+    </Key>
+    <Key ID="STR_MEU_Attachments_EnableWhitelistDesc">
+      <English>Allow only the attachments from the whitelist</English>
+      <Spanish>Permitir solamente los accesorios indicados en la lista blanca</Spanish>
+    </Key>
+    <Key ID="STR_MEU_Attachments_WhitelistName">
+      <English>Whitelist</English>
+      <Spanish>Lista blanca</Spanish>
+    </Key>
+    <Key ID="STR_MEU_Attachments_WhitelistDesc">
+      <English>Array with the list of allowed attachments in the form ['attachment', 'attachment']</English>
+      <Spanish>Array con la lista de accesorios permitidos en la forma ['accesorio', 'accesorio']</Spanish>
+    </Key>
+    <Key ID="STR_MEU_Attachments_Name">
+      <English>Attachments box</English>
+      <Spanish>Caja de accesorios</Spanish>
+    </Key>
+    <Key ID="STR_MEU_Attachments_Description">
+      <English>Synchronize an object with this module to add the attachments action</English>
+      <Spanish>Sincronizar un objeto con este modulo para asignarle la accion de accesorios</Spanish>
+    </Key>
+    <Key ID="STR_MEU_Attachments_Sync1">
+      <English>Object to assign attachments action</English>
+      <Spanish>Objeto para marcar como caja de accesorios</Spanish>
+    </Key>
+    <Key ID="STR_MEU_Attachments_Sync2">
+      <English>Doesn't have to be an ammo box</English>
+      <Spanish>No tiene que ser obligatoriamente una caja</Spanish>
+    </Key>
+    <Key ID="STR_MEU_Attachments_Exit">
+      <English>Exit</English>
+      <Spanish>Salir</Spanish>
+    </Key>
+    <Key ID="STR_MEU_Attachments_Flashlight">
+      <English>Switched to Flashlight mode</English>
+      <Spanish>Cambiado a modo linterna</Spanish>
+    </Key>
+    <Key ID="STR_MEU_Attachments_IRLaser">
+      <English>Switched to IR laser mode</English>
+      <Spanish>Cambiado a modo laser IR</Spanish>
+    </Key>
+    <Key ID="STR_MEU_Attachments_Optics">
+      <English>Switched Optics mode</English>
+      <Spanish>Cambiado modo de mira</Spanish>
+    </Key>
+    <Key ID="STR_MEU_Attachments_SwitchPointer">
+      <English>Switch Pointer mode</English>
+      <Spanish>Cambiar modo de puntero</Spanish>
+    </Key>
+    <Key ID="STR_MEU_Attachments_SwitchOptics">
+      <English>Switch optics mode</English>
+      <Spanish>Cambiar modo de mira</Spanish>
+    </Key>
+  </Package>
+</Project>

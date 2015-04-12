@@ -564,5 +564,6 @@ class CfgMods {
     };
 };
 
+#include "define.hpp"
 #include "CfgModuleCategories.hpp"
 #include "CfgEventHandlers.hpp"
