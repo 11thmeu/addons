@@ -51,4 +51,10 @@ class MEU_B_9x19_HP_S : MEU_B_9x19_HPP {
 	deflecting = 21;
 	visibleFire = 1;
 	audibleFire = 2;
+
+
+	// UW thingies
+	timeToLive = 0.12; // that's enough for 45 meters underwater
+	waterFriction = -0.00345426; // nearly direct line underwater
+	effectFly = "AmmoUnderwater";
 };
