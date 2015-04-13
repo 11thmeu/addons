@@ -1,6 +1,6 @@
 class CfgFontFamilies
 {
-	class GVAR(LCD_Font)
+	class GVARMAIN(LCD_Font)
 	{
 		fonts[] = {
 			PATHTOF(fonts\pixelmix\pixelmix6),
