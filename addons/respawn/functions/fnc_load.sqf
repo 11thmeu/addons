@@ -1,20 +1,26 @@
 /*
-	Author: Thrax
+ * Author: Thrax
+ * Restore the player status
+ *
+ * Arguments:
+ * 0: Old body <OBJECT>
+ * 1: ATL Position <ARRAY>
+ * 2: Player vehicle <OBJECT>
+ * 3: Player loadout <ARRAY>
+ * 4: Player object variables <ARRAY>
+ *
+ * Return Value:
+ * -
+ *
+ * Example:
+ * [unit, [0,0,0], vehicle, loadout, variables] call FUNC(load)
+ *
+ * Public: [No]
+ */
+#include "script_component.hpp"
 
-	Description:
-	Restore the player status
-
-
-	Parameter(s):
-		0: OBJECT - Old body
-		1: ARRAY - ATL Position [x,y,z] 
-		2: ARRAY - Player vehicle [Vehicle]
-		3: ARRAY - Player loadout
-		4: ARRAY - Player object variables
-
-	Returns:
-	-
-*/
+//Remove event handler
+[QGVAR(ReceiveServerData), GVAR(ReceiveServerDataHandlerID)] call ACEFUNC(common,removeEventHandler);
 
 private ["_position", "_vehicle", "_loadout", "_variables", "_assigned"];
 
@@ -31,12 +37,9 @@ if ((count _vehicle) > 0) then  {
 };
 
 //Set player loadout
-_loadout call MEU_fnc_setPlayerLoadout;
+_loadout call FUNC(main,setPlayerLoadout);
 
 //Set player variables
 {
 	player setVariable [_x select 0, _x select 1, _x select 2];
 } forEach _variables;
-
-//Undefine player status variable
-MEU_Respawn_Status = nil;

@@ -1,22 +1,22 @@
 /*
-	Author: Thrax
-
-	Description:
-	Store the status of a given unit in the server
-
-
-	Parameter(s):
-		0: OBJECT - unit
-		1: NUMBER - id
-		2: STRING - uid
-		3: STRING - name
-
-	Returns:
-	-
-*/
-
-#include "\x\cba\addons\main\script_macros.hpp"
-ISNILS(cse_sys_medical, false);
+ * Author: Thrax
+ * Store the status of a given unit in the server
+ *
+ * Arguments:
+ * 0: unit <OBJECT>
+ * 1: id <NUMBER>
+ * 2: uid <STRING>
+ * 3: name <STRING>
+ *
+ * Return Value:
+ * -
+ *
+ * Example:
+ * [unit, [0,0,0], vehicle, loadout, variables] call FUNC(load)
+ *
+ * Public: [No]
+ */
+#include "script_component.hpp"
 
 private ["_unit", "_clientUID", "_name", "_position", "_vehicle", "_loadout", "_variables", "_status"];
 
@@ -24,11 +24,9 @@ _unit = _this select 0;
 _clientUID = _this select 2;
 _name = _this select 3;
 
-["Medical",format["Saving status for %1", _clientUID]] call MEU_fnc_debug;
-
 //If unit has died dont save status
-if (_unit getVariable ["MEU_Respawn_IsDead", false]) exitWith {
-	["Medical",format["Saving status for %1 aborted, the unit is dead", _clientUID]] call MEU_fnc_debug;
+if (GETVAR(_unit,GVAR(Dead),false)) exitWith {
+	LOG(format["[MEU]: Saving status for %1 aborted, the unit is dead", _clientUID]);
 };
 
 //Save unit information
@@ -40,13 +38,13 @@ if ((vehicle _unit) != _unit) then {
 };
 
 //Unit loadout
-_loadout = [_unit] call MEU_fnc_getUnitLoadout;
+_loadout = [_unit] call FUNC(main,getUnitLoadout);
 
 //Object variables in format [["variableName", "variable value", public?]], i.e. [["badGuy", true, true], ["teamName", "Team1", false]];
 _variables = [];
 
 //Store status in a global variable
 _status = [_unit, _position, _vehicle, _loadout, _variables];
-call compile format ["MEU_Respawn_Status_%1 = _status;", _clientUID];
+call compile format ["meu_respawn_Status_%1 = _status;", _clientUID];
 
-["Medical", format["Unit %1, status saved: %2", _clientUID, _status]] call MEU_fnc_debug;
+LOG(format["[MEU]: Unit %1, status saved: %2", _clientUID, _status]);

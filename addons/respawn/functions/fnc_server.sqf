@@ -1,17 +1,20 @@
 /*
-	Author: Thrax
-
-	Description:
-	Return the server status of the given player
-
-
-	Parameter(s):
-		0: OBJECT - player object
-		1: BOOL (optional) - true to delete player info
-
-	Returns:
-	-
-*/
+ * Author: Thrax
+ * Return or delete the server status of the given player
+ *
+ * Arguments:
+ * 0: player unit <OBJECT>
+ * 1: (optional) delete player info <BOOL>
+ *
+ * Return Value:
+ * -
+ *
+ * Example:
+ * [unit] call FUNC(server)
+ *
+ * Public: [No]
+ */
+#include "script_component.hpp"
 
 private ["_playerObject", "_clientID", "_clientUID", "_status", "_body"];
 _playerObject = _this select 0;
@@ -22,28 +25,30 @@ _status = [];
 //Client request for data
 if ((count _this) == 1) then {
 
-	call compile format ["if (!isNil 'MEU_Respawn_Status_%1') then {_status = MEU_Respawn_Status_%1;};", _clientUID];
+	call compile format ["if (!isNil 'meu_respawn_Status_%1') then {_status = meu_respawn_Status_%1;};", _clientUID];
 
 	//Send info to client
-	MEU_Respawn_Status = _status;
-	_clientID publicVariableClient "MEU_Respawn_Status";
+	[QGVAR(receiveServerData), [ACE_Player], _status] call ACEFUNC(common,targetEvent);
 	
 	//Delete body if enabled and data exists
-	if (MEU_Medical_DeleteBodies && {(count _status) > 0}) then {
+	if (GVAR(DeleteBodies) && {(count _status) > 0}) then {
 		_body = _status select 0;
 		if (!isNull _body) then {
 			deleteVehicle _body;
 		};
 	};
+	
+	//Delete data
+	call compile format ["meu_respawn_Status_%1 = nil;", _clientUID];
 
-	["Medical",format["Server status query for player %1", _clientUID]] call MEU_fnc_debug;
+	LOG(format["[MEU]: Server status query for player %1", _clientUID]);
 
 //Client request for deletion
 } else {
 	if (_this select 1) then {
 		
-		call compile format ["MEU_Respawn_Status_%1 = nil;", _clientUID];
+		call compile format ["meu_respawn_Status_%1 = nil;", _clientUID];
 		
-		["Medical",format["Server status deletion for player %1", _clientUID]] call MEU_fnc_debug;
+		LOG(format["[MEU]: Server status deletion for player %1", _clientUID]);
 	};
 };

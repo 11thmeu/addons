@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Edited with tabler - 2015-04-13 -->
+<Project name="MEU">
+  <Package name="Respawn">
+    <Key ID="STR_MEU_Respawn_DeathMessage">
+      <English>You are dead</English>
+      <Spanish>Estas muerto</Spanish>
+    </Key>
+    <Key ID="STR_MEU_Respawn_SpectatorOn">
+      <English>Spectator mode enabled</English>
+      <Spanish>Modo espectador activado</Spanish>
+    </Key>
+  </Package>
+</Project>
