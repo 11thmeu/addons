@@ -10,8 +10,9 @@ GVAR(InterfaceVisible) 	= false;
 	"GPS: Toggle Overlay", // @todo localize
 	{
 		_this call FUNC(toggleDisplay);
+		true
 	},
-	{}, // up action
+	{false}, // up action
 	[DIK_M, false, true, false]
 ] call CBA_fnc_addKeybind;
 
