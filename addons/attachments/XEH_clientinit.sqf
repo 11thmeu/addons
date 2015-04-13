@@ -2,7 +2,7 @@
 if (!hasInterface) exitWith {};
 
 // Add keybinds
-["MEU", QGVAR(switchPointer), localize "STR_MEU_Attachments_SwitchPointer",
+[CBA_KEYBIDING_CATEGORY, QGVAR(switchPointer), localize "STR_MEU_Attachments_SwitchPointer",
 {
     call FUNC(switchPointer);
     true
@@ -10,7 +10,7 @@ if (!hasInterface) exitWith {};
 {false},
 [38, [false, true, false]], false] call cba_fnc_addKeybind; //Key CTRL+L
 
-["MEU", QGVAR(switchOptics), localize "STR_MEU_Attachments_SwitchOptics",
+[CBA_KEYBIDING_CATEGORY, QGVAR(switchOptics), localize "STR_MEU_Attachments_SwitchOptics",
 {
     call FUNC(switchOptics);
     true
