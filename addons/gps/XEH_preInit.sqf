@@ -3,6 +3,7 @@
 ADDON = false;
 
 PREP(unitGPS);
+PREP(vehicleGPS);
 PREP(toggleDisplay);
 PREP(toggleInterface);
 

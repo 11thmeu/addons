@@ -4,17 +4,13 @@
 GVAR(DisplayVisible) 	= false;
 GVAR(InterfaceVisible) 	= false;
 
-[
-	CBA_KEYBIDING_CATEGORY,
-	QGVAR(open_display),
-	"GPS: Toggle Overlay", // @todo localize
-	{
-		_this call FUNC(toggleDisplay);
-		true
-	},
-	{false}, // up action
-	[DIK_M, false, true, false]
-] call CBA_fnc_addKeybind;
+[CBA_KEYBIDING_CATEGORY, QGVAR(KeybindToggleDisplay), "GPS: Toggle Display",
+{
+    _this call FUNC(toggleDisplay);
+	true
+},
+{false},
+[DIK_M, [false, true, false]], false] call cba_fnc_addKeybind; //Key CTRL+/
 
 /*
 2.1 baby
@@ -33,14 +29,14 @@ GVAR(InterfaceVisible) 	= false;
 //////////////////////////////////////////////////
 // CALCULATE THE MAP COORDINATE SYSTEM
 //////////////////////////////////////////////////
-_gridOrigin = mapGridPosition [0,0];
-_xOrigin = [_gridOrigin,0,2] call BIS_fnc_trimString;
-_yOrigin = [_gridOrigin,3,5] call BIS_fnc_trimString;
+_gridOrigin = mapGridPosition [0, 0];
+_xOrigin 	= [_gridOrigin, 0, 2] call BIS_fnc_trimString;
+_yOrigin 	= [_gridOrigin, 3, 5] call BIS_fnc_trimString;
 
 //is Y inverted ?
-_gridStepY = mapGridPosition [0,100];
-_yStep = [_gridStepY,3,5] call BIS_fnc_trimString;
-_yInverted = false;
+_gridStepY 	= mapGridPosition [0, 100];
+_yStep 		= [_gridStepY, 3, 5] call BIS_fnc_trimString;
+_yInverted 	= false;
 if ((parseNumber _yOrigin) > (parseNumber _yStep)) then {
 	_yInverted = true;
 };
