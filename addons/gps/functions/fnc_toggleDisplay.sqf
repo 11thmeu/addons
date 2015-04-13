@@ -1,6 +1,5 @@
 #include "script_component.hpp"
 
-player sideChat "PRESS";
 
 if (!GVAR(DisplayVisible)) then {
 
@@ -26,13 +25,12 @@ if (!GVAR(DisplayVisible)) then {
 	};
 
 	if (_gpsUpdateFunction == "") exitWith {
-		player sideChat "ERROR NO UPDATE FUNC";
 		ERROR(format ["There is no update function for GPS: %1", _gpsDisplayClass]);
 	};
 
 	// its happening!
 	GVAR(DisplayVisible) = true;
-	player sideChat "GPSHOWING";
+	GVAR(DisplayLayer) cutRsc [_gpsDisplayClass, "PLAIN"];
 
 	// PFH Handler
 	GVAR(DisplayPFH) = [{
@@ -44,16 +42,18 @@ if (!GVAR(DisplayVisible)) then {
 			GVAR(DisplayVisible) = false;
 		};
 
-		_updateFunc = _params select 0;
+		_gps = _params select 0;
+		_updateFunc = _params select 1;
 
-		[] call (call compile _updateFunc);
+		call (call compile _updateFunc);
 
-	}, _gpsUpdateInterval, [_gpsUpdateFunction, _gpsDisplayInterval, _gpsDisplayClass]] call CBA_fnc_addPerFrameHandler;
+	}, _gpsUpdateInterval, [_gps, _gpsUpdateFunction, _gpsDisplayInterval, _gpsDisplayClass]] call CBA_fnc_addPerFrameHandler;
 
-	[QGVAR(displayShown), []] call ACEFUNC(common,localEvent);
+	[QGVAR(displayShown), [_gps, _gpsUpdateFunction, _gpsDisplayInterval, _gpsDisplayClass]] call ACEFUNC(common,localEvent);
 
 
 } else {
 	GVAR(DisplayVisible) = false;
+	GVAR(DisplayLayer) cutText ["", "PLAIN"]; //remove
 	[QGVAR(displayHidden), []] call ACEFUNC(common,localEvent);
 };

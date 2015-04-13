@@ -3,6 +3,7 @@
 
 GVAR(DisplayVisible) 	= false;
 GVAR(InterfaceVisible) 	= false;
+GVAR(DisplayLayer) 		= (QGVAR(DisplayLayer) call BIS_fnc_rscLayer);
 
 [CBA_KEYBIDING_CATEGORY, QGVAR(KeybindToggleDisplay), "GPS: Toggle Display",
 {

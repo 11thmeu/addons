@@ -6,8 +6,8 @@ _gps = "";
 {
 	_simu = getText(configFile >> "CfgWeapons" >> _x >> "simulation");
 
-	if (_simu == "ItemGPS") exitWith {
-		_x;
+	if (_simu == "ItemGPS") then {
+		_gps = _x;
 	};
 
 } forEach (assignedItems _unit);
