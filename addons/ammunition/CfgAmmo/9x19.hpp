@@ -62,6 +62,9 @@ class MEU_B_9x19_HP_S : MEU_B_9x19_HPP {
 	visibleFire = 1;
 	audibleFire = 2;
 
+	supersonicCrackFar[] = {};
+	supersonicCrackNear[] = {};
+
 
 	// UW thingies
 	timeToLive = 0.12; // that's enough for 45 meters underwater

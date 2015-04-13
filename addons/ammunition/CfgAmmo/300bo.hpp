@@ -23,7 +23,7 @@ class MEU_B_300BO_OTM: HLC_300Blackout_Ball {
 	AB_barrelLengths[] = {7,9,11,12,13,14,15,16,19,20,21};*/
 };
 
-class MEU_B_300BO_OTM_S: HLC_300Blackout_Ball {
+class MEU_B_300BO_OTM_S: MEU_B_300BO_OTM {
 	// ACE
 	ACE_BulletMass = 9;
 
@@ -35,6 +35,9 @@ class MEU_B_300BO_OTM_S: HLC_300Blackout_Ball {
 	deflecting = 14;
 	visibleFire = 1.25;
 	audibleFire = 2.50;
+
+	supersonicCrackFar[] = {};
+	supersonicCrackNear[] = {};
 
 	/*// AdvancedBallistics
 	AB_caliber = 0.308;
