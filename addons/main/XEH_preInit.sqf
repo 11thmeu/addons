@@ -2,15 +2,15 @@
 
 ADDON = false;
 
-//Initialize debug status to false
-if (isNil QUOTE(GVARMAIN(DebugModule))) then { GVARMAIN(DebugModule) = false; };
-
-PREP(getItemDetails);
-PREP(hideObjectServer);
-PREP(isThermalAttachment);
-PREP(replace);
 PREP(formatTime12);
 PREP(formatTime24);
+PREP(getItemDetails);
+PREP(getUnitLoadout);
+PREP(hideObjectServer);
+PREP(isThermalAttachment);
+PREP(processItem);
+PREP(replace);
+PREP(setPlayerLoadout);
 
 if (!isServer) exitWith {ADDON = true;};
 
