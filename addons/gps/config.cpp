@@ -14,3 +14,5 @@ class CfgPatches {
 };
 
 #include "CfgEventHandlers.hpp"
+#include "ArmAGPSHack.hpp"
+#include "RscBase.hpp"
