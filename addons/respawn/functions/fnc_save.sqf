@@ -38,7 +38,7 @@ if ((vehicle _unit) != _unit) then {
 };
 
 //Unit loadout
-_loadout = [_unit] call FUNC(main,getUnitLoadout);
+_loadout = [_unit] call EFUNC(main,getUnitLoadout);
 
 //Object variables in format [["variableName", "variable value", public?]], i.e. [["badGuy", true, true], ["teamName", "Team1", false]];
 _variables = [];
@@ -47,4 +47,4 @@ _variables = [];
 _status = [_unit, _position, _vehicle, _loadout, _variables];
 call compile format ["meu_respawn_Status_%1 = _status;", _clientUID];
 
-LOG(format["[MEU]: Unit %1, status saved: %2", _clientUID, _status]);
+LOG(format["[MEU]: Unit %1, status saved", _clientUID]);

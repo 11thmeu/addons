@@ -13,4 +13,10 @@ class CfgPatches {
     };
 };
 
+class CfgScriptPaths {
+    meu_respawn = "\z\meu\addons\respawn\scripts\";
+};
+
 #include "CfgEventHandlers.hpp"
+#include "CfgVehicles.hpp"
+#include "RscTitles.hpp"

@@ -115,13 +115,13 @@ if (_handgunWeapon != "") then { ACE_Player addWeapon _handgunWeapon; };
 } forEach _handgunWeaponItems;
 
 {
-    if (_x != "") then { ACE_Player addItemToUniform ([_x] call FUNC(processItem); };
+    if (_x != "") then { ACE_Player addItemToUniform ([_x] call FUNC(processItem)); };
 } forEach _uniformItems;
 {
-    if (_x != "") then { ACE_Player addItemToVest ([_x] call FUNC(processItem); };
+    if (_x != "") then { ACE_Player addItemToVest ([_x] call FUNC(processItem)); };
 } forEach _vestItems;
 {
-    if (_x != "") then { ACE_Player addItemToBackpack ([_x] call FUNC(processItem); };
+    if (_x != "") then { ACE_Player addItemToBackpack ([_x] call FUNC(processItem)); };
 } forEach _backpackItems;
 
 if (primaryWeapon ACE_Player != "") then { ACE_Player selectWeapon (primaryWeapon ACE_Player); };

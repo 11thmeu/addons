@@ -37,7 +37,7 @@ if ((count _vehicle) > 0) then  {
 };
 
 //Set player loadout
-_loadout call FUNC(main,setPlayerLoadout);
+_loadout call EFUNC(main,setPlayerLoadout);
 
 //Set player variables
 {

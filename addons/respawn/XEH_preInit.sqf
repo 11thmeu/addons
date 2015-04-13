@@ -2,6 +2,11 @@
 
 ADDON = false;
 
-PREP(empty);
+PREP(handleRespawn);
+PREP(init);
+PREP(load);
+PREP(moduleRespawn);
+PREP(save);
+PREP(server);
 
 ADDON = true;
