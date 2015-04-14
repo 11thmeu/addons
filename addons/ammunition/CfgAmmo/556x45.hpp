@@ -49,20 +49,6 @@ class MEU_B_556x45_Mk262Mod1: MEU_B_556x45_M855A1EPR {
 	AB_barrelLengths[] = {9,11,12,14,15,16,18,19,20,21,23,24};*/
 };
 
-class MEU_B_556x45_Mk318Mod0SOST: MEU_B_556x45_M855A1EPR {
-	// ACE3
-	ACE_BulletMass = 4.2;
-
-	// Credits to Spartan0536
-	hit = 9.40832;
-	typicalSpeed = 892.1468;
-	airFriction = -0.001243324;
-	caliber = 0.755;
-	deflecting = 18;
-	visibleFire = 3;
-	audibleFire = 5.5;
-};
-
 class MEU_B_556x45_SimunitionFX: B_556x45_Ball {
 	// ACE
 	ACE_BulletMass = 2;
