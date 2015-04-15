@@ -8,6 +8,6 @@ This is the 11th Marine Expeditionary Unit addons, Based on original addons from
 
 _This source is under heavy refactoring due to ACE Integration_
 
-## Authors@
+## Authors
  * [Thrax](https://github.com/Thraxs/)
  * [Kavinsky](https://github.com/kavinsky/)
