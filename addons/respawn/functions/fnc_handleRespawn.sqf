@@ -40,7 +40,7 @@ SETPVAR(ACE_Player,GVAR(Dead),true);
 [ACE_Player] joinsilent grpnull;
 
 //Call server function to hide unit object from all clients
-[[ACE_Player], QEFUNC(main,hideObjectServer), false, false, false] call BIS_fnc_MP;
+[[ACE_Player], QEFUNC(main,hideObjectServer), 1] call ACEFUNC(common,execRemoteFnc);
 
 //Update radio settings
 2 fadeSound 0.3;
@@ -60,8 +60,8 @@ if (GVAR(Spectator)) exitWith {
 	GVAR(DeathPos) = getPosATL _corpse;
 	
 	//Start spectator camera
-	_layer = "BIS_fnc_respawnSpectator" call BIS_fnc_rscLayer;
-	_layer cutrsc ["RscSpectator","plain"];	
+	_layer = QGVAR(respawnSpectator) call BIS_fnc_rscLayer;
+	_layer cutRsc ["RscMEU_Spectator","plain"];	
 	
 	titleText [localize "STR_MEU_Respawn_SpectatorOn","PLAIN"];
 

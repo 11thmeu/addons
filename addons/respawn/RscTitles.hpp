@@ -103,7 +103,7 @@ class RscTitles {
         };
     };
 	
-    class MEU_SpectatorHelp {
+    class RscMEU_SpectatorHelp {
         idd = -1;
         onLoad = "";
         duration = 86400;
@@ -136,7 +136,7 @@ class RscTitles {
                 w = 0.45;
                 x = safeZoneX + safeZoneW - 0.4;
                 y = safeZoneY + safeZoneH/2 - 0.25;
-                text = "$STR_MEU_Medical_SpectatorControls";
+                text = "$STR_MEU_Respawn_SpectatorControls";
             };
             class Key0: MEU_gui_SpectatorKeyText {
                 idc = -1;
@@ -146,17 +146,17 @@ class RscTitles {
             class Desc0: MEU_gui_SpectatorKeyDescription {
                 idc = -1;
                 y = safeZoneY + safeZoneH/2 - 0.15;
-                text = "$STR_MEU_Medical_SpectatorHelp";
+                text = "$STR_MEU_Respawn_SpectatorHelp";
             };
             class Key1: MEU_gui_SpectatorKeyText {
                 idc = -1;
                 y = safeZoneY + safeZoneH/2 - 0.1;
-                text = "?/?";
+                text = "←/→";
             };
             class Desc1: MEU_gui_SpectatorKeyDescription {
                 idc = -1;
                 y = safeZoneY + safeZoneH/2 - 0.1;
-                text = "$STR_MEU_Medical_SpectatorSwitch";
+                text = "$STR_MEU_Respawn_SpectatorSwitch";
             };
             class Key2: MEU_gui_SpectatorKeyText {
                 idc = -1;
@@ -166,7 +166,7 @@ class RscTitles {
             class Desc2: MEU_gui_SpectatorKeyDescription {
                 idc = -1;
                 y = safeZoneY + safeZoneH/2 - 0.05;
-                text = "$STR_MEU_Medical_SpectatorMap";
+                text = "$STR_MEU_Respawn_SpectatorMap";
             };
             class Key3: MEU_gui_SpectatorKeyText {
                 idc = -1;
@@ -176,7 +176,7 @@ class RscTitles {
             class Desc3: MEU_gui_SpectatorKeyDescription {
                 idc = -1;
                 y = safeZoneY + safeZoneH/2 - 0;
-                text = "$STR_MEU_Medical_SpectatorVision";
+                text = "$STR_MEU_Respawn_SpectatorVision";
             };
             class Key4: MEU_gui_SpectatorKeyText {
                 idc = -1;
@@ -186,7 +186,7 @@ class RscTitles {
             class Desc4: MEU_gui_SpectatorKeyDescription {
                 idc = -1;
                 y = safeZoneY + safeZoneH/2 + 0.05;
-                text = "$STR_MEU_Medical_SpectatorMoveCamera";
+                text = "$STR_MEU_Respawn_SpectatorMoveCam";
             };
             class Key5: MEU_gui_SpectatorKeyText {
                 idc = -1;
@@ -196,17 +196,17 @@ class RscTitles {
             class Desc5: MEU_gui_SpectatorKeyDescription {
                 idc = -1;
                 y = safeZoneY + safeZoneH/2 + 0.1;
-                text = "$STR_MEU_Medical_SpectatorMouseLook";
+                text = "$STR_MEU_Respawn_SpectatorFreeLook";
             };
             class Key6: MEU_gui_SpectatorKeyText {
                 idc = -1;
                 y = safeZoneY + safeZoneH/2 + 0.15;
-                text = "$STR_MEU_Medical_SpectatorDeletekey";
+                text = "$STR_MEU_Respawn_SpectatorDeleteKey";
             };
             class Desc6: MEU_gui_SpectatorKeyDescription {
                 idc = -1;
                 y = safeZoneY + safeZoneH/2 + 0.15;
-                text = "$STR_MEU_Medical_SpectatorToggleFloating";
+                text = "$STR_MEU_Respawn_SpectatorFloat";
             };
             class Key7: MEU_gui_SpectatorKeyText {
                 idc = -1;
@@ -216,7 +216,7 @@ class RscTitles {
             class Desc7: MEU_gui_SpectatorKeyDescription {
                 idc = -1;
                 y = safeZoneY + safeZoneH/2 + 0.2;
-                text = "$STR_MEU_Medical_SpectatorFocus";
+                text = "$STR_MEU_Respawn_SpectatorFocus";
             };
             class Key8: MEU_gui_SpectatorKeyText {
                 idc = -1;
@@ -226,7 +226,7 @@ class RscTitles {
             class Desc8: MEU_gui_SpectatorKeyDescription {
                 idc = -1;
                 y = safeZoneY + safeZoneH/2 + 0.25;
-                text = "$STR_MEU_Medical_SpectatorHideCrosshair";
+                text = "$STR_MEU_Respawn_SpectatorCrosshair";
             };
             class Key9: MEU_gui_SpectatorKeyText {
                 idc = -1;
@@ -236,7 +236,7 @@ class RscTitles {
             class Desc9: MEU_gui_SpectatorKeyDescription {
                 idc = -1;
                 y = safeZoneY + safeZoneH/2 + 0.30;
-                text = "$STR_MEU_Medical_SpectatorMoveToTarget";
+                text = "$STR_MEU_Respawn_SpectatorToTarget";
             };
         };
     };

@@ -2,7 +2,7 @@
 
 class CfgPatches {
     class ADDON {
-        units[] = {};
+        units[] = {"MEU_ModuleRespawn", "MEU_ModuleJipTeleport"};
         weapons[] = {};
         requiredVersion = REQUIRED_VERSION;
         requiredAddons[] = {"meu_main"};
@@ -14,7 +14,7 @@ class CfgPatches {
 };
 
 class CfgScriptPaths {
-    meu_respawn = "\z\meu\addons\respawn\scripts\";
+    meu_respawn = PATHTOF(scripts\);
 };
 
 #include "CfgEventHandlers.hpp"

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<!-- Edited with tabler - 2015-04-13 -->
+<!-- Edited with tabler - 2015-04-17 -->
 <Project name="MEU">
   <Package name="Respawn">
     <Key ID="STR_MEU_Respawn_DeathMessage">
@@ -41,6 +41,66 @@
     <Key ID="STR_MEU_Respawn_Description">
       <English>This module allows Join In Progress disabling respawn. Requires (respawn = BASE) or (respawn = 3)</English>
       <Spanish>Este modulo permite join in progress desactivando la reaparicion. Requiere (respawn = BASE) o (respawn = 3)</Spanish>
+    </Key>
+    <Key ID="STR_MEU_Respawn_SpectatorControls">
+      <English>Controls</English>
+      <Spanish>Controles</Spanish>
+    </Key>
+    <Key ID="STR_MEU_Respawn_SpectatorHelp">
+      <English>Show controls</English>
+      <Spanish>Mostrar controles</Spanish>
+    </Key>
+    <Key ID="STR_MEU_Respawn_SpectatorSwitch">
+      <English>Switch unit</English>
+      <Spanish>Cambiad unidad</Spanish>
+    </Key>
+    <Key ID="STR_MEU_Respawn_SpectatorMap">
+      <English>Open map</English>
+      <Spanish>Abrir mapa</Spanish>
+    </Key>
+    <Key ID="STR_MEU_Respawn_SpectatorVision">
+      <English>Vision mode</English>
+      <Spanish>Modo de vision</Spanish>
+    </Key>
+    <Key ID="STR_MEU_Respawn_SpectatorMoveCam">
+      <English>Move camera</English>
+      <Spanish>Mover camara</Spanish>
+    </Key>
+    <Key ID="STR_MEU_Respawn_SpectatorFreeLook">
+      <English>Toggle free cam</English>
+      <Spanish>Activar camara libre</Spanish>
+    </Key>
+    <Key ID="STR_MEU_Respawn_SpectatorDeleteKey">
+      <English>Delete</English>
+      <Spanish>Suprimir</Spanish>
+    </Key>
+    <Key ID="STR_MEU_Respawn_SpectatorFloat">
+      <English>Toggle float mode</English>
+      <Spanish>Activar camara flotante</Spanish>
+    </Key>
+    <Key ID="STR_MEU_Respawn_SpectatorFocus">
+      <English>Focus on target</English>
+      <Spanish>Centrar en objetivo</Spanish>
+    </Key>
+    <Key ID="STR_MEU_Respawn_SpectatorCrosshair">
+      <English>Hide crosshair</English>
+      <Spanish>Ocultar punto de mira</Spanish>
+    </Key>
+    <Key ID="STR_MEU_Respawn_SpectatorToTarget">
+      <English>Move camera to target</English>
+      <Spanish>Mover camara al objetivo</Spanish>
+    </Key>
+    <Key ID="STR_MEU_Respawn_TeleportInProgress">
+      <English>Press F10 during the next 10 minutes to regroup</English>
+      <Spanish>Pulsa F10 durante los proximos 10 minutos para reagruparte</Spanish>
+    </Key>
+    <Key ID="STR_MEU_Respawn_JIP_Name">
+      <English>Join In Progress Teleport</English>
+      <Spanish>Teletransporte Join In Progress</Spanish>
+    </Key>
+    <Key ID="STR_MEU_Respawn_JIP_Desc">
+      <English>Allows players to teleport to their group if they join after mission start</English>
+      <Spanish>Permite a los jugadores teletransportarse a su equipo si se unen tras comenzar</Spanish>
     </Key>
   </Package>
 </Project>

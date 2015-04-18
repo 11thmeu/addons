@@ -80,6 +80,27 @@ class CfgVehicles {
         class ModuleDescription: ModuleDescription {
             description = "$STR_MEU_Respawn_Description";
             sync[] = {};
+        };
+    };
+
+    class MEU_ModuleJipTeleport: Module_F {
+        author = "$STR_MEU_Main_MEUTeam";
+        _generalMacro = "MEU_ModuleJipTeleport";
+        scope = 2;
+        displayName = "$STR_MEU_Respawn_JIP_Name";
+        icon = PATHTOF(UI\Icon_Module_JipTeleport_ca.paa);
+        category = "MEU_modules";
+        function = QFUNC(moduleJipTeleport);
+        functionPriority = 0;
+        isGlobal = 1;
+        isTriggerActivated = 0;
+        isDisposable = 0;
+
+        class Arguments {};
+
+        class ModuleDescription: ModuleDescription {
+            description = "$STR_MEU_Respawn_JIP_Desc";
+            sync[] = {};
         };    
     };
 };

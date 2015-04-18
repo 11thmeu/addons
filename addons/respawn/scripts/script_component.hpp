@@ -1,0 +1,1 @@
+#include "\z\meu\addons\respawn\script_component.hpp"
