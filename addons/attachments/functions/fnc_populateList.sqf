@@ -9,7 +9,7 @@
  * -
  *
  * Example:
- * [attachments] call FUNC(filterAttachments)
+ * [attachmentsArray] call FUNC(populateList)
  *
  * Public: [No]
  */
