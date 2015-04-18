@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<!-- Edited with tabler - 2015-04-11 -->
+<!-- Edited with tabler - 2015-04-18 -->
 <Project name="MEU">
   <Package name="Attachments">
     <Key ID="STR_MEU_Attachments_Primary">
@@ -45,10 +45,6 @@
     <Key ID="STR_MEU_Attachments_Type">
       <English>Type</English>
       <Spanish>Tipo</Spanish>
-    </Key>
-    <Key ID="STR_MEU_Attachments_Add">
-      <English>Equip</English>
-      <Spanish>Equipar</Spanish>
     </Key>
     <Key ID="STR_MEU_Attachments_ActionName">
       <English>Action name</English>

@@ -51,3 +51,12 @@ lbSetCurSel [7551,0];
 lbSetCurSel [7552,0];
 
 call FUNC(updateAttachmentsSlots);
+
+//Initialize module variables
+GVAR(AttachmentsList) = [];
+GVAR(AttachmentsFilter) = "*";
+GVAR(ResetFilter) = false;
+GVAR(DialogOpen) = true;
+
+//Initialize filter
+[FUNC(filterAttachments), 0.5, []] call CBA_fnc_addPerFrameHandler;

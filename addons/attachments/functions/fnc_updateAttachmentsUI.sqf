@@ -17,7 +17,7 @@
 
 disableSerialization;
 
-private ["_weapon", "_type", "_collection", "_filteredCollection", "_info", "_index", "_tooltip", "_display", "_list", "_switch1", "_switch2"];
+private ["_weapon", "_type", "_collection", "_filteredCollection"];
 _weapon = lbCurSel 7551;
 _type = lbCurSel 7552;
 _collection = [];
@@ -26,11 +26,6 @@ _filteredCollection = [];
 if(_type == -1) then {
     _type = 0;
 };
-
-_display = GETUVAR(GVAR(AttachmentsDialog),displayNull);
-_list = _display displayCtrl 7553; 
-
-lbClear _list;
 
 switch(_weapon) do {
     //Primary
@@ -156,46 +151,10 @@ if (!GVAR(EnableThermal)) then {
     _filteredCollection = _collection;
 };
 
+//Store current listed attachments
+GVAR(AttachmentsList) = _filteredCollection;
+
 //Add elements to listbox
-{
-    _info = [_x,"CfgWeapons"] call EFUNC(main,getItemDetails);
-    _index = _list lbAdd (_info select 0);
-    _list lbSetData [_index, _x];
-    _list lbSetPicture [_index, (_info select 1)];
-    
-    //If item has pointer/optics switch change color
-    _switch1 = getText (configFile >> "CfgWeapons" >> _x >> "MEU_PointerSwitch");
-    _switch2 = getText (configFile >> "CfgWeapons" >> _x >> "MRT_SwitchItemNextClass");
-    if ((_switch1 != "") || (_switch2 != "")) then {
-        _list lbSetColor [_index, [0.5,1,0.5,1]];
-    };
-    
-    //If thermals are enabled and optics is thermal change color
-    if (GVAR(EnableThermal)) then {
-        if ([_x] call EFUNC(main,isThermalAttachment)) then {
-            _list lbSetColor [_index, [1,0.5,0.5,1]];
-        };
-    };
-    
-    //If DLC item change color
-    if ((getText (configFile >> "CfgWeapons" >> _x  >> "DLC")) != "") then {
-        _list lbSetColor [_index, [1,1,0,1]];
-    };
-    
-    _tooltip = "";
-    if (GVAR(Description)) then {
-        _tooltip = _info select 2;
-        _tooltip = [_tooltip, "<br />", ", "] call EFUNC(main,replace);
-        _tooltip = [_tooltip, "<br>/", ", "] call EFUNC(main,replace);
-    };
-    
-    if (GVAR(Tooltips)) then { 
-        _tooltip = _tooltip + format[" [%1]", _x];
-    };
-    
-    if (_tooltip != "") then { _list lbSetTooltip [_index, _tooltip]; };
-    
-    lbSort [_list, "ASC"];
-} forEach _filteredCollection;
+[_filteredCollection] call FUNC(populateList);
 
 call FUNC(updateAttachmentsSlots);

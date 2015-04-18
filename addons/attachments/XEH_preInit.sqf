@@ -4,8 +4,10 @@ ADDON = false;
 
 PREP(addAttachment);
 PREP(compatibleAttachments);
+PREP(filterAttachments);
 PREP(moduleAttachments);
 PREP(openAttachmentsUI);
+PREP(populateList);
 PREP(switchOptics);
 PREP(switchPointer);
 PREP(updateAttachmentsSlots);

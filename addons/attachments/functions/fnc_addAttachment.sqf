@@ -3,7 +3,8 @@
  * Adds the selected attachment to the player
  *
  * Arguments:
- * -
+ * 0: Control <CONTROL>
+ * 1: Selected item index <NUMBER>
  *
  * Return Value:
  * -
@@ -15,12 +16,17 @@
  */
 #include "script_component.hpp"
 
+disableSerialization;
+
 private ["_weapon", "_type", "_selected", "_primaryWeapon", "_primaryAttachments", "_secondaryWeapon", "_secondaryAttachments", "_handgun", "_handgunAttachments"];
 private ["_currentSights", "_currentPointer", "_currentMuzzle", "_currentBipod", "_newSights", "_newPointer", "_newMuzzle", "_newBipod"];
+private ["_control", "_selected"];
+
+_control = _this select 0;
+_selected = _this select 1;
 
 _weapon = lbCurSel 7551;
 _type = lbCurSel 7552; 
-_selected = lbCurSel 7553;
 
 _primaryWeapon = primaryWeapon ACE_Player;
 _primaryAttachments = primaryWeaponItems ACE_Player;
@@ -39,7 +45,7 @@ if(_selected != -1) then {
                 //Sights
                 case 0: {
                     _currentSights = _primaryAttachments select 2;
-                    _newSights = lbData [7553, _selected];
+                    _newSights = _control lbData _selected;
 
                     if(_currentSights == "") then {
                         ACE_Player addprimaryWeaponItem _newSights;
@@ -53,7 +59,7 @@ if(_selected != -1) then {
                 //Pointers
                 case 1: {
                     _currentPointer = _primaryAttachments select 1;
-                    _newPointer = lbData [7553, _selected];
+                    _newPointer = _control lbData _selected;
 
                     if(_currentPointer == "") then {
                         ACE_Player addprimaryWeaponItem _newPointer;
@@ -67,7 +73,7 @@ if(_selected != -1) then {
                 //Muzzles
                 case 2: {
                     _currentMuzzle = _primaryAttachments select 0;
-                    _newMuzzle = lbData [7553, _selected];
+                    _newMuzzle = _control lbData _selected;
 
                     if(_currentMuzzle == "") then {
                         ACE_Player addprimaryWeaponItem _newMuzzle;
@@ -81,7 +87,7 @@ if(_selected != -1) then {
                 //Bipods
                 case 3: {
                     _currentBipod = _primaryAttachments select 3;
-                    _newBipod = lbData [7553, _selected];
+                    _newBipod = _control lbData _selected;
 
                     if(_currentBipod == "") then {
                         ACE_Player addprimaryWeaponItem _newBipod;
@@ -104,7 +110,7 @@ if(_selected != -1) then {
                 //Sights
                 case 0: {
                     _currentSights = _secondaryAttachments select 2;
-                    _newSights = lbData [7553, _selected];
+                    _newSights = _control lbData _selected;
                     
                     if(_currentSights == "") then {
                         ACE_Player addsecondaryWeaponItem _newSights;
@@ -118,7 +124,7 @@ if(_selected != -1) then {
                 //Pointers
                 case 1: {
                     _currentPointer = _secondaryAttachments select 1;
-                    _newPointer = lbData [7553, _selected];
+                    _newPointer = _control lbData _selected;
                     
                     if(_currentPointer == "") then {
                         ACE_Player addsecondaryWeaponItem _newPointer;
@@ -132,7 +138,7 @@ if(_selected != -1) then {
                 //Muzzles
                 case 2: {
                     _currentMuzzle = _secondaryAttachments select 0;
-                    _newMuzzle = lbData [7553, _selected];
+                    _newMuzzle = _control lbData _selected;
                     
                     if(_currentMuzzle == "") then {
                         ACE_Player addsecondaryWeaponItem _newMuzzle;
@@ -146,7 +152,7 @@ if(_selected != -1) then {
                 //Bipods
                 case 3: {
                     _currentBipod = _secondaryAttachments select 3;
-                    _newBipod = lbData [7553, _selected];
+                    _newBipod = _control lbData _selected;
 
                     if(_currentBipod == "") then {
                         ACE_Player addsecondaryWeaponItem _newBipod;
@@ -169,7 +175,7 @@ if(_selected != -1) then {
                 //Sights
                 case 0: {
                     _currentSights = _handgunAttachments select 2;
-                    _newSights = lbData [7553, _selected];
+                    _newSights = _control lbData _selected;
 
                     if(_currentSights == "") then {
                         ACE_Player addHandgunItem _newSights;
@@ -183,7 +189,7 @@ if(_selected != -1) then {
                 //Pointers
                 case 1: {
                     _currentPointer = _handgunAttachments select 1;
-                    _newPointer = lbData [7553, _selected];
+                    _newPointer = _control lbData _selected;
 
                     if(_currentPointer == "") then {
                         ACE_Player addHandgunItem _newPointer;
@@ -197,7 +203,7 @@ if(_selected != -1) then {
                 //Muzzles
                 case 2: {
                     _currentMuzzle = _handgunAttachments select 0;
-                    _newMuzzle = lbData [7553, _selected];
+                    _newMuzzle = _control lbData _selected;
 
                     if(_currentMuzzle == "") then {
                         ACE_Player addHandgunItem _newMuzzle;
@@ -211,7 +217,7 @@ if(_selected != -1) then {
                 //Bipods
                 case 3: {
                     _currentBipod = _handgunAttachments select 3;
-                    _newBipod = lbData [7553, _selected];
+                    _newBipod = _control lbData _selected;
 
                     if(_currentBipod == "") then {
                         ACE_Player addHandgunItem _newBipod;
