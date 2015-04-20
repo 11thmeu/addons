@@ -22,7 +22,6 @@ if (!GVAR(DialogOpen)) exitWith {
 };
 
 disableSerialization;
-
 private ["_display", "_textBox", "_list", "_input", "_filtered", "_displayName", "_index", "_switch1", "_switch2", "_tooltip"];
 
 _display = GETUVAR(GVAR(AttachmentsDialog),displayNull);

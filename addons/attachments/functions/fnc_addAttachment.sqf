@@ -17,24 +17,19 @@
 #include "script_component.hpp"
 
 disableSerialization;
-
-private ["_weapon", "_type", "_selected", "_primaryWeapon", "_primaryAttachments", "_secondaryWeapon", "_secondaryAttachments", "_handgun", "_handgunAttachments"];
+private ["_weapon", "_type", "_selected", "_primaryAttachments", "_secondaryAttachments", "_handgunAttachments"];
 private ["_currentSights", "_currentPointer", "_currentMuzzle", "_currentBipod", "_newSights", "_newPointer", "_newMuzzle", "_newBipod"];
 private ["_control", "_selected"];
 
 _control = _this select 0;
 _selected = _this select 1;
 
-_weapon = lbCurSel 7551;
-_type = lbCurSel 7552; 
+_display = GETUVAR(GVAR(AttachmentsDialog),displayNull);
+_weapon = lbCurSel (_display displayCtrl 7551);
+_type = lbCurSel (_display displayCtrl 7552);
 
-_primaryWeapon = primaryWeapon ACE_Player;
 _primaryAttachments = primaryWeaponItems ACE_Player;
-
-_secondaryWeapon = secondaryWeapon ACE_Player;
 _secondaryAttachments = secondaryWeaponItems ACE_Player;
-
-_handgun = handgunWeapon ACE_Player;
 _handgunAttachments = handgunItems ACE_Player;
 
 if(_selected != -1) then {

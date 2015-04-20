@@ -16,10 +16,12 @@
 #include "script_component.hpp"
 
 disableSerialization;
+private ["_display", "_weapon", "_type", "_collection", "_filteredCollection"];
 
-private ["_weapon", "_type", "_collection", "_filteredCollection"];
-_weapon = lbCurSel 7551;
-_type = lbCurSel 7552;
+_display = GETUVAR(GVAR(AttachmentsDialog),displayNull);
+
+_weapon = lbCurSel (_display displayCtrl 7551);
+_type = lbCurSel (_display displayCtrl 7552);
 _collection = [];
 _filteredCollection = [];
 

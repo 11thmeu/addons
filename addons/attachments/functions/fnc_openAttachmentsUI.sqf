@@ -38,17 +38,26 @@ GVAR(Tooltips) = (_this select 3) select 6;
 
 createDialog "RscMEU_Attachments";
 
+disableSerialization;
+private ["_display", "_comboWeapons", "_comboTypes"];
+
+_display = GETUVAR(GVAR(AttachmentsDialog),displayNull);
+_comboWeapons = _display displayCtrl 7551;
+_comboTypes = _display displayCtrl 7552;
+
+(_display displayCtrl 7555) ctrlSetEventHandler ["MouseButtonClick", "hint 'EXECThis'; true"];
+
 //Add weapon types
 {
-    lbAdd [7551, _x];
+    _comboWeapons lbAdd _x;
 } forEach [(localize "STR_MEU_Attachments_Primary"), (localize "STR_MEU_Attachments_Secondary"), (localize "STR_MEU_Attachments_Handgun")];
-lbSetCurSel [7551,0];
+_comboWeapons lbSetCurSel 0;
 
 //Add attachment types
 {
-    lbAdd [7552, _x];
+    _comboTypes lbAdd _x;
 } forEach [(localize "STR_MEU_Attachments_Sights"), (localize "STR_MEU_Attachments_Pointer"), (localize "STR_MEU_Attachments_Muzzle"), (localize "STR_MEU_Attachments_Bipod")];
-lbSetCurSel [7552,0];
+_comboTypes lbSetCurSel 0;
 
 call FUNC(updateAttachmentsSlots);
 
