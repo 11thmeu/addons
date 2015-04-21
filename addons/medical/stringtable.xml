@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Edited with tabler - 2015-04-21 -->
+<Project name="MEU">
+  <Package name="Medical">
+    <Key ID="STR_MEU_Medical_IFAK_name">
+      <English>IFAK</English>
+      <Spanish>IFAK</Spanish>
+    </Key>
+    <Key ID="STR_MEU_Medical_IFAK_desc">
+      <English>Individual First Aid Kit&lt;br/&gt;Contains essential medical supplies</English>
+      <Spanish>Kit Individual de Primeros Auxilios&lt;br/&gt;Contiene suministros medicos esenciales</Spanish>
+    </Key>
+    <Key ID="STR_MEU_Medical_IFAK_open">
+      <English>Open IFAK</English>
+      <Spanish>Abrir IFAK</Spanish>
+    </Key>
+    <Key ID="STR_MEU_Medical_IFAK_close">
+      <English>Close IFAK</English>
+      <Spanish>Cerrar IFAK</Spanish>
+    </Key>
+    <Key ID="STR_MEU_Medical_IFAK_empty_name">
+      <English>IFAK (empty)</English>
+      <Spanish>IFAK (vacio)</Spanish>
+    </Key>
+    <Key ID="STR_MEU_Medical_IFAK_empty_desc">
+      <English>Empty Individual First Aid Kit</English>
+      <Spanish>Kit Individual de Primeros Auxilios vacio</Spanish>
+    </Key>
+    <Key ID="STR_MEU_Medical_IFAK_cantRepack">
+      <English>You dont have all the required items</English>
+      <Spanish>No tienes todos los objetos requeridos</Spanish>
+    </Key>
+  </Package>
+</Project>

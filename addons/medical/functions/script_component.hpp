@@ -1,0 +1,1 @@
+#include "\z\meu\addons\medical\script_component.hpp"
