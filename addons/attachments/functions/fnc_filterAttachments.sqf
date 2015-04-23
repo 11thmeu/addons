@@ -45,10 +45,10 @@ if (GVAR(ResetFilter)) then {
         _input = toLower GVAR(AttachmentsFilter);
         _filtered = [];
         {
-            _displayName = getText(configFile >> "CfgWeapons" >> _x >> "displayName");
             if (((toLower _x) find _input) != -1) then {
                 _filtered pushBack _x;
             } else {
+                _displayName = getText(configFile >> "CfgWeapons" >> _x >> "displayName");
                 if (((toLower _displayName) find _input) != -1) then {
                     _filtered pushBack _x;
                 };
