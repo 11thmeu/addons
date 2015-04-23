@@ -1,0 +1,138 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Edited with tabler - 2015-04-22 -->
+<Project name="MEU">
+  <Package name="Spawner">
+    <Key ID="STR_MEU_Spawner_Name">
+      <English>Vehicle spawner</English>
+      <Spanish>Spawn de vehiculos</Spanish>
+    </Key>
+    <Key ID="STR_MEU_Spawner_Description">
+      <English>Allows players to spawn vehicles with an action in the synchronized object</English>
+      <Spanish>Permite a los jugadores crear vehiculos con una accion en el objeto sincronizado</Spanish>
+    </Key>
+    <Key ID="STR_MEU_Spawner_ActionName">
+      <English>Action name</English>
+      <Spanish>Nombre de la accion</Spanish>
+    </Key>
+    <Key ID="STR_MEU_Spawner_ActionDesc">
+      <English>Text that will appear in the object menu to open the spawner interface</English>
+      <Spanish>El texto que aparecera en el menu del objeto para abrir la interfaz de crear vehiculos</Spanish>
+    </Key>
+    <Key ID="STR_MEU_Spawner_TypeName">
+      <English>Type</English>
+      <Spanish>Tipo</Spanish>
+    </Key>
+    <Key ID="STR_MEU_Spawner_TypeDesc">
+      <English>Type of vehicles allowed to spawn</English>
+      <Spanish>Tipo de vehiculos que se pueden crear</Spanish>
+    </Key>
+    <Key ID="STR_MEU_Spawner_Ground">
+      <English>Ground vehicles</English>
+      <Spanish>Vehiculos de tierra</Spanish>
+    </Key>
+    <Key ID="STR_MEU_Spawner_Air">
+      <English>Air vehicles</English>
+      <Spanish>Vehiculos de aire</Spanish>
+    </Key>
+    <Key ID="STR_MEU_Spawner_Water">
+      <English>Water vehicles</English>
+      <Spanish>Vehiculos de agua</Spanish>
+    </Key>
+    <Key ID="STR_MEU_Spawner_PositionName">
+      <English>Position</English>
+      <Spanish>Posicion</Spanish>
+    </Key>
+    <Key ID="STR_MEU_Spawner_PositionDesc">
+      <English>Name of the marker where the vehicles will be spawned</English>
+      <Spanish>Nombre del marcador donde se crearan los vehiculos</Spanish>
+    </Key>
+    <Key ID="STR_MEU_Spawner_RotationName">
+      <English>Rotation</English>
+      <Spanish>Rotacion</Spanish>
+    </Key>
+    <Key ID="STR_MEU_Spawner_RotationDesc">
+      <English>Direction of the spawned vehicle</English>
+      <Spanish>Direccion del vehiculo creado</Spanish>
+    </Key>
+    <Key ID="STR_MEU_Spawner_InstructorName">
+      <English>Training</English>
+      <Spanish>Entrenamiento</Spanish>
+    </Key>
+    <Key ID="STR_MEU_Spawner_InstructorDesc">
+      <English>Enable additional training mode actions</English>
+      <Spanish>Activar acciones adicionales de entrenamiento</Spanish>
+    </Key>
+    <Key ID="STR_MEU_Spawner_Create">
+      <English>Spawn vehicles</English>
+      <Spanish>Crear vehiculos</Spanish>
+    </Key>
+    <Key ID="STR_MEU_Spawner_HitVRotorLow">
+      <English>Low tail rotor damage</English>
+      <Spanish>Fallo leve rotor trasero</Spanish>
+    </Key>
+    <Key ID="STR_MEU_Spawner_HitVRotor">
+      <English>Full tail rotor damage</English>
+      <Spanish>Fallo total rotor trasero</Spanish>
+    </Key>
+    <Key ID="STR_MEU_Spawner_HitHRotor">
+      <English>Main rotor damage</English>
+      <Spanish>Fallo rotor principal</Spanish>
+    </Key>
+    <Key ID="STR_MEU_Spawner_DisableDamage">
+      <English>Disable damage</English>
+      <Spanish>Desactivar daño</Spanish>
+    </Key>
+    <Key ID="STR_MEU_Spawner_EnableDamage">
+      <English>Enable damage</English>
+      <Spanish>Activar daño</Spanish>
+    </Key>
+    <Key ID="STR_MEU_Spawner_Repair">
+      <English>Repair</English>
+      <Spanish>Reparar</Spanish>
+    </Key>
+    <Key ID="STR_MEU_Spawner_EnableInstructor">
+      <English>Enable instructor mode</English>
+      <Spanish>Activar modo instructor</Spanish>
+    </Key>
+    <Key ID="STR_MEU_Spawner_DisableInstructor">
+      <English>Disable instructor mode</English>
+      <Spanish>Desactivar modo instructor</Spanish>
+    </Key>
+    <Key ID="STR_MEU_Spawner_RepairRearmRefuel">
+      <English>Repair/Rearm/Refuel</English>
+      <Spanish>Reparar/Rearmar/Repostar</Spanish>
+    </Key>
+    <Key ID="STR_MEU_Spawner_Delete">
+      <English>Delete vehicle</English>
+      <Spanish>Borrar vehiculo</Spanish>
+    </Key>
+    <Key ID="STR_MEU_Spawner_Vehicle">
+      <English>Vehicle</English>
+      <Spanish>Vehiculo</Spanish>
+    </Key>
+    <Key ID="STR_MEU_Spawner_Class">
+      <English>Type</English>
+      <Spanish>Tipo</Spanish>
+    </Key>
+    <Key ID="STR_MEU_Spawner_Faction">
+      <English>Faction</English>
+      <Spanish>Faccion</Spanish>
+    </Key>
+    <Key ID="STR_MEU_Spawner_List">
+      <English>List of vehicles</English>
+      <Spanish>Lista de vehiculos</Spanish>
+    </Key>
+    <Key ID="STR_MEU_Spawner_Spawn">
+      <English>Spawn</English>
+      <Spanish>Crear</Spanish>
+    </Key>
+    <Key ID="STR_MEU_Spawner_Filter">
+      <English>Filter</English>
+      <Spanish>Filtrar</Spanish>
+    </Key>
+    <Key ID="STR_MEU_Spawner_Close">
+      <English>Close</English>
+      <Spanish>Cerrar</Spanish>
+    </Key>
+  </Package>
+</Project>

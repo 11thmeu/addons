@@ -1,0 +1,1 @@
+#include "\z\meu\addons\spawner\script_component.hpp"
