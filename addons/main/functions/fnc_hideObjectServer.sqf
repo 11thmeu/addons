@@ -1,6 +1,6 @@
 /*
  * Author: Thrax
- * Hide the given object from all clients. (Function to be executed using BIS_fnc_mp in server only)
+ * Hide the given object from all clients. (Function to be executed using ACEFUNC(common,execRemoteFnc) in server only)
  *
  * Arguments:
  * 0: Object to hide <OBJECT>
@@ -9,10 +9,11 @@
  * -
  *
  * Example:
- * [cursorTarget] call EFUNC(main,hideObjectGlobal)
+ * [[cursorTarget], QFUNC(hideObjectServer), 1] call ACEFUNC(common,execRemoteFnc);
  *
  * Public: [Yes]
  */
+#include "script_component.hpp"
  
 private ["_vehicle"];
 _vehicle = _this select 0;
