@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Edited with tabler - 2015-04-24 -->
+<Project name="MEU">
+  <Package name="Vehicles">
+    <Key ID="STR_MEU_Vehicles_JumpLeft">
+      <English>Jump out left</English>
+      <Spanish>Saltar fuera Izq.</Spanish>
+    </Key>
+    <Key ID="STR_MEU_Vehicles_JumpRight">
+      <English>Jump out right</English>
+      <Spanish>Saltar fuera Der.</Spanish>
+    </Key>
+  </Package>
+</Project>
