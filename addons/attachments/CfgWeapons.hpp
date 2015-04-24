@@ -1,10 +1,7 @@
 class CfgWeapons {
-    class ItemCore;
+    class acc_pointer_IR;
     class InventoryFlashLightItem_Base_F;
-    
-    class acc_pointer_IR: ItemCore {
-        MEU_PointerSwitch = "acc_pointer_IR_FlashLight";
-    };
+
     class acc_pointer_IR_FlashLight: acc_pointer_IR {
         descriptionShort = "$STR_A3_cfgWeapons_acc_flashlight1";
         MEU_PointerSwitch = "acc_pointer_IR";
