@@ -3,8 +3,6 @@ class CfgWeapons {
     class InventoryItem_Base_F;
     class MEU_IFAK: ACE_ItemCore {
         scope = 2;
-        value = 1;
-        count = 1;
         type = 16;
         model = "\A3\Weapons_F\Items\Medikit";
         displayName = "$STR_MEU_Medical_IFAK_name";
@@ -16,8 +14,6 @@ class CfgWeapons {
     };
     class MEU_IFAK_Empty: ACE_ItemCore {
         scope = 2;
-        value = 1;
-        count = 1;
         type = 16;
         model = "\A3\Weapons_F\Items\Medikit";
         displayName = "$STR_MEU_Medical_IFAK_empty_name";
