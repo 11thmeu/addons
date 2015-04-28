@@ -16,7 +16,7 @@
 #include "script_component.hpp"
 
 disableSerialization;
-private ["_attachments", "_display", "_list", "_info", "_index", "_switch1", "_switch2", "_tooltip"];
+private ["_attachments", "_display", "_list", "_info", "_index", "_switch", "_tooltip"];
 
 _attachments = _this select 0;
 _display = GETUVAR(GVAR(AttachmentsDialog),displayNull);
@@ -30,12 +30,11 @@ lbClear _list;
     _list lbSetPicture [_index, (_info select 1)];
     
     //If item has pointer/optics switch change color
-    _switch1 = getText (configFile >> "CfgWeapons" >> _x >> "MEU_PointerSwitch");
-    _switch2 = getText (configFile >> "CfgWeapons" >> _x >> "MRT_SwitchItemNextClass");
-    if ((_switch1 != "") || (_switch2 != "")) then {
+    _switch = getText (configFile >> "CfgWeapons" >> _x >> "MRT_SwitchItemNextClass");
+    if (_switch != "") then {
         _list lbSetColor [_index, [0.5,1,0.5,1]];
     };
-    
+
     //If thermals are enabled and optics is thermal change color
     if (GVAR(EnableThermal)) then {
         if ([_x] call EFUNC(main,isThermalAttachment)) then {

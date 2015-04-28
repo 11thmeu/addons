@@ -9,8 +9,6 @@ PREP(moduleAttachments);
 PREP(openAttachmentsUI);
 PREP(populateList);
 PREP(removeAttachment);
-PREP(switchOptics);
-PREP(switchPointer);
 PREP(updateAttachmentsSlots);
 PREP(updateAttachmentsUI);
 
