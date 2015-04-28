@@ -31,9 +31,9 @@ _variables = _this select 4;
 
 //Set player position / vehicle
 if ((count _vehicle) > 0) then  {
-	player moveInAny (_vehicle select 0);
+    player moveInAny (_vehicle select 0);
 } else {
-	player setPosATL _position;
+    player setPosATL _position;
 };
 
 //Set player loadout
@@ -41,5 +41,5 @@ _loadout call EFUNC(main,setPlayerLoadout);
 
 //Set player variables
 {
-	player setVariable [_x select 0, _x select 1, _x select 2];
+    player setVariable [_x select 0, _x select 1, _x select 2];
 } forEach _variables;

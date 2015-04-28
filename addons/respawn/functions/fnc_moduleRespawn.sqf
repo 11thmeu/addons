@@ -29,13 +29,13 @@ if !(_activated) exitWith {true};
 //Check if respawn is configured to 3/BASE
 _respawn = ["Respawn"] call BIS_fnc_getCfgData;
 if (IS_NUMBER(_respawn)) then {
-	if (_respawn != 3) exitWith {
-		ERROR("[MEU]: Error in respawn module, respawn is not 3 or BASE");
-	};
+    if (_respawn != 3) exitWith {
+        ERROR("[MEU]: Error in respawn module, respawn is not 3 or BASE");
+    };
 } else {
-	if (_respawn != "BASE") exitWith {
-		ERROR("[MEU]: Error in respawn module, respawn is not 3 or BASE");
-	};
+    if (_respawn != "BASE") exitWith {
+        ERROR("[MEU]: Error in respawn module, respawn is not 3 or BASE");
+    };
 };
 
 GVAR(Persist) = GETVAR(_logic,Persist,true);

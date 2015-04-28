@@ -5,27 +5,27 @@ class RscText;
 class RscStructuredText;
 
 class MEU_gui_SpectatorKeyText {
-	type = 0;
-	style = 0;
-	colorBackground[] = {0,0,0,0};
-	colorText[] = {0.77,0.51,0.08,1};
-	font = "PuristaBold";
-	sizeEx = 0.04;
-	h = 0.04;
-	w = 0.12;
-	x = safeZoneX + safeZoneW - 0.4;
+    type = 0;
+    style = 0;
+    colorBackground[] = {0,0,0,0};
+    colorText[] = {0.77,0.51,0.08,1};
+    font = "PuristaBold";
+    sizeEx = 0.04;
+    h = 0.04;
+    w = 0.12;
+    x = safeZoneX + safeZoneW - 0.4;
 };
 
 class MEU_gui_SpectatorKeyDescription {
-	type = 0;
-	style = 0;
-	colorBackground[] = {0,0,0,0};
-	colorText[] = {1,1,1,1};
-	font = "PuristaLight";
-	sizeEx = 0.04;
-	h = 0.04;
-	w = 0.3;
-	x = safeZoneX + safeZoneW - 0.27;
+    type = 0;
+    style = 0;
+    colorBackground[] = {0,0,0,0};
+    colorText[] = {1,1,1,1};
+    font = "PuristaLight";
+    sizeEx = 0.04;
+    h = 0.04;
+    w = 0.3;
+    x = safeZoneX + safeZoneW - 0.27;
 };
 
 class RscTitles {
@@ -102,7 +102,7 @@ class RscTitles {
             };
         };
     };
-	
+    
     class RscMEU_SpectatorHelp {
         idd = -1;
         onLoad = "";

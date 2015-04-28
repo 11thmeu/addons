@@ -18,11 +18,11 @@
 //Init respawn markers
 private "_respawn";
 {
-	_respawn = getMarkerPos _x;
-	if (((_respawn select 0) == 0) && ((_respawn select 1) == 0)) then
-	{
-		createMarkerLocal [_x, [0,0,0]];
-	};
+    _respawn = getMarkerPos _x;
+    if (((_respawn select 0) == 0) && ((_respawn select 1) == 0)) then
+    {
+        createMarkerLocal [_x, [0,0,0]];
+    };
 }foreach ["respawn_west", "respawn_east", "respawn_guerrila", "respawn_civilian"];
 
 //Init player

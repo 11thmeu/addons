@@ -62,7 +62,7 @@ switch _mode do {
         _ehDrawMap = _ctrlMainMap ctrlAddEventHandler ["draw", "with uiNamespace do {['drawMap',_this,''] call RscMEU_Spectator_script};"];
 
         //--- Create camera
-		_pos = missionNamespace getVariable [GVAR(DeathPos), [0,0,0]];
+        _pos = missionNamespace getVariable [GVAR(DeathPos), [0,0,0]];
         _pos set [2, (_pos select 2) + 2];
         _camera = "camera" camCreate _pos;
         _camera setDir direction cameraOn;
@@ -85,8 +85,8 @@ switch _mode do {
         showCinemaBorder false;
         showHUD false;
 
-		missionNamespace setVariable [GVAR(SpectatorCameras), [[],[],[],[],[],[],[],[],[],[]]];
-		missionNamespace setVariable [GVAR(SpectatorPlayers), ["","","","","","","","","",""]];
+        missionNamespace setVariable [GVAR(SpectatorCameras), [[],[],[],[],[],[],[],[],[],[]]];
+        missionNamespace setVariable [GVAR(SpectatorPlayers), ["","","","","","","","","",""]];
         with missionNamespace do {
             _units = [] call _fnc_units;
             GVAR(SpectatorCamera) = _camera;

@@ -26,7 +26,7 @@ _name = _this select 3;
 
 //If unit has died dont save status
 if (GETVAR(_unit,GVAR(Dead),false)) exitWith {
-	LOG(format["[MEU]: Saving status for %1 aborted, the unit is dead", _clientUID]);
+    LOG(format["[MEU]: Saving status for %1 aborted, the unit is dead", _clientUID]);
 };
 
 //Save unit information
@@ -34,7 +34,7 @@ _position = getPosATL _unit;
 
 _vehicle = [];
 if ((vehicle _unit) != _unit) then {
-	_vehicle set[0, (vehicle _unit)];
+    _vehicle set[0, (vehicle _unit)];
 };
 
 //Unit loadout
