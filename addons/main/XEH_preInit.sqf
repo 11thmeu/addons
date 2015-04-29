@@ -2,6 +2,8 @@
 
 ADDON = false;
 
+PREP(copyFromClipboard);
+PREP(copyToClipboard);
 PREP(formatTime12);
 PREP(formatTime24);
 PREP(getItemDetails);
@@ -11,11 +13,5 @@ PREP(isThermalAttachment);
 PREP(processItem);
 PREP(replace);
 PREP(setPlayerLoadout);
-
-if (!isServer) exitWith {ADDON = true;};
-
-//Send server version to clients
-GVAR(ServerVersion) = getText (configFile >> "CfgPatches" >> QUOTE(ADDON) >> "versionStr");
-publicVariable QGVAR(ServerVersion);
 
 ADDON = true;
