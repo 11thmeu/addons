@@ -2,6 +2,7 @@
 
 ADDON = false;
 
+PREP(convertVirtualLoadout);
 PREP(copyFromClipboard);
 PREP(copyToClipboard);
 PREP(formatTime12);
