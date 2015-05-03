@@ -1,0 +1,417 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Project name="MEU">
+	<Package name="Equipment">
+		<Key ID="STR_MEU_Equipment_ModuleEquipment_name">
+			<English>Equipment box</English>
+			<Spanish>Caja de equipamiento</Spanish>
+		</Key>
+		<Key ID="STR_MEU_Equipment_ModuleEquipment_desc">
+			<English>Synchronize an object with this module to assign the equipment action</English>
+			<Spanish>Sincronizar un objeto con este modulo para asignarle la accion de equipamiento</Spanish>
+		</Key>
+		<Key ID="STR_MEU_Equipment_ModuleEquipment_sync1">
+			<English>Object to assign equipment action</English>
+			<Spanish>Objeto para marcar como caja de equipamiento</Spanish>
+		</Key>
+		<Key ID="STR_MEU_Equipment_ModuleEquipment_sync2">
+			<English>Doesnt have to be an ammo box</English>
+			<Spanish>No tiene que ser obligatoriamente una caja</Spanish>
+		</Key>
+		<Key ID="STR_MEU_Equipment_ModuleEquipment_Action_name">
+			<English>Name of the action</English>
+			<Spanish>Nombre de la accion</Spanish>
+		</Key>
+		<Key ID="STR_MEU_Equipment_ModuleEquipment_Action_description">
+			<English>Text that will appear in the object menu to open the equipment interface</English>
+			<Spanish>El texto que aparecera en el menu del objeto para abrir la interfaz de equipamiento</Spanish>
+		</Key>
+		<Key ID="STR_MEU_Equipment_ModuleEquipment_Action_defaultValue">
+			<English>Equipment</English>
+			<Spanish>Equipamiento</Spanish>
+		</Key>
+		<Key ID="STR_MEU_Equipment_ModuleEquipment_Type_name">
+			<English>Faction</English>
+			<Spanish>Faccion</Spanish>
+		</Key>
+		<Key ID="STR_MEU_Equipment_ModuleEquipment_Type_description">
+			<English>Faction that will be available at the equipment module</English>
+			<Spanish>Que facciones estaran disponibles en la caja</Spanish>
+		</Key>
+		<Key ID="STR_MEU_Equipment_ModuleEquipment_Type_all">
+			<English>All</English>
+			<Spanish>Todas</Spanish>
+		</Key>
+		<Key ID="STR_MEU_Equipment_ModuleEquipment_Type_usmc">
+			<English>US Marine Corps</English>
+			<Spanish>Cuerpo de Marines EEUU</Spanish>
+		</Key>
+		<Key ID="STR_MEU_Equipment_ModuleEquipment_Type_usaf">
+			<English>USAF</English>
+			<Spanish>Fuerzas Armadas EEUU</Spanish>
+		</Key>
+		<Key ID="STR_MEU_Equipment_ModuleEquipment_Type_africa">
+			<English>Africa</English>
+			<Spanish>Africa</Spanish>
+		</Key>
+		<Key ID="STR_MEU_Equipment_ModuleEquipment_Type_africaMil">
+			<English>Africa - Military</English>
+			<Spanish>Africa - Militar</Spanish>
+		</Key>
+		<Key ID="STR_MEU_Equipment_ModuleEquipment_Type_eastern">
+			<English>Eastern Europe</English>
+			<Spanish>Europa del Este</Spanish>
+		</Key>
+		<Key ID="STR_MEU_Equipment_ModuleEquipment_Type_middleEast">
+			<English>Middle East</English>
+			<Spanish>Oriente Medio</Spanish>
+		</Key>
+		<Key ID="STR_MEU_Equipment_ModuleEquipment_Type_blufor">
+			<English>Blufor</English>
+			<Spanish>Blufor</Spanish>
+		</Key>
+		<Key ID="STR_MEU_Equipment_ModuleEquipment_Type_opfor">
+			<English>Opfor</English>
+			<Spanish>Opfor</Spanish>
+		</Key>
+		<Key ID="STR_MEU_Equipment_ModuleEquipment_Type_indfor">
+			<English>Indfor</English>
+			<Spanish>Indfor</Spanish>
+		</Key>
+		<Key ID="STR_MEU_Equipment_ModuleEquipment_Type_civil">
+			<English>Civillian</English>
+			<Spanish>Civil</Spanish>
+		</Key>
+		<Key ID="STR_MEU_Equipment_ModuleEquipment_Type_generic">
+			<English>Generic</English>
+			<Spanish>Generico</Spanish>
+		</Key>
+		<Key ID="STR_MEU_Equipment_ModuleEquipment_Type_military">
+			<English>Military</English>
+			<Spanish>Militar</Spanish>
+		</Key>
+		<Key ID="STR_MEU_Equipment_ModuleEquipment_Type_afrf">
+			<English>Armed Forces of the Russian Federation</English>
+			<Spanish>Fuerzas Armadas de la Federacion Rusa</Spanish>
+		</Key>
+		<Key ID="STR_MEU_Equipment_ModuleEquipment_Type_iraqiMil">
+			<English>Iraqi - Military</English>
+			<Spanish>Irak - Militar</Spanish>
+		</Key>
+		<Key ID="STR_MEU_Equipment_ModuleEquipment_Type_afghanMil">
+			<English>Afghan - Military</English>
+			<Spanish>Afgano - Militar</Spanish>
+		</Key>
+		<Key ID="STR_MEU_Equipment_ModuleEquipment_Type_cdf">
+			<English>Chernarussian Defence Forces</English>
+			<Spanish>Fuerzas de Defensa Chernarusas</Spanish>
+		</Key>
+		<Key ID="STR_MEU_Equipment_ModuleEquipment_Type_chDKZ">
+			<English>ChDKZ militia</English>
+			<Spanish>Milicia ChDKZ</Spanish>
+		</Key>
+		<Key ID="STR_MEU_Equipment_ModuleEquipment_Type_afghanCiv">
+			<English>Afghan civillian</English>
+			<Spanish>Civiles afghanos</Spanish>
+		</Key>
+		<Key ID="STR_MEU_Equipment_ModuleEquipment_Type_isis">
+			<English>ISIS</English>
+			<Spanish>ISIS</Spanish>
+		</Key>
+		<Key ID="STR_MEU_Equipment_ModuleEquipment_Type_ua">
+			<English>Ultranationalist army</English>
+			<Spanish>Ejercito Ultranacionalista</Spanish>
+		</Key>
+		<Key ID="STR_MEU_Equipment_ModuleEquipment_Users_name">
+			<English>Limit users</English>
+			<Spanish>Limitar usuarios</Spanish>
+		</Key>
+		<Key ID="STR_MEU_Equipment_ModuleEquipment_Users_description">
+			<English>Only show the action to the units with the types indicated in the form ['B_Soldier_F', 'B_Soldier_GL_F', ...]</English>
+			<Spanish>Solo mostrar la accion a las unidades de los tipos indicados en la forma ['B_Soldier_F', 'B_Soldier_GL_F', ...]</Spanish>
+		</Key>
+		<Key ID="STR_MEU_Equipment_ModuleEquipment_Info_name">
+			<English>Additional information</English>
+			<Spanish>Informacion adicional</Spanish>
+		</Key>
+		<Key ID="STR_MEU_Equipment_ModuleEquipment_Info_description">
+			<English>Show additional information for the equipment (Armor/Capacity for items)</English>
+			<Spanish>Mostrar informacion adicional en el equipamiento (Armadura/Capacidad de objetos)</Spanish>
+		</Key>
+		<Key ID="STR_MEU_Equipment_ModuleEquipment_Classnames_name">
+			<English>Classnames</English>
+			<Spanish>Classnames</Spanish>
+		</Key>
+		<Key ID="STR_MEU_Equipment_ModuleEquipment_Classnames_description">
+			<English>Show in the object description its classname</English>
+			<Spanish>Mostrar en la descripcion de cada objeto el classname</Spanish>
+		</Key>
+		<Key ID="STR_MEU_Equipment_ModuleEquipment_Presets_name">
+			<English>Presets</English>
+			<Spanish>Presets</Spanish>
+		</Key>
+		<Key ID="STR_MEU_Equipment_ModuleEquipment_Presets_description">
+			<English>Enable equipment presets</English>
+			<Spanish>Activar presets de equipamiento</Spanish>
+		</Key>
+		<Key ID="STR_MEU_Equipment_ModuleEquipment_OnlyPresets_name">
+			<English>Presets only</English>
+			<Spanish>Solo presets</Spanish>
+		</Key>
+		<Key ID="STR_MEU_Equipment_ModuleEquipment_OnlyPresets_description">
+			<English>Show only equipment presets, no individual items</English>
+			<Spanish>Solamente permitir presets, desactivar equipamiento suelto</Spanish>
+		</Key>
+		<Key ID="STR_MEU_Equipment_ModuleEquipment_AllowInsignias_name">
+			<English>Enable changing insignias</English>
+			<Spanish>Activar cambio de parches</Spanish>
+		</Key>
+		<Key ID="STR_MEU_Equipment_ModuleEquipment_AllowInsignias_desc">
+			<English>Allow players change the insignia of their uniform</English>
+			<Spanish>Permitir a los jugadores cambiar los parches de sus uniformes</Spanish>
+		</Key>
+		<Key ID="STR_MEU_Equipment_ModuleEquipment_AdditionalPresets_name">
+			<English>Additional presets</English>
+			<Spanish>Presets adicionales</Spanish>
+		</Key>
+		<Key ID="STR_MEU_Equipment_ModuleEquipment_AdditionalPresets_description">
+			<English>Additional presets in the form [['preset name', 'uniform', 'vest', 'backpack', 'helmet'],[...]]</English>
+			<Spanish>Presets adicionales con la estructura [['nombre preset', 'uniforme', 'chaleco', 'mochila', 'casco'],[...]]</Spanish>
+		</Key>
+		<Key ID="STR_MEU_Equipment_ModuleEquipment_Camera_name">
+			<English>Camera</English>
+			<Spanish>Camara</Spanish>
+		</Key>
+		<Key ID="STR_MEU_Equipment_ModuleEquipment_Camera_description">
+			<English>Enable the personal camera for the equipment module</English>
+			<Spanish>Activar camara personal en la caja de equipamiento</Spanish>
+		</Key>
+		<Key ID="STR_MEU_Equipment_ModuleEquipment_NightVision_name">
+			<English>Night Vision</English>
+			<Spanish>Vision nocturna</Spanish>
+		</Key>
+		<Key ID="STR_MEU_Equipment_ModuleEquipment_NightVision_description">
+			<English>Allow night vision in the personal camera</English>
+			<Spanish>Permitir vision nocturna en la camara personal</Spanish>
+		</Key>
+		<Key ID="STR_MEU_Equipment_ModuleEquipment_Saving_name">
+			<English>Saving system</English>
+			<Spanish>Sistema de guardado</Spanish>
+		</Key>
+		<Key ID="STR_MEU_Equipment_ModuleEquipment_Saving_description">
+			<English>Allow saving and loading equipment</English>
+			<Spanish>Permitir guardar y cargar equipamiento</Spanish>
+		</Key>
+		<Key ID="STR_MEU_Equipment_ModuleEquipment_DefaultProfiles_name">
+			<English>Default profiles</English>
+			<Spanish>Perfiles predeterminados</Spanish>
+		</Key>
+		<Key ID="STR_MEU_Equipment_ModuleEquipment_DefaultProfiles_description">
+			<English>Allow loading default profiles</English>
+			<Spanish>Permitir cargar perfiles predeterminados</Spanish>
+		</Key>
+		<Key ID="STR_MEU_Equipment_ModuleEquipment_Persistence_name">
+			<English>Persistence</English>
+			<Spanish>Persistencia</Spanish>
+		</Key>
+		<Key ID="STR_MEU_Equipment_ModuleEquipment_Persistence_description">
+			<English>Enable persistence system</English>
+			<Spanish>Activar sistema de persistencia</Spanish>
+		</Key>
+		<Key ID="STR_MEU_Equipment_ModuleEquipment_Persistence_yes">
+			<English>Yes [save globally]</English>
+			<Spanish>Si [guardar globalmente]</Spanish>
+		</Key>
+		<Key ID="STR_MEU_Equipment_ModuleEquipment_Persistence_no">
+			<English>No [save for current mission only]</English>
+			<Spanish>No [guardar para la mision actual]</Spanish>
+		</Key>
+		<Key ID="STR_MEU_Equipment_ModuleEquipment_Virtual_name">
+			<English>Virtual profiles</English>
+			<Spanish>Perfiles virtuales</Spanish>
+		</Key>
+		<Key ID="STR_MEU_Equipment_ModuleEquipment_Virtual_description">
+			<English>Allow loading profiles of the virtual arsenal</English>
+			<Spanish>Permitir cargar perfiles del arsenal virtual</Spanish>
+		</Key>
+		<Key ID="STR_MEU_Equipment_ModuleEquipment_SetData_name">
+			<English>Load personal data</English>
+			<Spanish>Cargar datos personales</Spanish>
+		</Key>
+		<Key ID="STR_MEU_Equipment_ModuleEquipment_SetData_desc">
+			<English>Load personal data when loading a profile</English>
+			<Spanish>Cargar datos personales al cargar un perfil</Spanish>
+		</Key>
+		<Key ID="STR_MEU_Equipment_ModuleEquipment_Uniforms">
+			<English>Uniforms</English>
+			<Spanish>Uniformes</Spanish>
+		</Key>
+		<Key ID="STR_MEU_Equipment_ModuleEquipment_Vests">
+			<English>Vests</English>
+			<Spanish>Chalecos</Spanish>
+		</Key>
+		<Key ID="STR_MEU_Equipment_ModuleEquipment_Backpacks">
+			<English>Backpacks</English>
+			<Spanish>Mochilas</Spanish>
+		</Key>
+		<Key ID="STR_MEU_Equipment_ModuleEquipment_Headgear">
+			<English>Headgear</English>
+			<Spanish>Accesorios</Spanish>
+		</Key>
+		<Key ID="STR_MEU_Equipment_ModuleEquipment_Goggles">
+			<English>Goggles</English>
+			<Spanish>Gafas</Spanish>
+		</Key>
+		<Key ID="STR_MEU_Equipment_ModuleEquipment_Insignias">
+			<English>Insignias</English>
+			<Spanish>Insignias</Spanish>
+		</Key>
+		<Key ID="STR_MEU_Equipment_ModuleEquipment_Presets">
+			<English>[Presets]</English>
+			<Spanish>[Presets]</Spanish>
+		</Key>
+		<Key ID="STR_MEU_Equipment_ModuleEquipment_Capacity">
+			<English>Capacity</English>
+			<Spanish>Capacidad</Spanish>
+		</Key>
+		<Key ID="STR_MEU_Equipment_ModuleEquipment_Protection">
+			<English>Protection</English>
+			<Spanish>Proteccion</Spanish>
+		</Key>
+		<Key ID="STR_MEU_Equipment_NoProfileSelected">
+			<English>You have not selected a profile</English>
+			<Spanish>No has seleccionado ningun perfil</Spanish>
+		</Key>
+		<Key ID="STR_MEU_Equipment_ProfileDoesntExist">
+			<English>The profile selected doesn't exist</English>
+			<Spanish>El perfil seleccionado no existe</Spanish>
+		</Key>
+		<Key ID="STR_MEU_Equipment_OptionDisabled">
+			<English>Disabled</English>
+			<Spanish>Desactivado</Spanish>
+		</Key>
+		<Key ID="STR_MEU_Equipment_LoadNotFinished">
+			<English>A equipment profile is still being loaded</English>
+			<Spanish>Ya hay un perfil de equipamiento siendo cargado</Spanish>
+		</Key>
+		<Key ID="STR_MEU_Equipment_LoadRadio">
+			<English>Waiting radios from server to load saved TFAR settings</English>
+			<Spanish>Esperando radios del servidor para cargar opciones guardadas de TFAR</Spanish>
+		</Key>
+		<Key ID="STR_MEU_Equipment_RadiosLoaded">
+			<English>Radio settings loaded</English>
+			<Spanish>Opciones de radio cargadas</Spanish>
+		</Key>
+		<Key ID="STR_MEU_Equipment_EquipmentList">
+			<English>Equipment list</English>
+			<Spanish>Lista de equipo</Spanish>
+		</Key>
+		<Key ID="STR_MEU_Equipment_EquipmentType">
+			<English>Type</English>
+			<Spanish>Tipo</Spanish>
+		</Key>
+		<Key ID="STR_MEU_Equipment_EquipmentClass">
+			<English>Class</English>
+			<Spanish>Clase</Spanish>
+		</Key>
+		<Key ID="STR_MEU_Equipment_EquipmentAddTT">
+			<English>Previous container items are lost</English>
+			<Spanish>Los objetos contenidos se perderan</Spanish>
+		</Key>
+		<Key ID="STR_MEU_Equipment_EquipmentReplace">
+			<English>Replace</English>
+			<Spanish>Reemplazar</Spanish>
+		</Key>
+		<Key ID="STR_MEU_Equipment_EquipmentReplaceTT">
+			<English>Previous container items are transfered</English>
+			<Spanish>Los objetos contenidos seran transferidos</Spanish>
+		</Key>
+		<Key ID="STR_MEU_Equipment_EquipmentSave">
+			<English>Save</English>
+			<Spanish>Guardar</Spanish>
+		</Key>
+		<Key ID="STR_MEU_Equipment_EquipmentLoad">
+			<English>Load</English>
+			<Spanish>Cargar</Spanish>
+		</Key>
+		<Key ID="STR_MEU_Equipment_EquipmentLoadDefault">
+			<English>Load a default profile</English>
+			<Spanish>Cargal un perfil predeterminado</Spanish>
+		</Key>
+		<Key ID="STR_MEU_Equipment_EquipmentLoadVR">
+			<English>Load a virtual profile</English>
+			<Spanish>Cargal un perfil virtual</Spanish>
+		</Key>
+		<Key ID="STR_MEU_Equipment_EquipmentDelete">
+			<English>Delete</English>
+			<Spanish>Borrar</Spanish>
+		</Key>
+		<Key ID="STR_MEU_Equipment_EquipmentBack">
+			<English>Back</English>
+			<Spanish>Volver</Spanish>
+		</Key>
+		<Key ID="STR_MEU_Equipment_EquipmentCopyToClipboard">
+			<English>Copy loadout to clipboard</English>
+			<Spanish>Copiar perfil al portapapeles</Spanish>
+		</Key>
+		<Key ID="STR_MEU_Equipment_EquipmentCopyFromClipboard">
+			<English>Paste loadout from clipboard</English>
+			<Spanish>Pegar perfil desde el portapapeles</Spanish>
+		</Key>
+		<Key ID="STR_MEU_Equipment_EquipmentProfiles">
+			<English>List of profiles</English>
+			<Spanish>Lista de perfiles</Spanish>
+		</Key>
+		<Key ID="STR_MEU_Equipment_EquipmentContents">
+			<English>List of contents</English>
+			<Spanish>Lista de contenidos</Spanish>
+		</Key>
+		<Key ID="STR_MEU_Equipment_EquipmentCustomName">
+			<English>Custom name</English>
+			<Spanish>Nombre personalizado</Spanish>
+		</Key>
+		<Key ID="STR_MEU_Equipment_DefaultLoadoutName">
+			<English>Custom name</English>
+			<Spanish>Nombre personalizado</Spanish>
+		</Key>
+		<Key ID="STR_MEU_Equipment_DefaultLoadoutTitle">
+			<English>Custom loadout</English>
+			<Spanish>Equipamiento personalizado</Spanish>
+		</Key>
+		<Key ID="STR_MEU_Equipment_DeleteLoadoutNotPossible">
+			<English>You cant delete that profile, it has no information</English>
+			<Spanish>No puedes borrar ese perfil, no contiene informacion</Spanish>
+		</Key>
+		<Key ID="STR_MEU_Equipment_LoadoutDeleted">
+			<English>You have deleted the profile</English>
+			<Spanish>Has borrado el perfil</Spanish>
+		</Key>
+		<Key ID="STR_MEU_Equipment_LoadoutCopied">
+			<English>Loadout copied to clipboard</English>
+			<Spanish>Perfil copiado al portapapeles</Spanish>
+		</Key>
+		<Key ID="STR_MEU_Equipment_LoadoutPasted">
+			<English>Loadout pasted from clipboard</English>
+			<Spanish>Perfil cargado desde el portapapeles</Spanish>
+		</Key>
+		<Key ID="STR_MEU_Equipment_LoadoutPasteError">
+			<English>Error in the loadout format</English>
+			<Spanish>Error en el formato del perfil</Spanish>
+		</Key>
+		<Key ID="STR_MEU_Main_ModulePersonalData_name">
+			<English>Personal Data</English>
+			<Spanish>Datos personales</Spanish>
+		</Key>
+		<Key ID="STR_MEU_Main_ModulePersonalData_desc">
+			<English>Enables the use of personal data, setting all personal data from CfgMEUPlayer</English>
+			<Spanish>Activa el uso de datos personales, configurando los datos personales de CfgMEUPlayer</Spanish>
+		</Key>
+		<Key ID="STR_MEU_Equipment_MedicInsignia">
+			<English>Medic</English>
+			<Spanish>Medico</Spanish>
+		</Key>
+		<Key ID="STR_MEU_Equipment_ScoutSnipers">
+			<English>Scout Snipers</English>
+			<Spanish>Scout Snipers</Spanish>
+		</Key>
+	</Package>
+</Project>

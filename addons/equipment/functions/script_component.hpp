@@ -1,0 +1,1 @@
+#include "\z\meu\addons\equipment\script_component.hpp"
