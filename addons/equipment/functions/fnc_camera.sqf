@@ -1,6 +1,6 @@
 /*
  * Author: Thrax
- * Open the equipment dialog with the configured parameters
+ * Equipment camera manager function
  *
  * Arguments:
  * 0: Mode <STRING>
@@ -15,10 +15,9 @@
  * Public: [No]
  */
 #include "script_component.hpp"
+#include PATHTOF(defineRscMEU_Equipment.hpp)
 
 disableserialization;
-
-#define IDC_MOUSEAREA 7650
 
 _mode = [_this,0,"Open",[""]] call BIS_fnc_param;
 _this = [_this,1,[]] call BIS_fnc_param;
@@ -36,7 +35,7 @@ switch _mode do {
         _display displayAddEventHandler ["mousebuttondown", { ['MouseButtonDown', _this] call FUNC(camera); }];
         _display displayAddEventHandler ["mousebuttonup", { ['MouseButtonUp', _this] call FUNC(camera); }];
 
-        _ctrlMouseArea = _display displayCtrl IDC_MOUSEAREA;
+        _ctrlMouseArea = _display displayCtrl IDC_RSCMEUEQUIPMENT_MOUSEAREA;
         _ctrlMouseArea ctrlAddEventHandler ["mousemoving", { ['Mouse', _this] call FUNC(camera); }];
         _ctrlMouseArea ctrlAddEventHandler ["mouseholding", { ['Mouse', _this] call FUNC(camera); }];
         _ctrlMouseArea ctrlAddEventHandler ["mousezchanged", { ['MouseZChanged', _this] call FUNC(camera); }];

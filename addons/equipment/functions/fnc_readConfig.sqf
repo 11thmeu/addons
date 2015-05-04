@@ -99,4 +99,5 @@ if (isArray (_config >> "defaultProfiles")) then {
     GVAR(DefaultProfiles) = getArray (_config >> "defaultProfiles");
 };
 
-GVAR(NewConfig) = false;
+//Create the equipment dialog once all configs have been read
+["createDialog", ""] call FUNC(equipmentUI);

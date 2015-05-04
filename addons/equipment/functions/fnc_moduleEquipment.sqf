@@ -57,7 +57,7 @@ if (typeName _users != "ARRAY") then { _users = []; };
         };
 
         _x addAction [MEU_TEXT_RED(_action), 
-        {_this spawn FUNC(openEquipmentUI)}, 
+        {["open",_this] call FUNC(equipmentUI)}, 
         [_type, _camera, _nv, _saveLoad, _persistent, _presets, _presetsArray, _info, _classnames, _presetsOnly, _insignias, _defaultProfiles, _personalData, _loadVR],
         1.5, true, true, "", _condition];
 

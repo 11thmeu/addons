@@ -8,7 +8,8 @@ class RscText;
 class RscMEU_Equipment {
     idd = -1;
     movingEnable = 1;
-    onLoad = QUOTE(SETUVAR(QGVAR(EquipmentDialog),_this select 0););
+    onLoad = QUOTE(['onLoad',_this] call FUNC(equipmentUI););
+	onUnload = QUOTE(['onUnload',''] call FUNC(equipmentUI););
 
     class controlsBackground {
         //Common controls
@@ -22,72 +23,80 @@ class RscMEU_Equipment {
         };
         class Background_Tools: MEU_gui_Base {
             colorBackground[] = {0, 0, 0, 0.8};
-            idc = 800004;
+            idc = -1;
             x = 0;
             y = 0;
             w = 0.9;
             h = 0.055;
         };
-        class Image_Camera: MEU_gui_Picture {
-            idc = 7580;
-            text = PATHTOF(UI\camera.paa);
+		class Image_Equipment: MEU_gui_Picture {
+            idc = -1;
+            text = "\a3\ui_f\data\gui\Rsc\RscDisplayArsenal\uniform_ca.paa";
             x = 0.005;
             y = -0.001;
             w = 0.064;
             h = 0.064;
         };
-        class Image_NV: MEU_gui_Picture {
-            idc = 7581;
-            text = PATHTOF(UI\nv.paa);
+        class Image_Camera: MEU_gui_Picture {
+            idc = -1;
+            text = PATHTOF(UI\camera.paa);
             x = 0.075;
             y = -0.001;
             w = 0.064;
             h = 0.064;
         };
-        class Image_Save: MEU_gui_Picture {
-            idc = 7582;
-            text = PATHTOF(UI\save.paa);
+        class Image_NV: MEU_gui_Picture {
+            idc = -1;
+            text = PATHTOF(UI\nv.paa);
             x = 0.145;
             y = -0.001;
             w = 0.064;
             h = 0.064;
         };
-        class Image_Load: MEU_gui_Picture {
-            idc = 7583;
-            text = PATHTOF(UI\load.paa);
+        class Image_Save: MEU_gui_Picture {
+            idc = -1;
+            text = PATHTOF(UI\save.paa);
             x = 0.215;
             y = -0.001;
             w = 0.064;
             h = 0.064;
         };
-        class Image_LoadDefault: MEU_gui_Picture {
-            idc = 7584;
-            text = PATHTOF(UI\loadDefault.paa);
+        class Image_Load: MEU_gui_Picture {
+            idc = -1;
+            text = PATHTOF(UI\load.paa);
             x = 0.285;
             y = -0.001;
             w = 0.064;
             h = 0.064;
         };
-        class Image_LoadVR: MEU_gui_Picture {
-            idc = 7585;
-            text = PATHTOF(UI\loadVR.paa);
+        class Image_LoadDefault: MEU_gui_Picture {
+            idc = -1;
+            text = PATHTOF(UI\loadDefault.paa);
             x = 0.355;
             y = -0.001;
             w = 0.064;
             h = 0.064;
         };
-        class Image_CopyToClipboard: MEU_gui_Picture {
-            idc = 7700;
-            text = PATHTOF(UI\copy.paa);
+        class Image_LoadVR: MEU_gui_Picture {
+            idc = -1;
+            text = PATHTOF(UI\loadVR.paa);
             x = 0.425;
             y = -0.001;
             w = 0.064;
             h = 0.064;
         };
-        class Image_PasteFromClipboard: MEU_gui_Picture {
-            idc = 7701;
-            text = PATHTOF(UI\paste.paa);
+        class Image_CopyToClipboard: MEU_gui_Picture {
+            idc = -1;
+            text = PATHTOF(UI\copy.paa);
             x = 0.495;
+            y = -0.001;
+            w = 0.064;
+            h = 0.064;
+        };
+        class Image_PasteFromClipboard: MEU_gui_Picture {
+            idc = -1;
+            text = PATHTOF(UI\paste.paa);
+            x = 0.565;
             y = -0.001;
             w = 0.064;
             h = 0.064;
@@ -111,7 +120,7 @@ class RscMEU_Equipment {
             x = "safezoneX + safezoneW";
         };
         class MouseArea: RscText {
-            idc = 7650;
+            idc = 7000;
             style = 16;
             x = "safezoneX";
             y = "safezoneY";
@@ -119,14 +128,14 @@ class RscMEU_Equipment {
             h = "safezoneH";
         };
         //Dynamic controls
-        class Title_List: MEU_gui_Base {
+        class List1_Title: MEU_gui_Base {
             idc = 800007;
             colorBackground[] = {1,0.5,0,0.5};
             text = "$STR_MEU_Equipment_EquipmentList";
             sizeEx = 0.04;
-            x = 0.053; 
-            y = 0.27;
-            w = 0.45; 
+            x = 0.04; 
+            y = 0.1;
+            w = 0.55; 
             h = 0.04;
         };
         class Label_Type: MEU_gui_Base {
@@ -150,6 +159,138 @@ class RscMEU_Equipment {
     };
     
     class controls {
+		//Common controls
+		class Button_Equipment: MEU_gui_Button {
+            idc = -1;
+            text = "";
+            toolTip = "TODO";
+            colorBackground[] = {0,0,0,0};
+            colorBackground2[] = {0,0,0,0};
+            colorBackgroundFocused[] = {0,0,0,0};
+            onButtonClick = "";
+            x = 0.005;
+            y = -0.001;
+            w = 0.064;
+            h = 0.064;
+        };
+		class Button_Camera: MEU_gui_Button {
+            idc = 7570;
+            text = "";
+            toolTip = "$STR_MEU_Equipment_ModuleEquipment_Camera_name";
+            colorBackground[] = {0,0,0,0};
+            colorBackground2[] = {0,0,0,0};
+            colorBackgroundFocused[] = {0,0,0,0};
+            onButtonClick = QUOTE(['switchCamera',''] call FUNC(equipmentUI););
+            x = 0.075;
+            y = -0.001;
+            w = 0.064;
+            h = 0.064;
+        };
+        class Button_NV: MEU_gui_Button {
+            idc = 7571;
+            text = "";
+            toolTip = "$STR_MEU_Equipment_ModuleEquipment_NightVision_name";
+            colorBackground[] = {0,0,0,0};
+            colorBackground2[] = {0,0,0,0};
+            colorBackgroundFocused[] = {0,0,0,0};
+			onButtonClick = QUOTE(['switchNV',''] call FUNC(equipmentUI););
+            x = 0.145;
+            y = -0.001;
+            w = 0.064;
+            h = 0.064;
+        };
+        class Button_Save: MEU_gui_Button {
+            idc = 7572;
+            text = "";
+            toolTip = "$STR_MEU_Equipment_EquipmentSave";
+            colorBackground[] = {0,0,0,0};
+            colorBackground2[] = {0,0,0,0};
+            colorBackgroundFocused[] = {0,0,0,0};
+            onButtonClick = "createDialog 'MEU_Dialog_save';";
+            x = 0.215;
+            y = -0.001;
+            w = 0.064;
+            h = 0.064;
+        };        
+        class Button_Load: MEU_gui_Button {
+            idc = 7573;
+            text = "";
+            toolTip = "$STR_MEU_Equipment_EquipmentLoad";
+            colorBackground[] = {0,0,0,0};
+            colorBackground2[] = {0,0,0,0};
+            colorBackgroundFocused[] = {0,0,0,0};
+            onButtonClick = "createDialog 'MEU_Dialog_load';";
+            x = 0.285;
+            y = -0.001;
+            w = 0.064;
+            h = 0.064;
+        };
+        class Button_LoadDefault: MEU_gui_Button {
+            idc = 7578;
+            text = "";
+            toolTip = "$STR_MEU_Equipment_EquipmentLoadDefault";
+            colorBackground[] = {0,0,0,0};
+            colorBackground2[] = {0,0,0,0};
+            colorBackgroundFocused[] = {0,0,0,0};
+            onButtonClick = "createDialog 'MEU_Dialog_loadDefault';";
+            x = 0.355;
+            y = -0.001;
+            w = 0.064;
+            h = 0.064;
+        };
+        class Button_LoadVR: MEU_gui_Button {
+            idc = 7579;
+            text = "";
+            toolTip = "$STR_MEU_Equipment_EquipmentLoadVR";
+            colorBackground[] = {0,0,0,0};
+            colorBackground2[] = {0,0,0,0};
+            colorBackgroundFocused[] = {0,0,0,0};
+            onButtonClick = "createDialog 'MEU_Dialog_loadVR';";
+            x = 0.425;
+            y = -0.001;
+            w = 0.064;
+            h = 0.064;
+        };
+        class Button_CopyToClipboard: MEU_gui_Button {
+            idc = 7702;
+            text = "";
+            toolTip = "$STR_MEU_Equipment_EquipmentCopyToClipboard";
+            colorBackground[] = {0,0,0,0};
+            colorBackground2[] = {0,0,0,0};
+            colorBackgroundFocused[] = {0,0,0,0};
+            onButtonClick = "call MEU_fnc_copyLoadout;";
+            x = 0.495;
+            y = -0.001;
+            w = 0.064;
+            h = 0.064;
+        };
+        class Button_PasteFromClipboard: MEU_gui_Button {
+            idc = 7703;
+            text = "";
+            toolTip = "$STR_MEU_Equipment_EquipmentCopyFromClipboard";
+            colorBackground[] = {0,0,0,0};
+            colorBackground2[] = {0,0,0,0};
+            colorBackgroundFocused[] = {0,0,0,0};
+            onButtonClick = "call MEU_fnc_pasteLoadout;";
+            x = 0.565;
+            y = -0.001;
+            w = 0.064;
+            h = 0.064;
+        };
+        class Button_Exit: MEU_gui_Button {
+            idc = -1;
+            text = "";
+            toolTip = "$STR_MEU_Equipment_EquipmentExit";
+            action = "closeDialog 0;";
+            colorBackground[] = {0,0,0,0};
+            colorBackground2[] = {0,0,0,0};
+            colorBackgroundFocused[] = {0,0,0,0};
+            x = 0.84;
+            y = -0.001;
+            w = 0.064;
+            h = 0.064;
+        };
+        //Dynamic controls
         class Title: MEU_gui_Base {
             colorBackground[] = {1,0.5,0,0.7};
             text = "$STR_MEU_Equipment_ModuleEquipment_Action_defaultValue";
@@ -170,7 +311,7 @@ class RscMEU_Equipment {
             y = 0.35;
             w = 0.20;
             h = 0.04;
-            onLBSelChanged = "[true] spawn MEU_fnc_equipmentDialog_update;";
+			onLBSelChanged = QUOTE(['update',[true]] call FUNC(equipmentUI););
         };
         class Combo_Side: MEU_gui_ComboBox {
             idc = 7555;
@@ -182,156 +323,39 @@ class RscMEU_Equipment {
             y = 0.45;
             w = 0.20;
             h = 0.04;
-            onLBSelChanged = "[false] spawn MEU_fnc_equipmentDialog_update;";
+            onLBSelChanged = QUOTE(['update',[false]] call FUNC(equipmentUI););
         };
-        class List_Equipment: MEU_gui_ListBox {
+        class List_One: MEU_gui_ListBox {
             idc = 7556;
             rowHeight = 0.08;
             text = "";
             sizeEx = 0.032;
-            x = 0.053;
-            y = 0.31;
-            w = 0.45;
-            h = 0.43;
+            x = 0.04;
+            y = 0.13;
+            w = 0.55;
+            h = 0.72;
         };
-        class Button_Add: MEU_gui_Button {
+        class Button_One: MEU_gui_Button {
             idc = 800001;
             text = "$STR_MEU_Equipment_EquipmentAdd";
             toolTip = "$STR_MEU_Equipment_EquipmentAddTT";
             colorBackground[] = {1,0.5,0,0.5};
-            onButtonClick = "[false] call MEU_fnc_addItem;";
+            onButtonClick = QUOTE(['addItem',[false]] call FUNC(equipmentUI);); //TODO VARIABLE EVENT?
             x = 0.54;
             y = 0.60;
             w = 0.1562;
             h = 0.04;
         };
-        class Button_Replace: MEU_gui_Button {
+        class Button_Two: MEU_gui_Button {
             idc = 800002;
             text = "$STR_MEU_Equipment_EquipmentReplace";
             toolTip = "$STR_MEU_Equipment_EquipmentReplaceTT";
             colorBackground[] = {1,0.5,0,0.5};
-            onButtonClick = "[true] call MEU_fnc_addItem;";
+            onButtonClick = QUOTE(['addItem',[true]] call FUNC(equipmentUI);); //TODO VARIABLE EVENT?
             x = 0.54;
             y = 0.66;
             w = 0.1562;
             h = 0.04;
-        };
-        class Button_Camera: MEU_gui_Button {
-            idc = 7570;
-            text = "";
-            toolTip = "$STR_MEU_Equipment_ModuleEquipment_Camera_name";
-            colorBackground[] = {0,0,0,0};
-            colorBackground2[] = {0,0,0,0};
-            colorBackgroundFocused[] = {0,0,0,0};
-            onButtonClick = "call MEU_fnc_switchCamera;";
-            x = 0.06;
-            y = 0.185;
-            w = 0.064;
-            h = 0.064;
-        };
-        class Button_NV: MEU_gui_Button {
-            idc = 7571;
-            text = "";
-            toolTip = "$STR_MEU_Equipment_ModuleEquipment_NightVision_name";
-            colorBackground[] = {0,0,0,0};
-            colorBackground2[] = {0,0,0,0};
-            colorBackgroundFocused[] = {0,0,0,0};
-            onButtonClick = "call MEU_fnc_switchNV;";
-            x = 0.13;
-            y = 0.185;
-            w = 0.064;
-            h = 0.064;
-        };
-        class Button_Save: MEU_gui_Button {
-            idc = 7572;
-            text = "";
-            toolTip = "$STR_MEU_Equipment_EquipmentSave";
-            colorBackground[] = {0,0,0,0};
-            colorBackground2[] = {0,0,0,0};
-            colorBackgroundFocused[] = {0,0,0,0};
-            onButtonClick = "createDialog 'MEU_Dialog_save';";
-            x = 0.2;
-            y = 0.185;
-            w = 0.064;
-            h = 0.064;
-        };        
-        class Button_Load: MEU_gui_Button {
-            idc = 7573;
-            text = "";
-            toolTip = "$STR_MEU_Equipment_EquipmentLoad";
-            colorBackground[] = {0,0,0,0};
-            colorBackground2[] = {0,0,0,0};
-            colorBackgroundFocused[] = {0,0,0,0};
-            onButtonClick = "createDialog 'MEU_Dialog_load';";
-            x = 0.27;
-            y = 0.185;
-            w = 0.064;
-            h = 0.064;
-        };
-        class Button_LoadDefault: MEU_gui_Button {
-            idc = 7578;
-            text = "";
-            toolTip = "$STR_MEU_Equipment_EquipmentLoadDefault";
-            colorBackground[] = {0,0,0,0};
-            colorBackground2[] = {0,0,0,0};
-            colorBackgroundFocused[] = {0,0,0,0};
-            onButtonClick = "createDialog 'MEU_Dialog_loadDefault';";
-            x = 0.34;
-            y = 0.185;
-            w = 0.064;
-            h = 0.064;
-        };
-        class Button_LoadVR: MEU_gui_Button {
-            idc = 7579;
-            text = "";
-            toolTip = "$STR_MEU_Equipment_EquipmentLoadVR";
-            colorBackground[] = {0,0,0,0};
-            colorBackground2[] = {0,0,0,0};
-            colorBackgroundFocused[] = {0,0,0,0};
-            onButtonClick = "createDialog 'MEU_Dialog_loadVR';";
-            x = 0.41;
-            y = 0.185;
-            w = 0.064;
-            h = 0.064;
-        };
-        class Button_CopyToClipboard: MEU_gui_Button {
-            idc = 7702;
-            text = "";
-            toolTip = "$STR_MEU_Equipment_EquipmentCopyToClipboard";
-            colorBackground[] = {0,0,0,0};
-            colorBackground2[] = {0,0,0,0};
-            colorBackgroundFocused[] = {0,0,0,0};
-            onButtonClick = "call MEU_fnc_copyLoadout;";
-            x = 0.48;
-            y = 0.185;
-            w = 0.064;
-            h = 0.064;
-        };
-        class Button_CopyFromClipboard: MEU_gui_Button {
-            idc = 7703;
-            text = "";
-            toolTip = "$STR_MEU_Equipment_EquipmentCopyFromClipboard";
-            colorBackground[] = {0,0,0,0};
-            colorBackground2[] = {0,0,0,0};
-            colorBackgroundFocused[] = {0,0,0,0};
-            onButtonClick = "call MEU_fnc_pasteLoadout;";
-            x = 0.55;
-            y = 0.185;
-            w = 0.064;
-            h = 0.064;
-        };
-        class Button_Exit: MEU_gui_Button {
-            idc = 7704;
-            text = "";
-            toolTip = "$STR_MEU_Equipment_EquipmentExit";
-            action = "closeDialog 0;";
-            colorBackground[] = {0,0,0,0};
-            colorBackground2[] = {0,0,0,0};
-            colorBackgroundFocused[] = {0,0,0,0};
-            x = 0.69;
-            y = 0.185;
-            w = 0.064;
-            h = 0.064;
         };
     };
 };

@@ -126,4 +126,5 @@ GVAR(DefaultProfiles) = [];
 
 } forEach _configs;
 
-GVAR(NewConfig) = false;
+//Create the equipment dialog once all configs have been read
+["createDialog", ""] call FUNC(equipmentUI);
