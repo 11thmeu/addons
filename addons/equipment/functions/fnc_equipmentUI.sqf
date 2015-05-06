@@ -15,18 +15,19 @@
  * Public: [No]
  */
 #include "script_component.hpp"
-#include PATHTOF(defineRscMEU_Equipment.hpp)
 
 disableSerialization;
-private ["_action", "_params"];
+private ["_action", "_params", "_display"];
 _action = _this select 0;
 _params = _this select 1;
+
+_display = GETUVAR(GVAR(EquipmentDisplay),displayNull);
 
 switch _action do {
 
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     case "onLoad": {
-        GVAR(EquipmentDisplay) = (_params select 0);
+		SETUVAR(GVAR(EquipmentDisplay),(_params select 0));
     };
     
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -63,15 +64,120 @@ switch _action do {
     
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     case "createDialog": {
-        private ["_display", "_title", "_types", "_comboType", "_comboSide"];
-
         createDialog "RscMEU_Equipment";
-
-        _display = GVAR(EquipmentDisplay);
-
-        //Set config title
-        _title = _display displayCtrl IDC_RSCMEUEQUIPMENT_TITLE;
+		
+		//Set config title
+		 private ["_title", "_buttonCamera", "_buttonNV", "_buttonSave", "_buttonLoad", "_buttonLoadDefault", "_buttonLoadVR"];
+        _title = DCONTROL(IDC_RSCMEUEQUIPMENT_TITLE);
         _title ctrlSetText format["%1 - [%2]", localize "STR_MEU_Equipment_ModuleEquipment_Action_defaultValue", GVAR(ConfigType)];
+		
+		//TODO----------------
+        //Camera
+        if (GVAR(EnableCamera)) then {
+            ["Init"] call FUNC(camera);
+            GVAR(NV) = false;
+
+            //Disable NV
+            if (!GVAR(EnableNV)) then {
+				_buttonNV = DCONTROL(IDC_RSCMEUEQUIPMENT_BUTTONNV);
+				_buttonNV ctrlShow false;
+				_buttonNV ctrlSetTooltip "DISABLED"; //TODO LOCALIZE
+            };
+            
+        } else {
+            //Disable buttons
+			_buttonCamera = DCONTROL(IDC_RSCMEUEQUIPMENT_BUTTONCAMERA);
+			_buttonCamera ctrlShow false;
+			_buttonCamera ctrlSetTooltip "DISABLED"; //TODO LOCALIZE
+			_buttonNV = DCONTROL(IDC_RSCMEUEQUIPMENT_BUTTONNV);
+			_buttonNV ctrlShow false;
+			_buttonNV ctrlSetTooltip "DISABLED"; //TODO LOCALIZE
+        };
+
+        //Save/Load system
+        if (!GVAR(EnableSaveLoad)) then {
+			_buttonSave = DCONTROL(IDC_RSCMEUEQUIPMENT_BUTTONSAVE);
+			_buttonSave ctrlShow false;
+			_buttonSave ctrlSetTooltip "DISABLED"; //TODO LOCALIZE
+			_buttonLoad = DCONTROL(IDC_RSCMEUEQUIPMENT_BUTTONLOAD);
+			_buttonLoad ctrlShow false;
+			_buttonLoad ctrlSetTooltip "DISABLED"; //TODO LOCALIZE
+        };
+
+        //Default profiles
+        if (!GVAR(EnableDefaultProfiles)) then {
+			_buttonLoadDefault = DCONTROL(IDC_RSCMEUEQUIPMENT_BUTTONLOADDEFAULT);
+			_buttonLoadDefault ctrlShow false;
+			_buttonLoadDefault ctrlSetTooltip "DISABLED"; //TODO LOCALIZE
+        };
+
+        if (!GVAR(AllowVirtualLoad)) then {
+			_buttonLoadVR = DCONTROL(IDC_RSCMEUEQUIPMENT_BUTTONLOADVR);
+			_buttonLoadVR ctrlShow false;
+			_buttonLoadVR ctrlSetTooltip "DISABLED"; //TODO LOCALIZE
+        };
+		
+		["equipmentView", ""] call FUNC(equipmentUI);
+    };
+	
+	//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    case "equipmentView": {
+	    private ["_list1_title", "_list1", "_labelType", "_comboType", "_labelSide", "_comboSide", "_buttonEquip", "_buttonReplace", "_types"];
+
+		//Set display elements
+		_list1_title = DCONTROL(IDC_RSCMEUEQUIPMENT_LIST1_TITLE);
+		_list1_title ctrlSetPosition [0.04, 0.09, 0.55, 0.04];
+		_list1_title ctrlCommit 0;
+		_list1_title ctrlShow true;
+		_list1_title ctrlSetText ""; //TODO
+		
+		_list1 = DCONTROL(IDC_RSCMEUEQUIPMENT_LIST1);
+		_list1 ctrlSetPosition [0.04, 0.13, 0.55, 0.72];
+		_list1 ctrlCommit 0;
+		_list1 ctrlShow true;
+		
+		_labelType = DCONTROL(IDC_RSCMEUEQUIPMENT_LABEL1);
+		_labelType ctrlSetPosition [0.65, 0.3, 0.10, 0.04];
+		_labelType ctrlCommit 0;
+		_labelType ctrlShow true;
+		_labelType ctrlSetText ""; //TODO
+		
+		_comboType = DCONTROL(IDC_RSCMEUEQUIPMENT_COMBO1);
+		_comboType ctrlSetPosition [0.65, 0.35, 0.20, 0.04];
+		_comboType ctrlCommit 0;
+		_comboType ctrlShow true;
+		_comboType ctrlAddEventHandler ["LBSelChanged", QUOTE(['update',[true]] call FUNC(equipmentUI))];
+		
+		_labelSide = DCONTROL(IDC_RSCMEUEQUIPMENT_LABEL2);
+		_labelSide ctrlSetPosition [0.65, 0.4, 0.10, 0.04];
+		_labelSide ctrlCommit 0;
+		_labelSide ctrlShow true;
+		_labelSide ctrlSetText ""; //TODO
+		
+		_comboSide = DCONTROL(IDC_RSCMEUEQUIPMENT_COMBO2);
+		_comboSide ctrlSetPosition [0.65, 0.45, 0.20, 0.04];
+		_comboSide ctrlCommit 0;
+		_comboSide ctrlShow true;
+		_comboSide ctrlAddEventHandler ["LBSelChanged", QUOTE(['update',[false]] call FUNC(equipmentUI);)];
+
+		_buttonEquip = DCONTROL(IDC_RSCMEUEQUIPMENT_BUTTON1);
+		_buttonEquip ctrlSetPosition [0.65, 0.60, 0.1562, 0.04];
+		_buttonEquip ctrlCommit 0;
+		_buttonEquip ctrlShow true;
+		_buttonEquip ctrlAddEventHandler ["ButtonClick", QUOTE(['addItem',[false]] call FUNC(equipmentUI);)];
+
+		_buttonReplace = DCONTROL(IDC_RSCMEUEQUIPMENT_BUTTON2);
+		_buttonReplace ctrlSetPosition [0.65, 0.66, 0.1562, 0.04];
+		_buttonReplace ctrlCommit 0;
+		_buttonReplace ctrlShow true;
+		_buttonReplace ctrlAddEventHandler ["ButtonClick", QUOTE(['addItem',[true]] call FUNC(equipmentUI);)];
+
+		//Hide unused elements
+		{
+			private "_ctrl";
+			_ctrl = DCONTROL(_x);
+			_ctrl ctrlShow false;
+		} forEach [IDC_RSCMEUEQUIPMENT_LIST2_TITLE, IDC_RSCMEUEQUIPMENT_LIST2];
 
         //Add item types
         _types = [];
@@ -91,54 +197,16 @@ switch _action do {
             _types pushBack (localize "STR_MEU_Equipment_ModuleEquipment_Presets");
         };
 
-        _comboType = _display displayCtrl IDC_RSCMEUEQUIPMENT_COMBOTYPE;
+		lbClear _comboType;
         { _comboType lbAdd _x; } forEach _types;
         _comboType lbSetCurSel 0;
 
-        //Add factions from configuration 
-        _comboSide = _display displayCtrl IDC_RSCMEUEQUIPMENT_COMBOSIDE;
+        //Add factions from configuration
+		lbClear _comboSide;
         _comboSide lbAdd localize "STR_MEU_Equipment_ModuleEquipment_Type_all";
         { _comboSide lbAdd _x; } forEach GVAR(UniformFactions);
         _comboSide lbSetCurSel 0;
-
-        //Camera
-        if (GVAR(EnableCamera)) then {
-            ["Init"] call FUNC(camera);
-            GVAR(NV) = false;
-
-            //Disable NV
-            if (!GVAR(EnableNV)) then {
-                ctrlShow [7571, false]; //TODO TOOLTIPS FOR DISABLED
-                ctrlSetText [7581, ""] 
-            };
-            
-        } else {
-            //Disable buttons
-            ctrlShow [7570, false]; //TODO TOOLTIPS FOR DISABLED
-            ctrlSetText [7580, ""];
-            ctrlShow [7571, false]; //TODO TOOLTIPS FOR DISABLED
-            ctrlSetText [7581, ""];
-        };
-
-        //Save/Load system
-        if (!GVAR(EnableSaveLoad)) then {
-            ctrlShow [7572, false]; //TODO TOOLTIPS FOR DISABLED
-            ctrlSetText [7582, ""];
-            ctrlShow [7573, false]; //TODO TOOLTIPS FOR DISABLED
-            ctrlSetText [7583, ""];
-        };
-
-        //Default profiles
-        if (!GVAR(EnableDefaultProfiles)) then {
-            ctrlShow [7578, false]; //TODO TOOLTIPS FOR DISABLED
-            ctrlSetText [7584, ""];
-        };
-
-        if (!GVAR(AllowVirtualLoad)) then {
-            ctrlShow [7579, false]; //TODO TOOLTIPS FOR DISABLED
-            ctrlSetText [7585, ""];
-        };
-    };
+	};
     
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     case "switchCamera": {
@@ -166,7 +234,7 @@ switch _action do {
     
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     case "update": {
-        private ["_display", "_comboType", "_comboSide", "_list", "_resetSide", "_type", "_side", "_collection", "_tooltip", "_load", "_protection", "_vconfig", "_index", "_insignias"];
+        private ["_comboType", "_comboSide", "_list", "_resetSide", "_type", "_side", "_collection", "_tooltip", "_load", "_protection", "_vconfig", "_index", "_insignias"];
 
         //If a reset was called, do nothing
         if (GVAR(Reset)) exitWith { GVAR(Reset) = false; };
@@ -183,11 +251,10 @@ switch _action do {
         };
 
         GVAR(Updating) = true;
-        
-        _display = GVAR(EquipmentDisplay);
-        _comboType = _display displayCtrl IDC_RSCMEUEQUIPMENT_COMBOTYPE;
-        _comboSide = _display displayCtrl IDC_RSCMEUEQUIPMENT_COMBOSIDE;
-        _list = _display displayCtrl IDC_RSCMEUEQUIPMENT_LIST1;
+
+        _comboType = DCONTROL(IDC_RSCMEUEQUIPMENT_COMBOTYPE);
+        _comboSide = DCONTROL(IDC_RSCMEUEQUIPMENT_COMBOSIDE);
+        _list = DCONTROL(IDC_RSCMEUEQUIPMENT_LIST1);
 
         _resetSide = _params select 0;
         _type = lbCurSel _comboType;
@@ -426,10 +493,9 @@ switch _action do {
     
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     case "addItem": {
-        private ["_display", "_list", "_replace", "_selected", "_type", "_items", "_container", "_data", "_insignia"];
+        private ["_list", "_replace", "_selected", "_type", "_items", "_container", "_data", "_insignia"];
 
-        _display = GVAR(EquipmentDisplay);
-        _list = _display displayCtrl IDC_RSCMEUEQUIPMENT_LIST1;        
+        _list = DCONTROL(IDC_RSCMEUEQUIPMENT_LIST1);
         
         _replace = _params select 0;
         _selected = lbCurSel _list;

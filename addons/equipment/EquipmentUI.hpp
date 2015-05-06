@@ -8,8 +8,8 @@ class RscText;
 class RscMEU_Equipment {
     idd = -1;
     movingEnable = 1;
-    onLoad = QUOTE(['onLoad',_this] call FUNC(equipmentUI););
-	onUnload = QUOTE(['onUnload',''] call FUNC(equipmentUI););
+    onLoad = "['onLoad',_this] call meu_equipment_fnc_equipmentUI;";
+	onUnload = "['onUnload',''] call meu_equipment_fnc_equipmentUI;";
 
     class controlsBackground {
         //Common controls
@@ -134,24 +134,24 @@ class RscMEU_Equipment {
             text = "$STR_MEU_Equipment_EquipmentList";
             sizeEx = 0.04;
             x = 0.04; 
-            y = 0.1;
+            y = 0.09;
             w = 0.55; 
             h = 0.04;
         };
-        class Label_Type: MEU_gui_Base {
+        class Label1: MEU_gui_Base {
             colorBackground[] = {0,0,0,0};
             text = "$STR_MEU_Equipment_EquipmentType";
             idc = 800006;
-            x = 0.54;
+            x = 0.65;
             y = 0.3;
             w = 0.10;
             h = 0.04;
         };
-        class Label_Side: MEU_gui_Base {
+        class Label2: MEU_gui_Base {
             colorBackground[] = {0,0,0,0};
             text = "$STR_MEU_Equipment_EquipmentClass";
             idc = 800005;
-            x = 0.54;
+            x = 0.65;
             y = 0.4;
             w = 0.10;
             h = 0.04;
@@ -307,11 +307,10 @@ class RscMEU_Equipment {
             sizeEx = 0.032;
             colorSelect[] = {1,1,1,1};
             colorSelectBackground[] = {1,0.5,0,0.5};
-            x = 0.54;
+            x = 0.65;
             y = 0.35;
             w = 0.20;
             h = 0.04;
-			onLBSelChanged = QUOTE(['update',[true]] call FUNC(equipmentUI););
         };
         class Combo_Side: MEU_gui_ComboBox {
             idc = 7555;
@@ -319,13 +318,12 @@ class RscMEU_Equipment {
             sizeEx = 0.032;
             colorSelect[] = {1,1,1,1};
             colorSelectBackground[] = {1,0.5,0,0.5};
-            x = 0.54;
+            x = 0.65;
             y = 0.45;
             w = 0.20;
             h = 0.04;
-            onLBSelChanged = QUOTE(['update',[false]] call FUNC(equipmentUI););
         };
-        class List_One: MEU_gui_ListBox {
+        class List1: MEU_gui_ListBox {
             idc = 7556;
             rowHeight = 0.08;
             text = "";
@@ -335,24 +333,22 @@ class RscMEU_Equipment {
             w = 0.55;
             h = 0.72;
         };
-        class Button_One: MEU_gui_Button {
+        class Button1: MEU_gui_Button {
             idc = 800001;
             text = "$STR_MEU_Equipment_EquipmentAdd";
             toolTip = "$STR_MEU_Equipment_EquipmentAddTT";
             colorBackground[] = {1,0.5,0,0.5};
-            onButtonClick = QUOTE(['addItem',[false]] call FUNC(equipmentUI);); //TODO VARIABLE EVENT?
-            x = 0.54;
+            x = 0.65;
             y = 0.60;
             w = 0.1562;
             h = 0.04;
         };
-        class Button_Two: MEU_gui_Button {
+        class Button2: MEU_gui_Button {
             idc = 800002;
             text = "$STR_MEU_Equipment_EquipmentReplace";
             toolTip = "$STR_MEU_Equipment_EquipmentReplaceTT";
             colorBackground[] = {1,0.5,0,0.5};
-            onButtonClick = QUOTE(['addItem',[true]] call FUNC(equipmentUI);); //TODO VARIABLE EVENT?
-            x = 0.54;
+            x = 0.65;
             y = 0.66;
             w = 0.1562;
             h = 0.04;

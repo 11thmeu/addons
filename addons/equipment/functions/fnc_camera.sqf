@@ -15,7 +15,6 @@
  * Public: [No]
  */
 #include "script_component.hpp"
-#include PATHTOF(defineRscMEU_Equipment.hpp)
 
 disableserialization;
 
