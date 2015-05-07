@@ -17,6 +17,9 @@
  */
 #include "script_component.hpp"
 
+//If TFAR is disabled, exit function
+if !(isClass(configFile >> "CfgPatches" >> "task_force_radio")) exitWith {};
+
 private ["_swSettings", "_lrSettings", "_otherSettings", "_activeSWRadio", "_processedRadios", "_playerItems", "_radio", "_settings", "_item"];
 _swSettings = _this select 0;
 _lrSettings = _this select 1;

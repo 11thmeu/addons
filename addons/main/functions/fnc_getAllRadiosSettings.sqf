@@ -15,6 +15,9 @@
  */
 #include "script_component.hpp"
 
+//If TFAR is disabled, exit function
+if !(isClass(configFile >> "CfgPatches" >> "task_force_radio")) exitWith { [[],[],[]] };
+
 private ["_activeSWRadio", "_activeLRRadio", "_radiosList", "_swSettings", "_lrSettings", "_otherSettings", "_radio", "_settings", "_classname"];
 _activeSWRadio = call TFAR_fnc_activeSwRadio;
 _activeLRRadio = call TFAR_fnc_activeLrRadio;
