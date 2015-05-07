@@ -17,6 +17,7 @@
 #include "script_component.hpp"
 
 #define EQUIPMENT_LOADOUTS 20
+#define CTRLANIMATIONTIME 0.5
 
 disableSerialization;
 private ["_action", "_params", "_display"];
@@ -60,7 +61,7 @@ switch _action do {
             [_type] call FUNC(readConfig);
         };
         
-		["createDialog", ""] call FUNC(equipmentUI);
+        ["createDialog", ""] call FUNC(equipmentUI);
     };
 
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -127,58 +128,62 @@ switch _action do {
         //Set display elements
         _list1_title = DCONTROL(IDC_RSCMEUEQUIPMENT_LIST1_TITLE);
         _list1_title ctrlSetPosition [0.04, 0.09, 0.55, 0.04];
-        _list1_title ctrlCommit 0;
+        _list1_title ctrlCommit CTRLANIMATIONTIME;
         _list1_title ctrlShow true;
         _list1_title ctrlSetText (localize "STR_MEU_Equipment_EquipmentList"); //TODO
         
         _list1 = DCONTROL(IDC_RSCMEUEQUIPMENT_LIST1);
+        _list1 ctrlRemoveAllEventHandlers "LBSelChanged";
+        lbClear _list1;
+        _list1 lbSetCurSel -1;
         _list1 ctrlSetPosition [0.04, 0.13, 0.55, 0.72];
-        _list1 ctrlCommit 0;
+        _list1 ctrlCommit CTRLANIMATIONTIME;
         _list1 ctrlShow true;
-		_list1 ctrlRemoveAllEventHandlers "LBSelChanged";
         
         _labelType = DCONTROL(IDC_RSCMEUEQUIPMENT_LABEL1);
         _labelType ctrlSetPosition [0.65, 0.3, 0.10, 0.04];
-        _labelType ctrlCommit 0;
+        _labelType ctrlCommit CTRLANIMATIONTIME;
         _labelType ctrlShow true;
-        _labelType ctrlSetText (localize "$STR_MEU_Equipment_EquipmentType"); //TODO
+        _labelType ctrlSetText (localize "STR_MEU_Equipment_EquipmentType"); //TODO
         
         _comboType = DCONTROL(IDC_RSCMEUEQUIPMENT_COMBO1);
+        lbClear _comboType;
         _comboType ctrlSetPosition [0.65, 0.35, 0.20, 0.04];
-        _comboType ctrlCommit 0;
+        _comboType ctrlCommit CTRLANIMATIONTIME;
         _comboType ctrlShow true;
-		_comboType ctrlRemoveAllEventHandlers "LBSelChanged";
+        _comboType ctrlRemoveAllEventHandlers "LBSelChanged";
         _comboType ctrlAddEventHandler ["LBSelChanged", {['update',[true]] call FUNC(equipmentUI)}];
         
         _labelSide = DCONTROL(IDC_RSCMEUEQUIPMENT_LABEL2);
         _labelSide ctrlSetPosition [0.65, 0.4, 0.10, 0.04];
-        _labelSide ctrlCommit 0;
+        _labelSide ctrlCommit CTRLANIMATIONTIME;
         _labelSide ctrlShow true;
         _labelSide ctrlSetText (localize "STR_MEU_Equipment_EquipmentClass"); //TODO
         
         _comboSide = DCONTROL(IDC_RSCMEUEQUIPMENT_COMBO2);
+        lbClear _comboSide;
         _comboSide ctrlSetPosition [0.65, 0.45, 0.20, 0.04];
-        _comboSide ctrlCommit 0;
+        _comboSide ctrlCommit CTRLANIMATIONTIME;
         _comboSide ctrlShow true;
-		_comboSide ctrlRemoveAllEventHandlers "LBSelChanged";
+        _comboSide ctrlRemoveAllEventHandlers "LBSelChanged";
         _comboSide ctrlAddEventHandler ["LBSelChanged", {['update',[false]] call FUNC(equipmentUI);}];
 
         _buttonEquip = DCONTROL(IDC_RSCMEUEQUIPMENT_BUTTON1);
         _buttonEquip ctrlSetPosition [0.65, 0.60, 0.1562, 0.04];
-        _buttonEquip ctrlCommit 0;
+        _buttonEquip ctrlCommit CTRLANIMATIONTIME;
         _buttonEquip ctrlShow true;
-		_buttonEquip ctrlSetText (localize "STR_MEU_Equipment_EquipmentAdd"); //TODO 
-		_buttonEquip ctrlSetTooltip (localize "STR_MEU_Equipment_EquipmentAddTT"); //TODO
-		_buttonEquip ctrlRemoveAllEventHandlers "ButtonClick";
+        _buttonEquip ctrlSetText (localize "STR_MEU_Equipment_EquipmentAdd"); //TODO 
+        _buttonEquip ctrlSetTooltip (localize "STR_MEU_Equipment_EquipmentAddTT"); //TODO
+        _buttonEquip ctrlRemoveAllEventHandlers "ButtonClick";
         _buttonEquip ctrlAddEventHandler ["ButtonClick", {['addItem',[false]] call FUNC(equipmentUI);}];
 
         _buttonReplace = DCONTROL(IDC_RSCMEUEQUIPMENT_BUTTON2);
         _buttonReplace ctrlSetPosition [0.65, 0.66, 0.1562, 0.04];
-        _buttonReplace ctrlCommit 0;
+        _buttonReplace ctrlCommit CTRLANIMATIONTIME;
         _buttonReplace ctrlShow true;
-		_buttonReplace ctrlSetText (localize "STR_MEU_Equipment_EquipmentReplace"); //TODO 
-		_buttonReplace ctrlSetTooltip (localize "STR_MEU_Equipment_EquipmentReplaceTT"); //TODO
-		_buttonReplace ctrlRemoveAllEventHandlers "ButtonClick";
+        _buttonReplace ctrlSetText (localize "STR_MEU_Equipment_EquipmentReplace"); //TODO 
+        _buttonReplace ctrlSetTooltip (localize "STR_MEU_Equipment_EquipmentReplaceTT"); //TODO
+        _buttonReplace ctrlRemoveAllEventHandlers "ButtonClick";
         _buttonReplace ctrlAddEventHandler ["ButtonClick", {['addItem',[true]] call FUNC(equipmentUI);}];
 
         //Hide unused elements
@@ -206,12 +211,10 @@ switch _action do {
             _types pushBack (localize "STR_MEU_Equipment_ModuleEquipment_Presets");
         };
 
-        lbClear _comboType;
         { _comboType lbAdd _x; } forEach _types;
         _comboType lbSetCurSel 0;
 
         //Add factions from configuration
-        lbClear _comboSide;
         _comboSide lbAdd localize "STR_MEU_Equipment_ModuleEquipment_Type_all";
         { _comboSide lbAdd _x; } forEach GVAR(UniformFactions);
         _comboSide lbSetCurSel 0;
@@ -220,94 +223,209 @@ switch _action do {
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     case "saveView": {
 
-		if (!GVAR(EnableSaveLoad)) exitWith { titleText[(localize "STR_MEU_Equipment_OptionDisabled"), "PLAIN DOWN"]; };
+        if (!GVAR(EnableSaveLoad)) exitWith { titleText[(localize "STR_MEU_Equipment_OptionDisabled"), "PLAIN DOWN"]; };
 
-		private ["_list1_title", "_list1", "_list2_title", "_list2"];
-		
-		_list1_title = DCONTROL(IDC_RSCMEUEQUIPMENT_LIST1_TITLE);
-		//TODO
-		
-		_list1 = DCONTROL(IDC_RSCMEUEQUIPMENT_LIST1);
-        //_list1 ctrlSetPosition [0.04, 0.13, 0.55, 0.72]; TODO
-        _list1 ctrlCommit 0;
+        private ["_list1_title", "_list1", "_list2_title", "_list2", "_textBox", "_buttonSave"];
+        
+        //Set display elements
+        _list1_title = DCONTROL(IDC_RSCMEUEQUIPMENT_LIST1_TITLE);
+        _list1_title ctrlSetPosition [0.04, 0.09, 0.4, 0.04];
+        _list1_title ctrlCommit CTRLANIMATIONTIME;
+        _list1_title ctrlShow true;
+        _list1_title ctrlSetText (localize "STR_MEU_Equipment_EquipmentProfiles"); //TODO
+
+        _list1 = DCONTROL(IDC_RSCMEUEQUIPMENT_LIST1);
+        _list1 ctrlRemoveAllEventHandlers "LBSelChanged";
+        lbClear _list1;
+        _list1 lbSetCurSel -1;
+        _list1 ctrlSetPosition [0.04, 0.13, 0.4, 0.65]; //TODO
+        _list1 ctrlCommit CTRLANIMATIONTIME;
         _list1 ctrlShow true;
-		
-		_list2_title = DCONTROL(IDC_RSCMEUEQUIPMENT_LIST2_TITLE);
-		//TODO
-		
-		_list2 = DCONTROL(IDC_RSCMEUEQUIPMENT_LIST2);
-		//TODO
+        _list1 ctrlAddEventHandler ["LBSelChanged", {['showProfile',true] call FUNC(equipmentUI);}];
 
-		lbClear _list1;
-		lbClear _list2;
+        _list2_title = DCONTROL(IDC_RSCMEUEQUIPMENT_LIST2_TITLE);
+        _list2_title ctrlSetPosition [0.46, 0.09, 0.4, 0.04];
+        _list2_title ctrlCommit CTRLANIMATIONTIME;
+        _list2_title ctrlShow true;
+        _list2_title ctrlSetText (localize "STR_MEU_Equipment_EquipmentContents"); //TODO
+        
+        _list2 = DCONTROL(IDC_RSCMEUEQUIPMENT_LIST2);
+        lbClear _list2;
+        _list2 lbSetCurSel -1;
+        _list2 ctrlSetPosition [0.46, 0.13, 0.4, 0.65]; //TODO
+        _list2 ctrlCommit CTRLANIMATIONTIME;
+        _list2 ctrlShow true;
+        
+        _textBox = DCONTROL(IDC_RSCMEUEQUIPMENT_TEXTBOX);
+        _textBox ctrlSetPosition [0.04, 0.83, 0.55, 0.04];
+        _textBox ctrlCommit CTRLANIMATIONTIME;
+        _textBox ctrlShow true;
+        _textBox ctrlSetText (localize "STR_MEU_Equipment_EquipmentCustomName"); //TODO
+        
+        _buttonSave = DCONTROL(IDC_RSCMEUEQUIPMENT_BUTTON1);
+        _buttonSave ctrlSetPosition [0.65, 0.83, 0.1562, 0.04];
+        _buttonSave ctrlCommit CTRLANIMATIONTIME;
+        _buttonSave ctrlShow true;
+        _buttonSave ctrlSetText (localize "STR_MEU_Equipment_EquipmentSave"); //TODO 
+        _buttonSave ctrlSetTooltip "";
+        _buttonSave ctrlRemoveAllEventHandlers "ButtonClick";
+        _buttonSave ctrlAddEventHandler ["ButtonClick", {['saveProfile',''] call FUNC(equipmentUI);}];
 
-		if (GVAR(EnablePersistence)) then {
-			for "_i" from 0 to (EQUIPMENT_LOADOUTS - 1) do {
-				if (!isNil {profileNamespace getVariable format["meu_dev_equipment_%1", _i]}) then {
-					_list1 lbAdd (format["%1", (profileNamespace getVariable format["meu_dev_equipment_%1", _i]) select 0]);
-				} else {
-					_list1 lbAdd (format["%1 %2", (localize "STR_MEU_Equipment_DefaultLoadoutTitle"), _i + 1]);
-				};
-			};
-		} else {
-			for "_i" from 0 to (EQUIPMENT_LOADOUTS - 1) do {
-				if (!isNil {missionNamespace getVariable format["meu_dev_equipment_%1", _i]}) then {
-					_list1 lbAdd (format["%1",(missionNamespace getVariable format["meu_dev_equipment_%1", _i]) select 0]);
-				} else {
-					_list1 lbAdd (format["%1 %2",(localize "STR_MEU_Equipment_DefaultLoadoutTitle"), _i + 1]);
-				};
-			};
-		};
+        //Hide unused elements
+        {
+            private "_ctrl";
+            _ctrl = DCONTROL(_x);
+            _ctrl ctrlShow false;
+        } forEach [IDC_RSCMEUEQUIPMENT_COMBO1, IDC_RSCMEUEQUIPMENT_COMBO2, IDC_RSCMEUEQUIPMENT_LABEL1, IDC_RSCMEUEQUIPMENT_LABEL2, IDC_RSCMEUEQUIPMENT_BUTTON2];
 
-		["showProfile", true] call FUNC(equipmentUI);
+        if (GVAR(EnablePersistence)) then {
+            for "_i" from 0 to (EQUIPMENT_LOADOUTS - 1) do {
+                if (!isNil {profileNamespace getVariable format["meu_dev_equipment_%1", _i]}) then {
+                    _list1 lbAdd (format["%1", (profileNamespace getVariable format["meu_dev_equipment_%1", _i]) select 0]);
+                } else {
+                    _list1 lbAdd (format["%1 %2", (localize "STR_MEU_Equipment_DefaultLoadoutTitle"), _i + 1]);
+                };
+            };
+        } else {
+            for "_i" from 0 to (EQUIPMENT_LOADOUTS - 1) do {
+                if (!isNil {missionNamespace getVariable format["meu_dev_equipment_%1", _i]}) then {
+                    _list1 lbAdd (format["%1",(missionNamespace getVariable format["meu_dev_equipment_%1", _i]) select 0]);
+                } else {
+                    _list1 lbAdd (format["%1 %2",(localize "STR_MEU_Equipment_DefaultLoadoutTitle"), _i + 1]);
+                };
+            };
+        };
+
+        ["showProfile", true] call FUNC(equipmentUI);
     };
-	
-	//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     case "loadView": {
-	
-		if (!GVAR(EnableSaveLoad)) exitWith { titleText[(localize "STR_MEU_Equipment_OptionDisabled"), "PLAIN DOWN"]; };
-		
-		private ["_list1_title", "_list1", "_list2_title", "_list2"];
-		
-		_list1_title = DCONTROL(IDC_RSCMEUEQUIPMENT_LIST1_TITLE);
-		//TODO
-		
-		_list1 = DCONTROL(IDC_RSCMEUEQUIPMENT_LIST1);
+    
+        if (!GVAR(EnableSaveLoad)) exitWith { titleText[(localize "STR_MEU_Equipment_OptionDisabled"), "PLAIN DOWN"]; };
+        
+        private ["_list1_title", "_list1", "_list2_title", "_list2"];
+        
+        _list1_title = DCONTROL(IDC_RSCMEUEQUIPMENT_LIST1_TITLE);
+        //TODO
+        
+        _list1 = DCONTROL(IDC_RSCMEUEQUIPMENT_LIST1);
         //_list1 ctrlSetPosition [0.04, 0.13, 0.55, 0.72]; TODO
         _list1 ctrlCommit 0;
         _list1 ctrlShow true;
-		
-		_list2_title = DCONTROL(IDC_RSCMEUEQUIPMENT_LIST2_TITLE);
-		//TODO
-		
-		_list2 = DCONTROL(IDC_RSCMEUEQUIPMENT_LIST2);
-		//TODO
+        
+        _list2_title = DCONTROL(IDC_RSCMEUEQUIPMENT_LIST2_TITLE);
+        //TODO
+        
+        _list2 = DCONTROL(IDC_RSCMEUEQUIPMENT_LIST2);
+        //TODO
 
-		lbClear _list1;
-		lbClear _list2;
+        lbClear _list1;
+        lbClear _list2;
 
-		if (GVAR(EnablePersistence)) then {
-			for "_i" from 0 to (EQUIPMENT_LOADOUTS - 1) do {
-				if (!isNil {profileNamespace getVariable format["meu_dev_equipment_%1", _i]}) then {
-					_list1 lbAdd (format["%1", (profileNamespace getVariable format["meu_dev_equipment_%1", _i]) select 0]);
-				} else {
-					_list1 lbAdd (format["%1 %2", (localize "STR_MEU_Equipment_DefaultLoadoutTitle"), _i + 1]);
-				};
-			};
-		} else {
-			for "_i" from 0 to (EQUIPMENT_LOADOUTS - 1) do {
-				if (!isNil {missionNamespace getVariable format["meu_dev_equipment_%1", _i]}) then {
-					_list1 lbAdd (format["%1",(missionNamespace getVariable format["meu_dev_equipment_%1", _i]) select 0]);
-				} else {
-					_list1 lbAdd (format["%1 %2",(localize "STR_MEU_Equipment_DefaultLoadoutTitle"), _i + 1]);
-				};
-			};
-		};
+        if (GVAR(EnablePersistence)) then {
+            for "_i" from 0 to (EQUIPMENT_LOADOUTS - 1) do {
+                if (!isNil {profileNamespace getVariable format["meu_dev_equipment_%1", _i]}) then {
+                    _list1 lbAdd (format["%1", (profileNamespace getVariable format["meu_dev_equipment_%1", _i]) select 0]);
+                } else {
+                    _list1 lbAdd (format["%1 %2", (localize "STR_MEU_Equipment_DefaultLoadoutTitle"), _i + 1]);
+                };
+            };
+        } else {
+            for "_i" from 0 to (EQUIPMENT_LOADOUTS - 1) do {
+                if (!isNil {missionNamespace getVariable format["meu_dev_equipment_%1", _i]}) then {
+                    _list1 lbAdd (format["%1",(missionNamespace getVariable format["meu_dev_equipment_%1", _i]) select 0]);
+                } else {
+                    _list1 lbAdd (format["%1 %2",(localize "STR_MEU_Equipment_DefaultLoadoutTitle"), _i + 1]);
+                };
+            };
+        };
 
-		["showProfile", true] call FUNC(equipmentUI);
-	};
-	
-	//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        ["showProfile", true] call FUNC(equipmentUI);
+    };
+
+    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    case "loadDefaultView": {
+        //TODO
+        private ["_profile", "_index", "_picture"];
+
+        //Hide camera options
+        if (GVAR(EnableCamera)) then {
+            if (!GVAR(EnableNV)) then {
+                ctrlShow [7605, false];
+                ctrlSetText [7601, ""];
+            };
+        } else {
+            ctrlShow [7604, false];
+            ctrlSetText [7600, ""];
+            ctrlShow [7605, false];
+            ctrlSetText [7601, ""];
+        };
+
+        if (!GVAR(EnableDefaultProfiles)) exitWith {titleText[(localize "STR_MEU_Equipment_OptionDisabled"), "PLAIN DOWN"];};
+
+        lbClear 7602;
+
+        {
+            _profile = _x;
+            _index = lbAdd [7602, (_profile select 0)];
+            _picture = getText (configFile >> "CfgWeapons" >> (_x select 5) >> "picture");
+            lbSetPicture [7602, _index, _picture];
+        } forEach GVAR(DefaultProfiles);
+    };
+
+    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    case "loadVRView": {
+        //TODO
+        private ["_profile", "_index", "_picture", "_profiles", "_loadoutName"];
+
+        //Hide camera options
+        if (GVAR(EnableCamera)) then {
+            if (!GVAR(EnableNV)) then {
+                ctrlShow [7806, false];
+                ctrlSetText [7801, ""];
+            };
+        } else {
+            ctrlShow [7805, false];
+            ctrlSetText [7800, ""];
+            ctrlShow [7806, false];
+            ctrlSetText [7801, ""];
+        };
+
+        if (!GVAR(AllowVirtualLoad)) exitWith {titleText[(localize "STR_MEU_Equipment_OptionDisabled"), "PLAIN DOWN"];};
+
+        lbClear 7803;
+
+        _profiles = profilenamespace getvariable ["bis_fnc_saveInventory_data",[]];
+
+        for "_i" from 0 to (count _profiles - 1) step 2 do {
+            _loadoutName = _profiles select _i;
+            _index = lbAdd [7803, _loadoutName];
+        };
+    };
+
+    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    case "sendLoadoutView": {
+        //TODO
+        /*
+        //List near players
+        _players = [];
+        {
+            if ((isPlayer _x) && ((ACE_Player distance _x) < 10)) {
+                _players pushBack _x;
+            };
+        } forEach playableUnits;
+
+        //Populate listbox
+        {
+            _index = lbAdd [_ctrl, name _x];
+            lbSetData [_ctrl, str(_x)]; //TODO: can get object back from call compile?
+
+        } forEach _players;
+        */
+    };
+
+    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     case "switchCamera": {
         if(GVAR(EnableCamera)) then {
             GVAR(CamPos) = nil;
@@ -722,18 +840,19 @@ switch _action do {
         _list2 = DCONTROL(IDC_RSCMEUEQUIPMENT_LIST2);
         lbClear _list2;
 
-        if (_selected == -1) exitWith { titleText[(localize "STR_MEU_Equipment_NoProfileSelected"), "PLAIN DOWN"]; };
+        if (_selected == -1) exitWith {};
 
         if (GVAR(EnablePersistence)) then {
             _loadout = profileNamespace getVariable format["meu_dev_equipment_%1", _selected];
         } else {
             _loadout = missionNamespace getVariable format["meu_dev_equipment_%1", _selected];
         };
+        
+        _textBox = DCONTROL(IDC_RSCMEUEQUIPMENT_TEXTBOX);
 
-        if (isNil {_loadout}) exitWith { ctrlSetText [7560, (localize "STR_MEU_Equipment_DefaultLoadoutName")]; };
+        if (isNil {_loadout}) exitWith { _textBox ctrlSetText (localize "STR_MEU_Equipment_DefaultLoadoutName"); };
 
         if (_type) then {
-            _textBox = DCONTROL(IDC_RSCMEUEQUIPMENT_TEXTBOX);
             _textBox ctrlSetText (_loadout select 0);
         };
 
@@ -759,14 +878,14 @@ switch _action do {
                 _name = (_info select 0);
                 if (_listItems find _name < 1) then {
                     _list2 lbAdd (format["[%1] %2", ({_x == _className} count _loadout_array), _name]);
-                    _list2 lbSetPicture [(lbSize _control)-1, (_info select 1)];
+                    _list2 lbSetPicture [(lbSize _list2)-1, (_info select 1)];
                     _listItems = _listItems + [_name];
                 };
             } else {
                 //Unit insignia
                 if (isClass (configFile >> "CfgUnitInsignia" >> _x)) then {
                     _list2 lbAdd (getText(configFile >> "CfgUnitInsignia" >> _x >> "displayName"));
-                    _list2 lbSetPicture [(lbSize _control)-1, getText(configFile >> "CfgUnitInsignia" >> _x >> "texture")];
+                    _list2 lbSetPicture [(lbSize _list2) - 1, getText(configFile >> "CfgUnitInsignia" >> _x >> "texture")];
                 };
             };
         } forEach _loadout_array;
@@ -774,33 +893,33 @@ switch _action do {
 
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     case "saveProfile": {
-		private ["_textBox", "_title", "_list", "_selected", "_profile", "_loadout"];
+        private ["_textBox", "_title", "_list", "_selected", "_profile", "_loadout"];
 
-		_textBox = DCONTROL(IDC_RSCMEUEQUIPMENT_TEXTBOX);
-		_title = ctrlText _textBox;
-		
-		_list = DCONTROL(IDC_RSCMEUEQUIPMENT_LIST1);
-		_selected = lbCurSel _list;
+        _textBox = DCONTROL(IDC_RSCMEUEQUIPMENT_TEXTBOX);
+        _title = ctrlText _textBox;
+        
+        _list = DCONTROL(IDC_RSCMEUEQUIPMENT_LIST1);
+        _selected = lbCurSel _list;
 
-		if (_selected == -1) exitWith { titleText[localize("STR_MEU_Equipment_NoProfileSelected"), "PLAIN DOWN"]; };
-		
-		_profile = format["meu_dev_equipment_%1", _selected];
+        if (_selected == -1) exitWith { titleText[localize("STR_MEU_Equipment_NoProfileSelected"), "PLAIN DOWN"]; };
+        
+        _profile = format["meu_dev_equipment_%1", _selected];
 
-		_loadout = [ACE_Player] call EFUNC(main,getUnitLoadout);
-		_loadout = [_loadout, [_title], 0] call BIS_fnc_arrayInsert;
-		_loadout pushBack (call EFUNC(main,getAllRadiosSettings));
+        _loadout = [ACE_Player] call EFUNC(main,getUnitLoadout);
+        _loadout = [_loadout, [_title], 0] call BIS_fnc_arrayInsert;
+        _loadout pushBack (call EFUNC(main,getAllRadiosSettings));
 
-		if (GVAR(EnablePersistence)) then {
-			profileNameSpace setVariable [_profile, _loadout];
-			saveProfileNamespace;
-		} else {
-			missionNamespace setVariable [_profile, _loadout];
-		};
+        if (GVAR(EnablePersistence)) then {
+            profileNameSpace setVariable [_profile, _loadout];
+            saveProfileNamespace;
+        } else {
+            missionNamespace setVariable [_profile, _loadout];
+        };
 
-		["showProfile", true] call FUNC(equipmentUI);
+        ["showProfile", true] call FUNC(equipmentUI);
     };
-	
-	//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     case "loadProfile": {
         private ["_list", "_selected", "_loadout", "_playerLoadout", "_radioSettings"];
 
@@ -876,8 +995,8 @@ switch _action do {
             titleText[format["%1:\n%2", localize "STR_MEU_Equipment_LoadoutDeleted", (missionNamespace getVariable _profile) select 0], "PLAIN DOWN"];
             missionNamespace setVariable[_profile, nil];
         };
-		
-		["showProfile", false] call FUNC(equipmentUI);
+        
+        ["showProfile", false] call FUNC(equipmentUI);
     };
 
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -890,7 +1009,7 @@ switch _action do {
         _list2 = DCONTROL(IDC_RSCMEUEQUIPMENT_LIST2);
         lbClear _list2;
 
-        if (_selected == -1) exitWith { titleText[(localize "STR_MEU_Equipment_NoProfileSelected"), "PLAIN DOWN"]; };
+        if (_selected == -1) exitWith {};
 
         _virtualInventory = (profileNamespace getVariable ["bis_fnc_saveInventory_data", []]) select ((2 * _selected) + 1);
         _loadout = [_virtualInventory] call EFUNC(main,convertVirtualLoadout);
@@ -912,7 +1031,7 @@ switch _action do {
                 _name = (_info select 0);
                 if (_listItems find _name < 1) then {
                     _list2 lbAdd (format["[%1] %2",({_x == _className} count _loadout_array),_name]);
-                    _list2 lbSetPicture [(lbSize _control)-1, (_info select 1)];
+                    _list2 lbSetPicture [(lbSize _list2) - 1, (_info select 1)];
                     _listItems = _listItems + [_name];
                 };
             };
@@ -950,7 +1069,7 @@ switch _action do {
         _list2 = DCONTROL(IDC_RSCMEUEQUIPMENT_LIST2);
         lbClear _list2;
 
-        if (_selected == -1) exitWith {titleText[(localize "STR_MEU_Equipment_NoProfileSelected"), "PLAIN DOWN"];};
+        if (_selected == -1) exitWith {};
 
         _defaultLoadout = GVAR(DefaultProfiles) select _selected;
         _loadout = + _defaultLoadout;
@@ -972,7 +1091,7 @@ switch _action do {
                 _name = (_info select 0);
                 if (_listItems find _name < 1) then {
                     _list2 lbAdd (format["[%1] %2",({_x == _className} count _loadout_array),_name]);
-                    _list2 lbSetPicture [(lbSize _control)-1, (_info select 1)];
+                    _list2 lbSetPicture [(lbSize _list2) - 1, (_info select 1)];
                     _listItems = _listItems + [_name];
                 };
             };

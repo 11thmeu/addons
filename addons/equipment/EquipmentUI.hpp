@@ -290,7 +290,7 @@ class RscMEU_Equipment {
         class Button_Exit: MEU_gui_Button {
             idc = -1;
             text = "";
-            toolTip = "$STR_MEU_Equipment_EquipmentExit";
+            toolTip = "TODO";
             action = "closeDialog 0;";
             colorBackground[] = {0,0,0,0};
             colorBackground2[] = {0,0,0,0};
@@ -345,7 +345,7 @@ class RscMEU_Equipment {
         };
 		class List2: MEU_gui_ListBox {
             idc = IDC_RSCMEUEQUIPMENT_LIST2;
-            rowHeight = 0.08;
+            rowHeight = 0.04;
             text = "";
             sizeEx = 0.032;
             x = 0.04;
@@ -353,7 +353,7 @@ class RscMEU_Equipment {
             w = 0.55;
             h = 0.72;
         };
-		class TextBox: MEU_Base {
+		class TextBox: MEU_gui_Base {
             idc = IDC_RSCMEUEQUIPMENT_TEXTBOX;
             text = "$STR_MEU_Equipment_EquipmentCustomName";
             x = 0.06;
