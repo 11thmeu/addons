@@ -12,3 +12,4 @@
 #endif
 
 #include "\z\meu\addons\main\script_macros.hpp"
+#include "\z\meu\addons\equipment\script_macros_ui.hpp"

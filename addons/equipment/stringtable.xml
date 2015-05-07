@@ -313,6 +313,10 @@
 			<English>Class</English>
 			<Spanish>Clase</Spanish>
 		</Key>
+		<Key ID="STR_MEU_Equipment_EquipmentAdd">
+			<English>Add</English>
+			<Spanish>Añadir</Spanish>
+		</Key>
 		<Key ID="STR_MEU_Equipment_EquipmentAddTT">
 			<English>Previous container items are lost</English>
 			<Spanish>Los objetos contenidos se perderan</Spanish>
@@ -396,14 +400,6 @@
 		<Key ID="STR_MEU_Equipment_LoadoutPasteError">
 			<English>Error in the loadout format</English>
 			<Spanish>Error en el formato del perfil</Spanish>
-		</Key>
-		<Key ID="STR_MEU_Main_ModulePersonalData_name">
-			<English>Personal Data</English>
-			<Spanish>Datos personales</Spanish>
-		</Key>
-		<Key ID="STR_MEU_Main_ModulePersonalData_desc">
-			<English>Enables the use of personal data, setting all personal data from CfgMEUPlayer</English>
-			<Spanish>Activa el uso de datos personales, configurando los datos personales de CfgMEUPlayer</Spanish>
 		</Key>
 		<Key ID="STR_MEU_Equipment_MedicInsignia">
 			<English>Medic</English>

@@ -24,7 +24,7 @@ _this = [_this,1,[]] call BIS_fnc_param;
 switch _mode do {
     ///////////////////////////////////////////////////////////////////////////////////////////
     case "Init": {
-        _display = GETUVAR(EquipmentDialog,displayNull);
+        _display = GETUVAR(GVAR(EquipmentDisplay),displayNull);
         GVAR(Mouse) = [0,0];
         GVAR(Buttons) = [[],[]];
         _center = ACE_Player;

@@ -18,7 +18,7 @@
 #include "script_component.hpp"
 
 private ["_logic", "_units", "_activated"];
-private ["_action", "_type", "_presets", "_presetsArray", "_info", "_classnames", "_presetsOnly", "_insignias", "_users", "_camera", "_nv", "_saveLoad", "_defaultProfiles", "_personalData", "_persistent", "_loadVR", "_condition"];
+private ["_action", "_type", "_presets", "_presetsArray", "_info", "_classnames", "_presetsOnly", "_insignias", "_users", "_camera", "_nv", "_saveLoad", "_defaultProfiles", "_persistent", "_loadVR", "_condition"];
 
 _logic = _this select 0;
 _units = _this select 1;
@@ -41,7 +41,6 @@ _presetsOnly = GETVAR(_logic,PresetsOnly,false);
 _insignias = GETVAR(_logic,Insignias,true);
 _users = call compile (GETVAR(_logic,Users,'[]'));
 _defaultProfiles = GETVAR(_logic,DefaultProfiles,true);
-_personalData = GETVAR(_logic,PersonalData,true);
 _loadVR = GETVAR(_logic,LoadVR,true);
 
 if (typeName _presetsArray != "ARRAY") then { _presetsArray = []; };
@@ -58,7 +57,7 @@ if (typeName _users != "ARRAY") then { _users = []; };
 
         _x addAction [MEU_TEXT_RED(_action), 
         {["open",_this] call FUNC(equipmentUI)}, 
-        [_type, _camera, _nv, _saveLoad, _persistent, _presets, _presetsArray, _info, _classnames, _presetsOnly, _insignias, _defaultProfiles, _personalData, _loadVR],
+        [_type, _camera, _nv, _saveLoad, _persistent, _presets, _presetsArray, _info, _classnames, _presetsOnly, _insignias, _defaultProfiles, _loadVR],
         1.5, true, true, "", _condition];
 
         _x setVariable [format["MEU_Equipment_Action_%1", _type], false, false];
