@@ -11,7 +11,7 @@
  * Example:
  * [unit] call FUNC(getUnitLoadout)
  *
- * Public: [YES]
+ * Public: [Yes]
  */
 #include "script_component.hpp"
 
@@ -54,6 +54,16 @@ if (count (getArray (configFile >> "CfgWeapons" >> _binocular >> "magazines")) !
             };
         };
     } forEach weaponsItems _unit;
+};
+
+//Check for ACE earplugs
+if (GETVAR(_unit,ACE_hasEarPlugsIn,false)) then {
+    switch true do {
+        case (_unit canAddItemToUniform "ACE_EarPlugs"): { _unit addItemToUniform "ACE_EarPlugs"; };
+        case (_unit canAddItemToVest "ACE_EarPlugs"): { _unit addItemToVest "ACE_EarPlugs"; };
+        case (_unit canAddItemToBackpack "ACE_EarPlugs"): { _unit addItemToBackpack "ACE_EarPlugs"; };
+        default {};
+    };
 };
 
 _insignia = [_unit] call BIS_fnc_getUnitInsignia; 
