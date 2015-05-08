@@ -2,7 +2,7 @@
 
 class CfgPatches {
     class ADDON {
-        units[] = {};
+        units[] = {"MEU_ModuleEquipment"};
         weapons[] = {};
         requiredVersion = REQUIRED_VERSION;
         requiredAddons[] = {"meu_main"};
@@ -13,4 +13,6 @@ class CfgPatches {
 };
 
 #include "CfgEventHandlers.hpp"
+#include "CfgMEUEquipment.hpp"
+#include "CfgVehicles.hpp"
 #include "EquipmentUI.hpp"

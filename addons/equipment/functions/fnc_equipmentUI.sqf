@@ -66,12 +66,9 @@ switch _action do {
 
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     case "createDialog": {
+        private ["_buttonCamera", "_buttonNV", "_buttonSave", "_buttonLoad", "_buttonLoadDefault", "_buttonLoadVR"];
+             
         createDialog "RscMEU_Equipment";
-
-        //Set config title
-         private ["_title", "_buttonCamera", "_buttonNV", "_buttonSave", "_buttonLoad", "_buttonLoadDefault", "_buttonLoadVR"];
-        _title = DCONTROL(IDC_RSCMEUEQUIPMENT_TITLE);
-        _title ctrlSetText format["%1 - [%2]", localize "STR_MEU_Equipment_ModuleEquipment_Action_defaultValue", GVAR(ConfigType)];
 
         //Camera
         if (GVAR(EnableCamera)) then {
@@ -81,40 +78,32 @@ switch _action do {
             //Disable NV
             if (!GVAR(EnableNV)) then {
                 _buttonNV = DCONTROL(IDC_RSCMEUEQUIPMENT_BUTTONNV);
-                _buttonNV ctrlShow false;
                 _buttonNV ctrlSetTooltip "DISABLED"; //TODO LOCALIZE
             };
-
         } else {
             //Disable buttons
             _buttonCamera = DCONTROL(IDC_RSCMEUEQUIPMENT_BUTTONCAMERA);
-            _buttonCamera ctrlShow false;
             _buttonCamera ctrlSetTooltip "DISABLED"; //TODO LOCALIZE
             _buttonNV = DCONTROL(IDC_RSCMEUEQUIPMENT_BUTTONNV);
-            _buttonNV ctrlShow false;
             _buttonNV ctrlSetTooltip "DISABLED"; //TODO LOCALIZE
         };
 
         //Save/Load system
         if (!GVAR(EnableSaveLoad)) then {
             _buttonSave = DCONTROL(IDC_RSCMEUEQUIPMENT_BUTTONSAVE);
-            _buttonSave ctrlShow false;
             _buttonSave ctrlSetTooltip "DISABLED"; //TODO LOCALIZE
             _buttonLoad = DCONTROL(IDC_RSCMEUEQUIPMENT_BUTTONLOAD);
-            _buttonLoad ctrlShow false;
             _buttonLoad ctrlSetTooltip "DISABLED"; //TODO LOCALIZE
         };
 
         //Default profiles
         if (!GVAR(EnableDefaultProfiles)) then {
             _buttonLoadDefault = DCONTROL(IDC_RSCMEUEQUIPMENT_BUTTONLOADDEFAULT);
-            _buttonLoadDefault ctrlShow false;
             _buttonLoadDefault ctrlSetTooltip "DISABLED"; //TODO LOCALIZE
         };
 
         if (!GVAR(AllowVirtualLoad)) then {
             _buttonLoadVR = DCONTROL(IDC_RSCMEUEQUIPMENT_BUTTONLOADVR);
-            _buttonLoadVR ctrlShow false;
             _buttonLoadVR ctrlSetTooltip "DISABLED"; //TODO LOCALIZE
         };
 
@@ -123,7 +112,11 @@ switch _action do {
 
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     case "equipmentView": {
-        private ["_list1_title", "_list1", "_labelType", "_comboType", "_labelSide", "_comboSide", "_buttonEquip", "_buttonReplace", "_types"];
+        private ["_title", "_list1_title", "_list1", "_labelType", "_comboType", "_labelSide", "_comboSide", "_buttonEquip", "_buttonReplace", "_types"];
+        
+        //Set config title
+        _title = DCONTROL(IDC_RSCMEUEQUIPMENT_TITLE);
+        _title ctrlSetText format["%1 - [%2]", localize "STR_MEU_Equipment_ModuleEquipment_Action_defaultValue", GVAR(ConfigType)];
 
         //Set display elements
         _list1_title = DCONTROL(IDC_RSCMEUEQUIPMENT_LIST1_TITLE);
@@ -534,7 +527,7 @@ switch _action do {
 
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     case "switchNV": {
-        if (GVAR(EnableCamera)) then {
+        if (GVAR(EnableCamera) && GVAR(EnableNV)) then {
             if (GVAR(NV)) then {
                 camUseNVG false;
                 GVAR(NV) = false;
@@ -542,6 +535,8 @@ switch _action do {
                 camUseNVG true;
                 GVAR(NV) = true;
             };
+        } else {
+            titleText[(localize "STR_MEU_Equipment_OptionDisabled"), "PLAIN DOWN"];
         };
     };
 
