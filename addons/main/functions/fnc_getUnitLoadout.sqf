@@ -41,7 +41,7 @@ _handgunItems = handGunItems _unit;
 
 //Containers items
 _uniformItems = if (_uniform != "") then { uniformItems _unit } else { [] };
-_vestItems = if (_vestItems != "") then { vestItems _unit } else { [] };
+_vestItems = if (_vest != "") then { vestItems _unit } else { [] };
 _backpackItems = if (_backpack != "") then { backPackItems _unit } else { [] };
 
 //Check for laser batteries
