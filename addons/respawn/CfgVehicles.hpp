@@ -89,7 +89,7 @@ class CfgVehicles {
         scope = 2;
         displayName = "$STR_MEU_Respawn_JIP_Name";
         icon = PATHTOF(UI\Icon_Module_JipTeleport_ca.paa);
-        category = "MEU_modules";
+        category = "MEU_Modules";
         function = QFUNC(moduleJipTeleport);
         functionPriority = 0;
         isGlobal = 1;
