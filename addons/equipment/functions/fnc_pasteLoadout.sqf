@@ -21,8 +21,8 @@ _loadout = call compile _loadoutStr;
 
 //If no parse errors, set loadout
 if ((typeName _loadout) == "ARRAY") then {
-	_loadout call EFUNC(main,setPlayerLoadout);
-	titleText[(localize "STR_MEU_Equipment_LoadoutPasted"), "PLAIN DOWN"];
+    _loadout call EFUNC(main,setPlayerLoadout);
+    titleText[(localize "STR_MEU_Equipment_LoadoutPasted"), "PLAIN DOWN"];
 } else {
-	titleText[(localize "STR_MEU_Equipment_LoadoutPasteError"), "PLAIN DOWN"];
+    titleText[(localize "STR_MEU_Equipment_LoadoutPasteError"), "PLAIN DOWN"];
 };
