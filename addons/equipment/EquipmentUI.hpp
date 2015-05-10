@@ -8,8 +8,8 @@ class RscText;
 class RscMEU_Equipment {
     idd = -1;
     movingEnable = 1;
-    onLoad = "['onLoad',_this] call meu_equipment_fnc_equipmentUI;";
-    onUnload = "['onUnload',''] call meu_equipment_fnc_equipmentUI;";
+    onLoad = QUOTE([ARR_2('onLoad',_this)] call FUNC(equipmentUI););
+    onUnload = QUOTE([ARR_2('onUnload','')] call FUNC(equipmentUI););
 
     class controlsBackground {
         //Common controls
@@ -177,7 +177,7 @@ class RscMEU_Equipment {
             colorBackground[] = {0,0,0,0};
             colorBackground2[] = {0,0,0,0};
             colorBackgroundFocused[] = {0,0,0,0};
-            onButtonClick = "['equipmentView',''] call meu_equipment_fnc_equipmentUI;";
+            onButtonClick = QUOTE([ARR_2('equipmentView','')] call FUNC(equipmentUI););
             x = 0.005;
             y = -0.001;
             w = 0.064;
@@ -190,7 +190,7 @@ class RscMEU_Equipment {
             colorBackground[] = {0,0,0,0};
             colorBackground2[] = {0,0,0,0};
             colorBackgroundFocused[] = {0,0,0,0};
-            onButtonClick = "['switchCamera',''] call meu_equipment_fnc_equipmentUI;";
+            onButtonClick = QUOTE([ARR_2('switchCamera','')] call FUNC(equipmentUI););
             x = 0.075;
             y = -0.001;
             w = 0.064;
@@ -203,7 +203,7 @@ class RscMEU_Equipment {
             colorBackground[] = {0,0,0,0};
             colorBackground2[] = {0,0,0,0};
             colorBackgroundFocused[] = {0,0,0,0};
-            onButtonClick = "['switchNV',''] call meu_equipment_fnc_equipmentUI;";
+            onButtonClick = QUOTE([ARR_2('switchNV','')] call FUNC(equipmentUI););
             x = 0.145;
             y = -0.001;
             w = 0.064;
@@ -216,7 +216,7 @@ class RscMEU_Equipment {
             colorBackground[] = {0,0,0,0};
             colorBackground2[] = {0,0,0,0};
             colorBackgroundFocused[] = {0,0,0,0};
-            onButtonClick = "['saveView',''] call meu_equipment_fnc_equipmentUI;";
+            onButtonClick = QUOTE([ARR_2('saveView','')] call FUNC(equipmentUI););
             x = 0.215;
             y = -0.001;
             w = 0.064;
@@ -229,7 +229,7 @@ class RscMEU_Equipment {
             colorBackground[] = {0,0,0,0};
             colorBackground2[] = {0,0,0,0};
             colorBackgroundFocused[] = {0,0,0,0};
-            onButtonClick = "['loadView',''] call meu_equipment_fnc_equipmentUI;";
+            onButtonClick = QUOTE([ARR_2('loadView','')] call FUNC(equipmentUI););
             x = 0.285;
             y = -0.001;
             w = 0.064;
@@ -242,7 +242,7 @@ class RscMEU_Equipment {
             colorBackground[] = {0,0,0,0};
             colorBackground2[] = {0,0,0,0};
             colorBackgroundFocused[] = {0,0,0,0};
-            onButtonClick = "['loadDefaultView',''] call meu_equipment_fnc_equipmentUI;";
+            onButtonClick = QUOTE([ARR_2('loadDefaultView','')] call FUNC(equipmentUI););
             x = 0.355;
             y = -0.001;
             w = 0.064;
@@ -255,7 +255,7 @@ class RscMEU_Equipment {
             colorBackground[] = {0,0,0,0};
             colorBackground2[] = {0,0,0,0};
             colorBackgroundFocused[] = {0,0,0,0};
-            onButtonClick = "['loadVRView',''] call meu_equipment_fnc_equipmentUI;";
+            onButtonClick = QUOTE([ARR_2('loadVRView','')] call FUNC(equipmentUI););
             x = 0.425;
             y = -0.001;
             w = 0.064;
@@ -268,7 +268,7 @@ class RscMEU_Equipment {
             colorBackground[] = {0,0,0,0};
             colorBackground2[] = {0,0,0,0};
             colorBackgroundFocused[] = {0,0,0,0};
-            onButtonClick = "call meu_equipment_fnc_copyLoadout;";
+            onButtonClick = QUOTE(call FUNC(copyLoadout););
             x = 0.495;
             y = -0.001;
             w = 0.064;
@@ -281,7 +281,7 @@ class RscMEU_Equipment {
             colorBackground[] = {0,0,0,0};
             colorBackground2[] = {0,0,0,0};
             colorBackgroundFocused[] = {0,0,0,0};
-            onButtonClick = "call meu_equipment_fnc_pasteLoadout;";
+            onButtonClick = QUOTE(call FUNC(pasteLoadout););
             x = 0.565;
             y = -0.001;
             w = 0.064;
@@ -291,7 +291,7 @@ class RscMEU_Equipment {
             idc = -1;
             text = "";
             toolTip = "TODO";
-            action = "closeDialog 0;";
+            action = QUOTE(closeDialog 0;);
             colorBackground[] = {0,0,0,0};
             colorBackground2[] = {0,0,0,0};
             colorBackgroundFocused[] = {0,0,0,0};
