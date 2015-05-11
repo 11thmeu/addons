@@ -151,7 +151,7 @@ class RscTitles {
             class Key1: MEU_gui_SpectatorKeyText {
                 idc = -1;
                 y = safeZoneY + safeZoneH/2 - 0.1;
-                text = "←/→";
+                text = "<-/->";
             };
             class Desc1: MEU_gui_SpectatorKeyDescription {
                 idc = -1;
