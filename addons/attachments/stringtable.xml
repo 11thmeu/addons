@@ -115,8 +115,8 @@
       <Spanish>Array con la lista de accesorios permitidos en la forma ['accesorio', 'accesorio']</Spanish>
     </Key>
     <Key ID="STR_MEU_Attachments_Name">
-      <English>Attachments box</English>
-      <Spanish>Caja de accesorios</Spanish>
+      <English>Attachments module</English>
+      <Spanish>Modulo de accesorios</Spanish>
     </Key>
     <Key ID="STR_MEU_Attachments_Description">
       <English>Synchronize an object with this module to add the attachments action</English>
