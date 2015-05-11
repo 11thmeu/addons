@@ -173,7 +173,7 @@ class RscMEU_Equipment {
         class Button_Equipment: MEU_gui_Button {
             idc = -1;
             text = "";
-            toolTip = "TODO";
+            toolTip = "$STR_MEU_Equipment_ButtonEquipment";
             colorBackground[] = {0,0,0,0};
             colorBackground2[] = {0,0,0,0};
             colorBackgroundFocused[] = {0,0,0,0};
@@ -186,7 +186,7 @@ class RscMEU_Equipment {
         class Button_Camera: MEU_gui_Button {
             idc = IDC_RSCMEUEQUIPMENT_BUTTONCAMERA;
             text = "";
-            toolTip = "$STR_MEU_Equipment_ModuleEquipment_Camera_name";
+            toolTip = "$STR_MEU_Equipment_ButtonCamera";
             colorBackground[] = {0,0,0,0};
             colorBackground2[] = {0,0,0,0};
             colorBackgroundFocused[] = {0,0,0,0};
@@ -199,7 +199,7 @@ class RscMEU_Equipment {
         class Button_NV: MEU_gui_Button {
             idc = IDC_RSCMEUEQUIPMENT_BUTTONNV;
             text = "";
-            toolTip = "$STR_MEU_Equipment_ModuleEquipment_NightVision_name";
+            toolTip = "$STR_MEU_Equipment_ButtonNV";
             colorBackground[] = {0,0,0,0};
             colorBackground2[] = {0,0,0,0};
             colorBackgroundFocused[] = {0,0,0,0};
@@ -212,7 +212,7 @@ class RscMEU_Equipment {
         class Button_Save: MEU_gui_Button {
             idc = IDC_RSCMEUEQUIPMENT_BUTTONSAVE;
             text = "";
-            toolTip = "$STR_MEU_Equipment_EquipmentSave";
+            toolTip = "$STR_MEU_Equipment_ButtonSave";
             colorBackground[] = {0,0,0,0};
             colorBackground2[] = {0,0,0,0};
             colorBackgroundFocused[] = {0,0,0,0};
@@ -225,7 +225,7 @@ class RscMEU_Equipment {
         class Button_Load: MEU_gui_Button {
             idc = IDC_RSCMEUEQUIPMENT_BUTTONLOAD;
             text = "";
-            toolTip = "$STR_MEU_Equipment_EquipmentLoad";
+            toolTip = "$STR_MEU_Equipment_ButtonLoad";
             colorBackground[] = {0,0,0,0};
             colorBackground2[] = {0,0,0,0};
             colorBackgroundFocused[] = {0,0,0,0};
@@ -238,7 +238,7 @@ class RscMEU_Equipment {
         class Button_LoadDefault: MEU_gui_Button {
             idc = IDC_RSCMEUEQUIPMENT_BUTTONLOADDEFAULT;
             text = "";
-            toolTip = "$STR_MEU_Equipment_EquipmentLoadDefault";
+            toolTip = "$STR_MEU_Equipment_ButtonLoadDefault";
             colorBackground[] = {0,0,0,0};
             colorBackground2[] = {0,0,0,0};
             colorBackgroundFocused[] = {0,0,0,0};
@@ -251,7 +251,7 @@ class RscMEU_Equipment {
         class Button_LoadVR: MEU_gui_Button {
             idc = IDC_RSCMEUEQUIPMENT_BUTTONLOADVR;
             text = "";
-            toolTip = "$STR_MEU_Equipment_EquipmentLoadVR";
+            toolTip = "$STR_MEU_Equipment_ButtonLoadVR";
             colorBackground[] = {0,0,0,0};
             colorBackground2[] = {0,0,0,0};
             colorBackgroundFocused[] = {0,0,0,0};
@@ -264,7 +264,7 @@ class RscMEU_Equipment {
         class Button_CopyToClipboard: MEU_gui_Button {
             idc = IDC_RSCMEUEQUIPMENT_BUTTONCLIPBOARDCOPY;
             text = "";
-            toolTip = "$STR_MEU_Equipment_EquipmentCopyToClipboard";
+            toolTip = "$STR_MEU_Equipment_ButtonCopyToClipboard";
             colorBackground[] = {0,0,0,0};
             colorBackground2[] = {0,0,0,0};
             colorBackgroundFocused[] = {0,0,0,0};
@@ -277,7 +277,7 @@ class RscMEU_Equipment {
         class Button_PasteFromClipboard: MEU_gui_Button {
             idc = IDC_RSCMEUEQUIPMENT_BUTTONCLIPBOARDPASTE;
             text = "";
-            toolTip = "$STR_MEU_Equipment_EquipmentCopyFromClipboard";
+            toolTip = "$STR_MEU_Equipment_ButtonPasteFromClipboard";
             colorBackground[] = {0,0,0,0};
             colorBackground2[] = {0,0,0,0};
             colorBackgroundFocused[] = {0,0,0,0};
@@ -290,7 +290,7 @@ class RscMEU_Equipment {
         class Button_Exit: MEU_gui_Button {
             idc = -1;
             text = "";
-            toolTip = "TODO";
+            toolTip = "$STR_MEU_Equipment_ButtonExit";
             action = QUOTE(closeDialog 0;);
             colorBackground[] = {0,0,0,0};
             colorBackground2[] = {0,0,0,0};
@@ -355,7 +355,7 @@ class RscMEU_Equipment {
         };
         class TextBox: MEU_gui_Base {
             idc = IDC_RSCMEUEQUIPMENT_TEXTBOX;
-            text = "$STR_MEU_Equipment_EquipmentCustomName";
+            text = "$STR_MEU_Equipment_ProfileName";
             x = 0.06;
             y = 0.69;
             w = 0.3766;

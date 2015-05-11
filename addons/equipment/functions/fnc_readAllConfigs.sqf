@@ -18,7 +18,7 @@
 private ["_config", "_children", "_name", "_uniforms", "_vests", "_backpacks", "_headgear", "_goggles", "_presets"];
 
 _configs = (configFile >> "CfgMEUEquipment") call BIS_fnc_returnchildren;
-GVAR(ConfigType) = localize "STR_MEU_Equipment_ModuleEquipment_Type_all";
+GVAR(ConfigType) = localize "STR_MEU_Equipment_TypeAll";
 
 //Initialize arrays
 GVAR(UniformFactions) = [];

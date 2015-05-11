@@ -13,7 +13,7 @@ class CfgVehicles {
         author = "$STR_MEU_Main_MEUTeam";
         _generalMacro = "MEU_ModuleEquipment";
         scope = 2;
-        displayName = "$STR_MEU_Equipment_ModuleEquipment_name";
+        displayName = "$STR_MEU_Equipment_Name";
         icon = PATHTOF(UI\Icon_Module_Equipment_ca.paa);
         category = "MEU_Modules";
         function = QFUNC(moduleEquipment);
@@ -24,49 +24,14 @@ class CfgVehicles {
 
         class Arguments {
             class Action {
-                displayName = "$STR_MEU_Equipment_ModuleEquipment_Action_name";
-                description = "$STR_MEU_Equipment_ModuleEquipment_Action_description";
-                defaultValue = "$STR_MEU_Equipment_ModuleEquipment_Action_defaultValue";
+                displayName = "$STR_MEU_Equipment_ActionName";
+                description = "$STR_MEU_Equipment_ActionDesc";
+                defaultValue = "$STR_MEU_Equipment_ActionDefault";
             };
 
-            class Type {
-                displayName = "$STR_MEU_Equipment_ModuleEquipment_Type_name";
-                description = "$STR_MEU_Equipment_ModuleEquipment_Type_description";
-                typeName = "STRING";
-                class values {
-                    class all {
-                        name = "$STR_MEU_Equipment_ModuleEquipment_Type_all";
-                        value = "all";
-                        default = 1;
-                    };
-                    class blufor {
-                        name = "$STR_MEU_Equipment_ModuleEquipment_Type_blufor";
-                        value = "blufor";
-                    };
-                    class opfor { 
-                        name = "$STR_MEU_Equipment_ModuleEquipment_Type_opfor";
-                        value = "opfor";
-                    };
-                    class indfor {
-                        name = "$STR_MEU_Equipment_ModuleEquipment_Type_indfor";
-                        value = "indfor";
-                    };
-                    class civil {
-                        name = "$STR_MEU_Equipment_ModuleEquipment_Type_civil";
-                        value = "civil";
-                    };
-                };
-            };
-
-            class Users {
-                displayName = "$STR_MEU_Equipment_ModuleEquipment_Users_name";
-                description = "$STR_MEU_Equipment_ModuleEquipment_Users_description";
-                defaultValue = "[]";
-            };
-
-            class Info {
-                displayName = "$STR_MEU_Equipment_ModuleEquipment_Info_name";
-                description = "$STR_MEU_Equipment_ModuleEquipment_Info_description";
+            class HideObject {
+                displayName = "$STR_MEU_Equipment_HideObjectName";
+                description = "$STR_MEU_Equipment_HideObjectDesc";
                 typeName = "BOOL";
                 class values {
                     class Yes {
@@ -81,101 +46,45 @@ class CfgVehicles {
                 };
             };
 
-            class Classnames {
-                displayName = "$STR_MEU_Equipment_ModuleEquipment_Classnames_name";
-                description = "$STR_MEU_Equipment_ModuleEquipment_Classnames_description";
-                typeName = "BOOL";
+            class Type {
+                displayName = "$STR_MEU_Equipment_TypeName";
+                description = "$STR_MEU_Equipment_TypeDesc";
+                typeName = "STRING";
                 class values {
-                    class Yes {
-                        name = "$STR_MEU_Main_Yes";
-                        value = 1;
-                    };
-                    class No {
-                        name = "$STR_MEU_Main_No";
-                        value = 0;
+                    class all {
+                        name = "$STR_MEU_Equipment_TypeAll";
+                        value = "all";
                         default = 1;
+                    };
+                    class blufor {
+                        name = "$str_a3_cfgfactionclasses_blu_f0";
+                        value = "blufor";
+                    };
+                    class opfor { 
+                        name = "$str_a3_cfgfactionclasses_opf_f0";
+                        value = "opfor";
+                    };
+                    class indfor {
+                        name = "$str_a3_cfgfactionclasses_ind_f0";
+                        value = "indfor";
+                    };
+                    class civil {
+                        name = "$str_a3_cfgfactionclasses_civ_f0";
+                        value = "civil";
                     };
                 };
             };
 
-            class Presets {
-                displayName = "$STR_MEU_Equipment_ModuleEquipment_Presets_name";
-                description = "$STR_MEU_Equipment_ModuleEquipment_Presets_description";
-                typeName = "BOOL";
-                class values {
-                    class Yes {
-                        name = "$STR_MEU_Main_Yes";
-                        value = 1;
-                        default = 1;
-                    };
-                    class No {
-                        name = "$STR_MEU_Main_No";
-                        value = 0;
-                    };
-                };
-            };
-
-            class PresetsOnly {
-                displayName = "$STR_MEU_Equipment_ModuleEquipment_OnlyPresets_name";
-                description = "$STR_MEU_Equipment_ModuleEquipment_OnlyPresets_description";
-                typeName = "BOOL";
-                class values {
-                    class Yes {
-                        name = "$STR_MEU_Main_Yes";
-                        value = 1;
-                    };
-                    class No {
-                        name = "$STR_MEU_Main_No";
-                        value = 0;
-                        default = 1;
-                    };
-                };
-            };
-
-            class PresetsArray {
-                displayName = "$STR_MEU_Equipment_ModuleEquipment_AdditionalPresets_name";
-                description = "$STR_MEU_Equipment_ModuleEquipment_AdditionalPresets_description";
+            class Users {
+                displayName = "$STR_MEU_Equipment_UsersName";
+                description = "$STR_MEU_Equipment_UsersDesc";
                 defaultValue = "[]";
-            };
-
-            class LoadVR {
-                displayName = "$STR_MEU_Equipment_ModuleEquipment_Virtual_name";
-                description = "$STR_MEU_Equipment_ModuleEquipment_Virtual_description";
-                typeName = "BOOL";
-                class values {
-                    class Yes {
-                        name = "$STR_MEU_Main_Yes";
-                        value = 1;
-                        default = 1;
-                    };
-                    class No {
-                        name = "$STR_MEU_Main_No";
-                        value = 0;
-                    };
-                };
-            };
-
-            class Insignias {
-                displayName = "$STR_MEU_Equipment_ModuleEquipment_AllowInsignias_name";
-                description = "$STR_MEU_Equipment_ModuleEquipment_AllowInsignias_desc";
-                typeName = "BOOL";
-                class values {
-                    class Yes {
-                        name = "$STR_MEU_Main_Yes";
-                        value = 1;
-                        default = 1;
-                    };
-                    class No {
-                        name = "$STR_MEU_Main_No";
-                        value = 0;
-                    };
-                };
             };
 
             class Camera
             {
-                displayName = "$STR_MEU_Equipment_ModuleEquipment_Camera_name";
-                description = "$STR_MEU_Equipment_ModuleEquipment_Camera_description";
+                displayName = "$STR_MEU_Equipment_CameraName";
+                description = "$STR_MEU_Equipment_CameraDesc";
                 typeName = "BOOL";
                 class values {
                     class Yes {
@@ -191,8 +100,8 @@ class CfgVehicles {
             };
 
             class NV {
-                displayName = "$STR_MEU_Equipment_ModuleEquipment_NightVision_name";
-                description = "$STR_MEU_Equipment_ModuleEquipment_NightVision_description";
+                displayName = "$STR_MEU_Equipment_NVName";
+                description = "$STR_MEU_Equipment_NVDesc";
                 typeName = "BOOL";
                 class values {
                     class Yes {
@@ -207,9 +116,83 @@ class CfgVehicles {
                 };
             };
 
+            class Info {
+                displayName = "$STR_MEU_Equipment_InfoName";
+                description = "$STR_MEU_Equipment_InfoDesc";
+                typeName = "BOOL";
+                class values {
+                    class Yes {
+                        name = "$STR_MEU_Main_Yes";
+                        value = 1;
+                        default = 1;
+                    };
+                    class No {
+                        name = "$STR_MEU_Main_No"; 
+                        value = 0;
+                    };
+                };
+            };
+
+            class Classnames {
+                displayName = "$STR_MEU_Equipment_ClassnamesName";
+                description = "$STR_MEU_Equipment_ClassnamesDesc";
+                typeName = "BOOL";
+                class values {
+                    class Yes {
+                        name = "$STR_MEU_Main_Yes";
+                        value = 1;
+                    };
+                    class No {
+                        name = "$STR_MEU_Main_No";
+                        value = 0;
+                        default = 1;
+                    };
+                };
+            };
+
+            class Presets {
+                displayName = "$STR_MEU_Equipment_PresetsName";
+                description = "$STR_MEU_Equipment_PresetsDesc";
+                typeName = "BOOL";
+                class values {
+                    class Yes {
+                        name = "$STR_MEU_Main_Yes";
+                        value = 1;
+                        default = 1;
+                    };
+                    class No {
+                        name = "$STR_MEU_Main_No";
+                        value = 0;
+                    };
+                };
+            };
+
+            class PresetsOnly {
+                displayName = "$STR_MEU_Equipment_PresetsOnlyName";
+                description = "$STR_MEU_Equipment_PresetsOnlyDesc";
+                typeName = "BOOL";
+                class values {
+                    class Yes {
+                        name = "$STR_MEU_Main_Yes";
+                        value = 1;
+                    };
+                    class No {
+                        name = "$STR_MEU_Main_No";
+                        value = 0;
+                        default = 1;
+                    };
+                };
+            };
+
+            class PresetsArray {
+                displayName = "$STR_MEU_Equipment_PresetsArrayName";
+                description = "$STR_MEU_Equipment_PresetsArrayDesc";
+                defaultValue = "[]";
+            };
+
             class SaveLoad {
-                displayName = "$STR_MEU_Equipment_ModuleEquipment_Saving_name";
-                description = "$STR_MEU_Equipment_ModuleEquipment_Saving_description";
+                displayName = "$STR_MEU_Equipment_SaveLoadName";
+                description = "$STR_MEU_Equipment_SaveLoadDesc";
                 typeName = "BOOL";
                 class values {
                     class Yes {
@@ -224,9 +207,26 @@ class CfgVehicles {
                 };
             };
 
-            class DefaultProfiles {
-                displayName = "$STR_MEU_Equipment_ModuleEquipment_DefaultProfiles_name";
-                description = "$STR_MEU_Equipment_ModuleEquipment_DefaultProfiles_description";
+            class Persistent {
+                displayName = "$STR_MEU_Equipment_PersistenceName";
+                description = "$STR_MEU_Equipment_PersistenceDesc";
+                typeName = "BOOL";
+                class values {
+                    class yes {
+                        name = "$STR_MEU_Equipment_PersistenceYes";
+                        value = 1;
+                        default = 1;
+                    };
+                    class no {
+                        name = "$STR_MEU_Equipment_PersistenceNo";
+                        value = 0;
+                    };
+                };
+            };
+
+            class LoadVR {
+                displayName = "$STR_MEU_Equipment_LoadVRName";
+                description = "$STR_MEU_Equipment_LoadVRDesc";
                 typeName = "BOOL";
                 class values {
                     class Yes {
@@ -241,18 +241,35 @@ class CfgVehicles {
                 };
             };
 
-            class Persistent {
-                displayName = "$STR_MEU_Equipment_ModuleEquipment_Persistence_name";
-                description = "$STR_MEU_Equipment_ModuleEquipment_Persistence_description";
+            class DefaultProfiles {
+                displayName = "$STR_MEU_Equipment_DefaultProfilesName";
+                description = "$STR_MEU_Equipment_DefaultProfilesDesc";
                 typeName = "BOOL";
                 class values {
-                    class yes {
-                        name = "$STR_MEU_Equipment_ModuleEquipment_Persistence_yes";
+                    class Yes {
+                        name = "$STR_MEU_Main_Yes";
                         value = 1;
                         default = 1;
                     };
-                    class no {
-                        name = "$STR_MEU_Equipment_ModuleEquipment_Persistence_no";
+                    class No {
+                        name = "$STR_MEU_Main_No";
+                        value = 0;
+                    };
+                };
+            };
+
+            class Insignias {
+                displayName = "$STR_MEU_Equipment_InsigniasName";
+                description = "$STR_MEU_Equipment_InsigniasDesc";
+                typeName = "BOOL";
+                class values {
+                    class Yes {
+                        name = "$STR_MEU_Main_Yes";
+                        value = 1;
+                        default = 1;
+                    };
+                    class No {
+                        name = "$STR_MEU_Main_No";
                         value = 0;
                     };
                 };
@@ -260,11 +277,11 @@ class CfgVehicles {
         };
 
         class ModuleDescription: ModuleDescription {
-            description = "$STR_MEU_Equipment_ModuleEquipment_desc";
+            description = "$STR_MEU_Equipment_Description";
             sync[] = {"ReammoBox_F"};
 
             class ReammoBox_F {
-                description[] = {"$STR_MEU_Equipment_ModuleEquipment_sync1", "$STR_MEU_Equipment_ModuleEquipment_sync2"};
+                description[] = {"$STR_MEU_Equipment_Sync1", "$STR_MEU_Equipment_Sync2"};
                 position = 0;
                 direction = 0;
                 optional = 0;

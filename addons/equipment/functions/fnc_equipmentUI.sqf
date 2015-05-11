@@ -38,22 +38,25 @@ switch _action do {
         private ["_actionParams", "_type"];
         _actionParams = _params select 3;
         _type = _actionParams select 0;
+        
+        GVAR(Object) = _params select 0;
 
         GVAR(Updating) = false;
         GVAR(Reset) = true;
-        
-        GVAR(EnableCamera) = _actionParams select 1;
-        GVAR(EnableNV) = _actionParams select 2;
-        GVAR(EnableSaveLoad) = _actionParams select 3;
-        GVAR(EnablePersistence) = _actionParams select 4;
-        GVAR(EnablePresets) = _actionParams select 5;
-        GVAR(PresetsArray) = _actionParams select 6;
-        GVAR(Info) = _actionParams select 7;
-        GVAR(Classnames) = _actionParams select 8;
-        GVAR(PresetsOnly) = _actionParams select 9;
-        GVAR(Insignias) = _actionParams select 10;
-        GVAR(EnableDefaultProfiles) = _actionParams select 11;
-        GVAR(AllowVirtualLoad) = _actionParams select 12;
+
+        GVAR(HideObject) = _actionParams select 1;
+        GVAR(EnableCamera) = _actionParams select 2;
+        GVAR(EnableNV) = _actionParams select 3;
+        GVAR(EnableSaveLoad) = _actionParams select 4;
+        GVAR(EnablePersistence) = _actionParams select 5;
+        GVAR(EnablePresets) = _actionParams select 6;
+        GVAR(PresetsArray) = _actionParams select 7;
+        GVAR(Info) = _actionParams select 8;
+        GVAR(Classnames) = _actionParams select 9;
+        GVAR(PresetsOnly) = _actionParams select 10;
+        GVAR(Insignias) = _actionParams select 11;
+        GVAR(EnableDefaultProfiles) = _actionParams select 12;
+        GVAR(AllowVirtualLoad) = _actionParams select 13;
 
         //Only update configuration if it's the first use or a different configuration was called
         if(isNil QGVAR(ConfigID) || {GVAR(ConfigID) != _type}) exitWith {
@@ -78,33 +81,38 @@ switch _action do {
             //Disable NV
             if (!GVAR(EnableNV)) then {
                 _buttonNV = DCONTROL(IDC_RSCMEUEQUIPMENT_BUTTONNV);
-                _buttonNV ctrlSetTooltip "DISABLED"; //TODO LOCALIZE
+                _buttonNV ctrlSetTooltip (localize "STR_MEU_Equipment_ButtonDisabled");
+            };
+
+            //Hide object if option is enabled
+            if (GVAR(HideObject)) then {
+                GVAR(Object) hideObject true;
             };
         } else {
             //Disable buttons
             _buttonCamera = DCONTROL(IDC_RSCMEUEQUIPMENT_BUTTONCAMERA);
-            _buttonCamera ctrlSetTooltip "DISABLED"; //TODO LOCALIZE
+            _buttonCamera ctrlSetTooltip (localize "STR_MEU_Equipment_ButtonDisabled");
             _buttonNV = DCONTROL(IDC_RSCMEUEQUIPMENT_BUTTONNV);
-            _buttonNV ctrlSetTooltip "DISABLED"; //TODO LOCALIZE
+            _buttonNV ctrlSetTooltip (localize "STR_MEU_Equipment_ButtonDisabled");
         };
 
         //Save/Load system
         if (!GVAR(EnableSaveLoad)) then {
             _buttonSave = DCONTROL(IDC_RSCMEUEQUIPMENT_BUTTONSAVE);
-            _buttonSave ctrlSetTooltip "DISABLED"; //TODO LOCALIZE
+            _buttonSave ctrlSetTooltip (localize "STR_MEU_Equipment_ButtonDisabled");
             _buttonLoad = DCONTROL(IDC_RSCMEUEQUIPMENT_BUTTONLOAD);
-            _buttonLoad ctrlSetTooltip "DISABLED"; //TODO LOCALIZE
+            _buttonLoad ctrlSetTooltip (localize "STR_MEU_Equipment_ButtonDisabled");
         };
 
         //Default profiles
         if (!GVAR(EnableDefaultProfiles)) then {
             _buttonLoadDefault = DCONTROL(IDC_RSCMEUEQUIPMENT_BUTTONLOADDEFAULT);
-            _buttonLoadDefault ctrlSetTooltip "DISABLED"; //TODO LOCALIZE
+            _buttonLoadDefault ctrlSetTooltip (localize "STR_MEU_Equipment_ButtonDisabled");
         };
 
         if (!GVAR(AllowVirtualLoad)) then {
             _buttonLoadVR = DCONTROL(IDC_RSCMEUEQUIPMENT_BUTTONLOADVR);
-            _buttonLoadVR ctrlSetTooltip "DISABLED"; //TODO LOCALIZE
+            _buttonLoadVR ctrlSetTooltip (localize "STR_MEU_Equipment_ButtonDisabled");
         };
 
         ["equipmentView", ""] call FUNC(equipmentUI);
@@ -116,14 +124,14 @@ switch _action do {
         
         //Set config title
         _title = DCONTROL(IDC_RSCMEUEQUIPMENT_TITLE);
-        _title ctrlSetText format["%1 - [%2]", localize "STR_MEU_Equipment_ModuleEquipment_Action_defaultValue", GVAR(ConfigType)];
+        _title ctrlSetText format["%1 - [%2]", localize "STR_MEU_Equipment_ActionDefault", GVAR(ConfigType)];
 
         //Set display elements
         _list1_title = DCONTROL(IDC_RSCMEUEQUIPMENT_LIST1_TITLE);
         _list1_title ctrlSetPosition [0.04, 0.09, 0.55, 0.04];
         _list1_title ctrlCommit CTRLANIMATIONTIME;
         _list1_title ctrlShow true;
-        _list1_title ctrlSetText (localize "STR_MEU_Equipment_EquipmentList"); //TODO
+        _list1_title ctrlSetText (localize "STR_MEU_Equipment_LabelEquipment");
 
         _list1 = DCONTROL(IDC_RSCMEUEQUIPMENT_LIST1);
         _list1 ctrlRemoveAllEventHandlers "LBSelChanged";
@@ -137,7 +145,7 @@ switch _action do {
         _labelType ctrlSetPosition [0.65, 0.3, 0.10, 0.04];
         _labelType ctrlCommit CTRLANIMATIONTIME;
         _labelType ctrlShow true;
-        _labelType ctrlSetText (localize "STR_MEU_Equipment_EquipmentType"); //TODO
+        _labelType ctrlSetText (localize "STR_MEU_Equipment_LabelType");
 
         _comboType = DCONTROL(IDC_RSCMEUEQUIPMENT_COMBO1);
         lbClear _comboType;
@@ -151,7 +159,7 @@ switch _action do {
         _labelSide ctrlSetPosition [0.65, 0.4, 0.10, 0.04];
         _labelSide ctrlCommit CTRLANIMATIONTIME;
         _labelSide ctrlShow true;
-        _labelSide ctrlSetText (localize "STR_MEU_Equipment_EquipmentClass"); //TODO
+        _labelSide ctrlSetText (localize "STR_MEU_Equipment_LabelFaction");
 
         _comboSide = DCONTROL(IDC_RSCMEUEQUIPMENT_COMBO2);
         lbClear _comboSide;
@@ -165,8 +173,8 @@ switch _action do {
         _buttonEquip ctrlSetPosition [0.65, 0.60, 0.1562, 0.04];
         _buttonEquip ctrlCommit CTRLANIMATIONTIME;
         _buttonEquip ctrlShow true;
-        _buttonEquip ctrlSetText (localize "STR_MEU_Equipment_EquipmentAdd"); //TODO 
-        _buttonEquip ctrlSetTooltip (localize "STR_MEU_Equipment_EquipmentAddTT"); //TODO
+        _buttonEquip ctrlSetText (localize "STR_MEU_Equipment_ButtonAdd");
+        _buttonEquip ctrlSetTooltip (localize "STR_MEU_Equipment_ButtonAddTooltip");
         _buttonEquip ctrlRemoveAllEventHandlers "ButtonClick";
         _buttonEquip ctrlAddEventHandler ["ButtonClick", {['addItem',[false]] call FUNC(equipmentUI);}];
 
@@ -174,8 +182,8 @@ switch _action do {
         _buttonReplace ctrlSetPosition [0.65, 0.66, 0.1562, 0.04];
         _buttonReplace ctrlCommit CTRLANIMATIONTIME;
         _buttonReplace ctrlShow true;
-        _buttonReplace ctrlSetText (localize "STR_MEU_Equipment_EquipmentReplace"); //TODO 
-        _buttonReplace ctrlSetTooltip (localize "STR_MEU_Equipment_EquipmentReplaceTT"); //TODO
+        _buttonReplace ctrlSetText (localize "STR_MEU_Equipment_ButtonReplace");
+        _buttonReplace ctrlSetTooltip (localize "STR_MEU_Equipment_ButtonReplaceTooltip");
         _buttonReplace ctrlRemoveAllEventHandlers "ButtonClick";
         _buttonReplace ctrlAddEventHandler ["ButtonClick", {['addItem',[true]] call FUNC(equipmentUI);}];
 
@@ -189,26 +197,26 @@ switch _action do {
         //Add item types
         _types = [];
         if (!GVAR(PresetsOnly)) then {
-            _types set[0, localize "STR_MEU_Equipment_ModuleEquipment_Uniforms"];
-            _types set[1, localize "STR_MEU_Equipment_ModuleEquipment_Vests"];
-            _types set[2, localize "STR_MEU_Equipment_ModuleEquipment_Backpacks"];
-            _types set[3, localize "STR_MEU_Equipment_ModuleEquipment_Headgear"];
+            _types set[0, localize "STR_MEU_Equipment_Uniforms"];
+            _types set[1, localize "STR_MEU_Equipment_Vests"];
+            _types set[2, localize "STR_MEU_Equipment_Backpacks"];
+            _types set[3, localize "STR_MEU_Equipment_Headgear"];
         };
-        _types pushBack (localize "STR_MEU_Equipment_ModuleEquipment_Goggles");
+        _types pushBack (localize "STR_MEU_Equipment_Goggles");
 
         if (GVAR(Insignias)) then {
-            _types pushBack (localize "STR_MEU_Equipment_ModuleEquipment_Insignias");
+            _types pushBack (localize "STR_MEU_Equipment_Insignias");
         };
 
         if (GVAR(EnablePresets)) then {
-            _types pushBack (localize "STR_MEU_Equipment_ModuleEquipment_Presets");
+            _types pushBack (localize "STR_MEU_Equipment_Presets");
         };
 
         { _comboType lbAdd _x; } forEach _types;
         _comboType lbSetCurSel 0;
 
         //Add factions from configuration
-        _comboSide lbAdd localize "STR_MEU_Equipment_ModuleEquipment_Type_all";
+        _comboSide lbAdd (localize "STR_MEU_Equipment_TypeAll");
         { _comboSide lbAdd _x; } forEach GVAR(UniformFactions);
         _comboSide lbSetCurSel 0;
     };
@@ -225,13 +233,13 @@ switch _action do {
         _list1_title ctrlSetPosition [0.04, 0.09, 0.4, 0.04];
         _list1_title ctrlCommit CTRLANIMATIONTIME;
         _list1_title ctrlShow true;
-        _list1_title ctrlSetText (localize "STR_MEU_Equipment_EquipmentProfiles"); //TODO
+        _list1_title ctrlSetText (localize "STR_MEU_Equipment_LabelProfiles");
 
         _list1 = DCONTROL(IDC_RSCMEUEQUIPMENT_LIST1);
         _list1 ctrlRemoveAllEventHandlers "LBSelChanged";
         lbClear _list1;
         _list1 lbSetCurSel -1;
-        _list1 ctrlSetPosition [0.04, 0.13, 0.4, 0.65]; //TODO
+        _list1 ctrlSetPosition [0.04, 0.13, 0.4, 0.65];
         _list1 ctrlCommit CTRLANIMATIONTIME;
         _list1 ctrlShow true;
         _list1 ctrlAddEventHandler ["LBSelChanged", {['showProfile',true] call FUNC(equipmentUI);}];
@@ -240,12 +248,12 @@ switch _action do {
         _list2_title ctrlSetPosition [0.46, 0.09, 0.4, 0.04];
         _list2_title ctrlCommit CTRLANIMATIONTIME;
         _list2_title ctrlShow true;
-        _list2_title ctrlSetText (localize "STR_MEU_Equipment_EquipmentContents"); //TODO
+        _list2_title ctrlSetText (localize "STR_MEU_Equipment_LabelContents");
 
         _list2 = DCONTROL(IDC_RSCMEUEQUIPMENT_LIST2);
         lbClear _list2;
         _list2 lbSetCurSel -1;
-        _list2 ctrlSetPosition [0.46, 0.13, 0.4, 0.65]; //TODO
+        _list2 ctrlSetPosition [0.46, 0.13, 0.4, 0.65];
         _list2 ctrlCommit CTRLANIMATIONTIME;
         _list2 ctrlShow true;
 
@@ -253,13 +261,13 @@ switch _action do {
         _textBox ctrlSetPosition [0.04, 0.83, 0.55, 0.04];
         _textBox ctrlCommit CTRLANIMATIONTIME;
         _textBox ctrlShow true;
-        _textBox ctrlSetText (localize "STR_MEU_Equipment_EquipmentCustomName"); //TODO
+        _textBox ctrlSetText (localize "STR_MEU_Equipment_ProfileName");
 
         _buttonSave = DCONTROL(IDC_RSCMEUEQUIPMENT_BUTTON1);
         _buttonSave ctrlSetPosition [0.65, 0.83, 0.1562, 0.04];
         _buttonSave ctrlCommit CTRLANIMATIONTIME;
         _buttonSave ctrlShow true;
-        _buttonSave ctrlSetText (localize "STR_MEU_Equipment_EquipmentSave"); //TODO 
+        _buttonSave ctrlSetText (localize "STR_MEU_Equipment_ButtonSave");
         _buttonSave ctrlSetTooltip "";
         _buttonSave ctrlRemoveAllEventHandlers "ButtonClick";
         _buttonSave ctrlAddEventHandler ["ButtonClick", {['saveProfile',''] call FUNC(equipmentUI);}];
@@ -276,7 +284,7 @@ switch _action do {
                 if (!isNil {profileNamespace getVariable format["meu_dev_equipment_%1", _i]}) then {
                     _list1 lbAdd (format["%1", (profileNamespace getVariable format["meu_dev_equipment_%1", _i]) select 0]);
                 } else {
-                    _list1 lbAdd (format["%1 %2", (localize "STR_MEU_Equipment_DefaultLoadoutTitle"), _i + 1]);
+                    _list1 lbAdd (format["%1 %2", (localize "STR_MEU_Equipment_DefaultLoadoutName"), _i + 1]);
                 };
             };
         } else {
@@ -284,7 +292,7 @@ switch _action do {
                 if (!isNil {missionNamespace getVariable format["meu_dev_equipment_%1", _i]}) then {
                     _list1 lbAdd (format["%1",(missionNamespace getVariable format["meu_dev_equipment_%1", _i]) select 0]);
                 } else {
-                    _list1 lbAdd (format["%1 %2",(localize "STR_MEU_Equipment_DefaultLoadoutTitle"), _i + 1]);
+                    _list1 lbAdd (format["%1 %2",(localize "STR_MEU_Equipment_DefaultLoadoutName"), _i + 1]);
                 };
             };
         };
@@ -304,13 +312,13 @@ switch _action do {
         _list1_title ctrlSetPosition [0.04, 0.09, 0.4, 0.04];
         _list1_title ctrlCommit CTRLANIMATIONTIME;
         _list1_title ctrlShow true;
-        _list1_title ctrlSetText (localize "STR_MEU_Equipment_EquipmentProfiles"); //TODO
+        _list1_title ctrlSetText (localize "STR_MEU_Equipment_LabelProfiles");
 
         _list1 = DCONTROL(IDC_RSCMEUEQUIPMENT_LIST1);
         _list1 ctrlRemoveAllEventHandlers "LBSelChanged";
         lbClear _list1;
         _list1 lbSetCurSel -1;
-        _list1 ctrlSetPosition [0.04, 0.13, 0.4, 0.65]; //TODO
+        _list1 ctrlSetPosition [0.04, 0.13, 0.4, 0.65];
         _list1 ctrlCommit CTRLANIMATIONTIME;
         _list1 ctrlShow true;
         _list1 ctrlAddEventHandler ["LBSelChanged", {['showProfile',false] call FUNC(equipmentUI);}];
@@ -319,12 +327,12 @@ switch _action do {
         _list2_title ctrlSetPosition [0.46, 0.09, 0.4, 0.04];
         _list2_title ctrlCommit CTRLANIMATIONTIME;
         _list2_title ctrlShow true;
-        _list2_title ctrlSetText (localize "STR_MEU_Equipment_EquipmentContents"); //TODO
+        _list2_title ctrlSetText (localize "STR_MEU_Equipment_LabelContents");
 
         _list2 = DCONTROL(IDC_RSCMEUEQUIPMENT_LIST2);
         lbClear _list2;
         _list2 lbSetCurSel -1;
-        _list2 ctrlSetPosition [0.46, 0.13, 0.4, 0.65]; //TODO
+        _list2 ctrlSetPosition [0.46, 0.13, 0.4, 0.65];
         _list2 ctrlCommit CTRLANIMATIONTIME;
         _list2 ctrlShow true;
 
@@ -332,7 +340,7 @@ switch _action do {
         _buttonLoad ctrlSetPosition [0.45, 0.83, 0.1562, 0.04];
         _buttonLoad ctrlCommit CTRLANIMATIONTIME;
         _buttonLoad ctrlShow true;
-        _buttonLoad ctrlSetText (localize "STR_MEU_Equipment_EquipmentLoad"); //TODO 
+        _buttonLoad ctrlSetText (localize "STR_MEU_Equipment_ButtonLoad");
         _buttonLoad ctrlSetTooltip "";
         _buttonLoad ctrlRemoveAllEventHandlers "ButtonClick";
         _buttonLoad ctrlAddEventHandler ["ButtonClick", {['loadProfile',''] call FUNC(equipmentUI);}];
@@ -341,7 +349,7 @@ switch _action do {
         _buttonDelete ctrlSetPosition [0.65, 0.83, 0.1562, 0.04];
         _buttonDelete ctrlCommit CTRLANIMATIONTIME;
         _buttonDelete ctrlShow true;
-        _buttonDelete ctrlSetText (localize "STR_MEU_Equipment_EquipmentDelete"); //TODO 
+        _buttonDelete ctrlSetText (localize "STR_MEU_Equipment_ButtonDelete"); 
         _buttonDelete ctrlSetTooltip "";
         _buttonDelete ctrlRemoveAllEventHandlers "ButtonClick";
         _buttonDelete ctrlAddEventHandler ["ButtonClick", {['deleteProfile',''] call FUNC(equipmentUI);}];
@@ -358,7 +366,7 @@ switch _action do {
                 if (!isNil {profileNamespace getVariable format["meu_dev_equipment_%1", _i]}) then {
                     _list1 lbAdd (format["%1", (profileNamespace getVariable format["meu_dev_equipment_%1", _i]) select 0]);
                 } else {
-                    _list1 lbAdd (format["%1 %2", (localize "STR_MEU_Equipment_DefaultLoadoutTitle"), _i + 1]);
+                    _list1 lbAdd (format["%1 %2", (localize "STR_MEU_Equipment_DefaultLoadoutName"), _i + 1]);
                 };
             };
         } else {
@@ -366,7 +374,7 @@ switch _action do {
                 if (!isNil {missionNamespace getVariable format["meu_dev_equipment_%1", _i]}) then {
                     _list1 lbAdd (format["%1",(missionNamespace getVariable format["meu_dev_equipment_%1", _i]) select 0]);
                 } else {
-                    _list1 lbAdd (format["%1 %2",(localize "STR_MEU_Equipment_DefaultLoadoutTitle"), _i + 1]);
+                    _list1 lbAdd (format["%1 %2",(localize "STR_MEU_Equipment_DefaultLoadoutName"), _i + 1]);
                 };
             };
         };
@@ -386,13 +394,13 @@ switch _action do {
         _list1_title ctrlSetPosition [0.04, 0.09, 0.4, 0.04];
         _list1_title ctrlCommit CTRLANIMATIONTIME;
         _list1_title ctrlShow true;
-        _list1_title ctrlSetText (localize "STR_MEU_Equipment_EquipmentProfiles"); //TODO
+        _list1_title ctrlSetText (localize "STR_MEU_Equipment_LabelProfiles");
 
         _list1 = DCONTROL(IDC_RSCMEUEQUIPMENT_LIST1);
         _list1 ctrlRemoveAllEventHandlers "LBSelChanged";
         lbClear _list1;
         _list1 lbSetCurSel -1;
-        _list1 ctrlSetPosition [0.04, 0.13, 0.4, 0.65]; //TODO
+        _list1 ctrlSetPosition [0.04, 0.13, 0.4, 0.65];
         _list1 ctrlCommit CTRLANIMATIONTIME;
         _list1 ctrlShow true;
         _list1 ctrlAddEventHandler ["LBSelChanged", {['showProfile',false] call FUNC(equipmentUI);}];
@@ -401,12 +409,12 @@ switch _action do {
         _list2_title ctrlSetPosition [0.46, 0.09, 0.4, 0.04];
         _list2_title ctrlCommit CTRLANIMATIONTIME;
         _list2_title ctrlShow true;
-        _list2_title ctrlSetText (localize "STR_MEU_Equipment_EquipmentContents"); //TODO
+        _list2_title ctrlSetText (localize "STR_MEU_Equipment_LabelContents");
 
         _list2 = DCONTROL(IDC_RSCMEUEQUIPMENT_LIST2);
         lbClear _list2;
         _list2 lbSetCurSel -1;
-        _list2 ctrlSetPosition [0.46, 0.13, 0.4, 0.65]; //TODO
+        _list2 ctrlSetPosition [0.46, 0.13, 0.4, 0.65];
         _list2 ctrlCommit CTRLANIMATIONTIME;
         _list2 ctrlShow true;
 
@@ -414,7 +422,7 @@ switch _action do {
         _buttonLoad ctrlSetPosition [0.65, 0.83, 0.1562, 0.04];
         _buttonLoad ctrlCommit CTRLANIMATIONTIME;
         _buttonLoad ctrlShow true;
-        _buttonLoad ctrlSetText (localize "STR_MEU_Equipment_EquipmentLoad"); //TODO 
+        _buttonLoad ctrlSetText (localize "STR_MEU_Equipment_ButtonLoad");
         _buttonLoad ctrlSetTooltip "";
         _buttonLoad ctrlRemoveAllEventHandlers "ButtonClick";
         _buttonLoad ctrlAddEventHandler ["ButtonClick", {['loadDefaultProfile',''] call FUNC(equipmentUI);}];
@@ -437,7 +445,7 @@ switch _action do {
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     case "loadVRView": {
 
-        if (!GVAR(AllowVirtualLoad)) exitWith { titleText[(localize "STR_MEU_Equipment_OptionDisabled"), "PLAIN DOWN"]; };
+        if (!GVAR(AllowVirtualLoad)) exitWith { titleText[(localize "STR_MEU_Equipment_MessageDisabled"), "PLAIN DOWN"]; };
 
         private ["_list1_title", "_list1", "_list2_title", "_list2", "_buttonLoad", "_profiles"];
 
@@ -446,13 +454,13 @@ switch _action do {
         _list1_title ctrlSetPosition [0.04, 0.09, 0.4, 0.04];
         _list1_title ctrlCommit CTRLANIMATIONTIME;
         _list1_title ctrlShow true;
-        _list1_title ctrlSetText (localize "STR_MEU_Equipment_EquipmentProfiles"); //TODO
+        _list1_title ctrlSetText (localize "STR_MEU_Equipment_LabelProfiles");
 
         _list1 = DCONTROL(IDC_RSCMEUEQUIPMENT_LIST1);
         _list1 ctrlRemoveAllEventHandlers "LBSelChanged";
         lbClear _list1;
         _list1 lbSetCurSel -1;
-        _list1 ctrlSetPosition [0.04, 0.13, 0.4, 0.65]; //TODO
+        _list1 ctrlSetPosition [0.04, 0.13, 0.4, 0.65];
         _list1 ctrlCommit CTRLANIMATIONTIME;
         _list1 ctrlShow true;
         _list1 ctrlAddEventHandler ["LBSelChanged", {['showVRProfile',false] call FUNC(equipmentUI);}];
@@ -461,12 +469,12 @@ switch _action do {
         _list2_title ctrlSetPosition [0.46, 0.09, 0.4, 0.04];
         _list2_title ctrlCommit CTRLANIMATIONTIME;
         _list2_title ctrlShow true;
-        _list2_title ctrlSetText (localize "STR_MEU_Equipment_EquipmentContents"); //TODO
+        _list2_title ctrlSetText (localize "STR_MEU_Equipment_LabelContents");
 
         _list2 = DCONTROL(IDC_RSCMEUEQUIPMENT_LIST2);
         lbClear _list2;
         _list2 lbSetCurSel -1;
-        _list2 ctrlSetPosition [0.46, 0.13, 0.4, 0.65]; //TODO
+        _list2 ctrlSetPosition [0.46, 0.13, 0.4, 0.65];
         _list2 ctrlCommit CTRLANIMATIONTIME;
         _list2 ctrlShow true;
 
@@ -474,7 +482,7 @@ switch _action do {
         _buttonLoad ctrlSetPosition [0.65, 0.83, 0.1562, 0.04];
         _buttonLoad ctrlCommit CTRLANIMATIONTIME;
         _buttonLoad ctrlShow true;
-        _buttonLoad ctrlSetText (localize "STR_MEU_Equipment_EquipmentLoad"); //TODO 
+        _buttonLoad ctrlSetText (localize "STR_MEU_Equipment_ButtonLoad");
         _buttonLoad ctrlSetTooltip "";
         _buttonLoad ctrlRemoveAllEventHandlers "ButtonClick";
         _buttonLoad ctrlAddEventHandler ["ButtonClick", {['loadVRProfile',''] call FUNC(equipmentUI);}];
@@ -521,7 +529,7 @@ switch _action do {
             ["Exit"] call FUNC(camera);
             ["Init"] call FUNC(camera);
         } else {
-            titleText[(localize "STR_MEU_Equipment_OptionDisabled"), "PLAIN DOWN"];
+            titleText[(localize "STR_MEU_Equipment_MessageDisabled"), "PLAIN DOWN"];
         };
     };
 
@@ -536,7 +544,7 @@ switch _action do {
                 GVAR(NV) = true;
             };
         } else {
-            titleText[(localize "STR_MEU_Equipment_OptionDisabled"), "PLAIN DOWN"];
+            titleText[(localize "STR_MEU_Equipment_MessageDisabled"), "PLAIN DOWN"];
         };
     };
 
@@ -579,7 +587,7 @@ switch _action do {
 
         lbClear _list;
         lbClear _comboSide;
-        _comboSide lbAdd (localize "STR_MEU_Equipment_ModuleEquipment_Type_all");
+        _comboSide lbAdd (localize "STR_MEU_Equipment_TypeAll");
 
         if (GVAR(PresetsOnly)) then { _type = _type + 4; };
 
@@ -612,7 +620,7 @@ switch _action do {
                     
                     _tooltip = "";
                     if (GVAR(Info)) then {
-                        _tooltip = (localize "STR_MEU_Equipment_ModuleEquipment_Capacity") + ": " + ([getText (_vconfig >> "ItemInfo" >> "containerClass"), "Supply", ""] call CBA_fnc_replace);
+                        _tooltip = (localize "STR_MEU_Equipment_ItemCapacity") + ": " + ([getText (_vconfig >> "ItemInfo" >> "containerClass"), "Supply", ""] call CBA_fnc_replace);
                     };
                     if (GVAR(Classnames)) then { _tooltip = _tooltip + format[" [%1]", _x]; };    
                     if (_tooltip != "") then { _list lbSetTooltip [_index, _tooltip]; };
@@ -641,8 +649,8 @@ switch _action do {
 
                     _tooltip = "";
                     if (GVAR(Info)) then {
-                        _tooltip = (localize "STR_MEU_Equipment_ModuleEquipment_Capacity") + ": " + ([getText (_vconfig >> "ItemInfo" >> "containerClass"), "Supply", ""] call CBA_fnc_replace);
-                        _tooltip = _tooltip + format[" | %1: %2", localize "STR_MEU_Equipment_ModuleEquipment_Protection", getNumber (_vconfig >> "ItemInfo" >> "armor")];
+                        _tooltip = (localize "STR_MEU_Equipment_ItemCapacity") + ": " + ([getText (_vconfig >> "ItemInfo" >> "containerClass"), "Supply", ""] call CBA_fnc_replace);
+                        _tooltip = _tooltip + format[" | %1: %2", localize "STR_MEU_Equipment_ItemProtection", getNumber (_vconfig >> "ItemInfo" >> "armor")];
                     };
                     if (GVAR(Classnames)) then { _tooltip = _tooltip + format[" [%1]", _x]; };    
                     if (_tooltip != "") then { _list lbSetTooltip [_index, _tooltip]; };
@@ -671,7 +679,7 @@ switch _action do {
 
                     _tooltip = "";
                     if (GVAR(Info)) then { 
-                        _tooltip = format["%1: %2", localize "STR_MEU_Equipment_ModuleEquipment_Capacity", getNumber (_vconfig >> "maximumLoad")]; 
+                        _tooltip = format["%1: %2", localize "STR_MEU_Equipment_ItemCapacity", getNumber (_vconfig >> "maximumLoad")]; 
                     };
                     if (GVAR(Classnames)) then { _tooltip = _tooltip + format[" [%1]", _x]; };    
                     if (_tooltip != "") then { _list lbSetTooltip[_index, _tooltip]; };
@@ -700,7 +708,7 @@ switch _action do {
 
                     _tooltip = "";
                     if (GVAR(Info)) then { 
-                        _tooltip = format["%1: %2", localize "STR_MEU_Equipment_ModuleEquipment_Protection", getNumber (_vconfig >> "ItemInfo" >> "armor")]; 
+                        _tooltip = format["%1: %2", localize "STR_MEU_Equipment_ItemProtection", getNumber (_vconfig >> "ItemInfo" >> "armor")]; 
                     };
                     if (GVAR(Classnames)) then { _tooltip = _tooltip + format[" [%1]", _x]; };    
                     if (_tooltip != "") then { _list lbSetTooltip [_index, _tooltip]; };
@@ -783,7 +791,7 @@ switch _action do {
                             if (((_x select 4) != "G_Diving") && ((_x select 4) != "")) then { //TODO ADD GOGGLES TO PRESETS
                                 _protection = _protection + getNumber (configFile >> "CfgWeapons" >> (_x select 4) >> "ItemInfo" >> "armor");
                             };
-                            _tooltip = format["%1: %2 | %3: %4", localize "STR_MEU_Equipment_ModuleEquipment_Capacity", _load, localize "STR_MEU_Equipment_ModuleEquipment_Protection", _protection];
+                            _tooltip = format["%1: %2 | %3: %4", localize "STR_MEU_Equipment_ItemCapacity", _load, localize "STR_MEU_Equipment_ItemProtection", _protection];
                             _list lbSetTooltip[_index, _tooltip];
                         };
                     } forEach _x;
@@ -992,7 +1000,7 @@ switch _action do {
         _list = DCONTROL(IDC_RSCMEUEQUIPMENT_LIST1);
         _selected = lbCurSel _list;
 
-        if (_selected == -1) exitWith { titleText[localize("STR_MEU_Equipment_NoProfileSelected"), "PLAIN DOWN"]; };
+        if (_selected == -1) exitWith { titleText[localize("STR_MEU_Equipment_MessageNoProfile"), "PLAIN DOWN"]; };
         
         _profile = format["meu_dev_equipment_%1", _selected];
 
@@ -1017,12 +1025,12 @@ switch _action do {
     case "loadProfile": {
         private ["_list", "_selected", "_loadout", "_playerLoadout", "_radioSettings"];
 
-        if (!isNil {GVAR(Loading)}) exitWith {titleText[(localize "STR_MEU_Equipment_LoadNotFinished"), "PLAIN DOWN"];};
+        if (!isNil {GVAR(Loading)}) exitWith {titleText[(localize "STR_MEU_Equipment_MessageNotFinished"), "PLAIN DOWN"];};
 
         _list = DCONTROL(IDC_RSCMEUEQUIPMENT_LIST1);
         _selected = lbCurSel _list;
 
-        if (_selected == -1) exitWith {titleText[(localize "STR_MEU_Equipment_NoProfileSelected"), "PLAIN DOWN"];};
+        if (_selected == -1) exitWith {titleText[(localize "STR_MEU_Equipment_MessageNoProfile"), "PLAIN DOWN"];};
 
         if(GVAR(EnablePersistence)) then {
             _loadout = profileNamespace getVariable format["meu_dev_equipment_%1", _selected];
@@ -1031,7 +1039,7 @@ switch _action do {
             _loadout = missionNamespace getVariable format["meu_dev_equipment_%1", _selected];
         };
 
-        if (isNil {_loadout}) exitWith {titleText[(localize "STR_MEU_Equipment_ProfileDoesntExist"), "PLAIN DOWN"];};
+        if (isNil {_loadout}) exitWith {titleText[(localize "STR_MEU_Equipment_MessageNotExists"), "PLAIN DOWN"];};
 
         GVAR(Loading) = true;
 
@@ -1044,13 +1052,13 @@ switch _action do {
             _radioSettings = (_playerLoadout select 17);
 
             if ((count (_radioSettings select 0) > 0) || (count (_radioSettings select 1) > 0) || (count (_radioSettings select 2) > 0)) then {
-                titleText[(localize "STR_MEU_Equipment_LoadRadio"), "PLAIN DOWN"];
+                titleText[(localize "STR_MEU_Equipment_MessageLoadRadio"), "PLAIN DOWN"];
                 //TFAR radioToRequestCount function uses sleep, Scheduled Space has to be used
                 _radioSettings spawn {
                     sleep 5;
                     waitUntil {sleep 1; (count (false call TFAR_fnc_radioToRequestCount) == 0)};
                     _this call EFUNC(main,setAllRadiosSettings);
-                    titleText[(localize "STR_MEU_Equipment_RadiosLoaded"), "PLAIN DOWN"];
+                    titleText[(localize "STR_MEU_Equipment_MessageRadiosLoaded"), "PLAIN DOWN"];
                     GVAR(Loading) = nil;
                 };
             } else {
@@ -1068,7 +1076,7 @@ switch _action do {
         _list = DCONTROL(IDC_RSCMEUEQUIPMENT_LIST1);
         _selected = lbCurSel _list;
 
-        if (_selected == -1) exitWith { titleText[(localize "STR_MEU_Equipment_NoProfileSelected"), "PLAIN DOWN"]; };
+        if (_selected == -1) exitWith { titleText[(localize "STR_MEU_Equipment_MessageNoProfile"), "PLAIN DOWN"]; };
 
         _profile = format["meu_dev_equipment_%1", _selected];
         
@@ -1078,14 +1086,14 @@ switch _action do {
             _data = missionNamespace getVariable _profile;
         };
 
-        if (isNil {_data}) exitWith { titleText [(localize "STR_MEU_Equipment_DeleteLoadoutNotPossible"), "PLAIN DOWN"]; };
+        if (isNil {_data}) exitWith { titleText [(localize "STR_MEU_Equipment_MessageCantDelete"), "PLAIN DOWN"]; };
 
         if (GVAR(EnablePersistence)) then {
-            titleText[format["%1:\n%2", localize "STR_MEU_Equipment_LoadoutDeleted", (profileNameSpace getVariable _profile) select 0], "PLAIN DOWN"];
+            titleText[format["%1:\n%2", localize "STR_MEU_Equipment_MessageDeleted", (profileNameSpace getVariable _profile) select 0], "PLAIN DOWN"];
             profileNameSpace setVariable[_profile, nil];
             saveProfileNamespace;
         } else {
-            titleText[format["%1:\n%2", localize "STR_MEU_Equipment_LoadoutDeleted", (missionNamespace getVariable _profile) select 0], "PLAIN DOWN"];
+            titleText[format["%1:\n%2", localize "STR_MEU_Equipment_MessageDeleted", (missionNamespace getVariable _profile) select 0], "PLAIN DOWN"];
             missionNamespace setVariable[_profile, nil];
         };
 
@@ -1138,12 +1146,12 @@ switch _action do {
     case "loadVRProfile": {
         private ["_list", "_selected", "_virtualInventory", "_loadout"];
 
-        if (!isNil {GVAR(Loading)}) exitWith { titleText[(localize "STR_MEU_Equipment_LoadNotFinished"), "PLAIN DOWN"]; };
+        if (!isNil {GVAR(Loading)}) exitWith { titleText[(localize "STR_MEU_Equipment_MessageNotFinished"), "PLAIN DOWN"]; };
 
         _list = DCONTROL(IDC_RSCMEUEQUIPMENT_LIST1);
         _selected = lbCurSel _list;
 
-        if (_selected == -1) exitWith {titleText[(localize "STR_MEU_Equipment_NoProfileSelected"), "PLAIN DOWN"];};
+        if (_selected == -1) exitWith {titleText[(localize "STR_MEU_Equipment_MessageNoProfile"), "PLAIN DOWN"];};
 
         _virtualInventory = (profilenamespace getvariable ["bis_fnc_saveInventory_data",[]]) select ((2 * _selected) + 1);
         _loadout = [_virtualInventory] call EFUNC(main,convertVirtualLoadout);
@@ -1198,12 +1206,12 @@ switch _action do {
     case "loadDefaultProfile": {
         private ["_list", "_selected", "_loadout", "_playerLoadout"];
 
-        if (!isNil {GVAR(Loading)}) exitWith { titleText[(localize "STR_MEU_Equipment_LoadNotFinished"), "PLAIN DOWN"]; };
+        if (!isNil {GVAR(Loading)}) exitWith { titleText[(localize "STR_MEU_Equipment_MessageNotFinished"), "PLAIN DOWN"]; };
 
         _list = DCONTROL(IDC_RSCMEUEQUIPMENT_LIST1);
         _selected = lbCurSel _list;
 
-        if (_selected == -1) exitWith { titleText[(localize "STR_MEU_Equipment_NoProfileSelected"), "PLAIN DOWN"]; };
+        if (_selected == -1) exitWith { titleText[(localize "STR_MEU_Equipment_MessageNoProfile"), "PLAIN DOWN"]; };
 
         _loadout = GVAR(DefaultProfiles) select _selected;
 
@@ -1220,6 +1228,11 @@ switch _action do {
     case "onUnload": {
         if (GVAR(EnableCamera)) then {
             ["Exit"] call FUNC(camera);
+        };
+
+        //Hide object if option is enabled
+        if (GVAR(HideObject)) then {
+             GVAR(Object) hideObject false;
         };
     };
 };

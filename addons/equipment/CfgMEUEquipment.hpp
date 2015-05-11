@@ -1,10 +1,10 @@
 class CfgMEUEquipment {
 	class blufor {
-		displayName = "$STR_MEU_Equipment_ModuleEquipment_Type_blufor";
+		displayName = "$str_a3_cfgfactionclasses_blu_f0";
 		
 		class Uniforms {
 			class blufor {
-				displayName = "$STR_MEU_Equipment_ModuleEquipment_Type_blufor";
+				displayName = "$str_a3_cfgfactionclasses_blu_f0";
 				classes[] = {
 					"U_B_CombatUniform_mcam",
 					"U_B_CombatUniform_mcam_tshirt",
@@ -24,26 +24,26 @@ class CfgMEUEquipment {
 		
 		class Vests {
 			class generic {
-				displayName = "$STR_MEU_Equipment_ModuleEquipment_Type_generic";
+				displayName = "Generic";
 				classes[] = {};
 			};
 		};
 		
 		class Backpacks {
 			class generic {
-				displayName = "$STR_MEU_Equipment_ModuleEquipment_Type_generic";
+				displayName = "Generic";
 				classes[] = {};
 			};
 		};
 		
 		class Headgear {
 			class generic {
-				displayName = "$STR_MEU_Equipment_ModuleEquipment_Type_generic";
+				displayName = "Generic";
 				classes[] = {};
 			};
 			
 			class blufor {
-				displayName = "$STR_MEU_Equipment_ModuleEquipment_Type_blufor";
+				displayName = "$str_a3_cfgfactionclasses_blu_f0";
 				classes[] = {
 					"H_CrewHelmetHeli_B",
 					"H_HelmetCrew_B",
@@ -56,12 +56,12 @@ class CfgMEUEquipment {
 		
 		class Goggles {
 			class military {
-				displayName = "$STR_MEU_Equipment_ModuleEquipment_Type_military";
+				displayName = "Military";
 				classes[] = {};
 			};
 			
 			class civil {
-				displayName = "$STR_MEU_Equipment_ModuleEquipment_Type_civil";
+				displayName = "Civilian";
 				classes[] = {};
 			};
 		};
