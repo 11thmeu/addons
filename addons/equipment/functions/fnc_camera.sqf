@@ -76,6 +76,7 @@ switch _mode do {
         camDestroy _cam;
 
         GVAR(Camera) = nil;
+        GVAR(CamPos = nil;
         GVAR(Mouse) = nil;
         GVAR(Buttons) = nil;
         
