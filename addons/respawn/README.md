@@ -9,6 +9,14 @@ This addon includes a module designed to be used with respawn enabled (respawn =
 - Custom spectator camera using a lightly modified version of the vanilla spectator system
 
 
+## Classlist
+
+### Vehicles
+
+* MEU_ModuleRespawn
+* MEU_ModuleJipTeleport
+
+
 ## Maintainers
 
 The people responsible for merging changes to this component or answering potential questions.
