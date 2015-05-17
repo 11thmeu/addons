@@ -1,8 +1,5 @@
 class B_556x45_Ball;
 class MEU_B_556x45_M855A1EPR: B_556x45_Ball {
-	// ACE3
-	ACE_BulletMass = 4.1;
-
 	// Credits to Spartan0536
 	hit = 8.114581;
 	typicalSpeed = 905.256;
@@ -26,9 +23,6 @@ class MEU_B_556x45_M855A1EPR: B_556x45_Ball {
 };
 
 class MEU_B_556x45_Mk262Mod1: MEU_B_556x45_M855A1EPR {
-	// ACE3
-	ACE_BulletMass = 4.4;
-
 	// Credits to Spartan0536
 	hit = 11.5702505;
 	typicalSpeed = 868.68;
@@ -50,8 +44,6 @@ class MEU_B_556x45_Mk262Mod1: MEU_B_556x45_M855A1EPR {
 };
 
 class MEU_B_556x45_SimunitionFX: B_556x45_Ball {
-	// ACE
-	ACE_BulletMass = 2;
 
 	hit = 0;
 	typicalSpeed = 905.256;

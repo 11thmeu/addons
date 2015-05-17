@@ -1,8 +1,5 @@
 class B_762x51_Ball;
 class MEU_B_762x51_M80A1: B_762x51_Ball {// this should be M80A1
-	// ACE
-	ACE_BulletMass = 10;
-
 	// Credits to Spartan0536
 	hit = 9.17418487;
 	typicalSpeed = 858.012;
@@ -26,9 +23,6 @@ class MEU_B_762x51_M80A1: B_762x51_Ball {// this should be M80A1
 };
 
 class MEU_B_762x51_Mk316Mod0: B_762x51_Ball {
-	// ACE
-	ACE_BulletMass = 10;
-
 	// Credits to Spartan0536
 	hit = 14.89033142;
 	typicalSpeed = 790.956;
@@ -40,8 +34,6 @@ class MEU_B_762x51_Mk316Mod0: B_762x51_Ball {
 };
 
 class MEU_B_762x51_LapuaFMJBTSub: B_762x51_Ball {
-	// ACE
-	ACE_BulletMass = 10;
 
 	// Credits to Spartan0536
 	hit = 5.152501272;

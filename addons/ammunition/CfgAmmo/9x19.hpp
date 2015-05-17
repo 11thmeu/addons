@@ -1,7 +1,5 @@
 class B_9x21_Ball;
 class MEU_B_9x19_M882: B_9x21_Ball {
-	// ACE3
-	ACE_BulletMass = 4.5; // temporary
 
 	// Credits to Spartan0536
 	hit = 5.359214173;
@@ -31,9 +29,6 @@ class MEU_B_9x19_M882: B_9x21_Ball {
 };
 
 class MEU_B_9x19_HPP : MEU_B_9x19_M882 {
-	// ACE3
-	ACE_BulletMass = 4.5; // temporary
-
 	// Credits to Spartan0536
 	hit = 8.790347689;
 	typicalSpeed = 416;
@@ -50,9 +45,6 @@ class MEU_B_9x19_HPP : MEU_B_9x19_M882 {
 };
 
 class MEU_B_9x19_HP_S : MEU_B_9x19_HPP {
-	// ACE3
-	ACE_BulletMass = 4.5; // temporary
-
 	// Credits to Spartan0536
 	hit = 7.670762747;
 	typicalSpeed = 333;

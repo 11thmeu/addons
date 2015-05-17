@@ -1,7 +1,4 @@
 class MEU_B_45ACP_FMJ: B_9x21_Ball {
-	// ACE3
-	ACE_BulletMass = 5.1; // temporary
-
 	// Credits to Spartan0536
 	hit = 5.317573216;
 	typicalSpeed = 307.5432;
@@ -25,9 +22,6 @@ class MEU_B_45ACP_FMJ: B_9x21_Ball {
 };
 
 class MEU_B_45ACP_JHP: MEU_B_45ACP_FMJ {
-	// ACE3
-	ACE_BulletMass = 5.1; // temporary
-
 	// Credits to Spartan0536
 	hit = 9.466891709;
 	typicalSpeed = 328.8792;

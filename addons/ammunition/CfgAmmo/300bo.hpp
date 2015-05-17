@@ -1,8 +1,5 @@
 class HLC_300Blackout_Ball;
 class MEU_B_300BO_OTM: HLC_300Blackout_Ball {
-	// ACE
-	ACE_BulletMass = 9;
-
 	// Credits to Spartan0536
 	hit = 10.82971547;
 	typicalSpeed = 655;
