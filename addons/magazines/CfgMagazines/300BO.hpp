@@ -3,7 +3,7 @@ class MEU_29Rnd_STANAG300_OTM: 30Rnd_556x45_Stanag {
 
 	ammo = "MEU_B_300BO_OTM";
 	count = 29;
-	mass = 15; // need less guessing
+	mass = 16;
 
 	picture = PATHTOF(UI\m_29_300bootm_ca.paa);
 	displayName = "29Rnd .300AAC OTM Mag";
@@ -18,7 +18,7 @@ class MEU_29Rnd_STANAG300_OTM_S: MEU_29Rnd_STANAG300_OTM {
 
 	ammo = "MEU_B_300BO_OTM_S";
 	count = 29;
-	mass = 15; // need less guessing
+	mass = 16;
 
 	picture = PATHTOF(UI\m_29_300bootm_s_ca.paa);
 	displayName = "29Rnd .300AAC OTM Subsonic Mag";
