@@ -38,7 +38,7 @@ switch _action do {
         private ["_actionParams", "_type"];
         _actionParams = _params select 3;
         _type = _actionParams select 0;
-        
+
         GVAR(Object) = _params select 0;
 
         GVAR(Updating) = false;
@@ -70,7 +70,7 @@ switch _action do {
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     case "createDialog": {
         private ["_buttonCamera", "_buttonNV", "_buttonSave", "_buttonLoad", "_buttonLoadDefault", "_buttonLoadVR"];
-             
+
         createDialog "RscMEU_Equipment";
 
         //Camera
@@ -121,7 +121,7 @@ switch _action do {
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     case "equipmentView": {
         private ["_title", "_list1_title", "_list1", "_labelType", "_comboType", "_labelSide", "_comboSide", "_buttonEquip", "_buttonReplace", "_types"];
-        
+
         //Set config title
         _title = DCONTROL(IDC_RSCMEUEQUIPMENT_TITLE);
         _title ctrlSetText format["%1 - [%2]", localize "STR_MEU_Equipment_ActionDefault", GVAR(ConfigType)];
@@ -227,7 +227,7 @@ switch _action do {
         if (!GVAR(EnableSaveLoad)) exitWith { titleText[(localize "STR_MEU_Equipment_OptionDisabled"), "PLAIN DOWN"]; };
 
         private ["_list1_title", "_list1", "_list2_title", "_list2", "_textBox", "_buttonSave"];
-        
+
         //Set display elements
         _list1_title = DCONTROL(IDC_RSCMEUEQUIPMENT_LIST1_TITLE);
         _list1_title ctrlSetPosition [0.04, 0.09, 0.4, 0.04];
@@ -302,7 +302,7 @@ switch _action do {
 
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     case "loadView": {
-    
+
         if (!GVAR(EnableSaveLoad)) exitWith { titleText[(localize "STR_MEU_Equipment_OptionDisabled"), "PLAIN DOWN"]; };
 
         private ["_list1_title", "_list1", "_list2_title", "_list2", "_buttonLoad", "_buttonDelete"];
@@ -349,7 +349,7 @@ switch _action do {
         _buttonDelete ctrlSetPosition [0.65, 0.83, 0.1562, 0.04];
         _buttonDelete ctrlCommit CTRLANIMATIONTIME;
         _buttonDelete ctrlShow true;
-        _buttonDelete ctrlSetText (localize "STR_MEU_Equipment_ButtonDelete"); 
+        _buttonDelete ctrlSetText (localize "STR_MEU_Equipment_ButtonDelete");
         _buttonDelete ctrlSetTooltip "";
         _buttonDelete ctrlRemoveAllEventHandlers "ButtonClick";
         _buttonDelete ctrlAddEventHandler ["ButtonClick", {['deleteProfile',''] call FUNC(equipmentUI);}];
@@ -386,7 +386,7 @@ switch _action do {
     case "loadDefaultView": {
 
         if (!GVAR(EnableDefaultProfiles)) exitWith { titleText[(localize "STR_MEU_Equipment_OptionDisabled"), "PLAIN DOWN"]; };
-        
+
         private ["_list1_title", "_list1", "_list2_title", "_list2", "_buttonLoad", "_profile", "_index", "_picture"];
 
         //Set display elements
@@ -493,7 +493,7 @@ switch _action do {
             _ctrl = DCONTROL(_x);
             _ctrl ctrlShow false;
         } forEach [IDC_RSCMEUEQUIPMENT_COMBO1, IDC_RSCMEUEQUIPMENT_COMBO2, IDC_RSCMEUEQUIPMENT_LABEL1, IDC_RSCMEUEQUIPMENT_LABEL2, IDC_RSCMEUEQUIPMENT_TEXTBOX, IDC_RSCMEUEQUIPMENT_BUTTON2];
-        
+
         _profiles = profilenamespace getvariable ["bis_fnc_saveInventory_data",[]];
 
         for "_i" from 0 to (count _profiles - 1) step 2 do {
@@ -562,7 +562,7 @@ switch _action do {
                     [_this select 1] call CBA_fnc_removePerFrameHandler;
                     ["update", _this select 0] call FUNC(equipmentUI);
                 };
-            
+
             }, 0.5, _params select 0] call CBA_fnc_addPerFrameHandler;
         };
 
@@ -596,10 +596,10 @@ switch _action do {
         switch (_type) do {
             case 0: {
                 GVAR(Type) = 0;
-                
+
                 //Set available factions
                 { _comboSide lbAdd _x; } forEach GVAR(UniformFactions);
-                
+
                 //Check side
                 if(_side == 0) then {
                     { { _collection pushBack _x; } forEach _x; } forEach GVAR(Uniforms);
@@ -613,33 +613,33 @@ switch _action do {
                     _index = _list lbAdd (getText(_vconfig >> "displayName"));
                     _list lbSetData [_index, _x];
                     _list lbSetPicture [_index, getText(_vconfig >> "picture")];
-                    
+
                     if ((getText (_vconfig >> "DLC")) != "") then {
                         _list lbSetColor [_index, [1,1,0,1]];
                     };
-                    
+
                     _tooltip = "";
                     if (GVAR(Info)) then {
                         _tooltip = (localize "STR_MEU_Equipment_ItemCapacity") + ": " + ([getText (_vconfig >> "ItemInfo" >> "containerClass"), "Supply", ""] call CBA_fnc_replace);
                     };
-                    if (GVAR(Classnames)) then { _tooltip = _tooltip + format[" [%1]", _x]; };    
+                    if (GVAR(Classnames)) then { _tooltip = _tooltip + format[" [%1]", _x]; };
                     if (_tooltip != "") then { _list lbSetTooltip [_index, _tooltip]; };
                 } forEach _collection;
             };
-            
+
             case 1: {
                 GVAR(Type) = 1;
 
                 //Set available factions
                 { _comboSide lbAdd _x; } forEach GVAR(VestFactions);
-                
+
                 //Check side
                 if(_side == 0) then {
                     { { _collection pushBack _x; } forEach _x; } forEach GVAR(Vests);
                 } else {
                     _collection = GVAR(Vests) select (_side - 1);
                 };
-                
+
                 //Add elements to listbox
                 {
                     _vconfig = configFile >> "CfgWeapons" >> _x;
@@ -652,24 +652,24 @@ switch _action do {
                         _tooltip = (localize "STR_MEU_Equipment_ItemCapacity") + ": " + ([getText (_vconfig >> "ItemInfo" >> "containerClass"), "Supply", ""] call CBA_fnc_replace);
                         _tooltip = _tooltip + format[" | %1: %2", localize "STR_MEU_Equipment_ItemProtection", getNumber (_vconfig >> "ItemInfo" >> "armor")];
                     };
-                    if (GVAR(Classnames)) then { _tooltip = _tooltip + format[" [%1]", _x]; };    
+                    if (GVAR(Classnames)) then { _tooltip = _tooltip + format[" [%1]", _x]; };
                     if (_tooltip != "") then { _list lbSetTooltip [_index, _tooltip]; };
                 } forEach _collection;
             };
-            
+
             case 2: {
                 GVAR(Type) = 2;
 
                 //Set available factions
                 { _comboSide lbAdd _x; } forEach GVAR(BackpackFactions);
-                
+
                 //Check side
                 if(_side == 0) then {
                     { { _collection pushBack _x; } forEach _x; } forEach GVAR(Backpacks);
                 } else {
                     _collection = GVAR(Backpacks) select (_side - 1);
                 };
-                
+
                 //Add elements to listbox
                 {
                     _vconfig = configFile >> "CfgVehicles" >> _x;
@@ -678,27 +678,27 @@ switch _action do {
                     _list lbSetPicture [_index, getText(_vconfig >> "picture")];
 
                     _tooltip = "";
-                    if (GVAR(Info)) then { 
-                        _tooltip = format["%1: %2", localize "STR_MEU_Equipment_ItemCapacity", getNumber (_vconfig >> "maximumLoad")]; 
+                    if (GVAR(Info)) then {
+                        _tooltip = format["%1: %2", localize "STR_MEU_Equipment_ItemCapacity", getNumber (_vconfig >> "maximumLoad")];
                     };
-                    if (GVAR(Classnames)) then { _tooltip = _tooltip + format[" [%1]", _x]; };    
+                    if (GVAR(Classnames)) then { _tooltip = _tooltip + format[" [%1]", _x]; };
                     if (_tooltip != "") then { _list lbSetTooltip[_index, _tooltip]; };
                 } forEach _collection;
             };
-            
+
             case 3: {
                 GVAR(Type) = 3;
 
                 //Set available factions
                 { _comboSide lbAdd _x; } forEach GVAR(HeadgearFactions);
-                
+
                 //Check side
                 if(_side == 0) then {
                     { {    _collection pushBack _x; } forEach _x; } forEach GVAR(Headgear);
                 } else {
                     _collection = GVAR(Headgear) select (_side - 1);
                 };
-                
+
                 //Add elements to listbox
                 {
                     _vconfig = configFile >> "CfgWeapons" >> _x;
@@ -707,20 +707,20 @@ switch _action do {
                     _list lbSetPicture [_index, getText(_vconfig >> "picture")];
 
                     _tooltip = "";
-                    if (GVAR(Info)) then { 
-                        _tooltip = format["%1: %2", localize "STR_MEU_Equipment_ItemProtection", getNumber (_vconfig >> "ItemInfo" >> "armor")]; 
+                    if (GVAR(Info)) then {
+                        _tooltip = format["%1: %2", localize "STR_MEU_Equipment_ItemProtection", getNumber (_vconfig >> "ItemInfo" >> "armor")];
                     };
-                    if (GVAR(Classnames)) then { _tooltip = _tooltip + format[" [%1]", _x]; };    
+                    if (GVAR(Classnames)) then { _tooltip = _tooltip + format[" [%1]", _x]; };
                     if (_tooltip != "") then { _list lbSetTooltip [_index, _tooltip]; };
                 } forEach _collection;
             };
-            
+
             case 4: {
                 GVAR(Type) = 4;
-                
+
                 //Set available factions
                 { _comboSide lbAdd _x; } forEach GVAR(GoggleFactions);
-                
+
                 //Check side
                 if(_side == 0) then {
                     { { _collection pushBack _x; } forEach _x; } forEach GVAR(Goggles);
@@ -734,7 +734,7 @@ switch _action do {
                     _index = _list lbAdd (getText(_vconfig >> "displayName"));
                     _list lbSetData [_index, _x];
                     _list lbSetPicture [_index, getText(_vconfig >> "picture")];
-                    
+
                     if (GVAR(Classnames)) then {
                         _tooltip = "";
                         _tooltip = format["[%1]", _x];
@@ -742,27 +742,27 @@ switch _action do {
                     };
                 } forEach _collection;
             };
-            
+
             case 5: {
                 GVAR(Type) = 5;
-                
+
                 //If insignias are not preloaded fetch them from config (slower)
                 if (isNil "MEU_Equipment_AllInsignias") then {
                     _insignias = (configfile >> "CfgUnitInsignia") call BIS_fnc_returnchildren;
                 } else {
                     _insignias = GVAR(AllInsignias);
                 };
-                
+
                 {
                     _index = _list lbAdd (getText (_x >> "displayName"));
                     _list lbSetData [_index, configName _x];
                     _list lbSetPicture [_index, getText (_x >> "texture")];
                 } forEach _insignias;
             };
-            
+
             case 6: {
                 GVAR(Type) = 6;
-            
+
                 //Set available factions
                 { _comboSide lbAdd _x; } forEach GVAR(PresetFactions);
 
@@ -779,7 +779,7 @@ switch _action do {
                         _index = _list lbAdd (_x select 0);
                         _list lbSetData [_index, str(_x)];
                         _list lbSetPicture [_index, getText(configFile >> "CfgWeapons" >> (_x select 1) >> "picture")];
-                        
+
                         _load = 0;
                         _protection = 0;
                         _tooltip = "";
@@ -812,7 +812,7 @@ switch _action do {
         private ["_list", "_replace", "_selected", "_type", "_items", "_container", "_data", "_insignia"];
 
         _list = DCONTROL(IDC_RSCMEUEQUIPMENT_LIST1);
-        
+
         _replace = _params select 0;
         _selected = lbCurSel _list;
         _type = GVAR(Type);
@@ -821,95 +821,95 @@ switch _action do {
             switch (_type) do {
                 case 0: {
                     _items = uniformItems ACE_Player;
-                    _insignia = [ACE_Player] call BIS_fnc_getUnitInsignia; 
+                    _insignia = [ACE_Player] call BIS_fnc_getUnitInsignia;
                     removeUniform ACE_Player;
                     ACE_Player forceAddUniform (_list lbData _selected);
-                    
+
                     //Clear new container items
                     _container = uniformContainer ACE_Player;
                     clearWeaponCargo _container;
                     clearMagazineCargo _container;
                     clearItemCargo _container;
-                    
+
                     if (_replace) then {
                         { ACE_Player addItemToUniform ([_x] call EFUNC(main,processItem)); } forEach _items;
                         if (_insignia != "") then { [ACE_Player, _insignia] call BIS_fnc_setUnitInsignia; };
                     };
                 };
-                
+
                 case 1: {
                     _items = vestItems ACE_Player;
                     removeVest ACE_Player;
                     ACE_Player addVest (_list lbData _selected);
-                    
+
                     //Clear new container items
                     _container = vestContainer ACE_Player;
                     clearWeaponCargo _container;
                     clearMagazineCargo _container;
                     clearItemCargo _container;
-                    
+
                     if (_replace) then {
                         { ACE_Player addItemToVest ([_x] call EFUNC(main,processItem)); } forEach _items;
                     };
                 };
-                
+
                 case 2: {
                     _items = backpackItems ACE_Player;
                     removeBackpack ACE_Player;
                     ACE_Player addBackpack (_list lbData _selected);
-                    
+
                     //Clear new container items
                     _container = backpackContainer ACE_Player;
                     clearWeaponCargo _container;
                     clearMagazineCargo _container;
                     clearItemCargo _container;
-                    
+
                     if (_replace) then {
                         { ACE_Player addItemToBackpack ([_x] call EFUNC(main,processItem)); } forEach _items;
                     };
                 };
-                
+
                 case 3: {
                     removeHeadgear ACE_Player;
                     ACE_Player addHeadgear (_list lbData _selected);
                 };
-                
+
                 case 4: {
                     removeGoggles ACE_Player;
                     ACE_Player addGoggles (_list lbData _selected);
                 };
-                
+
                 case 5: {
                     [ACE_Player, _list lbData _selected] call BIS_fnc_setUnitInsignia;
                 };
-                
+
                 case 6: {
                     removeUniform ACE_Player;
                     removeVest ACE_Player;
                     removeBackpack ACE_Player;
                     removeHeadgear ACE_Player;
                     removeGoggles ACE_Player;
-                    
+
                     _data = call compile format["%1", _list lbData _selected];
-                    
+
                     ACE_Player forceAddUniform (_data select 1);
                     _container = uniformContainer ACE_Player;
                     clearWeaponCargo _container;
                     clearMagazineCargo _container;
                     clearItemCargo _container;
-                    
+
                     ACE_Player addVest (_data select 2);
                     _container = vestContainer ACE_Player;
                     clearWeaponCargo _container;
                     clearMagazineCargo _container;
                     clearItemCargo _container;
-                    
+
                     ACE_Player addBackpack (_data select 3);
                     _container = backpackContainer ACE_Player;
                     clearWeaponCargo _container;
                     clearMagazineCargo _container;
                     clearItemCargo _container;
-                    
+
                     //TODO REMOVE
                     if ((_data select 4) != "") then {
                         if ((_data select 2) == "V_RebreatherB") then {
@@ -919,7 +919,7 @@ switch _action do {
                         };
                     };
                 };
-                
+
                 default {
                     ERROR("Error in equipment addItem function");
                 };
@@ -935,7 +935,7 @@ switch _action do {
 
         _list1 = DCONTROL(IDC_RSCMEUEQUIPMENT_LIST1);
         _selected = lbCurSel _list1;
-        
+
         _list2 = DCONTROL(IDC_RSCMEUEQUIPMENT_LIST2);
         lbClear _list2;
 
@@ -946,7 +946,7 @@ switch _action do {
         } else {
             _loadout = missionNamespace getVariable format["meu_dev_equipment_%1", _selected];
         };
-        
+
         _textBox = DCONTROL(IDC_RSCMEUEQUIPMENT_TEXTBOX);
 
         if (isNil {_loadout}) exitWith { _textBox ctrlSetText (localize "STR_MEU_Equipment_DefaultLoadoutName"); };
@@ -959,7 +959,7 @@ switch _action do {
         {
             switch(typeName _x) do {
                 case "STRING": { _loadout_array = _loadout_array + [_x]; };
-                
+
                 case "ARRAY": {
                     //Only process array items if its not a radio configuration
                     if ((typeName (_x select 0)) != "ARRAY") then {
@@ -996,12 +996,12 @@ switch _action do {
 
         _textBox = DCONTROL(IDC_RSCMEUEQUIPMENT_TEXTBOX);
         _title = ctrlText _textBox;
-        
+
         _list = DCONTROL(IDC_RSCMEUEQUIPMENT_LIST1);
         _selected = lbCurSel _list;
 
         if (_selected == -1) exitWith { titleText[localize("STR_MEU_Equipment_MessageNoProfile"), "PLAIN DOWN"]; };
-        
+
         _profile = format["meu_dev_equipment_%1", _selected];
 
         _loadout = [ACE_Player] call EFUNC(main,getUnitLoadout);
@@ -1014,6 +1014,9 @@ switch _action do {
         } else {
             missionNamespace setVariable [_profile, _loadout];
         };
+
+        // eventhandling
+        ["equipmentProfileSaved", [ACE_Player, (format["meu_dev_equipment_%1", _selected]), _loadout]] call ace_common_fnc_localEvent;
 
         //Refresh view
         ["saveView",''] call FUNC(equipmentUI);
@@ -1060,12 +1063,21 @@ switch _action do {
                     _this call EFUNC(main,setAllRadiosSettings);
                     titleText[(localize "STR_MEU_Equipment_MessageRadiosLoaded"), "PLAIN DOWN"];
                     GVAR(Loading) = nil;
+
+                    // eventhandling
+                    ["equipmentProfileLoaded", [ACE_Player, (format["meu_dev_equipment_%1", _selected]), _playerLoadout]] call ace_common_fnc_localEvent;
                 };
             } else {
                 GVAR(Loading) = nil;
+
+                // eventhandling
+                ["equipmentProfileLoaded", [ACE_Player, (format["meu_dev_equipment_%1", _selected]), _playerLoadout]] call ace_common_fnc_localEvent;
             };
         } else {
             GVAR(Loading) = nil;
+
+            // eventhandling
+            ["equipmentProfileLoaded", [ACE_Player, (format["meu_dev_equipment_%1", _selected]), _playerLoadout]] call ace_common_fnc_localEvent;
         };
     };
 
@@ -1079,7 +1091,7 @@ switch _action do {
         if (_selected == -1) exitWith { titleText[(localize "STR_MEU_Equipment_MessageNoProfile"), "PLAIN DOWN"]; };
 
         _profile = format["meu_dev_equipment_%1", _selected];
-        
+
         if (GVAR(EnablePersistence)) then {
             _data = profileNameSpace getVariable _profile
         } else {
@@ -1109,7 +1121,7 @@ switch _action do {
 
         _list1 = DCONTROL(IDC_RSCMEUEQUIPMENT_LIST1);
         _selected = lbCurSel _list1;
-        
+
         _list2 = DCONTROL(IDC_RSCMEUEQUIPMENT_LIST2);
         lbClear _list2;
 
@@ -1122,7 +1134,7 @@ switch _action do {
         {
             switch(typeName _x) do {
                 case "STRING": { _loadout_array = _loadout_array + [_x]; };
-                
+
                 case "ARRAY": { { _loadout_array = _loadout_array + [_x]; } forEach _x; };
             };
         } forEach _loadout;
@@ -1220,6 +1232,9 @@ switch _action do {
         _playerLoadout = + _loadout;
         _playerLoadout deleteAt 0;
         _playerLoadout call EFUNC(main,setPlayerLoadout);
+
+        // eventhandling
+        ["equipmentProfileLoaded", [ACE_Player, nil, _playerLoadout]] call ace_common_fnc_localEvent;
 
         GVAR(Loading) = nil;
     };
