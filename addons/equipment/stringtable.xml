@@ -366,5 +366,25 @@
       <English>Loadout received from a player</English>
       <Spanish>Equipamiento recibido de un jugador</Spanish>
     </Key>
+    <Key ID="STR_MEU_Equipment_TypeGeneric">
+      <English>Generic</English>
+      <Spanish>Generico</Spanish>
+    </Key>
+    <Key ID="STR_MEU_Equipment_TypeBlufor">
+      <English>Blufor</English>
+      <Spanish>Blufor</Spanish>
+    </Key>
+    <Key ID="STR_MEU_Equipment_TypeOpfor">
+      <English>Opfor</English>
+      <Spanish>Opfor</Spanish>
+    </Key>
+    <Key ID="STR_MEU_Equipment_TypeIndfor">
+      <English>Indfor</English>
+      <Spanish>Indfor</Spanish>
+    </Key>
+    <Key ID="STR_MEU_Equipment_TypeCivillian">
+      <English>Civillian</English>
+      <Spanish>Civil</Spanish>
+    </Key>
   </Package>
 </Project>

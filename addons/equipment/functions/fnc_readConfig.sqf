@@ -34,7 +34,11 @@ if (isClass (_config >> "Uniforms")) then {
     _uniforms = (_config >> "Uniforms") call BIS_fnc_returnchildren;
     {
         GVAR(UniformFactions) pushBack (getText (_x >> "displayName"));
-        GVAR(Uniforms) pushBack (getArray (_x >> "classes"));
+        if (getNumber (_x >> "common") == 1) then {
+            GVAR(Uniforms) pushBack (getArray (configFile >> "CfgMeuCommonEquipment" >> "Uniforms" >> "classes"));
+        } else {
+            GVAR(Uniforms) pushBack (getArray (_x >> "classes"));
+        };
     } forEach _uniforms;
 };
 
@@ -45,7 +49,11 @@ if (isClass (_config >> "Vests")) then {
     _vests = (_config >> "Vests") call BIS_fnc_returnchildren;
     {
         GVAR(VestFactions) pushBack (getText (_x >> "displayName"));
-        GVAR(Vests) pushBack (getArray (_x >> "classes"));
+        if (getNumber (_x >> "common") == 1) then {
+            GVAR(Vests) pushBack (getArray (configFile >> "CfgMeuCommonEquipment" >> "Vests" >> "classes"));
+        } else {
+            GVAR(Vests) pushBack (getArray (_x >> "classes"));
+        };
     } forEach _vests;
 };
 
@@ -56,7 +64,11 @@ if (isClass (_config >> "Backpacks")) then {
     _backpacks = (_config >> "Backpacks") call BIS_fnc_returnchildren;
     {
         GVAR(BackpackFactions) pushBack (getText (_x >> "displayName"));
-        GVAR(Backpacks) pushBack (getArray (_x >> "classes"));
+        if (getNumber (_x >> "common") == 1) then {
+            GVAR(Backpacks) pushBack (getArray (configFile >> "CfgMeuCommonEquipment" >> "Backpacks" >> "classes"));
+        } else {
+            GVAR(Backpacks) pushBack (getArray (_x >> "classes"));
+        };
     } forEach _backpacks;
 };
 
@@ -67,7 +79,11 @@ if (isClass (_config >> "Headgear")) then {
     _headgear = (_config >> "Headgear") call BIS_fnc_returnchildren;
     {
         GVAR(HeadgearFactions) pushBack (getText (_x >> "displayName"));
-        GVAR(Headgear) pushBack (getArray (_x >> "classes"));
+        if (getNumber (_x >> "common") == 1) then {
+            GVAR(Headgear) pushBack (getArray (configFile >> "CfgMeuCommonEquipment" >> "Headgear" >> "classes"));
+        } else {
+            GVAR(Headgear) pushBack (getArray (_x >> "classes"));
+        };
     } forEach _headgear;
 };
 
@@ -78,7 +94,11 @@ if (isClass (_config >> "Goggles")) then {
     _goggles = (_config >> "Goggles") call BIS_fnc_returnchildren;
     {
         GVAR(GoggleFactions) pushBack (getText (_x >> "displayName"));
-        GVAR(Goggles) pushBack (getArray (_x >> "classes"));
+        if (getNumber (_x >> "common") == 1) then {
+            GVAR(Goggles) pushBack (getArray (configFile >> "CfgMeuCommonEquipment" >> "Goggles" >> "classes"));
+        } else {
+            GVAR(Goggles) pushBack (getArray (_x >> "classes"));
+        };
     } forEach _goggles;
 };
 

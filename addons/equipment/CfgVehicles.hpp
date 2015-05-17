@@ -57,19 +57,19 @@ class CfgVehicles {
                         default = 1;
                     };
                     class blufor {
-                        name = "$str_a3_cfgfactionclasses_blu_f0";
+                        name = "$STR_MEU_Equipment_TypeBlufor";
                         value = "blufor";
                     };
                     class opfor { 
-                        name = "$str_a3_cfgfactionclasses_opf_f0";
+                        name = "$STR_MEU_Equipment_TypeOpfor";
                         value = "opfor";
                     };
                     class indfor {
-                        name = "$str_a3_cfgfactionclasses_ind_f0";
+                        name = "$STR_MEU_Equipment_TypeIndfor";
                         value = "indfor";
                     };
                     class civil {
-                        name = "$str_a3_cfgfactionclasses_civ_f0";
+                        name = "$STR_MEU_Equipment_TypeCivillian";
                         value = "civil";
                     };
                 };

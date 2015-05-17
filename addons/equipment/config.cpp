@@ -14,5 +14,6 @@ class CfgPatches {
 
 #include "CfgEventHandlers.hpp"
 #include "CfgMEUEquipment.hpp"
+#include "CfgMEUCommonEquipment.hpp"
 #include "CfgVehicles.hpp"
 #include "EquipmentUI.hpp"
