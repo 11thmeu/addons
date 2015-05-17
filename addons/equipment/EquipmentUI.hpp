@@ -101,6 +101,14 @@ class RscMEU_Equipment {
             w = 0.064;
             h = 0.064;
         };
+        class Image_SendLoadout: MEU_gui_Picture {
+            idc = -1;
+            text = PATHTOF(UI\send.paa);
+            x = 0.635;
+            y = -0.001;
+            w = 0.064;
+            h = 0.064;
+        };
         class Image_Close: MEU_gui_Picture {
             idc = -1;
             text = PATHTOF(UI\close.paa);
@@ -287,6 +295,19 @@ class RscMEU_Equipment {
             w = 0.064;
             h = 0.064;
         };
+        class Button_SendLoadout: MEU_gui_Button {
+            idc = IDC_RSCMEUEQUIPMENT_BUTTONSENDLOADOUT;
+            text = "";
+            toolTip = "$STR_MEU_Equipment_ButtonSendLoadout";
+            colorBackground[] = {0,0,0,0};
+            colorBackground2[] = {0,0,0,0};
+            colorBackgroundFocused[] = {0,0,0,0};
+            onButtonClick = QUOTE([ARR_2('sendLoadoutView','')] call FUNC(equipmentUI););
+            x = 0.635;
+            y = -0.001;
+            w = 0.064;
+            h = 0.064;
+        };
         class Button_Exit: MEU_gui_Button {
             idc = -1;
             text = "";
@@ -385,6 +406,69 @@ class RscMEU_Equipment {
             colorBackground[] = {1,0.5,0,0.5};
             x = 0.65;
             y = 0.66;
+            w = 0.1562;
+            h = 0.04;
+        };
+    };
+};
+
+class RscMEU_ReceiveEquipment {
+    idd = -1;
+    movingEnable = 1;
+    onLoad = QUOTE(SETUVAR(QGVAR(ReceptionDisplay),_this select 0););
+    onUnload = QUOTE(GVAR(ReceivedLoadout) = nil;);
+
+    class controlsBackground {
+        class Background: MEU_gui_Base {
+            colorBackground[] = {0, 0, 0, 0.7};
+            idc = 60001;
+            x = 0.2;
+            y = 0.2;
+            w = 0.7;
+            h = 0.3;
+        };
+        class Title: MEU_gui_Base {
+            idc = 60002;
+            colorBackground[] = {1,0.5,0,0.7};
+            text = "$STR_MEU_Equipment_LabelLoadoutReceived";
+            x = 0.2;
+            y = 0.16;
+            w = 0.7;
+            h = 0.04;
+            moving = 1;
+        };
+        class Label: MEU_gui_Base {
+            idc = IDC_RSCMEURECEIVEEQUIPMENT_LABEL;
+            style = 16 + 0x200;
+            colorBackground[] = {0,0,0,0};
+            text = "";
+            x = 0.24;
+            y = 0.22;
+            w = 0.6;
+            h = 0.1;
+        };
+    };
+
+    class controls {
+        class Button_Yes: MEU_gui_Button {
+            idc = 60003;
+            text = "$STR_MEU_Main_Yes";
+            toolTip = "";
+            action = QUOTE(GVAR(ReceivedLoadout) call EFUNC(main,setPlayerLoadout); closeDialog 0;);
+            colorBackground[] = {1,0.5,0,0.5};
+            x = 0.4;
+            y = 0.4;
+            w = 0.1562;
+            h = 0.04;
+        };
+        class Button_No: MEU_gui_Button {
+            idc = 60004;
+            text = "$STR_MEU_Main_No";
+            toolTip = "";
+            action = QUOTE(closeDialog 0;);
+            colorBackground[] = {1,0.5,0,0.5};
+            x = 0.6;
+            y = 0.4;
             w = 0.1562;
             h = 0.04;
         };

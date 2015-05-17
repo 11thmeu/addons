@@ -503,23 +503,54 @@ switch _action do {
 
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     case "sendLoadoutView": {
-        /*
-        //TODO
+
+        private ["_list1_title", "_list1", "_buttonSend", "_players", "_index"];
+
+        //Set display elements
+        _list1_title = DCONTROL(IDC_RSCMEUEQUIPMENT_LIST1_TITLE);
+        _list1_title ctrlSetPosition [0.04, 0.09, 0.4, 0.04];
+        _list1_title ctrlCommit CTRLANIMATIONTIME;
+        _list1_title ctrlShow true;
+        _list1_title ctrlSetText (localize "STR_MEU_Equipment_Players");
+
+        _list1 = DCONTROL(IDC_RSCMEUEQUIPMENT_LIST1);
+        _list1 ctrlRemoveAllEventHandlers "LBSelChanged";
+        lbClear _list1;
+        _list1 lbSetCurSel -1;
+        _list1 ctrlSetPosition [0.04, 0.13, 0.4, 0.65];
+        _list1 ctrlCommit CTRLANIMATIONTIME;
+        _list1 ctrlShow true;
+
+        _buttonSend = DCONTROL(IDC_RSCMEUEQUIPMENT_BUTTON1);
+        _buttonSend ctrlSetPosition [0.5, 0.83, 0.3, 0.04];
+        _buttonSend ctrlCommit CTRLANIMATIONTIME;
+        _buttonSend ctrlShow true;
+        _buttonSend ctrlSetText (localize "STR_MEU_Equipment_SendLoadout");
+        _buttonSend ctrlSetTooltip "";
+        _buttonSend ctrlRemoveAllEventHandlers "ButtonClick";
+        _buttonSend ctrlAddEventHandler ["ButtonClick", {['sendLoadout',''] call FUNC(equipmentUI);}];
+
+        //Hide unused elements
+        {
+            private "_ctrl";
+            _ctrl = DCONTROL(_x);
+            _ctrl ctrlShow false;
+        } forEach [IDC_RSCMEUEQUIPMENT_LIST2_TITLE, IDC_RSCMEUEQUIPMENT_LIST2, IDC_RSCMEUEQUIPMENT_LABEL1, IDC_RSCMEUEQUIPMENT_LABEL2, IDC_RSCMEUEQUIPMENT_BUTTON2, IDC_RSCMEUEQUIPMENT_COMBO1, IDC_RSCMEUEQUIPMENT_COMBO2, IDC_RSCMEUEQUIPMENT_TEXTBOX];
+
         //List near players
         _players = [];
         {
-            if ((isPlayer _x) && ((ACE_Player distance _x) < 10)) {
+            if ((isPlayer _x) && ((ACE_Player distance _x) < 10)) then {
                 _players pushBack _x;
             };
         } forEach playableUnits;
 
-        //Populate listbox
-        {
-            _index = lbAdd [_ctrl, name _x];
-            lbSetData [_ctrl, str(_x)]; //TODO: can get object back from call compile?
+        _players = _players - [ACE_Player];
 
+        {
+            _index = _list1 lbAdd (name _x);
+            _list1 lbSetData [_index, format["%1", _x]];
         } forEach _players;
-        */
     };
 
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -1237,6 +1268,23 @@ switch _action do {
         ["equipmentProfileLoaded", [ACE_Player, nil, _playerLoadout]] call ace_common_fnc_localEvent;
 
         GVAR(Loading) = nil;
+    };
+
+    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    case "sendLoadout": {
+        private ["_list", "_selected", "_selectedPlayer", "_loadout"];
+
+        _list = DCONTROL(IDC_RSCMEUEQUIPMENT_LIST1);
+        _selected = lbCurSel _list;
+
+        if (_selected == -1) exitWith { titleText[(localize "STR_MEU_Equipment_MessageNoPlayer"), "PLAIN DOWN"]; };
+
+        _selectedPlayer = call compile (_list lbData _selected);
+        _loadout = [ACE_Player] call EFUNC(main,getUnitLoadout);
+
+        [[name ACE_Player, _loadout], QFUNC(receiveLoadout), _selectedPlayer] call ACEFUNC(common,execRemoteFnc);
+
+        titleText[(localize "STR_MEU_Equipment_MessageLoadoutSent"), "PLAIN DOWN"];
     };
 
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////

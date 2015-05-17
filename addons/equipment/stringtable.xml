@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<!-- Edited with tabler - 2015-05-11 -->
+<!-- Edited with tabler - 2015-05-17 -->
 <Project name="MEU">
   <Package name="Equipment">
     <Key ID="STR_MEU_Equipment_Name">
@@ -333,6 +333,38 @@
     <Key ID="STR_MEU_Equipment_MessageDeleted">
       <English>You have deleted the profile</English>
       <Spanish>Has borrado el perfil</Spanish>
+    </Key>
+    <Key ID="STR_MEU_Equipment_Players">
+      <English>Nearby players</English>
+      <Spanish>Jugadores cercanos</Spanish>
+    </Key>
+    <Key ID="STR_MEU_Equipment_SendLoadout">
+      <English>Send loadout</English>
+      <Spanish>Enviar equipamiento</Spanish>
+    </Key>
+    <Key ID="STR_MEU_Equipment_MessageNoPlayer">
+      <English>You have not selected a player</English>
+      <Spanish>No has seleccionado ningun jugador</Spanish>
+    </Key>
+    <Key ID="STR_MEU_Equipment_ButtonSendLoadout">
+      <English>Send your current loadout to a player</English>
+      <Spanish>Enviar tu equipamiento actual a un jugador</Spanish>
+    </Key>
+    <Key ID="STR_MEU_Equipment_MessageLoadoutSent">
+      <English>Loadout sent to selected player</English>
+      <Spanish>Equipamiento enviado al jugador seleccionado</Spanish>
+    </Key>
+    <Key ID="STR_MEU_Equipment_LabelReceived1">
+      <English>You have received an equipment loadout from</English>
+      <Spanish>Has recibido un perfil de equipamiento de</Spanish>
+    </Key>
+    <Key ID="STR_MEU_Equipment_LabelReceived2">
+      <English>, do you accept it?</English>
+      <Spanish>, ¿lo aceptas?</Spanish>
+    </Key>
+    <Key ID="STR_MEU_Equipment_LabelLoadoutReceived">
+      <English>Loadout received from a player</English>
+      <Spanish>Equipamiento recibido de un jugador</Spanish>
     </Key>
   </Package>
 </Project>

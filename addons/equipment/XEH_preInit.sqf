@@ -10,6 +10,5 @@ PREP(pasteLoadout);
 PREP(readAllConfigs);
 PREP(readConfig);
 PREP(receiveLoadout);
-PREP(sendLoadout);
 
 ADDON = true;

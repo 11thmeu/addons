@@ -3,34 +3,29 @@
  * Receive a loadout from another player
  *
  * Arguments:
- * 0: Loadout sender <OBJECT>
+ * 0: Loadout sender <STRING>
  * 1: Loadout <ARRAY>
- * 2: Loadout accepted <BOOL>
  *
  * Return Value:
  * -
  *
  * Example:
- * [_unit, _loadout, false] call FUNC(receiveLoadout)
+ * [name _unit, _loadout] call FUNC(receiveLoadout)
  *
  * Public: [No]
  */
 #include "script_component.hpp"
 
-private ["_sender", "_loadout", "_accepted"];
+disableSerialization;
+private ["_sender", "_loadout", "_display", "_label"];
 _sender = _this select 0;
 _loadout = _this select 1;
-_accepted = _this select 2;
 
-if (!_accepted) then {
-    //Show accept loadout dialog
-    GVAR(RemoteSender) = _sender;
-    GVAR(RemoteLoadout) = _loadout;
-} else {
-    //Set the loadout
-    //[MEU_Equipment_RemoteSender, MEU_Equipment_RemoteLoadout, true] call MEU_fnc_receiveLoadout;
-    _loadout call EFUNC(main,setPlayerLoadout);
-    GVAR(RemoteSender) = nil;
-    GVAR(RemoteLoadout) = nil;
-    //TODO show message
-};
+if (!isNil QGVAR(ReceivedLoadout)) exitWith {}; //Another loadout has been received, wait to accept or decline
+
+GVAR(ReceivedLoadout) = _loadout;
+
+createDialog "RscMEU_ReceiveEquipment";
+_display = GETUVAR(GVAR(ReceptionDisplay),displayNull);
+_label = DCONTROL(IDC_RSCMEURECEIVEEQUIPMENT_LABEL);
+_label ctrlSetText format["%1 %2%3", localize "STR_MEU_Equipment_LabelReceived1", _sender, localize "STR_MEU_Equipment_LabelReceived2"];
