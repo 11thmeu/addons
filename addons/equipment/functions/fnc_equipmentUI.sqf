@@ -281,16 +281,16 @@ switch _action do {
 
         if (GVAR(EnablePersistence)) then {
             for "_i" from 0 to (EQUIPMENT_LOADOUTS) do {
-                if (!isNil {profileNamespace getVariable format["meu_dev_equipment_%1", _i]}) then {
-                    _list1 lbAdd (format["%1", (profileNamespace getVariable format["meu_dev_equipment_%1", _i]) select 0]);
+                if (!isNil {profileNamespace getVariable format["meu_equipment_%1", _i]}) then {
+                    _list1 lbAdd (format["%1", (profileNamespace getVariable format["meu_equipment_%1", _i]) select 0]);
                 } else {
                     _list1 lbAdd (format["%1 %2", (localize "STR_MEU_Equipment_DefaultLoadoutName"), _i + 1]);
                 };
             };
         } else {
             for "_i" from 0 to (EQUIPMENT_LOADOUTS) do {
-                if (!isNil {missionNamespace getVariable format["meu_dev_equipment_%1", _i]}) then {
-                    _list1 lbAdd (format["%1",(missionNamespace getVariable format["meu_dev_equipment_%1", _i]) select 0]);
+                if (!isNil {missionNamespace getVariable format["meu_equipment_%1", _i]}) then {
+                    _list1 lbAdd (format["%1",(missionNamespace getVariable format["meu_equipment_%1", _i]) select 0]);
                 } else {
                     _list1 lbAdd (format["%1 %2",(localize "STR_MEU_Equipment_DefaultLoadoutName"), _i + 1]);
                 };
@@ -363,16 +363,16 @@ switch _action do {
 
         if (GVAR(EnablePersistence)) then {
             for "_i" from 0 to (EQUIPMENT_LOADOUTS) do {
-                if (!isNil {profileNamespace getVariable format["meu_dev_equipment_%1", _i]}) then {
-                    _list1 lbAdd (format["%1", (profileNamespace getVariable format["meu_dev_equipment_%1", _i]) select 0]);
+                if (!isNil {profileNamespace getVariable format["meu_equipment_%1", _i]}) then {
+                    _list1 lbAdd (format["%1", (profileNamespace getVariable format["meu_equipment_%1", _i]) select 0]);
                 } else {
                     _list1 lbAdd (format["%1 %2", (localize "STR_MEU_Equipment_DefaultLoadoutName"), _i + 1]);
                 };
             };
         } else {
             for "_i" from 0 to (EQUIPMENT_LOADOUTS) do {
-                if (!isNil {missionNamespace getVariable format["meu_dev_equipment_%1", _i]}) then {
-                    _list1 lbAdd (format["%1",(missionNamespace getVariable format["meu_dev_equipment_%1", _i]) select 0]);
+                if (!isNil {missionNamespace getVariable format["meu_equipment_%1", _i]}) then {
+                    _list1 lbAdd (format["%1",(missionNamespace getVariable format["meu_equipment_%1", _i]) select 0]);
                 } else {
                     _list1 lbAdd (format["%1 %2",(localize "STR_MEU_Equipment_DefaultLoadoutName"), _i + 1]);
                 };
@@ -973,9 +973,9 @@ switch _action do {
         if (_selected == -1) exitWith {};
 
         if (GVAR(EnablePersistence)) then {
-            _loadout = profileNamespace getVariable format["meu_dev_equipment_%1", _selected];
+            _loadout = profileNamespace getVariable format["meu_equipment_%1", _selected];
         } else {
-            _loadout = missionNamespace getVariable format["meu_dev_equipment_%1", _selected];
+            _loadout = missionNamespace getVariable format["meu_equipment_%1", _selected];
         };
 
         _textBox = DCONTROL(IDC_RSCMEUEQUIPMENT_TEXTBOX);
@@ -1033,7 +1033,7 @@ switch _action do {
 
         if (_selected == -1) exitWith { titleText[localize("STR_MEU_Equipment_MessageNoProfile"), "PLAIN DOWN"]; };
 
-        _profile = format["meu_dev_equipment_%1", _selected];
+        _profile = format["meu_equipment_%1", _selected];
 
         _loadout = [ACE_Player] call EFUNC(main,getUnitLoadout);
         _loadout = [_loadout, [_title], 0] call BIS_fnc_arrayInsert;
@@ -1047,7 +1047,7 @@ switch _action do {
         };
 
         // eventhandling
-        ["equipmentProfileSaved", [ACE_Player, (format["meu_dev_equipment_%1", _selected]), _loadout]] call ace_common_fnc_localEvent;
+        ["equipmentProfileSaved", [ACE_Player, (format["meu_equipment_%1", _selected]), _loadout]] call ace_common_fnc_localEvent;
 
         //Refresh view
         ["saveView",''] call FUNC(equipmentUI);
@@ -1067,10 +1067,10 @@ switch _action do {
         if (_selected == -1) exitWith {titleText[(localize "STR_MEU_Equipment_MessageNoProfile"), "PLAIN DOWN"];};
 
         if(GVAR(EnablePersistence)) then {
-            _loadout = profileNamespace getVariable format["meu_dev_equipment_%1", _selected];
+            _loadout = profileNamespace getVariable format["meu_equipment_%1", _selected];
         }
         else {
-            _loadout = missionNamespace getVariable format["meu_dev_equipment_%1", _selected];
+            _loadout = missionNamespace getVariable format["meu_equipment_%1", _selected];
         };
 
         if (isNil {_loadout}) exitWith {titleText[(localize "STR_MEU_Equipment_MessageNotExists"), "PLAIN DOWN"];};
@@ -1096,19 +1096,19 @@ switch _action do {
                     GVAR(Loading) = nil;
 
                     // eventhandling
-                    ["equipmentProfileLoaded", [ACE_Player, (format["meu_dev_equipment_%1", _selected]), _playerLoadout]] call ace_common_fnc_localEvent;
+                    ["equipmentProfileLoaded", [ACE_Player, (format["meu_equipment_%1", _selected]), _playerLoadout]] call ace_common_fnc_localEvent;
                 };
             } else {
                 GVAR(Loading) = nil;
 
                 // eventhandling
-                ["equipmentProfileLoaded", [ACE_Player, (format["meu_dev_equipment_%1", _selected]), _playerLoadout]] call ace_common_fnc_localEvent;
+                ["equipmentProfileLoaded", [ACE_Player, (format["meu_equipment_%1", _selected]), _playerLoadout]] call ace_common_fnc_localEvent;
             };
         } else {
             GVAR(Loading) = nil;
 
             // eventhandling
-            ["equipmentProfileLoaded", [ACE_Player, (format["meu_dev_equipment_%1", _selected]), _playerLoadout]] call ace_common_fnc_localEvent;
+            ["equipmentProfileLoaded", [ACE_Player, (format["meu_equipment_%1", _selected]), _playerLoadout]] call ace_common_fnc_localEvent;
         };
     };
 
@@ -1121,7 +1121,7 @@ switch _action do {
 
         if (_selected == -1) exitWith { titleText[(localize "STR_MEU_Equipment_MessageNoProfile"), "PLAIN DOWN"]; };
 
-        _profile = format["meu_dev_equipment_%1", _selected];
+        _profile = format["meu_equipment_%1", _selected];
 
         if (GVAR(EnablePersistence)) then {
             _data = profileNameSpace getVariable _profile
