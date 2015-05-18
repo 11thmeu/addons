@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project name="MEU">
+    <Package name="Ammoboxes">
+        <Key ID="STR_MEU_Ammoboxes_Weapons_USMC">
+            <English>[USMC] Weapons box</English>
+            <Spanish>[USMC] Caja de Armas</Spanish>
+        </Key>
+        <Key ID="STR_MEU_Ammoboxes_Weapons_USMC_REG">
+            <English>[USMC] Reg.Inf Weapons box</English>
+            <Spanish>[USMC] Caja de Armas Inf. Reg.</Spanish>
+        </Key>
+        <Key ID="STR_MEU_Ammoboxes_Weapons_USMC_SOC">
+            <English>[USMC] (SOC) Weapons box</English>
+            <Spanish>[USMC] Caja de Armas (SOC)</Spanish>
+        </Key>
+        <Key ID="STR_MEU_Ammoboxes_Meds_USMC">
+            <English>[USMC] Medical box</English>
+            <Spanish>[USMC] Caja de medicinas</Spanish>
+        </Key>
+        <Key ID="STR_MEU_Ammoboxes_Launchers_USMC">
+            <English>[USMC] Launchers box</English>
+            <Spanish>[USMC] Caja de lanzadores</Spanish>
+        </Key>
+        <Key ID="STR_MEU_Ammoboxes_Explosives_USMC">
+            <English>[USMC] Explosives box</English>
+            <Spanish>[USMC] Caja de explosivos</Spanish>
+        </Key>
+        <Key ID="STR_MEU_Ammoboxes_Items_USMC">
+            <English>[USMC] Items box</English>
+            <Spanish>[USMC] Caja de objetos</Spanish>
+        </Key>
+        <Key ID="STR_MEU_Ammoboxes_Radios_USMC">
+            <English>[USMC] Radios box</English>
+            <Spanish>[USMC] Caja de radios</Spanish>
+        </Key>
+        <Key ID="STR_MEU_Ammoboxes_Rations_USMC">
+            <English>[USMC] Rations box</English>
+            <Spanish>[USMC] Caja de raciones</Spanish>
+        </Key>
+        <Key ID="STR_MEU_Ammoboxes_50Cal_USMC">
+            <English>[USMC] 50 Cal box</English>
+            <Spanish>[USMC] Caja de Calibre 50</Spanish>
+        </Key>
+        <Key ID="STR_MEU_Ammoboxes_MK19_USMC">
+            <English>[USMC] 40mm grenades box</English>
+            <Spanish>[USMC] Caja de granadas de 40mm</Spanish>
+        </Key>
+        <Key ID="STR_MEU_Ammoboxes_Supplies_USMC">
+            <English>[USMC] Supplies box</English>
+            <Spanish>[USMC] Caja de suministros</Spanish>
+        </Key>
+        <Key ID="STR_MEU_Ammoboxes_Weapons_RU">
+            <English>[RU] Weapons box</English>
+            <Spanish>[RU] Caja de Armas</Spanish>
+        </Key>
+        <Key ID="STR_MEU_Ammoboxes_Crate_name">
+            <English>Crate</English>
+            <Spanish>Caja</Spanish>
+        </Key>
+        <Key ID="STR_MEU_Ammoboxes_Equipment_name">
+            <English>Equipment crate</English>
+            <Spanish>Caja de equipamiento</Spanish>
+        </Key>
+        <Key ID="STR_MEU_Ammoboxes_Explosives_name">
+            <English>Explosives crate</English>
+            <Spanish>Caja de explosivos</Spanish>
+        </Key>
+        <Key ID="STR_MEU_Ammoboxes_Items_name">
+            <English>Items crate</English>
+            <Spanish>Caja de objetos</Spanish>
+        </Key>
+        <Key ID="STR_MEU_Ammoboxes_Launchers_name">
+            <English>Launchers crate</English>
+            <Spanish>Caja de lanzadores</Spanish>
+        </Key>
+        <Key ID="STR_MEU_Ammoboxes_Medical_name">
+            <English>Medical crate</English>
+            <Spanish>Caja de medicinas</Spanish>
+        </Key>
+        <Key ID="STR_MEU_Ammoboxes_Radios_name">
+            <English>Radios crate</English>
+            <Spanish>Caja de radios</Spanish>
+        </Key>
+        <Key ID="STR_MEU_Ammoboxes_Weapons_name">
+            <English>Weapons crate</English>
+            <Spanish>Caja de armas</Spanish>
+        </Key>
+        <Key ID="STR_MEU_Ammoboxes_Ropes_name">
+            <English>Ropes crate</English>
+            <Spanish>Caja de cuerdas</Spanish>
+        </Key>
+        <Key ID="STR_MEU_Ammoboxes_Rations_name">
+            <English>Rations crate</English>
+            <Spanish>Caja de raciones</Spanish>
+        </Key>
+        <Key ID="STR_MEU_Ammoboxes_50Cal_name">
+            <English>50 Cal crate</English>
+            <Spanish>Caja calibre 50</Spanish>
+        </Key>
+        <Key ID="STR_MEU_Ammoboxes_Mk19_name">
+            <English>40mm grenades crate</English>
+            <Spanish>Caja de granadas de 40mm</Spanish>
+        </Key>
+    </Package>
+</Project>
