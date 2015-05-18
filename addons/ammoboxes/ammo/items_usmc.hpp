@@ -91,9 +91,9 @@ class TransportItems
 	MACRO_ADDITEM(ACE_key_lockpick,10);
 	MACRO_ADDITEM(B_UavTerminal,50);
 	MACRO_ADDITEM(ACE_UAVBattery,100);
-	MACRO_ADDITEM(ACE_NVG_Gen3,100);
-	MACRO_ADDITEM(ACE_NVG_Gen4,100);
 	
+	MACRO_ADDITEM(rhsusf_ANPVS_14,30);
+	MACRO_ADDITEM(rhsusf_ANPVS_15,30);
 	MACRO_ADDITEM(A3_GPNVG18_F,10);
     MACRO_ADDITEM(A3_GPNVG18_BLK_F,10);
     MACRO_ADDITEM(A3_GPNVG18b_F,10);
@@ -102,91 +102,7 @@ class TransportItems
     MACRO_ADDITEM(A3_GPNVG18_REC_BLK_F,10);
     MACRO_ADDITEM(A3_GPNVG18b_REC_F,10);
     MACRO_ADDITEM(A3_GPNVG18b_REC_BLK_F,10);
-	class _xx_NVGoggles_mas_mask
-	{
-		name = "NVGoggles_mas_mask";
-		count = 30;
-	};
-	class _xx_NVGoggles_mas_mask2
-	{
-		name = "NVGoggles_mas_mask2";
-		count = 30;
-	};
-	class _xx_NVGoggles_mas_mask_b
-	{
-		name = "NVGoggles_mas_mask_b";
-		count = 30;
-	};
-	class _xx_NVGoggles_mas_mask2_b
-	{
-		name = "NVGoggles_mas_mask2_b";
-		count = 30;
-	};
-	class _xx_NVGoggles_mas_mask_t
-	{
-		name = "NVGoggles_mas_mask_t";
-		count = 30;
-	};
-	class _xx_NVGoggles_mas_mask2_t
-	{
-		name = "NVGoggles_mas_mask2_t";
-		count = 30;
-	};
-	class _xx_NVGoggles_mas_mask3
-	{
-		name = "NVGoggles_mas_mask3";
-		count = 30;
-	};
-	class _xx_NVGoggles_mas
-	{
-		name = "NVGoggles_mas";
-		count = 30;
-	};
-	class _xx_NVGoggles_o_mas
-	{
-		name = "NVGoggles_o_mas";
-		count = 30;
-	};
-	class _xx_Kio_Balaclava_blk
-	{
-		name = "Kio_Balaclava_blk";
-		count = 30;
-	};
-	class _xx_Kio_Balaclava_blkSkull
-	{
-		name = "Kio_Balaclava_blkSkull";
-		count = 30;
-	};
-	class _xx_Kio_Balaclava_grn
-	{
-		name = "Kio_Balaclava_grn";
-		count = 30;
-	};
-	class _xx_Kio_Balaclava_des
-	{
-		name = "Kio_Balaclava_des";
-		count = 30;
-	};
-	class _xx_Kio_Balaclava_multicam
-	{
-		name = "Kio_Balaclava_multicam";
-		count = 30;
-	};
-	class _xx_Kio_Balaclava_hex
-	{
-		name = "Kio_Balaclava_hex";
-		count = 30;
-	};
-	class _xx_Kio_Balaclava_wcam
-	{
-		name = "Kio_Balaclava_wcam";
-		count = 30;
-	};
-	class _xx_Kio_Balaclava_urbcam
-	{
-		name = "Kio_Balaclava_urbcam";
-		count = 30;
-	};
+
 };
 
 class TransportBackpacks

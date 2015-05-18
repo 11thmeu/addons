@@ -55,26 +55,6 @@ class TransportWeapons
 		weapon = "RH_fnp45t";
 		count = 20;
 	};
-	class _xx_prpl_benelli_rail
-	{
-		weapon = "prpl_benelli_rail";
-		count = 5;
-	};
-	class _xx_prpl_benelli_14_rail
-	{
-		weapon = "prpl_benelli_14_rail";
-		count = 5;
-	};
-	class _xx_prpl_benelli_pgs_rail
-	{
-		weapon = "prpl_benelli_pgs_rail";
-		count = 5;
-	};
-	class _xx_prpl_benelli_14_pgs_rail
-	{
-		weapon = "prpl_benelli_14_pgs_rail";
-		count = 5;
-	};
 	class _xx_rhs_weap_M590_8RD
 	{
 		weapon = "rhs_weap_M590_8RD";
