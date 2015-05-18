@@ -1,10 +1,10 @@
 class TransportWeapons {};
 
 class TransportMagazines {
-	MACRO_ADDMAGAZINE(MEU_IFAK,200);
 };
 
 class TransportItems {
+	MACRO_ADDITEM(MEU_IFAK,200);
 	MACRO_ADDITEM(ACE_fieldDressing,500);
 	MACRO_ADDITEM(ACE_elasticBandage,500);
 	MACRO_ADDITEM(ACE_quikclot,500);
