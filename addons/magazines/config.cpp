@@ -14,3 +14,4 @@ class CfgPatches {
 };
 
 #include "CfgMagazines.hpp"
+#include "CfgVehicles.hpp"
