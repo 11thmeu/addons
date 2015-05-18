@@ -1,1 +1,0 @@
-#include "\z\meu\addons\gps\script_component.hpp"

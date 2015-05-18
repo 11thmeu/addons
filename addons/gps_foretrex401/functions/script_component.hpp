@@ -1,1 +1,0 @@
-#include "\z\meu\addons\gps_foretrex401\script_component.hpp"
