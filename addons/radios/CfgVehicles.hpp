@@ -1,4 +1,5 @@
 class CfgVehicles {
+    class tf_rt1523g;
     class MEU_PRC117G_NicecommII_Coy: tf_rt1523g {
         displayName = "AN/PRC-117G Coyote";
         descriptionShort = "AN/PRC-117G Coyote";
