@@ -5,7 +5,7 @@ class MEU_29Rnd_STANAG300_OTM: 30Rnd_556x45_Stanag {
 	count = 29;
 	mass = 16;
 
-	picture = PATHTOF(UI\m_29_300bootm_ca.paa);
+	picture = QUOTE(PATHTOF(UI\m_29_300bootm_ca.paa));
 	displayName = "29Rnd .300AAC OTM Mag";
 	descriptionShort = "$STR_MEU_Magazines_29_STANAG300_OTM";
 	displayNameShort = ".300AAC";
@@ -20,7 +20,7 @@ class MEU_29Rnd_STANAG300_OTM_S: MEU_29Rnd_STANAG300_OTM {
 	count = 29;
 	mass = 16;
 
-	picture = PATHTOF(UI\m_29_300bootm_s_ca.paa);
+	picture = QUOTE(PATHTOF(UI\m_29_300bootm_s_ca.paa));
 	displayName = "29Rnd .300AAC OTM Subsonic Mag";
 	descriptionShort = "$STR_MEU_Magazines_29_STANAG300_OTM_S";
 	displayNameShort = ".300AAC";
