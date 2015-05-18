@@ -30,14 +30,6 @@ class Box_MEU_Rations_USMC: Box_MEU_Rations {
     scope = 2;
     displayName = "$STR_MEU_Ammoboxes_Rations_USMC";
 };
-class Box_MEU_50Cal_USMC: Box_MEU_50Cal {
-    scope = 2;
-    displayName = "$STR_MEU_Ammoboxes_50Cal_USMC";
-};
-class Box_MEU_Mk19_USMC: Box_MEU_Mk19 {
-    scope = 2;
-    displayName = "$STR_MEU_Ammoboxes_MK19_USMC";
-};
 
 class B_CargoNet_01_ammo_F;
 class Box_MEU_Supplies_USMC: B_CargoNet_01_ammo_F {

@@ -1,4 +1,4 @@
-class Box_NATO_AmoVeh_F;
+class Box_NATO_AmmoVeh_F;
 class Box_MEU_Crate: Box_NATO_AmmoVeh_F {
     MEU_AUTHORS;
     scope = 2;
