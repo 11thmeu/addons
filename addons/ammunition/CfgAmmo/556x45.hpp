@@ -9,6 +9,33 @@ class MEU_B_556x45_M855A1EPR: B_556x45_Ball {
 	visibleFire = 3;
 	audibleFire = 7;
 
+	timeToLive = 1.5; // 1300m
+
+	// AdvancedBallistics
+	/*AB_caliber = 0.224;
+	AB_bulletLength = 0.906;
+	AB_bulletMass = 62;
+	AB_ammoTempMuzzleVelocityData[] = {-91,-86,-78,-68,-57,-42,-23,0,29,65,110}; // ND
+	AB_ballisticCoefficients[] = {0.307};
+	AB_velocityBoundaries[] = {};
+	AB_standardAtmosphere = "ASM";
+	AB_dragModel = 1;
+	AB_muzzleVelocities[] = {747,807,850,868,884,905,911,923,953,962,970,985};
+	AB_barrelLengths[] = {7,9,11,12,13,14,15,16,19,20,21,23,24};*/
+};
+
+class MEU_B_556x45_M856A1EPR: B_556x45_Ball {
+	// Credits to Spartan0536
+	hit = 8.114581;
+	typicalSpeed = 905.256;
+	airFriction = -0.0011543788;
+	caliber = 0.855;
+	deflecting = 21;
+	visibleFire = 3;
+	audibleFire = 7;
+
+	timeToLive = 0.9; // 814m aprox
+
 	// AdvancedBallistics
 	/*AB_caliber = 0.224;
 	AB_bulletLength = 0.906;
@@ -32,6 +59,8 @@ class MEU_B_556x45_Mk262Mod1: MEU_B_556x45_M855A1EPR {
 	visibleFire = 2.5;
 	audibleFire = 5;
 
+	timeToLive = 1.7; // 1600m
+
 	// AdvancedBallistics
 	/*AB_bulletMass = 77;
 	AB_ammoTempMuzzleVelocityData[] = {-91,-86,-78,-68,-57,-42,-23,0,29,65,110}; // ND
@@ -46,13 +75,15 @@ class MEU_B_556x45_Mk262Mod1: MEU_B_556x45_M855A1EPR {
 class MEU_B_556x45_SimunitionFX: B_556x45_Ball {
 
 	hit = 0;
-	typicalSpeed = 905.256;
+	typicalSpeed = 198; // http://en.wikipedia.org/wiki/Simunition
 	airFriction = -0.0011543788;
 	caliber = 0.855;
 	deflecting = 21;
 	visibleFire = 3;
 	visiblefiretime = 7;
 	audibleFire = 0;
+
+	timeToLive = 0.9; // 180m aprox
 
 	hitMan[] = {};
 	bulletfly[] = {};
