@@ -25,21 +25,6 @@ class TransportWeapons
 		weapon = "rhs_weap_M136_hp";
 		count = 20;
 	};
-	class _xx_MEU_L_M72A6_Folded
-	{
-		weapon = "MEU_L_M72A6_Folded";
-		count = 20;
-	};
-	class _xx_Trixie_SMAW
-	{
-		weapon = "Trixie_SMAW";
-		count = 10;
-	};
-	class _xx_Trixie_Javelin
-	{
-		weapon = "Trixie_Javelin";
-		count = 10;
-	};
 	class _xx_mas_rhs_weap_fim92
 	{
 		weapon = "rhs_weap_fim92";
