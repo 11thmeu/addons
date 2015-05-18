@@ -1,119 +1,125 @@
 class B_556x45_Ball;
 class MEU_B_556x45_M855A1EPR: B_556x45_Ball {
-	// Credits to Spartan0536
-	hit = 8.114581;
-	typicalSpeed = 905.256;
-	airFriction = -0.0011543788;
-	caliber = 0.855;
-	deflecting = 21;
-	visibleFire = 3;
-	audibleFire = 7;
+    // Credits to Spartan0536
+    hit = 8.114581;
+    typicalSpeed = 905.256;
+    airFriction = -0.0011543788;
+    caliber = 0.855;
+    deflecting = 21;
+    visibleFire = 3;
+    audibleFire = 7;
 
-	timeToLive = 1.5; // 1300m
+    timeToLive = 3; // 1300m
 
-	// AdvancedBallistics
-	/*AB_caliber = 0.224;
-	AB_bulletLength = 0.906;
-	AB_bulletMass = 62;
-	AB_ammoTempMuzzleVelocityData[] = {-91,-86,-78,-68,-57,-42,-23,0,29,65,110}; // ND
-	AB_ballisticCoefficients[] = {0.307};
-	AB_velocityBoundaries[] = {};
-	AB_standardAtmosphere = "ASM";
-	AB_dragModel = 1;
-	AB_muzzleVelocities[] = {747,807,850,868,884,905,911,923,953,962,970,985};
-	AB_barrelLengths[] = {7,9,11,12,13,14,15,16,19,20,21,23,24};*/
+    tracerStartTime = 0;
+    tracerEndTime = 0;
+
+    ACE_caliber = 5.69;
+    ACE_bulletLength = 23.012;
+    ACE_bulletMass = 4.0176;
+    ACE_ammoTempMuzzleVelocityShifts[] = {-27.20, -26.44, -23.76, -21.00, -17.54, -13.10, -7.95, -1.62, 6.24, 15.48, 27.75};
+    ACE_ballisticCoefficients[] = {0.151};
+    ACE_velocityBoundaries[] = {};
+    ACE_standardAtmosphere = "ASM";
+    ACE_dragModel = 7;
+    ACE_muzzleVelocities[] = {723, 764, 796, 825, 843, 866, 878, 892, 906, 915, 922, 900};
+    ACE_barrelLengths[] = {210.82, 238.76, 269.24, 299.72, 330.2, 360.68, 391.16, 419.1, 449.58, 480.06, 508.0, 609.6};
 };
 
 class MEU_B_556x45_M856A1EPR: B_556x45_Ball {
-	// Credits to Spartan0536
-	hit = 8.114581;
-	typicalSpeed = 905.256;
-	airFriction = -0.0011543788;
-	caliber = 0.855;
-	deflecting = 21;
-	visibleFire = 3;
-	audibleFire = 7;
+    // Credits to Spartan0536
+    hit = 8.114581;
+    typicalSpeed = 905.256;
+    airFriction = -0.0011543788;
+    caliber = 0.855;
+    deflecting = 21;
+    visibleFire = 3;
+    audibleFire = 7;
 
-	timeToLive = 0.9; // 814m aprox
+    timeToLive = 2; // 814m aprox
+    tracerStartTime = 0.073;
+    tracerEndTime = 1.579;
 
-	// AdvancedBallistics
-	/*AB_caliber = 0.224;
-	AB_bulletLength = 0.906;
-	AB_bulletMass = 62;
-	AB_ammoTempMuzzleVelocityData[] = {-91,-86,-78,-68,-57,-42,-23,0,29,65,110}; // ND
-	AB_ballisticCoefficients[] = {0.307};
-	AB_velocityBoundaries[] = {};
-	AB_standardAtmosphere = "ASM";
-	AB_dragModel = 1;
-	AB_muzzleVelocities[] = {747,807,850,868,884,905,911,923,953,962,970,985};
-	AB_barrelLengths[] = {7,9,11,12,13,14,15,16,19,20,21,23,24};*/
+    ACE_caliber = 5.69;
+    ACE_bulletLength = 23.012;
+    ACE_bulletMass = 4.0176;
+    ACE_ammoTempMuzzleVelocityShifts[] = {-27.20, -26.44, -23.76, -21.00, -17.54, -13.10, -7.95, -1.62, 6.24, 15.48, 27.75};
+    ACE_ballisticCoefficients[] = {0.151};
+    ACE_velocityBoundaries[] = {};
+    ACE_standardAtmosphere = "ASM";
+    ACE_dragModel = 7;
+    ACE_muzzleVelocities[] = {723, 764, 796, 825, 843, 866, 878, 892, 906, 915, 922, 900};
+    ACE_barrelLengths[] = {210.82, 238.76, 269.24, 299.72, 330.2, 360.68, 391.16, 419.1, 449.58, 480.06, 508.0, 609.6};
 };
 
 class MEU_B_556x45_Mk262Mod1: MEU_B_556x45_M855A1EPR {
-	// Credits to Spartan0536
-	hit = 11.5702505;
-	typicalSpeed = 868.68;
-	airFriction = -0.0010867938;
-	caliber = 0.615;
-	deflecting = 16;
-	visibleFire = 2.5;
-	audibleFire = 5;
+    // Credits to Spartan0536
+    hit = 11.5702505;
+    visibleFire = 2.5;
+    audibleFire = 5;
 
-	timeToLive = 1.7; // 1600m
+    timeToLive = 3; // 1600m
 
-	// AdvancedBallistics
-	/*AB_bulletMass = 77;
-	AB_ammoTempMuzzleVelocityData[] = {-91,-86,-78,-68,-57,-42,-23,0,29,65,110}; // ND
-	AB_ballisticCoefficients[] = {0.340};
-	AB_velocityBoundaries[] = {};
-	AB_standardAtmosphere = "ASM";
-	AB_dragModel = 1;
-	AB_muzzleVelocities[] = {723,764,780,808,820,831,851,859,867,875,889};
-	AB_barrelLengths[] = {9,11,12,14,15,16,18,19,20,21,23,24};*/
+    airFriction = -0.001125;
+    caliber = 0.8;
+    deflecting = 18;
+    typicalSpeed = 836;
+    ACE_caliber = 5.69;
+    ACE_bulletLength = 23.012;
+    ACE_bulletMass = 4.9896;
+    ACE_ammoTempMuzzleVelocityShifts[] = {-26.55, -25.47, -22.85, -20.12, -16.98, -12.80, -7.64, -1.53, 5.96, 15.17, 26.19};
+    ACE_ballisticCoefficients[] = {0.361};
+    ACE_velocityBoundaries[] = {};
+    ACE_standardAtmosphere = "ASM";
+    ACE_dragModel = 1;
+    ACE_muzzleVelocities[] = {624, 816, 832, 838};
+    ACE_barrelLengths[] = {190.5, 368.3, 457.2, 508.0};
 };
 
 class MEU_B_556x45_SimunitionFX: B_556x45_Ball {
 
-	hit = 0;
-	typicalSpeed = 198; // http://en.wikipedia.org/wiki/Simunition
-	airFriction = -0.0011543788;
-	caliber = 0.855;
-	deflecting = 21;
-	visibleFire = 3;
-	visiblefiretime = 7;
-	audibleFire = 0;
+    hit = 0;
+    typicalSpeed = 198; // http://en.wikipedia.org/wiki/Simunition
+    airFriction = -0.0011543788;
+    caliber = 0.855;
+    deflecting = 21;
+    visibleFire = 3;
+    visiblefiretime = 7;
+    audibleFire = 0;
 
-	timeToLive = 0.9; // 180m aprox
+    timeToLive = 0.9; // 180m aprox
 
-	hitMan[] = {};
-	bulletfly[] = {};
-	hitarmor[] = {};
-	hitbuilding[] = {};
-	hitconcrete[] = {};
-	hitdefault[] = {};
-	hitfoliage[] = {};
-	hitglass[] = {};
-	hitglassarmored[] = {};
-	hitgroundhard[] = {};
-	hitgroundsoft[] = {};
-	hitiron[] = {};
-	hitmetal[] = {};
-	hitmetalplate[] = {};
-	hitplastic[] = {};
-	hitrubber[] = {};
-	hitwood[] = {};
-	hitground[] = {};
+    // TODO SIMUNITION Ballistic Coef and speeds
 
-	class HitEffects {
-		hit_blood = "";
-		hit_concrete = "";
-		hit_foliage = "";
-		hit_foliage_green = "";
-		hit_glass = "";
-		hit_glass_thin = "";
-		hit_metal = "";
-		hit_plaster = "";
-		hit_rubber = "";
-		hit_wood = "";
-	};
+    hitMan[] = {};
+    bulletfly[] = {};
+    hitarmor[] = {};
+    hitbuilding[] = {};
+    hitconcrete[] = {};
+    hitdefault[] = {};
+    hitfoliage[] = {};
+    hitglass[] = {};
+    hitglassarmored[] = {};
+    hitgroundhard[] = {};
+    hitgroundsoft[] = {};
+    hitiron[] = {};
+    hitmetal[] = {};
+    hitmetalplate[] = {};
+    hitplastic[] = {};
+    hitrubber[] = {};
+    hitwood[] = {};
+    hitground[] = {};
+
+    class HitEffects {
+        hit_blood = "";
+        hit_concrete = "";
+        hit_foliage = "";
+        hit_foliage_green = "";
+        hit_glass = "";
+        hit_glass_thin = "";
+        hit_metal = "";
+        hit_plaster = "";
+        hit_rubber = "";
+        hit_wood = "";
+    };
 };
