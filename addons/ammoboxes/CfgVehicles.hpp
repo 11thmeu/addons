@@ -164,7 +164,7 @@ class CfgVehicles
 		author = "Thrax";
 		scope = 2;
 		vehicleClass = "MEU_vehicles";
-		icon = "\11th_vehicles\data\icon_weapons_ca.paa";
+		icon = PATHTOF(data\icon_weapons_ca.paa);
 		displayName = "$STR_MEU_Ammoboxes_Supplies_USMC";
 		transportAmmo = 0;
 		maximumLoad = 1000000000;
