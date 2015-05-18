@@ -2,14 +2,6 @@ class Box_MEU_Weapons_USMC: Box_MEU_Weapons {
     scope = 2;
     displayName = "$STR_MEU_Ammoboxes_Weapons_USMC";
 };
-class Box_MEU_Weapons_USMC_SOC: Box_MEU_Weapons {
-    scope = 2;
-    displayName = "$STR_MEU_Ammoboxes_Weapons_USMC_SOC";
-};
-class Box_MEU_Weapons_USMC_SOC_REG: Box_MEU_Weapons {
-    scope = 2;
-    displayName = "$STR_MEU_Ammoboxes_Weapons_USMC_REG";
-};
 /* DEPRECATED
 class Box_USMC_Weapons_USMC: Box_MEU_Weapons_USMC {//Naming error, left for compatibility
     scope = 1;
