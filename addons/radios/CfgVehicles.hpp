@@ -5,5 +5,6 @@ class CfgVehicles {
         descriptionShort = "AN/PRC-117G Coyote";
         hiddenSelections[] = {"camo"};
         hiddenSelectionsTextures[] = {"\task_force_radio_items\models\data\clf_nicecomm2_coyote_co.paa"};
+        model = "\task_force_radio_items\models\clf_nicecomm2";
     };
 };
