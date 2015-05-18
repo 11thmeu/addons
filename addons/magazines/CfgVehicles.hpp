@@ -1,0 +1,16 @@
+class CfgVehicles {
+    class Box_MEU_Weapons;
+    class Box_MEU_Weapons_USMC: Box_MEU_Weapons {
+        class TransportMagazines {
+            MACRO_ADDMAGAZINE(MEU_30Rnd_STANAG4179_M855A1,100);
+            MACRO_ADDMAGAZINE(MEU_30Rnd_STANAG4179_M856A1,100);
+            MACRO_ADDMAGAZINE(MEU_30Rnd_STANAG4179_Mk262Mod1,100);
+            MACRO_ADDMAGAZINE(MEU_20Rnd_STANAG4179_Mk262Mod1,100);
+            MACRO_ADDMAGAZINE(MEU_100Rnd_BetaCMag,100);
+            MACRO_ADDMAGAZINE(MEU_200Rnd_M249_M855A1,100);
+            MACRO_ADDMAGAZINE(MEU_200Rnd_M249_M856A1,100);
+            MACRO_ADDMAGAZINE(MEU_100Rnd_M249_M855A1,100);
+            MACRO_ADDMAGAZINE(MEU_100Rnd_M249_M856A1,100);
+        };
+    };
+};

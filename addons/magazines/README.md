@@ -27,6 +27,7 @@ This addons contains all weapon magazines used by [11th Marine Expeditionary Uni
 List of addons required to use this component.
 
 - meu_ammunition
+- meu_ammoboxes
 
 
 ## Maintainers
