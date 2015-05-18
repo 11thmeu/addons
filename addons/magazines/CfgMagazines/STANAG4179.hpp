@@ -65,7 +65,7 @@ class MEU_100Rnd_BetaCMag: MEU_30Rnd_STANAG4179_M855A1 {
 	count = 100;
 	mass = 46;
 
-	picture = PATHOF(UI\m_100_stanag4179_m855a1_ca.paa);
+	picture = PATHTOF(UI\m_100_stanag4179_m855a1_ca.paa);
 	displayName = "100Rnd 5.56x45mm Beta C-Mag";
 	descriptionShort = "$STR_MEU_Weapons_100Rnd_BetaCMag";
 	displayNameShort = "M855A1";
@@ -77,7 +77,7 @@ class MEU_200Rnd_M249_M855A1: MEU_30Rnd_STANAG4179_M855A1 {
 	count = 200;
 	mass = 100;
 
-	picture = PATHOF(UI\m_200_M249_m855a1.paa);
+	picture = PATHTOF(UI\m_200_M249_m855a1.paa);
 	displayName = "200Rnd M855A1 M249";
 	descriptionShort = "$STR_MEU_Weapons_100Rnd_BetaCMag";
 	displayNameShort = "M855A1";
@@ -90,7 +90,7 @@ class MEU_200Rnd_M249_M855A1: MEU_30Rnd_STANAG4179_M855A1 {
 class MEU_200Rnd_M249_M856A1: MEU_200Rnd_M249_M855A1 {
 	tracersEvery = 3;
 
-	picture = PATHOF(UI\m_200_M249_m856a1.paa);
+	picture = PATHTOF(UI\m_200_M249_m856a1.paa);
 	displayName = "200Rnd M856A1 M249";
 	descriptionShort = "$STR_MEU_Weapons_100Rnd_BetaCMag";
 	displayNameShort = "M856A1";
@@ -104,7 +104,7 @@ class MEU_100Rnd_M249_M855A1: MEU_30Rnd_STANAG4179_M855A1 {
 	count = 200;
 	mass = 100;
 
-	picture = PATHOF(UI\m_100_M249_m855a1.paa);
+	picture = PATHTOF(UI\m_100_M249_m855a1.paa);
 	displayName = "100Rnd M855A1 M249";
 	descriptionShort = "$STR_MEU_Weapons_100Rnd_BetaCMag";
 	displayNameShort = "M855A1";
@@ -117,7 +117,7 @@ class MEU_100Rnd_M249_M855A1: MEU_30Rnd_STANAG4179_M855A1 {
 class MEU_100Rnd_M249_M856A1: MEU_200Rnd_M249_M855A1 {
 	tracersEvery = 3;
 
-	picture = PATHOF(UI\m_100_M249_m856a1.paa);
+	picture = PATHTOF(UI\m_100_M249_m856a1.paa);
 	displayName = "100Rnd M856A1 M249";
 	descriptionShort = "$STR_MEU_Weapons_100Rnd_BetaCMag";
 	displayNameShort = "M856A1";
