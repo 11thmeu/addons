@@ -1,60 +1,25 @@
-class TransportWeapons
-{
-	class _xx_RH_m9
-	{
-		weapon = "RH_m9";
-		count = 10;
-	};
-	class _xx_RH_m9c
-	{
-		weapon = "RH_m9c";
-		count = 10;
-	};
-	class _xx_C1987_MP7_folded_p
-	{
-		weapon = "C1987_MP7_folded_p";
-		count = 20;
-	};
-	class _xx_RH_m1911
-	{
-		weapon = "RH_m1911";
-		count = 20;
-	};
-	class _xx_RH_kimber
-	{
-		weapon = "RH_kimber";
-		count = 20;
-	};
-	class _xx_RH_kimber_nw
-	{
-		weapon = "RH_kimber_nw";
-		count = 20;
-	};
-	class _xx_RH_mk2
-	{
-		weapon = "RH_mk2";
-		count = 20;
-	};	
-	class _xx_RH_g19
-	{
-		weapon = "RH_g19";
-		count = 20;
-	};
-	class _xx_RH_g19t
-	{
-		weapon = "RH_g19t";
-		count = 20;
-	};
-	class _xx_RH_fnp45
-	{
-		weapon = "RH_fnp45";
-		count = 20;
-	};
-	class _xx_RH_fnp45t
-	{
-		weapon = "RH_fnp45t";
-		count = 20;
-	};
+class TransportWeapons {
+
+	// Sidearms
+	MACRO_ADDWEAPON(RH_usp,20);
+	MACRO_ADDWEAPON(RH_uspm,20);
+	MACRO_ADDWEAPON(RH_m1911,20);
+	MACRO_ADDWEAPON(RH_kimber,20);
+	MACRO_ADDWEAPON(RH_kimber_nw,20);
+	MACRO_ADDWEAPON(RH_m9,20);
+	MACRO_ADDWEAPON(RH_m9c,20);
+	MACRO_ADDWEAPON(RH_g18,20);
+	MACRO_ADDWEAPON(RH_g17,20);
+	MACRO_ADDWEAPON(RH_g19,20);
+	MACRO_ADDWEAPON(RH_g19t,20);
+	MACRO_ADDWEAPON(RH_p226,20);
+	MACRO_ADDWEAPON(RH_p226s,20);
+	MACRO_ADDWEAPON(RH_fnp45,20);
+	MACRO_ADDWEAPON(RH_fnp45t,20);
+	MACRO_ADDWEAPON(RH_fn57,20);
+	MACRO_ADDWEAPON(RH_fn57_g,20);
+	MACRO_ADDWEAPON(RH_fn57_t,20);
+
 	class _xx_rhs_weap_M590_8RD
 	{
 		weapon = "rhs_weap_M590_8RD";
@@ -415,11 +380,6 @@ class TransportWeapons
 		weapon = "Trixie_M40A3_Clean";
 		count = 2;
 	};
-	class _xx_shm_m40a5
-	{
-		weapon = "shm_m40a5";
-		count = 2;
-	};
 	class _xx_RH_Mk11
 	{
 		weapon = "RH_Mk11";
@@ -509,61 +469,15 @@ class TransportWeapons
 
 class TransportMagazines
 {
-	class _xx_RH_15Rnd_9x19_M9
-	{
-		magazine = "RH_15Rnd_9x19_M9";
-		count = 100;
-	};
-	class _xx_RH_10Rnd_22LR_mk2
-	{
-		magazine = "RH_10Rnd_22LR_mk2";
-		count = 100;
-	};
-	class _xx_RH_7Rnd_45cal_m1911
-	{
-		magazine = "RH_7Rnd_45cal_m1911";
-		count = 100;
-	};
-	class _xx_RH_17Rnd_9x19_g17
-	{
-		magazine = "RH_17Rnd_9x19_g17";
-		count = 100;
-	};
-	class _xx_RH_15Rnd_45cal_fnp
-	{
-		magazine = "RH_15Rnd_45cal_fnp";
-		count = 100;
-	};
-	class _xx_12Rnd_mas_45acp_Mag
-	{
-		magazine = "12Rnd_mas_45acp_Mag";
-		count = 100;
-	};
-	class _xx_10Rnd_mas_45acp_Mag
-	{
-		magazine = "10Rnd_mas_45acp_Mag";
-		count = 100;
-	};
-	class _xx_prpl_8Rnd_12Gauge_Pellets
-	{
-		magazine = "prpl_8Rnd_12Gauge_Pellets";
-		count = 100;
-	};
-	class _xx_prpl_8Rnd_12Gauge_Slug
-	{
-		magazine = "prpl_8Rnd_12Gauge_Slug";
-		count = 100;
-	};
-	class _xx_prpl_6Rnd_12Gauge_Pellets
-	{
-		magazine = "prpl_6Rnd_12Gauge_Pellets";
-		count = 100;
-	};
-	class _xx_prpl_6Rnd_12Gauge_Slug
-	{
-		magazine = "prpl_6Rnd_12Gauge_Slug";
-		count = 100;
-	};
+	MACRO_ADDMAGAZINE(RH_7Rnd_45cal_m1911,100);
+	MACRO_ADDMAGAZINE(RH_16Rnd_40cal_usp,100);
+	MACRO_ADDMAGAZINE(RH_15Rnd_9x19_M9,100);
+	MACRO_ADDMAGAZINE(RH_33Rnd_9x19_g18,100);
+	MACRO_ADDMAGAZINE(RH_17Rnd_9x19_g17,100);
+	MACRO_ADDMAGAZINE(RH_15Rnd_9x19_SIG,100);
+	MACRO_ADDMAGAZINE(RH_15Rnd_45cal_fnp,100);
+	MACRO_ADDMAGAZINE(RH_20Rnd_57x28_FN,100);
+	
 	class _xx_rhsusf_8Rnd_00Buck
 	{
 		magazine = "rhsusf_8Rnd_00Buck";
@@ -664,11 +578,6 @@ class TransportMagazines
 		magazine = "MEU_20Rnd_MK11_M80";
 		count = 100;
 	};
-	/*class _xx_MEU_20Rnd_MK11_M80_FT
-	{
-		magazine = "MEU_20Rnd_MK11_M80_FT";
-		count = 100;
-	};*/
 	class _xx_MEU_20Rnd_MK11_M118LR
 	{
 		magazine = "MEU_20Rnd_MK11_M118LR";
