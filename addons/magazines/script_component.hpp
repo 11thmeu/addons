@@ -9,6 +9,6 @@
     #define DEBUG_SETTINGS DEBUG_SETTINGS_MAGAZINES
 #endif
 
-#include "magazine_groups.hpp"
+#include "macros.hpp"
 
 #include "\z\meu\addons\main\script_macros.hpp"

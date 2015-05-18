@@ -81,6 +81,8 @@ class MEU_200Rnd_M249_M855A1: MEU_30Rnd_STANAG4179_M855A1 {
 	displayName = "200Rnd M855A1 M249";
 	descriptionShort = "$STR_MEU_Weapons_100Rnd_BetaCMag";
 	displayNameShort = "M855A1";
+	
+	ACE_isBelt = 1;
 
 	MAGAZINE_GROUP_M249;
 };
@@ -92,6 +94,8 @@ class MEU_200Rnd_M249_M856A1: MEU_200Rnd_M249_M855A1 {
 	displayName = "200Rnd M856A1 M249";
 	descriptionShort = "$STR_MEU_Weapons_100Rnd_BetaCMag";
 	displayNameShort = "M856A1";
+
+	ACE_isBelt = 1;
 
 	MAGAZINE_GROUP_M249;
 };
@@ -105,6 +109,8 @@ class MEU_100Rnd_M249_M855A1: MEU_30Rnd_STANAG4179_M855A1 {
 	descriptionShort = "$STR_MEU_Weapons_100Rnd_BetaCMag";
 	displayNameShort = "M855A1";
 
+	ACE_isBelt = 1;
+
 	MAGAZINE_GROUP_M249;
 };
 
@@ -116,5 +122,7 @@ class MEU_100Rnd_M249_M856A1: MEU_200Rnd_M249_M855A1 {
 	descriptionShort = "$STR_MEU_Weapons_100Rnd_BetaCMag";
 	displayNameShort = "M856A1";
 
+	ACE_isBelt = 1;
+	
 	MAGAZINE_GROUP_M249;
 };
