@@ -460,15 +460,10 @@ class TransportWeapons {
 		weapon = "Trixie_M107_Black";
 		count = 2;
 	};
-	class _xx_rhs_weap_M320
-	{
-		weapon = "rhs_weap_M320";
-		count = 5;
-	};
+	MACRO_ADDWEAPON(rhs_weap_M320,20);
 };
 
-class TransportMagazines
-{
+class TransportMagazines {
 	MACRO_ADDMAGAZINE(RH_7Rnd_45cal_m1911,100);
 	MACRO_ADDMAGAZINE(RH_16Rnd_40cal_usp,100);
 	MACRO_ADDMAGAZINE(RH_15Rnd_9x19_M9,100);
@@ -477,252 +472,54 @@ class TransportMagazines
 	MACRO_ADDMAGAZINE(RH_15Rnd_9x19_SIG,100);
 	MACRO_ADDMAGAZINE(RH_15Rnd_45cal_fnp,100);
 	MACRO_ADDMAGAZINE(RH_20Rnd_57x28_FN,100);
-	
-	class _xx_rhsusf_8Rnd_00Buck
-	{
-		magazine = "rhsusf_8Rnd_00Buck";
-		count = 100;
-	};
-	class _xx_rhsusf_8rnd_doomsday_buck
-	{
-		magazine = "rhsusf_8rnd_doomsday_buck";
-		count = 100;
-	};
-	class _xx_C1987_40Rnd_46x30_mp7
-	{
-		magazine = "C1987_40Rnd_46x30_mp7";
-		count = 100;
-	};
-	class _xx_hlc_30Rnd_9x19_B_MP5
-	{
-		magazine = "hlc_30Rnd_9x19_B_MP5";
-		count = 100;
-	};
-	class _xx_hlc_30Rnd_9x19_GD_MP5
-	{
-		magazine = "hlc_30Rnd_9x19_GD_MP5";
-		count = 100;
-	};
-	class _xx_hlc_30Rnd_9x19_SD_MP5
-	{
-		magazine = "hlc_30Rnd_9x19_SD_MP5";
-		count = 100;
-	};
-	class _xx_200Rnd_mas_556x45_Stanag
-	{
-		magazine = "200Rnd_mas_556x45_Stanag";
-		count = 100;
-	};
-	class _xx_200Rnd_mas_556x45_T_Stanag
-	{
-		magazine = "200Rnd_mas_556x45_T_Stanag";
-		count = 100;
-	};
-	class _xx_MEU_30Rnd_STANAG4179_M855A1EPR
-	{
-		magazine = "MEU_30Rnd_STANAG4179_M855A1EPR";
-		count = 100;
-	};
-	class _xx_MEU_30Rnd_STANAG4179_M856A1EPR_FT
-	{
-		magazine = "MEU_30Rnd_STANAG4179_M856A1EPR_FT";
-		count = 100;
-	};
-	class _xx_MEU_30Rnd_STANAG4179_M855A1EPR_MT
-	{
-		magazine = "MEU_30Rnd_STANAG4179_M855A1EPR_MT";
-		count = 100;
-	};
-	class _xx_MEU_30Rnd_STANAG4179_Mk262Mod1
-	{
-		magazine = "MEU_30Rnd_STANAG4179_Mk262Mod1";
-		count = 100;
-	};
-	class _xx_MEU_20Rnd_STANAG4179_Mk262Mod1
-	{
-		magazine = "MEU_20Rnd_STANAG4179_Mk262Mod1";
-		count = 100;
-	};
-	class _xx_MEU_20Rnd_STANAG4179_Mk318SOST
-	{
-		magazine = "MEU_30Rnd_STANAG4179_Mk318Mod0SOST";
-		count = 100;
-	};
-	class _xx_MEU_100Rnd_BetaCMag
-	{
-		magazine = "MEU_100Rnd_BetaCMag";
-		count = 50;
-	};
-	class _xx_MEU_100Rnd_BetaCMag_FT
-	{
-		magazine = "MEU_100Rnd_BetaCMag_FT";
-		count = 50;
-	};
-	class _xx_MEU_30Rnd_SimunitionFX
-	{
-		magazine = "MEU_30Rnd_SimunitionFX";
-		count = 100;
-	};
-	class _xx_MEU_29_STANAG300_OTM
-	{
-		magazine = "MEU_29_STANAG300_OTM";
-		count = 100;
-	};
-	class _xx_MEU_29_STANAG300_OTM_S
-	{
-		magazine = "MEU_29_STANAG300_OTM_S";
-		count = 100;
-	};
-	class _xx_MEU_20Rnd_MK11_M80
-	{
-		magazine = "MEU_20Rnd_MK11_M80";
-		count = 100;
-	};
-	class _xx_MEU_20Rnd_MK11_M118LR
-	{
-		magazine = "MEU_20Rnd_MK11_M118LR";
-		count = 100;
-	};
-	class _xx_MEU_20Rnd_MK11_Mk316Mod0
-	{
-		magazine = "MEU_20Rnd_MK11_Mk316Mod0";
-		count = 100;
-	};
-	class _xx_MEU_20Rnd_MK11_Mk319Mod0
-	{
-		magazine = "MEU_20Rnd_MK11_Mk319Mod0";
-		count = 100;
-	};
-	class _xx_MEU_20Rnd_MK11_LapuaFMJBTSub
-	{
-		magazine = "MEU_20Rnd_MK11_LapuaFMJBTSub";
-		count = 100;
-	};
-	class _xx_MEU_20Rnd_M14_M80
-	{
-		magazine = "MEU_20Rnd_M14_M80";
-		count = 100;
-	};
-	class _xx_MEU_20Rnd_M14_Mk316Mod0
-	{
-		magazine = "MEU_20Rnd_M14_Mk316Mod0";
-		count = 100;
-	};
-	class _xx_MEU_20Rnd_M14_Mk319Mod0
-	{
-		magazine = "MEU_20Rnd_M14_Mk319Mod0";
-		count = 100;
-	};
-	class _xx_MEU_20Rnd_M14_LapuaFMJBTSub
-	{
-		magazine = "MEU_20Rnd_M14_LapuaFMJBTSub";
-		count = 100;
-	};
-	class _xx_MEU_5Rnd_Bullet_M80
-	{
-		magazine = "MEU_5Rnd_Bullet_M80";
-		count = 100;
-	};
-	class _xx_MEU_5Rnd_Bullet_Mk316Mod0
-	{
-		magazine = "MEU_5Rnd_Bullet_Mk316Mod0";
-		count = 100;
-	};
-	class _xx_20Rnd_556x45_UW_mag
-	{
-		magazine = "20Rnd_556x45_UW_mag";
-		count = 200;
-	};
-	class _xx_100Rnd_mas_762x51_Stanag
-	{
-		magazine = "100Rnd_mas_762x51_Stanag";
-		count = 200;
-	};
-	class _xx_100Rnd_mas_762x51_T_Stanag
-	{
-		magazine = "100Rnd_mas_762x51_T_Stanag";
-		count = 200;
-	};
-	class _xx_Trixie_10x127_mag
-	{
-		magazine = "Trixie_10x127_mag";
-		count = 100;
-	};
-	class _xx_Trixie_10x127_HE_Mag
-	{
-		magazine = "Trixie_10x127_HE_Mag";
-		count = 100;
-	};
-	class _xx_Trixie_10x127_HEIAP_Mag
-	{
-		magazine = "Trixie_10x127_HEIAP_Mag";
-		count = 100;
-	};
-	class _xx_1Rnd_HE_Grenade_shell
-	{
-		magazine = "1Rnd_HE_Grenade_shell";
-		count = 100;
-	};
-	class _xx_UGL_FlareWhite_F
-	{
-		magazine = "UGL_FlareWhite_F";
-		count = 100;
-	};
-	class _xx_UGL_FlareGreen_F
-	{
-		magazine = "UGL_FlareGreen_F";
-		count = 100;
-	};
-	class _xx_UGL_FlareRed_F
-	{
-		magazine = "UGL_FlareRed_F";
-		count = 100;
-	};
-	class _xx_UGL_FlareYellow_F
-	{
-		magazine = "UGL_FlareYellow_F";
-		count = 100;
-	};
-	class _xx_UGL_FlareCIR_F
-	{
-		magazine = "UGL_FlareCIR_F";
-		count = 100;
-	};
-	class _xx_1Rnd_Smoke_Grenade_shell
-	{
-		magazine = "1Rnd_Smoke_Grenade_shell";
-		count = 100;
-	};
-	class _xx_1Rnd_SmokeRed_Grenade_shell
-	{
-		magazine = "1Rnd_SmokeRed_Grenade_shell";
-		count = 100;
-	};
-	class _xx_1Rnd_SmokeGreen_Grenade_shell
-	{
-		magazine = "1Rnd_SmokeGreen_Grenade_shell";
-		count = 100;
-	};
-	class _xx_1Rnd_SmokeYellow_Grenade_shell
-	{
-		magazine = "1Rnd_SmokeYellow_Grenade_shell";
-		count = 100;
-	};
-	class _xx_1Rnd_SmokePurple_Grenade_shell
-	{
-		magazine = "1Rnd_SmokePurple_Grenade_shell";
-		count = 100;
-	};
-	class _xx_1Rnd_SmokeBlue_Grenade_shell
-	{
-		magazine = "1Rnd_SmokeBlue_Grenade_shell";
-		count = 100;
-	};
-	class _xx_1Rnd_SmokeOrange_Grenade_shell
-	{
-		magazine = "1Rnd_SmokeOrange_Grenade_shell";
-		count = 100;
-	};
+	MACRO_ADDMAGAZINE(rhsusf_8Rnd_00Buck,100);
+	MACRO_ADDMAGAZINE(rhsusf_8rnd_doomsday_buck,100);
+	MACRO_ADDMAGAZINE(C1987_40Rnd_46x30_mp7,100);
+	MACRO_ADDMAGAZINE(hlc_30Rnd_9x19_B_MP5,100);
+	MACRO_ADDMAGAZINE(hlc_30Rnd_9x19_GD_MP5,100);
+	MACRO_ADDMAGAZINE(hlc_30Rnd_9x19_SD_MP5,100);
+	MACRO_ADDMAGAZINE(MEU_30Rnd_STANAG4179_M855A1,200);
+	MACRO_ADDMAGAZINE(MEU_30Rnd_STANAG4179_M856A1,200);
+	MACRO_ADDMAGAZINE(MEU_30Rnd_STANAG4179_Mk262Mod1,200);
+	MACRO_ADDMAGAZINE(MEU_20Rnd_STANAG4179_Mk262Mod1,200);
+	MACRO_ADDMAGAZINE(20Rnd_556x45_UW_mag,200);
+	MACRO_ADDMAGAZINE(MEU_100Rnd_BetaCMag,200);
+	MACRO_ADDMAGAZINE(MEU_200Rnd_M249_M855A1,200);
+	MACRO_ADDMAGAZINE(MEU_200Rnd_M249_M856A1,200);
+	MACRO_ADDMAGAZINE(MEU_100Rnd_M249_M855A1,200);
+	MACRO_ADDMAGAZINE(MEU_100Rnd_M249_M856A1,200);
+	MACRO_ADDMAGAZINE(MEU_29Rnd_STANAG300_OTM,200);
+	MACRO_ADDMAGAZINE(MEU_29Rnd_STANAG300_OTM_S,200);
+	MACRO_ADDMAGAZINE(MEU_20Rnd_MK11_M80A1,200);
+	MACRO_ADDMAGAZINE(MEU_20Rnd_MK11_M80A1_T,200);
+	MACRO_ADDMAGAZINE(MEU_20Rnd_MK11_M118LR,200);
+	MACRO_ADDMAGAZINE(MEU_20Rnd_MK11_Mk316Mod0,200);
+	MACRO_ADDMAGAZINE(MEU_20Rnd_MK11_LapuaFMJBTSub,200);
+	MACRO_ADDMAGAZINE(MEU_20Rnd_M14_M80,200);
+	MACRO_ADDMAGAZINE(MEU_20Rnd_M14_Mk316Mod0,200);
+	MACRO_ADDMAGAZINE(MEU_20Rnd_M14_LapuaFMJBTSub,200);
+	MACRO_ADDMAGAZINE(MEU_5Rnd_M40_Mk316Mod0,200);
+	MACRO_ADDMAGAZINE(MEU_5Rnd_M40_M118LR,200);
+	MACRO_ADDMAGAZINE(MEU_5Rnd_Bullet_Mk316Mod0,200);
+	MACRO_ADDMAGAZINE(MEU_5Rnd_Bullet_M118LR,200);
+	MACRO_ADDMAGAZINE(MEU_100Rnd_Belt_M80A1,100);
+	MACRO_ADDMAGAZINE(MEU_100Rnd_Belt_M80A1_T,100);
+	MACRO_ADDMAGAZINE(Trixie_10x127_mag,50);
+	MACRO_ADDMAGAZINE(Trixie_10x127_HE_Mag,50);
+	MACRO_ADDMAGAZINE(Trixie_10x127_HEIAP_Mag,50);
+	MACRO_ADDMAGAZINE(1Rnd_HE_Grenade_shell,50);
+	MACRO_ADDMAGAZINE(UGL_FlareWhite_F,50);
+	MACRO_ADDMAGAZINE(UGL_FlareGreen_F,50);
+	MACRO_ADDMAGAZINE(UGL_FlareRed_F,50);
+	MACRO_ADDMAGAZINE(UGL_FlareYellow_F,50);
+	MACRO_ADDMAGAZINE(UGL_FlareCIR_F,50);
+	MACRO_ADDMAGAZINE(1Rnd_Smoke_Grenade_shell,50);
+	MACRO_ADDMAGAZINE(1Rnd_SmokeRed_Grenade_shell,50);
+	MACRO_ADDMAGAZINE(1Rnd_SmokeGreen_Grenade_shell,50);
+	MACRO_ADDMAGAZINE(1Rnd_SmokeYellow_Grenade_shell,50);
+	MACRO_ADDMAGAZINE(1Rnd_SmokePurple_Grenade_shell,50);
+	MACRO_ADDMAGAZINE(1Rnd_SmokeBlue_Grenade_shell,50);
+	MACRO_ADDMAGAZINE(1Rnd_SmokeOrange_Grenade_shell,50);
 };
 
 class TransportItems {};

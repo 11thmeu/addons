@@ -103,6 +103,19 @@ class MEU_20Rnd_M14_LapuaFMJBTSub: MEU_20Rnd_MK11_LapuaFMJBTSub {
 	magazineGroup[] = {"MEU_M14"};
 };
 
+class MEU_20Rnd_M14_M118LR: MEU_20Rnd_MK11_M118LR {
+	MEU_AUTHORS;
+
+	count = 20;
+
+	picture = QUOTE(PATHTOF(UI\m_20_m14_m118lr_ca.paa));
+	displayName = "20Rnd M118LR M14";
+	descriptionShort = "20Rnd M118LR";
+	displayNameShort = "20Rnd M118LR";
+
+	magazineGroup[] = {"MEU_M14"};
+};
+
 class MEU_5Rnd_M40_Mk316Mod0: MEU_20Rnd_MK11_Mk316Mod0 {
 	MEU_AUTHORS;
 
@@ -112,6 +125,19 @@ class MEU_5Rnd_M40_Mk316Mod0: MEU_20Rnd_MK11_Mk316Mod0 {
 	displayName = "5Rnd Mk 316 Mod 0 M40";
 	descriptionShort = "$STR_MEU_Weapons_5Rnd_M40_Mk316Mod0";
 	displayNameShort = "7.62mm";
+
+	magazineGroup[] = {"MEU_M40"};
+};
+
+class MEU_5Rnd_M40_M118LR: MEU_20Rnd_MK11_M118LR {
+	MEU_AUTHORS;
+
+	count = 5;
+
+	picture = QUOTE(PATHTOF(UI\m_5_m40_m118lr_ca.paa));
+	displayName = "5Rnd M118LR M40";
+	descriptionShort = "5Rnd M118LR";
+	displayNameShort = "5Rnd M118LR";
 
 	magazineGroup[] = {"MEU_M40"};
 };
@@ -129,32 +155,6 @@ class MEU_5Rnd_Bullet_Mk316Mod0: MEU_5Rnd_M40_Mk316Mod0 {
 	magazineGroup[] = {"MEU_762Bullets"};
 };
 
-class MEU_20Rnd_M14_M118LR: MEU_20Rnd_MK11_M118LR {
-	MEU_AUTHORS;
-
-	count = 20;
-
-	picture = QUOTE(PATHTOF(UI\m_20_m14_m118lr_ca.paa));
-	displayName = "20Rnd M118LR M14";
-	descriptionShort = "20Rnd M118LR";
-	displayNameShort = "20Rnd M118LR";
-
-	magazineGroup[] = {"MEU_M14"};
-};
-
-class MEU_5Rnd_M40_M118LR: MEU_20Rnd_MK11_M118LR {
-	MEU_AUTHORS;
-
-	count = 5;
-
-	picture = QUOTE(PATHTOF(UI\m_5_m40_m118lr_ca.paa));
-	displayName = "5Rnd M118LR M40";
-	descriptionShort = "5Rnd M118LR";
-	displayNameShort = "5Rnd M118LR";
-
-	magazineGroup[] = {"MEU_M40"};
-};
-
 class MEU_5Rnd_Bullet_M118LR: MEU_20Rnd_MK11_M118LR {
 	MEU_AUTHORS;
 	
@@ -166,4 +166,32 @@ class MEU_5Rnd_Bullet_M118LR: MEU_20Rnd_MK11_M118LR {
 	displayNameShort = "5Rnd M118LR";
 
 	magazineGroup[] = {"MEU_762Bullets"};
+};
+
+class MEU_100Rnd_Belt_M80A1: MEU_20Rnd_MK11_M80A1 {
+	ammo = "MEU_B_762x51_M80A1";
+	count = 20;
+
+	picture = QUOTE(PATHTOF(UI\m_200_belt_m80_ca.paa);
+	displayName = "20Rnd M80A1 Mk11";
+	descriptionShort = "$STR_MEU_Weapons_20Rnd_MK11_M80";
+	displayNameShort = "M80A1";
+
+	ACE_isBelt = 1;
+
+	MAGAZINE_GROUP_762BELT;
+};
+
+class MEU_100Rnd_Belt_M80A1_T: MEU_100Rnd_Belt_M80A1 {
+	ammo = "MEU_B_762x51_M80A1";
+	count = 20;
+
+	picture = QUOTE(PATHTOF(UI\m_200_belt_m80_ca.paa);
+	displayName = "20Rnd M80A1 Mk11";
+	descriptionShort = "$STR_MEU_Weapons_20Rnd_MK11_M80";
+	displayNameShort = "M80A1";
+
+	ACE_isBelt = 1;
+
+	MAGAZINE_GROUP_762BELT;
 };
