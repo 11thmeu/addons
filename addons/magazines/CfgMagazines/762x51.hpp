@@ -5,7 +5,7 @@ class MEU_20Rnd_MK11_M80A1: 20Rnd_762x51_Mag {
 	ammo = "MEU_B_762x51_M80A1";
 	count = 20;
 
-	picture = QUOTE(PATHTOF(UI\m_20_mk11_m80_ca.paa);
+	picture = QUOTE(PATHTOF(UI\m_20_mk11_m80_ca.paa));
 	displayName = "20Rnd M80A1 Mk11";
 	descriptionShort = "$STR_MEU_Weapons_20Rnd_MK11_M80";
 	displayNameShort = "M80A1";
@@ -121,7 +121,7 @@ class MEU_5Rnd_M40_Mk316Mod0: MEU_20Rnd_MK11_Mk316Mod0 {
 
 	count = 5;
 
-	picture = QUOTE(PATHTOF(UI\m_5_m40_mk316mod0_ca.paa);
+	picture = QUOTE(PATHTOF(UI\m_5_m40_mk316mod0_ca.paa));
 	displayName = "5Rnd Mk 316 Mod 0 M40";
 	descriptionShort = "$STR_MEU_Weapons_5Rnd_M40_Mk316Mod0";
 	displayNameShort = "7.62mm";
