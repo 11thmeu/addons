@@ -1,5 +1,5 @@
 class 20Rnd_762x51_Mag;
-class MEU_20Rnd_MK11_M80A1: 20Rnd_762x51_Mag {
+class MEU_20Rnd_MK11_M80: 20Rnd_762x51_Mag {
 	MEU_AUTHORS;
 
 	ammo = "MEU_B_762x51_M80A1";
@@ -13,7 +13,7 @@ class MEU_20Rnd_MK11_M80A1: 20Rnd_762x51_Mag {
 	MAGAZINE_GROUP_MK11;
 };
 
-class MEU_20Rnd_MK11_M80A1_T: MEU_20Rnd_MK11_M80A1 {
+class MEU_20Rnd_MK11_M80_T: MEU_20Rnd_MK11_M80 {
 	MEU_AUTHORS;
 
 	ammo = "MEU_B_762x51_M80A1";
@@ -168,13 +168,13 @@ class MEU_5Rnd_Bullet_M118LR: MEU_20Rnd_MK11_M118LR {
 	MAGAZINE_GROUP_762BULLETS;
 };
 
-class MEU_100Rnd_Belt_M80A1: MEU_20Rnd_MK11_M80A1 {
+class MEU_100Rnd_Belt_M80: MEU_20Rnd_MK11_M80 {
 	MEU_AUTHORS;
 	
 	ammo = "MEU_B_762x51_M80A1";
 	count = 20;
 
-	picture = QUOTE(PATHTOF(UI\m_200_belt_m80_ca.paa);
+	picture = QUOTE(PATHTOF(UI\m_200_belt_m80_ca.paa));
 	displayName = "20Rnd M80A1 Mk11";
 	descriptionShort = "$STR_MEU_Weapons_20Rnd_MK11_M80";
 	displayNameShort = "M80A1";
@@ -184,13 +184,13 @@ class MEU_100Rnd_Belt_M80A1: MEU_20Rnd_MK11_M80A1 {
 	MAGAZINE_GROUP_762BELT;
 };
 
-class MEU_100Rnd_Belt_M80A1_T: MEU_100Rnd_Belt_M80A1 {
+class MEU_100Rnd_Belt_M80_T: MEU_100Rnd_Belt_M80 {
 	MEU_AUTHORS;
 
 	ammo = "MEU_B_762x51_M80A1";
 	count = 20;
 
-	picture = QUOTE(PATHTOF(UI\m_200_belt_m80_ca.paa);
+	picture = QUOTE(PATHTOF(UI\m_200_belt_m80_ca.paa));
 	displayName = "20Rnd M80A1 Mk11";
 	descriptionShort = "$STR_MEU_Weapons_20Rnd_MK11_M80";
 	displayNameShort = "M80A1";
