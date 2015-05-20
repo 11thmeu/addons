@@ -13,8 +13,3 @@
 
 // MINIMAL required version for the Mod. Components can specify others..
 #define REQUIRED_VERSION 1.44
-
-
-/*
-    #define DEBUG_ENABLED_ATTACHMENTS
-/*
