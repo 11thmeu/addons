@@ -19,42 +19,13 @@ class TransportWeapons {
 	MACRO_ADDWEAPON(RH_fn57,20);
 	MACRO_ADDWEAPON(RH_fn57_g,20);
 	MACRO_ADDWEAPON(RH_fn57_t,20);
-
-	class _xx_rhs_weap_M590_8RD
-	{
-		weapon = "rhs_weap_M590_8RD";
-		count = 5;
-	};
-	class _xx_C1987_MP7
-	{
-		weapon = "C1987_MP7";
-		count = 20;
-	};
-	class _xx_hlc_smg_mp5a4
-	{
-		weapon = "hlc_smg_mp5a4";
-		count = 20;
-	};
-	class _xx_hlc_smg_MP5N 
-	{
-		weapon = "hlc_smg_MP5N";
-		count = 20;
-	};
-	class _xx_hlc_smg_mp5sd6
-	{
-		weapon = "hlc_smg_mp5sd6";
-		count = 20;
-	};
-	class _xx_hlc_smg_9mmar
-	{
-		weapon = "hlc_smg_9mmar";
-		count = 20;
-	};
-	class _xx_hlc_rifle_honeybadger
-	{
-		weapon = "hlc_rifle_honeybadger";
-		count = 20;
-	};
+	MACRO_ADDWEAPON(rhs_weap_M590_8RD,20);
+	MACRO_ADDWEAPON(C1987_MP7,20);
+	MACRO_ADDWEAPON(hlc_smg_mp5a4,20);
+	MACRO_ADDWEAPON(hlc_smg_MP5N,20);
+	MACRO_ADDWEAPON(hlc_smg_mp5sd5,20);
+	MACRO_ADDWEAPON(hlc_smg_mp5sd6,20);
+	MACRO_ADDWEAPON(hlc_rifle_honeybadger,20);
 	class _xx_RH_hb
 	{
 		weapon = "RH_hb";

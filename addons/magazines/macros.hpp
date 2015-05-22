@@ -133,7 +133,8 @@
                       "RH_30Rnd_762x35_FMJ", "RH_30Rnd_762x35_Match", "RH_30Rnd_762x35_MSB"
 
 // Magazines for MP5
-#define MAGAZINES_MP5 "hlc_30Rnd_9x19_B_MP5", "hlc_30Rnd_9x19_GD_MP5", "hlc_30Rnd_9x19_SD_MP5", \
+#define MAGAZINES_MP5 "MEU_30Rnd_MP5_M882", "MEU_30Rnd_MP5_HPP", "MEU_30Rnd_MP5_HP_S", \
+                      "hlc_30Rnd_9x19_B_MP5", "hlc_30Rnd_9x19_GD_MP5", "hlc_30Rnd_9x19_SD_MP5", \
                       "RH_32Rnd_9mm_M822", "RH_32Rnd_9mm_HP", "RH_32Rnd_9mm_HPSB", \
                       "30Rnd_mas_9x21_Stanag", \
                       "30Rnd_9x21_Mag"
