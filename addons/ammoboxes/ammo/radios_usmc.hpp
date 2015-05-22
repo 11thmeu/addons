@@ -1,7 +1,6 @@
 class TransportWeapons {};
 
 class TransportMagazines {
-	MACRO_ADDMAGAZINE(MEU_FrequenciesCard,50);
 };
 
 class TransportItems {
