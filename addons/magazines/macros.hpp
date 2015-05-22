@@ -75,7 +75,7 @@
                       "MEU_30Rnd_SimunitionFX"
                             
 // Magazines for 5.56 STANAG machineguns
-#define MAGAZINES_STANAG_MG "MEU_200Rnd_M249_M855A1", "MEU_200Rnd_M249_M856A1", "MEU_100Rnd_M249_M855A1", "MEU_100Rnd_M249_M856A1" \
+#define MAGAZINES_STANAG_MG "MEU_200Rnd_M249_M855A1", "MEU_200Rnd_M249_M856A1", "MEU_100Rnd_M249_M855A1", "MEU_100Rnd_M249_M856A1", \
                             "200Rnd_mas_556x45_Stanag", "200Rnd_mas_556x45_T_Stanag", \
                             "rhsusf_100Rnd_556x45_soft_pouch", \
                             "MEU_30Rnd_STANAG4179_M855A1", "MEU_30Rnd_STANAG4179_M856A1", \
