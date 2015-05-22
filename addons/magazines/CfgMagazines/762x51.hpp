@@ -31,7 +31,7 @@ class MEU_20Rnd_MK11_M80_T: MEU_20Rnd_MK11_M80 {
 class MEU_20Rnd_MK11_M118LR: 20Rnd_762x51_Mag {
 	MEU_AUTHORS;
 
-	ammo = "AGM_B_762x51_M118LR";
+	ammo = "MEU_B_762x51_M80A1";
 	count = 20;
 
 	picture = QUOTE(PATHTOF(UI\m_20_mk11_m118lr_ca.paa));
@@ -174,7 +174,7 @@ class MEU_100Rnd_Belt_M80: MEU_20Rnd_MK11_M80 {
 	ammo = "MEU_B_762x51_M80A1";
 	count = 20;
 
-	picture = QUOTE(PATHTOF(UI\m_200_belt_m80_ca.paa));
+	picture = QUOTE(PATHTOF(UI\m_100_belt_m80_ca.paa));
 	displayName = "20Rnd M80A1 Mk11";
 	descriptionShort = "$STR_MEU_Weapons_20Rnd_MK11_M80";
 	displayNameShort = "M80A1";
@@ -190,7 +190,7 @@ class MEU_100Rnd_Belt_M80_T: MEU_100Rnd_Belt_M80 {
 	ammo = "MEU_B_762x51_M80A1";
 	count = 20;
 
-	picture = QUOTE(PATHTOF(UI\m_200_belt_m80_ca.paa));
+	picture = QUOTE(PATHTOF(UI\m_100_belt_m80_t_ca.paa));
 	displayName = "20Rnd M80A1 Mk11";
 	descriptionShort = "$STR_MEU_Weapons_20Rnd_MK11_M80";
 	displayNameShort = "M80A1";
