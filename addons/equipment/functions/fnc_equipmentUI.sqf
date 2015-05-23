@@ -1088,15 +1088,15 @@ switch _action do {
             if ((count (_radioSettings select 0) > 0) || (count (_radioSettings select 1) > 0) || (count (_radioSettings select 2) > 0)) then {
                 titleText[(localize "STR_MEU_Equipment_MessageLoadRadio"), "PLAIN DOWN"];
                 //TFAR radioToRequestCount function uses sleep, Scheduled Space has to be used
-                _radioSettings spawn {
+                [_radioSettings, _selected, _playerLoadout] spawn {
                     sleep 5;
                     waitUntil {sleep 1; (count (false call TFAR_fnc_radioToRequestCount) == 0)};
-                    _this call EFUNC(main,setAllRadiosSettings);
+                    (_this select 0) call EFUNC(main,setAllRadiosSettings);
                     titleText[(localize "STR_MEU_Equipment_MessageRadiosLoaded"), "PLAIN DOWN"];
                     GVAR(Loading) = nil;
 
                     // eventhandling
-                    ["equipmentProfileLoaded", [ACE_Player, (format["meu_equipment_%1", _selected]), _playerLoadout]] call ace_common_fnc_localEvent;
+                    ["equipmentProfileLoaded", [ACE_Player, (format["meu_equipment_%1", (_this select 1)]), (_this select 2)]] call ace_common_fnc_localEvent;
                 };
             } else {
                 GVAR(Loading) = nil;
