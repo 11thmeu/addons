@@ -34,7 +34,7 @@ class hlc_rifle_aks74_GL: hlc_rifle_aks74
 	};
 };
 
-class hlc_rifle_ak12: hlc_rifle_aks74 {};
+class hlc_rifle_ak12: hlc_ak_base {};
 class hlc_rifle_RPK12: hlc_rifle_ak12
 {
 	magazines[] = {MAGAZINES_RU545_MG};
@@ -47,7 +47,7 @@ class hlc_rifle_saiga12k: hlc_rifle_ak47
 	magazines[] = {MAGAZINES_Saiga};
 };
 
-class hlc_rifle_ak12GL: hlc_rifle_aks74
+class hlc_rifle_ak12GL: hlc_rifle_ak12
 {
 	class hlc_GP30_AK12: UGL_F
 	{

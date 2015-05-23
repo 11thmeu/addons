@@ -83,7 +83,7 @@ class arifle_mas_mp5: SMG_02_F
 	magazines[] = {MAGAZINES_MP5};
 };
 
-class arifle_mas_mp5sd: arifle_mas_mp5
+class arifle_mas_mp5sd: SMG_02_F
 {
 	magazines[] = {MAGAZINES_MP5};
 };
@@ -143,12 +143,12 @@ class arifle_mas_g3_m203: arifle_mas_hk416_m203
 	magazines[] = {MAGAZINES_G3};
 };
 
-class arifle_mas_fal: arifle_mas_g3
+class arifle_mas_fal: arifle_mas_hk416
 {
 	magazines[] = {MAGAZINES_FAL};
 };
 
-class arifle_mas_fal_m203: arifle_mas_g3_m203
+class arifle_mas_fal_m203: arifle_mas_hk416_m203
 {
 	magazines[] = {MAGAZINES_FAL};
 };

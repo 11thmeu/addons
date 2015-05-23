@@ -1,4 +1,4 @@
-class rhs_weap_M320_Base_F: Rifle_Base_F
+class rhs_weap_M320_Base_F: Pistol_Base_F
 {
 	magazines[] = {ROUNDS_M203};
 };
