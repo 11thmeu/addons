@@ -1,6 +1,7 @@
 class CfgWeapons
 {
     class Rifle;
+    class Pistol_Base_F;
     class Rifle_Base_F: Rifle
     {
         class WeaponSlotsInfo;
