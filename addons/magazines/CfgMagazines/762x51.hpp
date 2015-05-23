@@ -172,11 +172,11 @@ class MEU_100Rnd_Belt_M80: MEU_20Rnd_MK11_M80 {
 	MEU_AUTHORS;
 	
 	ammo = "MEU_B_762x51_M80A1";
-	count = 20;
+	count = 100;
 
 	picture = QUOTE(PATHTOF(UI\m_100_belt_m80_ca.paa));
-	displayName = "20Rnd M80A1 Mk11";
-	descriptionShort = "$STR_MEU_Weapons_20Rnd_MK11_M80";
+	displayName = "100Rnd M80A1 Tracer Belt";
+	descriptionShort = "";
 	displayNameShort = "M80A1";
 
 	ACE_isBelt = 1;
@@ -188,11 +188,13 @@ class MEU_100Rnd_Belt_M80_T: MEU_100Rnd_Belt_M80 {
 	MEU_AUTHORS;
 
 	ammo = "MEU_B_762x51_M80A1";
-	count = 20;
+	count = 100;
+
+	tracersEvery = 1;
 
 	picture = QUOTE(PATHTOF(UI\m_100_belt_m80_t_ca.paa));
-	displayName = "20Rnd M80A1 Mk11";
-	descriptionShort = "$STR_MEU_Weapons_20Rnd_MK11_M80";
+	displayName = "100Rnd M80A1 Tracer Belt";
+	descriptionShort = "Tracer";
 	displayNameShort = "M80A1";
 
 	ACE_isBelt = 1;
