@@ -14,7 +14,6 @@ class CfgWeapons
     class arifle_MX_Base_F;
     class arifle_MX_F: arifle_MX_Base_F {};
     class arifle_MX_GL_F: arifle_MX_Base_F {};
-    class srifle_EBR_F;
     class mk20_base_F;
     class arifle_Katiba_F;
     class arifle_Katiba_GL_F;
@@ -24,7 +23,9 @@ class CfgWeapons
     class SMG_02_F;
     class UGL_F;
     class Binocular;
+    class EBR_base_F;
     
+    #include "CfgWeapons\vanilla.hpp"
     #include "CfgWeapons\c1987_mp7.hpp"
     #include "CfgWeapons\hlc_wp_ak.hpp"
     #include "CfgWeapons\hlc_wp_ar15.hpp"
