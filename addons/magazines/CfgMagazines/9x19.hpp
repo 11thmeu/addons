@@ -6,7 +6,7 @@ class MEU_30Rnd_MP5_M882: 30Rnd_9x21_Mag {
 
 	ammo = "MEU_B_9x19_M882";
 	count = 30;
-	mass = 10;
+	mass = 8;
 
 	picture = QUOTE(PATHTOF(UI\m_30_mp5_m882_ca.paa));
 	displayName = "30Rnd MP5 M882";
@@ -21,7 +21,7 @@ class MEU_30Rnd_MP5_HPP: MEU_30Rnd_MP5_M882 {
 
 	ammo = "MEU_B_9x19_HPP";
 	count = 30;
-	mass = 10;
+	mass = 8;
 
 	picture = QUOTE(PATHTOF(UI\m_30_mp5_hpp_ca.paa));
 	displayName = "30Rnd MP5 HPP";
@@ -36,7 +36,7 @@ class MEU_30Rnd_MP5_HP_S: MEU_30Rnd_MP5_M882 {
 
 	ammo = "MEU_B_9x19_HP_S";
 	count = 30;
-	mass = 10;
+	mass = 8;
 
 	picture = QUOTE(PATHTOF(UI\m_30_mp5_hp_s_ca.paa));
 	displayName = "30Rnd MP5 HP Subsonic";

@@ -19,6 +19,7 @@ class MEU_30Rnd_STANAG4179_M855A1: 30Rnd_556x45_Stanag {
 class MEU_30Rnd_STANAG4179_M856A1: MEU_30Rnd_STANAG4179_M855A1 {
 	MEU_AUTHORS;
 	
+	lastRoundsTracer = 30;
 	tracersEvery = 1;
 
 	picture = QUOTE(PATHTOF(UI\m_30_stanag4179_m855a1_mt_ca.paa));
@@ -94,9 +95,9 @@ class MEU_200Rnd_M249_M855A1: MEU_30Rnd_STANAG4179_M855A1 {
 
 class MEU_200Rnd_M249_M856A1: MEU_200Rnd_M249_M855A1 {
 	tracersEvery = 1;
+	lastRoundsTracer = 200;
 	mass = 58;
 
-	ammo = "MEU_B_556x45_M856A1EPR";
 	picture = QUOTE(PATHTOF(UI\m_100_M249_m856a1.paa));
 	displayName = "200Rnd M856A1 M249";
 	descriptionShort = "Tracer";
@@ -125,9 +126,9 @@ class MEU_100Rnd_M249_M855A1: MEU_30Rnd_STANAG4179_M855A1 {
 
 class MEU_100Rnd_M249_M856A1: MEU_200Rnd_M249_M855A1 {
 	tracersEvery = 1;
+	lastRoundsTracer = 100;
 	mass = 33;
 
-	ammo = "MEU_B_556x45_M856A1EPR";
 	picture = QUOTE(PATHTOF(UI\m_100_M249_m856a1.paa));
 	displayName = "100Rnd M856A1 M249";
 	descriptionShort = "Tracer";
