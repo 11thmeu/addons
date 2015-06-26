@@ -1,4 +1,4 @@
-class ACE_gui_buttonBase,
+class ACE_gui_buttonBase;
 class MEU_PlayerFix_BtnBase : ACE_gui_buttonBase {
     class Attributes {
         font = "PuristaMedium";
@@ -67,11 +67,11 @@ class MEU_PlayerFix_BtnBase : ACE_gui_buttonBase {
     tooltipColorShade[] = {0,0,0,0.65};
     tooltipColorText[] = {1,1,1,1};
     type = 16;
-    x = "2 * (((safezoneW / safezoneH) min 1.2) / 40) + (safezoneX)";
-    y = "1 * ((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) + safezoneY";
+    x = "1 * (((safezoneW / safezoneH) min 1.2) / 40) + (safezoneX)";
+    y = "2 * ((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) + safezoneY";
     w = "15 * (((safezoneW / safezoneH) min 1.2) / 40)";
     h = "1 * ((((safezoneW / safezoneH) min 1.2) / 1.2) / 25)";
-    action = QUOTE((findDisplay 49) closeDisplay 0; [] call FUNC(playerFix));
+    action = "(findDisplay 49) closeDisplay 0; [] call meu_pausemenu_fnc_playerFix";
 };
 
 class MEU_ViewDistance_BtnBase : ACE_gui_buttonBase {
@@ -142,36 +142,38 @@ class MEU_ViewDistance_BtnBase : ACE_gui_buttonBase {
     tooltipColorShade[] = {0,0,0,0.65};
     tooltipColorText[] = {1,1,1,1};
     type = 16;
-    x = "3 * (((safezoneW / safezoneH) min 1.2) / 40) + (safezoneX)";
-    y = "1 * ((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) + safezoneY";
+    x = "1 * (((safezoneW / safezoneH) min 1.2) / 40) + (safezoneX)";
+    y = "3 * ((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) + safezoneY";
     w = "15 * (((safezoneW / safezoneH) min 1.2) / 40)";
     h = "1 * ((((safezoneW / safezoneH) min 1.2) / 1.2) / 25)";
-    action = QUOTE((findDisplay 49) closeDisplay 0; [] call TAWVD_fnc_openTAWVD;);
+    action = "(findDisplay 49) closeDisplay 0; [] call TAWVD_fnc_openTAWVD";
 };
 
 
 class RscStandardDisplay;
 class RscDisplayMPInterrupt: RscStandardDisplay {
     class controls {
-        class MEU_PlayerFix_Btn : MEU_PlayerFix_BtnBase {};
-        class MEU_ViewDistance_Btn : MEU_ViewDistance_BtnBase {};
+        class MEU_PlayerFix_Btn: MEU_PlayerFix_BtnBase {};
+        class MEU_ViewDistance_Btn: MEU_ViewDistance_BtnBase {};
     };
 };
 class RscDisplayInterruptEditorPreview: RscStandardDisplay {
     class controls {
-        class MEU_PlayerFix_Btn : MEU_PlayerFix_BtnBase {};
-        class MEU_ViewDistance_Btn : MEU_ViewDistance_BtnBase {};
+        class MEU_PlayerFix_Btn: MEU_PlayerFix_BtnBase {};
+        class MEU_ViewDistance_Btn: MEU_ViewDistance_BtnBase {};
     };
 };
 class RscDisplayInterrupt: RscStandardDisplay {
     class controls {
-        class MEU_PlayerFix_Btn : MEU_PlayerFix_BtnBase {};
+        class MEU_PlayerFix_Btn: MEU_PlayerFix_BtnBase {};
         class MEU_ViewDistance_Btn : MEU_ViewDistance_BtnBase {};
     };
 };
 class RscDisplayInterruptEditor3D: RscStandardDisplay {
     class controls {
-        class MEU_PlayerFix_Btn : MEU_PlayerFix_BtnBase {};
-        class MEU_ViewDistance_Btn : MEU_ViewDistance_BtnBase {};
+        class MEU_PlayerFix_Btn: MEU_PlayerFix_BtnBase {};
+        class MEU_ViewDistance_Btn: MEU_ViewDistance_BtnBase {};
     };
 };
+
+#include "gui\tawvd.hpp"

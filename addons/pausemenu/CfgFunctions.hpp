@@ -3,7 +3,7 @@ class TAWVD
 	tag = "TAWVD";
 	class TAW_VD
 	{
-		file = PATHTOF(functions\taw);
+		file = QUOTE(PATHTOF(functions\taw));
 		class onSliderChange {};
 		class onTerrainChange {};
 		class updateViewDistance {};
