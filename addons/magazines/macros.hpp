@@ -49,6 +49,7 @@
                          "hlc_30rnd_556x45_EPR", "hlc_30rnd_556x45_SOST", "hlc_30rnd_556x45_SPR", "hlc_50rnd_556x45_EPR", "hlc_30rnd_556x45_S", \
                          "rhs_mag_30Rnd_556x45_M855A1_Stanag", "rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red", "rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Green", "rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Yellow", "rhs_mag_30Rnd_556x45_Mk318_Stanag", "rhs_mag_30Rnd_556x45_Mk262_Stanag", \
                          "30Rnd_mas_556x45_Stanag", "30Rnd_mas_556x45_T_Stanag", \
+                         "MEU_20Rnd_STANAG4179_M193", \
                          "MEU_30Rnd_SimunitionFX"
 
 // Magazines for long range 5.56 STANAG weapons with priority for quality ammo
@@ -62,6 +63,7 @@
                             "hlc_30rnd_556x45_EPR", "hlc_30rnd_556x45_SOST", "hlc_30rnd_556x45_SPR", "hlc_50rnd_556x45_EPR", "hlc_30rnd_556x45_S", \
                             "rhs_mag_30Rnd_556x45_M855A1_Stanag", "rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red", "rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Green", "rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Yellow", \
                             "30Rnd_mas_556x45_Stanag", "30Rnd_mas_556x45_T_Stanag", \
+                            "MEU_20Rnd_STANAG4179_M193", \
                             "MEU_30Rnd_SimunitionFX"
 
 // Magazines for the 5.56 STANAG M27 IAR with priority for quality and big magazines
@@ -72,6 +74,7 @@
                       "30Rnd_556x45_Stanag", "30Rnd_556x45_Stanag_Tracer_Red", "30Rnd_556x45_Stanag_Tracer_Green", "30Rnd_556x45_Stanag_Tracer_Yellow", "20Rnd_556x45_UW_mag", \
                       "RH_30Rnd_556x45_M855A1", "RH_20Rnd_556x45_M855A1", "30Rnd_mas_556x45_Stanag", "30Rnd_mas_556x45_T_Stanag", \
                       "rhs_mag_30Rnd_556x45_M855A1_Stanag", "rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red", "rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Green", "rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Yellow", \
+                      "MEU_20Rnd_STANAG4179_M193", \
                       "MEU_30Rnd_SimunitionFX"
                             
 // Magazines for 5.56 STANAG machineguns
@@ -200,7 +203,7 @@
                        
 // Magazines for the M14 and the M21
 #define MAGAZINES_M14 "MEU_20Rnd_M14_Mk316Mod0", "MEU_20Rnd_M14_Mk319Mod0", "MEU_20Rnd_M14_LapuaFMJBTSub", \
-                      "MEU_20Rnd_M14_M80", \
+                      "MEU_20Rnd_M14_M80", "MEU_20Rnd_M14_M59", \
                       "hlc_20Rnd_762x51_B_M14", "hlc_20Rnd_762x51_Barrier_M14", "hlc_20Rnd_762x51_mk316_M14", "hlc_20Rnd_762x51_T_M14", "hlc_50Rnd_762x51_B_M14", "hlc_20Rnd_762x51_S_M14", \
                       "Trixie_20x762_Mag", \
                       "20Rnd_mas_762x51_Stanag","20Rnd_mas_762x51_T_Stanag", \
@@ -208,10 +211,10 @@
                       "20Rnd_762x51_Mag"
                       
 // Magazines for the M60 machinegun
-#define MAGAZINES_M60 "MEU_100Rnd_Belt_M80", "MEU_100Rnd_Belt_M80_T", \
+#define MAGAZINES_M60 "MEU_100Rnd_Belt_M80", "MEU_100Rnd_Belt_M80_T", "MEU_100Rnd_Belt_M59",  \
                       "hlc_100Rnd_762x51_B_M60E4", "hlc_100Rnd_762x51_M_M60E4", "hlc_100Rnd_762x51_T_M60E4", \
                       "100Rnd_mas_762x51_Stanag", "100Rnd_mas_762x51_T_Stanag", \
-                      "150Rnd_762x51_Box", "150Rnd_762x51_Box_Tracer",
+                      "150Rnd_762x51_Box", "150Rnd_762x51_Box_Tracer"
                       
 // Magazines for the Lee Enfield
 #define MAGAZINES_Enfield "Trixie_Enfield_Mag", \

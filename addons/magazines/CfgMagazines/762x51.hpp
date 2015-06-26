@@ -88,6 +88,21 @@ class MEU_20Rnd_M14_M80: MEU_20Rnd_MK11_M80 {
 	MAGAZINE_GROUP_M14;
 };
 
+class MEU_20Rnd_M14_M59: MEU_20Rnd_M14_M80 {
+	MEU_AUTHORS;
+	mass = 10;
+
+	picture = QUOTE(PATHTOF(UI\m_20_m14_m80_ca.paa));
+	displayName = "20Rnd M59 M14";
+	descriptionShort = "M59";
+	displayNameShort = "M59";
+
+	tracersEvery = 4;
+	lastRoundsTracer = 20;
+
+	MAGAZINE_GROUP_M14;
+};
+
 class MEU_20Rnd_M14_Mk316Mod0: MEU_20Rnd_MK11_Mk316Mod0 {
 	MEU_AUTHORS;
 	mass = 10;
@@ -193,6 +208,26 @@ class MEU_100Rnd_Belt_M80: MEU_20Rnd_MK11_M80 {
 	displayName = "100Rnd M80A1 Tracer Belt";
 	descriptionShort = "";
 	displayNameShort = "M80A1";
+
+	ACE_isBelt = 1;
+
+	MAGAZINE_GROUP_762BELT;
+};
+
+class MEU_100Rnd_Belt_M59: MEU_100Rnd_Belt_M80 {
+	MEU_AUTHORS;
+	
+	ammo = "MEU_B_762x51_M80A1";
+	mass = 82;
+	count = 100;
+
+	tracersEvery = 4;
+	lastRoundsTracer = 100;
+
+	picture = QUOTE(PATHTOF(UI\m_100_belt_m80_ca.paa));
+	displayName = "100Rnd M59 Belt";
+	descriptionShort = "";
+	displayNameShort = "M59";
 
 	ACE_isBelt = 1;
 

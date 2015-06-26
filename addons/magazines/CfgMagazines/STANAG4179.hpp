@@ -30,6 +30,26 @@ class MEU_30Rnd_STANAG4179_M856A1: MEU_30Rnd_STANAG4179_M855A1 {
 	MAGAZINE_GROUP_STANAG4179;
 };
 
+class MEU_20Rnd_STANAG4179_M193: MEU_30Rnd_STANAG4179_M855A1 {
+	MEU_AUTHORS;
+
+		
+	count = 20;
+	mass = 8;
+
+	tracersEvery = 4;
+	lastRoundsTracer = 30;
+
+	picture = QUOTE(PATHTOF(UI\m_30_stanag4179_m855a1_ca.paa));
+	displayName = "20Rnd STANAG M193";
+	descriptionShort = "M193";
+	displayNameShort = "M193";
+
+	model = "\rhsusf\addons\rhsusf_weapons\magazines\rhs_stanag_mag";
+
+	MAGAZINE_GROUP_STANAG4179;
+};
+
 class MEU_30Rnd_STANAG4179_Mk262Mod1: 30Rnd_556x45_Stanag {
 	MEU_AUTHORS;
 
