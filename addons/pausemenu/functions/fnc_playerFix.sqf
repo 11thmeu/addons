@@ -10,3 +10,5 @@ if (ace_medical) then {
 
 [-1, {_this switchMove "";}, ACE_Player] call CBA_fnc_globalExecute;
 
+ //Broadcast message
+[[player,  "Ha usado player fix."], "globalChat", true, false, false] call BIS_fnc_MP;
