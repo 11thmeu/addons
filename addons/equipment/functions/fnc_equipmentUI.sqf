@@ -1282,7 +1282,7 @@ switch _action do {
         _selectedPlayer = call compile (_list lbData _selected);
         _loadout = [ACE_Player] call EFUNC(main,getUnitLoadout);
 
-        [[name ACE_Player, _loadout], QFUNC(receiveLoadout), _selectedPlayer] call ACEFUNC(common,execRemoteFnc);
+        [[name ACE_Player, _selectedPlayer, _loadout], QFUNC(receiveLoadout), _selectedPlayer] call ACEFUNC(common,execRemoteFnc);
 
         titleText[(localize "STR_MEU_Equipment_MessageLoadoutSent"), "PLAIN DOWN"];
     };

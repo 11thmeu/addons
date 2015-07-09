@@ -4,22 +4,26 @@
  *
  * Arguments:
  * 0: Loadout sender <STRING>
- * 1: Loadout <ARRAY>
+ * 1: Loadout target <OBJECT>
+ * 2: Loadout <ARRAY>
  *
  * Return Value:
  * -
  *
  * Example:
- * [name _unit, _loadout] call FUNC(receiveLoadout)
+ * [name _unit, _target, _loadout] call FUNC(receiveLoadout)
  *
  * Public: [No]
  */
 #include "script_component.hpp"
 
 disableSerialization;
-private ["_sender", "_loadout", "_display", "_label"];
+private ["_sender", "_target", "_loadout", "_display", "_label"];
 _sender = _this select 0;
-_loadout = _this select 1;
+_target = _this select 1;
+_loadout = _this select 2;
+
+if (_target != ACE_Player) exitWith {}; //This loadout is not for the local client
 
 if (!isNil QGVAR(ReceivedLoadout)) exitWith {}; //Another loadout has been received, wait to accept or decline
 
