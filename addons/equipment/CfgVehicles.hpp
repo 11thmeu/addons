@@ -34,7 +34,7 @@ class CfgVehicles {
                 description = "$STR_MEU_Equipment_HideObjectDesc";
                 typeName = "BOOL";
                 class values {
-                    class Yes {
+                    class Yes { 
                         name = "$STR_MEU_Main_Yes";
                         value = 1;
                         default = 1;
@@ -42,6 +42,7 @@ class CfgVehicles {
                     class No {
                         name = "$STR_MEU_Main_No"; 
                         value = 0;
+                        default = 0;
                     };
                 };
             };
@@ -59,18 +60,22 @@ class CfgVehicles {
                     class blufor {
                         name = "$STR_MEU_Equipment_TypeBlufor";
                         value = "blufor";
+                        default = 0;
                     };
                     class opfor { 
                         name = "$STR_MEU_Equipment_TypeOpfor";
                         value = "opfor";
+                        default = 0;
                     };
                     class indfor {
                         name = "$STR_MEU_Equipment_TypeIndfor";
                         value = "indfor";
+                        default = 0;
                     };
                     class civil {
                         name = "$STR_MEU_Equipment_TypeCivillian";
                         value = "civil";
+                        default = 0;
                     };
                 };
             };
@@ -95,6 +100,7 @@ class CfgVehicles {
                     class No {
                         name = "$STR_MEU_Main_No";
                         value = 0;
+                        default = 0;
                     };
                 };
             };
@@ -112,6 +118,7 @@ class CfgVehicles {
                     class No {
                         name = "$STR_MEU_Main_No";
                         value = 0;
+                        default = 0;
                     };
                 };
             };
@@ -129,6 +136,7 @@ class CfgVehicles {
                     class No {
                         name = "$STR_MEU_Main_No"; 
                         value = 0;
+                        default = 0;
                     };
                 };
             };
@@ -141,6 +149,7 @@ class CfgVehicles {
                     class Yes {
                         name = "$STR_MEU_Main_Yes";
                         value = 1;
+                        default = 0;
                     };
                     class No {
                         name = "$STR_MEU_Main_No";
@@ -163,6 +172,7 @@ class CfgVehicles {
                     class No {
                         name = "$STR_MEU_Main_No";
                         value = 0;
+                        default = 0;
                     };
                 };
             };
@@ -175,6 +185,7 @@ class CfgVehicles {
                     class Yes {
                         name = "$STR_MEU_Main_Yes";
                         value = 1;
+                        default = 0;
                     };
                     class No {
                         name = "$STR_MEU_Main_No";
@@ -203,6 +214,7 @@ class CfgVehicles {
                     class No { 
                         name = "$STR_MEU_Main_No";
                         value = 0;
+                        default = 0;
                     };
                 };
             };
@@ -220,6 +232,7 @@ class CfgVehicles {
                     class no {
                         name = "$STR_MEU_Equipment_PersistenceNo";
                         value = 0;
+                        default = 0;
                     };
                 };
             };
@@ -237,6 +250,7 @@ class CfgVehicles {
                     class No {
                         name = "$STR_MEU_Main_No";
                         value = 0;
+                        default = 0;
                     };
                 };
             };
@@ -254,6 +268,7 @@ class CfgVehicles {
                     class No {
                         name = "$STR_MEU_Main_No";
                         value = 0;
+                        default = 0;
                     };
                 };
             };
@@ -271,6 +286,7 @@ class CfgVehicles {
                     class No {
                         name = "$STR_MEU_Main_No";
                         value = 0;
+                        default = 0;
                     };
                 };
             };

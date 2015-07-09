@@ -35,7 +35,7 @@ class CfgVehicles {
                 typeName = "BOOL";
                 class values {
                     class Yes { name = "$STR_MEU_Main_Yes"; value = 1; default = 1; };
-                    class No { name = "$STR_MEU_Main_No"; value = 0; };
+                    class No { name = "$STR_MEU_Main_No"; value = 0; default = 0; };
                 };
             };
             
@@ -44,7 +44,7 @@ class CfgVehicles {
                 description = "$STR_MEU_Attachments_TooltipDesc";
                 typeName = "BOOL";
                 class values {
-                    class Yes { name = "$STR_MEU_Main_Yes"; value = 1; };
+                    class Yes { name = "$STR_MEU_Main_Yes"; value = 1; default = 0; };
                     class No { name = "$STR_MEU_Main_No"; value = 0; default = 1; };
                 };
             };
@@ -55,7 +55,7 @@ class CfgVehicles {
                 typeName = "BOOL";
                 class values {
                     class Yes { name = "$STR_MEU_Main_Yes"; value = 1; default = 1; };
-                    class No { name = "$STR_MEU_Main_No"; value = 0; };
+                    class No { name = "$STR_MEU_Main_No"; value = 0; default = 0; };
                 };
             };
             
@@ -64,7 +64,7 @@ class CfgVehicles {
                 description = "$STR_MEU_Attachments_EnableBlacklistDesc";
                 typeName = "BOOL";
                 class values {
-                    class Yes { name = "$STR_MEU_Main_Yes"; value = 1; };
+                    class Yes { name = "$STR_MEU_Main_Yes"; value = 1; default = 0; };
                     class No { name = "$STR_MEU_Main_No"; value = 0; default = 1; };
                 };
             };
@@ -80,7 +80,7 @@ class CfgVehicles {
                 description = "$STR_MEU_Attachments_EnableWhitelistDesc";
                 typeName = "BOOL";
                 class values {
-                    class Yes { name = "$STR_MEU_Main_Yes"; value = 1; };
+                    class Yes { name = "$STR_MEU_Main_Yes"; value = 1; default = 0; };
                     class No { name = "$STR_MEU_Main_No"; value = 0; default = 1; };
                 };
             };

@@ -35,8 +35,8 @@ class CfgVehicles {
                 typeName = "NUMBER";
                 class values {
                     class ground { name = "$STR_MEU_Spawner_Ground"; value = 0; default = 1; };
-                    class air { name = "$STR_MEU_Spawner_Air"; value = 1; };
-                    class water { name = "$STR_MEU_Spawner_Water"; value = 2; };
+                    class air { name = "$STR_MEU_Spawner_Air"; value = 1; default = 0; };
+                    class water { name = "$STR_MEU_Spawner_Water"; value = 2; default = 0; };
                 };
             };
 
@@ -58,7 +58,7 @@ class CfgVehicles {
                 typeName = "BOOL";
                 class values {
                     class yes { name = "$STR_MEU_Main_Yes"; value = 1; default = 1; };
-                    class no { name = "$STR_MEU_Main_No"; value = 0; };
+                    class no { name = "$STR_MEU_Main_No"; value = 0; default = 0; };
                 };
             };
         };

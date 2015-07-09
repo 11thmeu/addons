@@ -37,6 +37,7 @@ class CfgVehicles {
                     {
                         name = "$STR_MEU_Main_No"; 
                         value = 0;
+                        default = 0;
                     };
                 };
             };
@@ -55,6 +56,7 @@ class CfgVehicles {
                     {
                         name = "$STR_MEU_Main_No"; 
                         value = 0;
+                        default = 0;
                     };
                 };
             };
@@ -72,6 +74,7 @@ class CfgVehicles {
                     {
                         name = "$STR_MEU_Main_No"; 
                         value = 0;
+                        default = 0;
                     };
                 };
             };
