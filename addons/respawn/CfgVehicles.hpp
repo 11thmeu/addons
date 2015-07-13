@@ -10,7 +10,7 @@ class CfgVehicles {
     };
     
     class MEU_ModuleRespawn: Module_F {
-        author = "$STR_MEU_Main_MEUTeam";
+        MEU_AUTHORS;
         _generalMacro = "MEU_ModuleRespawn";
         scope = 2;
         displayName = "$STR_MEU_Respawn_Name";
@@ -87,7 +87,7 @@ class CfgVehicles {
     };
 
     class MEU_ModuleJipTeleport: Module_F {
-        author = "$STR_MEU_Main_MEUTeam";
+        MEU_AUTHORS;
         _generalMacro = "MEU_ModuleJipTeleport";
         scope = 2;
         displayName = "$STR_MEU_Respawn_JIP_Name";

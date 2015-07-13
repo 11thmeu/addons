@@ -2,10 +2,6 @@
 <!-- Edited with tabler - 2015-04-11 -->
 <Project name="MEU">
   <Package name="Main">
-    <Key ID="STR_MEU_Main_MEUTeam">
-      <English>11th MEU Team</English>
-      <Spanish>Equipo 11th MEU</Spanish>
-    </Key>
     <Key ID="STR_MEU_Main_Yes">
       <English>Yes</English>
       <Spanish>Si</Spanish>

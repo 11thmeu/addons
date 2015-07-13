@@ -10,7 +10,7 @@ class CfgVehicles {
     };
 
     class MEU_ModuleVehicleSpawner: Module_F {
-        author = "$STR_MEU_Main_MEUTeam";
+        MEU_AUTHORS;
         _generalMacro = "MEU_ModuleVehicleSpawner";
         scope = 2;
         displayName = "$STR_MEU_Spawner_Name";

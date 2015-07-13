@@ -10,7 +10,7 @@ class CfgVehicles {
     };
 
     class MEU_ModuleEquipment: Module_F {
-        author = "$STR_MEU_Main_MEUTeam";
+        MEU_AUTHORS;
         _generalMacro = "MEU_ModuleEquipment";
         scope = 2;
         displayName = "$STR_MEU_Equipment_Name";
