@@ -15,7 +15,7 @@ class RscMEU_Equipment {
         //Common controls
         class Background: MEU_gui_Base {
             colorBackground[] = {0, 0, 0, 0.7};
-            idc = -1;
+            idc = IDC_RSCMEUEQUIPMENT_BACKGROUND;
             x = 0;
             y = 0;
             w = 0.9;

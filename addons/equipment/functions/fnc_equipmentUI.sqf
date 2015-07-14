@@ -17,14 +17,15 @@
 #include "script_component.hpp"
 
 #define EQUIPMENT_LOADOUTS 20
-#define CTRLANIMATIONTIME 0.5
+#define CTRLANIMATIONTIME 0
 
 disableSerialization;
-private ["_action", "_params", "_display"];
+private ["_action", "_params", "_display", "_background"];
 _action = _this select 0;
 _params = _this select 1;
 
 _display = GETUVAR(GVAR(EquipmentDisplay),displayNull);
+_background = DCONTROL(IDC_RSCMEUEQUIPMENT_BACKGROUND);
 
 switch _action do {
 
@@ -121,7 +122,7 @@ switch _action do {
 
         //Set display elements
         _list1_title = DCONTROL(IDC_RSCMEUEQUIPMENT_LIST1_TITLE);
-        _list1_title ctrlSetPosition [0.04, 0.09, 0.55, 0.04];
+        _list1_title ctrlSetPosition [DCURPOSX + 0.04, DCURPOSY + 0.09, 0.55, 0.04];
         _list1_title ctrlCommit CTRLANIMATIONTIME;
         _list1_title ctrlShow true;
         _list1_title ctrlSetText (localize "STR_MEU_Equipment_LabelEquipment");
@@ -130,40 +131,40 @@ switch _action do {
         _list1 ctrlRemoveAllEventHandlers "LBSelChanged";
         lbClear _list1;
         _list1 lbSetCurSel -1;
-        _list1 ctrlSetPosition [0.04, 0.13, 0.55, 0.72];
+        _list1 ctrlSetPosition [DCURPOSX + 0.04, DCURPOSY + 0.13, 0.55, 0.72];
         _list1 ctrlCommit CTRLANIMATIONTIME;
         _list1 ctrlShow true;
 
         _labelType = DCONTROL(IDC_RSCMEUEQUIPMENT_LABEL1);
-        _labelType ctrlSetPosition [0.65, 0.3, 0.10, 0.04];
+        _labelType ctrlSetPosition [DCURPOSX + 0.65, DCURPOSY + 0.3, 0.10, 0.04];
         _labelType ctrlCommit CTRLANIMATIONTIME;
         _labelType ctrlShow true;
         _labelType ctrlSetText (localize "STR_MEU_Equipment_LabelType");
 
         _comboType = DCONTROL(IDC_RSCMEUEQUIPMENT_COMBO1);
         lbClear _comboType;
-        _comboType ctrlSetPosition [0.65, 0.35, 0.20, 0.04];
+        _comboType ctrlSetPosition [DCURPOSX + 0.65, DCURPOSY + 0.35, 0.20, 0.04];
         _comboType ctrlCommit CTRLANIMATIONTIME;
         _comboType ctrlShow true;
         _comboType ctrlRemoveAllEventHandlers "LBSelChanged";
         _comboType ctrlAddEventHandler ["LBSelChanged", {['update',[true]] call FUNC(equipmentUI)}];
 
         _labelSide = DCONTROL(IDC_RSCMEUEQUIPMENT_LABEL2);
-        _labelSide ctrlSetPosition [0.65, 0.4, 0.10, 0.04];
+        _labelSide ctrlSetPosition [DCURPOSX + 0.65, DCURPOSY + 0.4, 0.10, 0.04];
         _labelSide ctrlCommit CTRLANIMATIONTIME;
         _labelSide ctrlShow true;
         _labelSide ctrlSetText (localize "STR_MEU_Equipment_LabelFaction");
 
         _comboSide = DCONTROL(IDC_RSCMEUEQUIPMENT_COMBO2);
         lbClear _comboSide;
-        _comboSide ctrlSetPosition [0.65, 0.45, 0.20, 0.04];
+        _comboSide ctrlSetPosition [DCURPOSX + 0.65, DCURPOSY + 0.45, 0.20, 0.04];
         _comboSide ctrlCommit CTRLANIMATIONTIME;
         _comboSide ctrlShow true;
         _comboSide ctrlRemoveAllEventHandlers "LBSelChanged";
         _comboSide ctrlAddEventHandler ["LBSelChanged", {['update',[false]] call FUNC(equipmentUI);}];
 
         _buttonEquip = DCONTROL(IDC_RSCMEUEQUIPMENT_BUTTON1);
-        _buttonEquip ctrlSetPosition [0.65, 0.60, 0.1562, 0.04];
+        _buttonEquip ctrlSetPosition [DCURPOSX + 0.65, DCURPOSY + 0.60, 0.1562, 0.04];
         _buttonEquip ctrlCommit CTRLANIMATIONTIME;
         _buttonEquip ctrlShow true;
         _buttonEquip ctrlSetText (localize "STR_MEU_Equipment_ButtonAdd");
@@ -172,7 +173,7 @@ switch _action do {
         _buttonEquip ctrlAddEventHandler ["ButtonClick", {['addItem',[false]] call FUNC(equipmentUI);}];
 
         _buttonReplace = DCONTROL(IDC_RSCMEUEQUIPMENT_BUTTON2);
-        _buttonReplace ctrlSetPosition [0.65, 0.66, 0.1562, 0.04];
+        _buttonReplace ctrlSetPosition [DCURPOSX + 0.65, DCURPOSY + 0.66, 0.1562, 0.04];
         _buttonReplace ctrlCommit CTRLANIMATIONTIME;
         _buttonReplace ctrlShow true;
         _buttonReplace ctrlSetText (localize "STR_MEU_Equipment_ButtonReplace");
@@ -223,7 +224,7 @@ switch _action do {
 
         //Set display elements
         _list1_title = DCONTROL(IDC_RSCMEUEQUIPMENT_LIST1_TITLE);
-        _list1_title ctrlSetPosition [0.04, 0.09, 0.4, 0.04];
+        _list1_title ctrlSetPosition [DCURPOSX + 0.04, DCURPOSY + 0.09, 0.4, 0.04];
         _list1_title ctrlCommit CTRLANIMATIONTIME;
         _list1_title ctrlShow true;
         _list1_title ctrlSetText (localize "STR_MEU_Equipment_LabelProfiles");
@@ -232,13 +233,13 @@ switch _action do {
         _list1 ctrlRemoveAllEventHandlers "LBSelChanged";
         lbClear _list1;
         _list1 lbSetCurSel -1;
-        _list1 ctrlSetPosition [0.04, 0.13, 0.4, 0.65];
+        _list1 ctrlSetPosition [DCURPOSX + 0.04, DCURPOSY + 0.13, 0.4, 0.65];
         _list1 ctrlCommit CTRLANIMATIONTIME;
         _list1 ctrlShow true;
         _list1 ctrlAddEventHandler ["LBSelChanged", {['showProfile',true] call FUNC(equipmentUI);}];
 
         _list2_title = DCONTROL(IDC_RSCMEUEQUIPMENT_LIST2_TITLE);
-        _list2_title ctrlSetPosition [0.46, 0.09, 0.4, 0.04];
+        _list2_title ctrlSetPosition [DCURPOSX + 0.46, DCURPOSY + 0.09, 0.4, 0.04];
         _list2_title ctrlCommit CTRLANIMATIONTIME;
         _list2_title ctrlShow true;
         _list2_title ctrlSetText (localize "STR_MEU_Equipment_LabelContents");
@@ -246,18 +247,18 @@ switch _action do {
         _list2 = DCONTROL(IDC_RSCMEUEQUIPMENT_LIST2);
         lbClear _list2;
         _list2 lbSetCurSel -1;
-        _list2 ctrlSetPosition [0.46, 0.13, 0.4, 0.65];
+        _list2 ctrlSetPosition [DCURPOSX + 0.46, DCURPOSY + 0.13, 0.4, 0.65];
         _list2 ctrlCommit CTRLANIMATIONTIME;
         _list2 ctrlShow true;
 
         _textBox = DCONTROL(IDC_RSCMEUEQUIPMENT_TEXTBOX);
-        _textBox ctrlSetPosition [0.04, 0.83, 0.55, 0.04];
+        _textBox ctrlSetPosition [DCURPOSX + 0.04, DCURPOSY + 0.83, 0.55, 0.04];
         _textBox ctrlCommit CTRLANIMATIONTIME;
         _textBox ctrlShow true;
         _textBox ctrlSetText (localize "STR_MEU_Equipment_ProfileName");
 
         _buttonSave = DCONTROL(IDC_RSCMEUEQUIPMENT_BUTTON1);
-        _buttonSave ctrlSetPosition [0.65, 0.83, 0.1562, 0.04];
+        _buttonSave ctrlSetPosition [DCURPOSX + 0.65, DCURPOSY + 0.83, 0.1562, 0.04];
         _buttonSave ctrlCommit CTRLANIMATIONTIME;
         _buttonSave ctrlShow true;
         _buttonSave ctrlSetText (localize "STR_MEU_Equipment_ButtonSave");
@@ -302,7 +303,7 @@ switch _action do {
 
         //Set display elements
         _list1_title = DCONTROL(IDC_RSCMEUEQUIPMENT_LIST1_TITLE);
-        _list1_title ctrlSetPosition [0.04, 0.09, 0.4, 0.04];
+        _list1_title ctrlSetPosition [DCURPOSX + 0.04, DCURPOSY + 0.09, 0.4, 0.04];
         _list1_title ctrlCommit CTRLANIMATIONTIME;
         _list1_title ctrlShow true;
         _list1_title ctrlSetText (localize "STR_MEU_Equipment_LabelProfiles");
@@ -311,13 +312,13 @@ switch _action do {
         _list1 ctrlRemoveAllEventHandlers "LBSelChanged";
         lbClear _list1;
         _list1 lbSetCurSel -1;
-        _list1 ctrlSetPosition [0.04, 0.13, 0.4, 0.65];
+        _list1 ctrlSetPosition [DCURPOSX + 0.04, DCURPOSY + 0.13, 0.4, 0.65];
         _list1 ctrlCommit CTRLANIMATIONTIME;
         _list1 ctrlShow true;
         _list1 ctrlAddEventHandler ["LBSelChanged", {['showProfile',false] call FUNC(equipmentUI);}];
 
         _list2_title = DCONTROL(IDC_RSCMEUEQUIPMENT_LIST2_TITLE);
-        _list2_title ctrlSetPosition [0.46, 0.09, 0.4, 0.04];
+        _list2_title ctrlSetPosition [DCURPOSX + 0.46, DCURPOSY + 0.09, 0.4, 0.04];
         _list2_title ctrlCommit CTRLANIMATIONTIME;
         _list2_title ctrlShow true;
         _list2_title ctrlSetText (localize "STR_MEU_Equipment_LabelContents");
@@ -325,12 +326,12 @@ switch _action do {
         _list2 = DCONTROL(IDC_RSCMEUEQUIPMENT_LIST2);
         lbClear _list2;
         _list2 lbSetCurSel -1;
-        _list2 ctrlSetPosition [0.46, 0.13, 0.4, 0.65];
+        _list2 ctrlSetPosition [DCURPOSX + 0.46, DCURPOSY + 0.13, 0.4, 0.65];
         _list2 ctrlCommit CTRLANIMATIONTIME;
         _list2 ctrlShow true;
 
         _buttonLoad = DCONTROL(IDC_RSCMEUEQUIPMENT_BUTTON1);
-        _buttonLoad ctrlSetPosition [0.45, 0.83, 0.1562, 0.04];
+        _buttonLoad ctrlSetPosition [DCURPOSX + 0.45, DCURPOSY + 0.83, 0.1562, 0.04];
         _buttonLoad ctrlCommit CTRLANIMATIONTIME;
         _buttonLoad ctrlShow true;
         _buttonLoad ctrlSetText (localize "STR_MEU_Equipment_ButtonLoad");
@@ -339,7 +340,7 @@ switch _action do {
         _buttonLoad ctrlAddEventHandler ["ButtonClick", {['loadProfile',''] call FUNC(equipmentUI);}];
 
         _buttonDelete = DCONTROL(IDC_RSCMEUEQUIPMENT_BUTTON2);
-        _buttonDelete ctrlSetPosition [0.65, 0.83, 0.1562, 0.04];
+        _buttonDelete ctrlSetPosition [DCURPOSX + 0.65, DCURPOSY + 0.83, 0.1562, 0.04];
         _buttonDelete ctrlCommit CTRLANIMATIONTIME;
         _buttonDelete ctrlShow true;
         _buttonDelete ctrlSetText (localize "STR_MEU_Equipment_ButtonDelete");
@@ -384,7 +385,7 @@ switch _action do {
 
         //Set display elements
         _list1_title = DCONTROL(IDC_RSCMEUEQUIPMENT_LIST1_TITLE);
-        _list1_title ctrlSetPosition [0.04, 0.09, 0.4, 0.04];
+        _list1_title ctrlSetPosition [DCURPOSX + 0.04, DCURPOSY + 0.09, 0.4, 0.04];
         _list1_title ctrlCommit CTRLANIMATIONTIME;
         _list1_title ctrlShow true;
         _list1_title ctrlSetText (localize "STR_MEU_Equipment_LabelProfiles");
@@ -393,13 +394,13 @@ switch _action do {
         _list1 ctrlRemoveAllEventHandlers "LBSelChanged";
         lbClear _list1;
         _list1 lbSetCurSel -1;
-        _list1 ctrlSetPosition [0.04, 0.13, 0.4, 0.65];
+        _list1 ctrlSetPosition [DCURPOSX + 0.04, DCURPOSY + 0.13, 0.4, 0.65];
         _list1 ctrlCommit CTRLANIMATIONTIME;
         _list1 ctrlShow true;
         _list1 ctrlAddEventHandler ["LBSelChanged", {['showVRProfile',false] call FUNC(equipmentUI);}];
 
         _list2_title = DCONTROL(IDC_RSCMEUEQUIPMENT_LIST2_TITLE);
-        _list2_title ctrlSetPosition [0.46, 0.09, 0.4, 0.04];
+        _list2_title ctrlSetPosition [DCURPOSX + 0.46, DCURPOSY + 0.09, 0.4, 0.04];
         _list2_title ctrlCommit CTRLANIMATIONTIME;
         _list2_title ctrlShow true;
         _list2_title ctrlSetText (localize "STR_MEU_Equipment_LabelContents");
@@ -407,12 +408,12 @@ switch _action do {
         _list2 = DCONTROL(IDC_RSCMEUEQUIPMENT_LIST2);
         lbClear _list2;
         _list2 lbSetCurSel -1;
-        _list2 ctrlSetPosition [0.46, 0.13, 0.4, 0.65];
+        _list2 ctrlSetPosition [DCURPOSX + 0.46, DCURPOSY + 0.13, 0.4, 0.65];
         _list2 ctrlCommit CTRLANIMATIONTIME;
         _list2 ctrlShow true;
 
         _buttonLoad = DCONTROL(IDC_RSCMEUEQUIPMENT_BUTTON1);
-        _buttonLoad ctrlSetPosition [0.65, 0.83, 0.1562, 0.04];
+        _buttonLoad ctrlSetPosition [DCURPOSX + 0.65, DCURPOSY + 0.83, 0.1562, 0.04];
         _buttonLoad ctrlCommit CTRLANIMATIONTIME;
         _buttonLoad ctrlShow true;
         _buttonLoad ctrlSetText (localize "STR_MEU_Equipment_ButtonLoad");
@@ -441,7 +442,7 @@ switch _action do {
 
         //Set display elements
         _list1_title = DCONTROL(IDC_RSCMEUEQUIPMENT_LIST1_TITLE);
-        _list1_title ctrlSetPosition [0.04, 0.09, 0.4, 0.04];
+        _list1_title ctrlSetPosition [DCURPOSX + 0.04, DCURPOSY + 0.09, 0.4, 0.04];
         _list1_title ctrlCommit CTRLANIMATIONTIME;
         _list1_title ctrlShow true;
         _list1_title ctrlSetText (localize "STR_MEU_Equipment_Players");
@@ -450,12 +451,12 @@ switch _action do {
         _list1 ctrlRemoveAllEventHandlers "LBSelChanged";
         lbClear _list1;
         _list1 lbSetCurSel -1;
-        _list1 ctrlSetPosition [0.04, 0.13, 0.4, 0.65];
+        _list1 ctrlSetPosition [DCURPOSX + 0.04, DCURPOSY + 0.13, 0.4, 0.65];
         _list1 ctrlCommit CTRLANIMATIONTIME;
         _list1 ctrlShow true;
 
         _buttonSend = DCONTROL(IDC_RSCMEUEQUIPMENT_BUTTON1);
-        _buttonSend ctrlSetPosition [0.5, 0.83, 0.3, 0.04];
+        _buttonSend ctrlSetPosition [DCURPOSX + 0.5, DCURPOSY + 0.83, 0.3, 0.04];
         _buttonSend ctrlCommit CTRLANIMATIONTIME;
         _buttonSend ctrlShow true;
         _buttonSend ctrlSetText (localize "STR_MEU_Equipment_SendLoadout");
