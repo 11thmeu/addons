@@ -33,7 +33,6 @@ GVAR(GoggleFactions) = [];
 GVAR(Goggles) = [];
 GVAR(PresetFactions) = [];
 GVAR(Presets) = [];
-GVAR(DefaultProfiles) = [];
 
 {
     _config = _x;
@@ -145,15 +144,6 @@ GVAR(DefaultProfiles) = [];
             };
         } forEach _presets;
     };
-
-    //Read default profiles from config
-    if (isArray (_config >> "defaultProfiles")) then {
-        _profiles = getArray (_config >> "defaultProfiles");
-        {
-            GVAR(DefaultProfiles) pushBack _x;
-        } forEach _profiles;
-    };
-
 } forEach _configs;
 
 //Create the equipment dialog once all configs have been read

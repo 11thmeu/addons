@@ -255,24 +255,6 @@ class CfgVehicles {
                 };
             };
 
-            class DefaultProfiles {
-                displayName = "$STR_MEU_Equipment_DefaultProfilesName";
-                description = "$STR_MEU_Equipment_DefaultProfilesDesc";
-                typeName = "BOOL";
-                class values {
-                    class Yes {
-                        name = "$STR_MEU_Main_Yes";
-                        value = 1;
-                        default = 1;
-                    };
-                    class No {
-                        name = "$STR_MEU_Main_No";
-                        value = 0;
-                        default = 0;
-                    };
-                };
-            };
-
             class Insignias {
                 displayName = "$STR_MEU_Equipment_InsigniasName";
                 description = "$STR_MEU_Equipment_InsigniasDesc";

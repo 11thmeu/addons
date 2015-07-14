@@ -69,18 +69,10 @@ class RscMEU_Equipment {
             w = 0.064;
             h = 0.064;
         };
-        class Image_LoadDefault: MEU_gui_Picture {
-            idc = -1;
-            text = PATHTOF(UI\loadDefault.paa);
-            x = 0.355;
-            y = -0.001;
-            w = 0.064;
-            h = 0.064;
-        };
         class Image_LoadVR: MEU_gui_Picture {
             idc = -1;
             text = PATHTOF(UI\loadVR.paa);
-            x = 0.425;
+            x = 0.355;
             y = -0.001;
             w = 0.064;
             h = 0.064;
@@ -88,7 +80,7 @@ class RscMEU_Equipment {
         class Image_CopyToClipboard: MEU_gui_Picture {
             idc = -1;
             text = PATHTOF(UI\copy.paa);
-            x = 0.495;
+            x = 0.425;
             y = -0.001;
             w = 0.064;
             h = 0.064;
@@ -96,7 +88,7 @@ class RscMEU_Equipment {
         class Image_PasteFromClipboard: MEU_gui_Picture {
             idc = -1;
             text = PATHTOF(UI\paste.paa);
-            x = 0.565;
+            x = 0.495;
             y = -0.001;
             w = 0.064;
             h = 0.064;
@@ -104,7 +96,7 @@ class RscMEU_Equipment {
         class Image_SendLoadout: MEU_gui_Picture {
             idc = -1;
             text = PATHTOF(UI\send.paa);
-            x = 0.635;
+            x = 0.565;
             y = -0.001;
             w = 0.064;
             h = 0.064;
@@ -243,19 +235,6 @@ class RscMEU_Equipment {
             w = 0.064;
             h = 0.064;
         };
-        class Button_LoadDefault: MEU_gui_Button {
-            idc = IDC_RSCMEUEQUIPMENT_BUTTONLOADDEFAULT;
-            text = "";
-            toolTip = "$STR_MEU_Equipment_ButtonLoadDefault";
-            colorBackground[] = {0,0,0,0};
-            colorBackground2[] = {0,0,0,0};
-            colorBackgroundFocused[] = {0,0,0,0};
-            onButtonClick = QUOTE([ARR_2('loadDefaultView','')] call FUNC(equipmentUI););
-            x = 0.355;
-            y = -0.001;
-            w = 0.064;
-            h = 0.064;
-        };
         class Button_LoadVR: MEU_gui_Button {
             idc = IDC_RSCMEUEQUIPMENT_BUTTONLOADVR;
             text = "";
@@ -264,7 +243,7 @@ class RscMEU_Equipment {
             colorBackground2[] = {0,0,0,0};
             colorBackgroundFocused[] = {0,0,0,0};
             onButtonClick = QUOTE([ARR_2('loadVRView','')] call FUNC(equipmentUI););
-            x = 0.425;
+            x = 0.355;
             y = -0.001;
             w = 0.064;
             h = 0.064;
@@ -277,7 +256,7 @@ class RscMEU_Equipment {
             colorBackground2[] = {0,0,0,0};
             colorBackgroundFocused[] = {0,0,0,0};
             onButtonClick = QUOTE(call FUNC(copyLoadout););
-            x = 0.495;
+            x = 0.425;
             y = -0.001;
             w = 0.064;
             h = 0.064;
@@ -290,7 +269,7 @@ class RscMEU_Equipment {
             colorBackground2[] = {0,0,0,0};
             colorBackgroundFocused[] = {0,0,0,0};
             onButtonClick = QUOTE(call FUNC(pasteLoadout););
-            x = 0.565;
+            x = 0.495;
             y = -0.001;
             w = 0.064;
             h = 0.064;
@@ -303,7 +282,7 @@ class RscMEU_Equipment {
             colorBackground2[] = {0,0,0,0};
             colorBackgroundFocused[] = {0,0,0,0};
             onButtonClick = QUOTE([ARR_2('sendLoadoutView','')] call FUNC(equipmentUI););
-            x = 0.635;
+            x = 0.565;
             y = -0.001;
             w = 0.064;
             h = 0.064;

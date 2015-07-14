@@ -113,11 +113,5 @@ if (isClass (_config >> "Presets")) then {
     } forEach _presets;
 };
 
-//Read default profiles from config
-GVAR(DefaultProfiles) = [];
-if (isArray (_config >> "defaultProfiles")) then {
-    GVAR(DefaultProfiles) = getArray (_config >> "defaultProfiles");
-};
-
 //Create the equipment dialog once all configs have been read
 ["createDialog", ""] call FUNC(equipmentUI);

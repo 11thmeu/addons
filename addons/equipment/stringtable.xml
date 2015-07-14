@@ -146,14 +146,6 @@
       <English>Allow loading profiles of the virtual arsenal</English>
       <Spanish>Permitir cargar perfiles del arsenal virtual</Spanish>
     </Key>
-    <Key ID="STR_MEU_Equipment_DefaultProfilesName">
-      <English>Default profiles</English>
-      <Spanish>Perfiles predeterminados</Spanish>
-    </Key>
-    <Key ID="STR_MEU_Equipment_DefaultProfilesDesc">
-      <English>Allow loading default profiles</English>
-      <Spanish>Permitir cargar perfiles predeterminados</Spanish>
-    </Key>
     <Key ID="STR_MEU_Equipment_InsigniasName">
       <English>Enable changing insignias</English>
       <Spanish>Activar cambio de parches</Spanish>
