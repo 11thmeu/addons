@@ -1163,7 +1163,7 @@ switch _action do {
             ["Exit"] call FUNC(camera);
         };
 
-        //Hide object if option is enabled
+        //Show object if hideobject option is enabled
         if (GVAR(HideObject)) then {
              GVAR(Object) hideObject false;
         };

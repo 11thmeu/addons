@@ -400,14 +400,14 @@ class RscMEU_ReceiveEquipment {
     class controlsBackground {
         class Background: MEU_gui_Base {
             colorBackground[] = {0, 0, 0, 0.7};
-            idc = 60001;
+            idc = -1;
             x = 0.2;
             y = 0.2;
             w = 0.7;
             h = 0.3;
         };
         class Title: MEU_gui_Base {
-            idc = 60002;
+            idc = -1;
             colorBackground[] = {1,0.5,0,0.7};
             text = "$STR_MEU_Equipment_LabelLoadoutReceived";
             x = 0.2;
@@ -430,7 +430,7 @@ class RscMEU_ReceiveEquipment {
 
     class controls {
         class Button_Yes: MEU_gui_Button {
-            idc = 60003;
+            idc = -1;
             text = "$STR_MEU_Main_Yes";
             toolTip = "";
             action = QUOTE(GVAR(ReceivedLoadout) call EFUNC(main,setPlayerLoadout); closeDialog 0;);
@@ -441,7 +441,7 @@ class RscMEU_ReceiveEquipment {
             h = 0.04;
         };
         class Button_No: MEU_gui_Button {
-            idc = 60004;
+            idc = -1;
             text = "$STR_MEU_Main_No";
             toolTip = "";
             action = QUOTE(closeDialog 0;);
