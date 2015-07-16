@@ -141,6 +141,8 @@ class MEU_gui_ListBox {
     style = 16;
     idc = -1;
     type = 5;
+    x = 0;
+    y = 0;
     w = 0.275;
     h = 0.04;
     font = "PuristaMedium";
@@ -188,6 +190,8 @@ class MEU_gui_ListNBox {
     access = 0;
     type = 102;
     style = 16;
+    x = 0;
+    y = 0;
     w = 0.4;
     h = 0.4;
     font = "PuristaMedium";
