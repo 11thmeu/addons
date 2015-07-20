@@ -91,6 +91,12 @@ class CfgVehicles
         displayName = "$STR_MEU_Ammoboxes_Weapons_USMC";
         #include "ammo\weapons_usmc.hpp"
     };
+    class Box_MEU_Weapons_USMC_Regular: Box_MEU_Weapons {
+        MEU_AUTHORS;
+        scope = 2;
+        displayName = "$STR_MEU_Ammoboxes_Weapons_USMC_Regular";
+        #include "ammo\weapons_usmc_regular.hpp"
+    };
     class Box_MEU_Medical_USMC: Box_MEU_Meds {
         MEU_AUTHORS;
         scope = 2;

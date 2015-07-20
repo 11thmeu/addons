@@ -18,11 +18,11 @@ class rhs_weap_m4_Base: arifle_MX_Base_F
 	};
 };
 
-class rhs_M249_base: LMG_Mk200_F
+class rhs_weap_M249_base: LMG_Mk200_F
 {
 	magazines[] = {MAGAZINES_STANAG_MG};
 };
-
+class rhs_M249_base;
 class weap_m240_base: rhs_M249_base
 {
 	magazines[] = {MAGAZINES_762_MG};
