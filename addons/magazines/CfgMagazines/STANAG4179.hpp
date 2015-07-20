@@ -4,7 +4,7 @@ class MEU_30Rnd_STANAG4179_M855A1: 30Rnd_556x45_Stanag {
 
 		
 	count = 30;
-	mass = 8;
+	mass = 10;
 
 	picture = QUOTE(PATHTOF(UI\m_30_stanag4179_m855a1_ca.paa));
 	displayName = "30Rnd STANAG M855A1";
@@ -20,7 +20,7 @@ class MEU_30Rnd_STANAG4179_M856A1: MEU_30Rnd_STANAG4179_M855A1 {
 	MEU_AUTHORS;
 	
 	lastRoundsTracer = 30;
-	tracersEvery = 1;
+	tracersEvery = 3;
 
 	picture = QUOTE(PATHTOF(UI\m_30_stanag4179_m855a1_mt_ca.paa));
 	displayName = "30Rnd STANAG M856A1 TR";
@@ -35,7 +35,7 @@ class MEU_20Rnd_STANAG4179_M193: MEU_30Rnd_STANAG4179_M855A1 {
 
 		
 	count = 20;
-	mass = 8;
+	mass = 10;
 
 	tracersEvery = 4;
 	lastRoundsTracer = 30;
@@ -55,7 +55,7 @@ class MEU_30Rnd_STANAG4179_Mk262Mod1: 30Rnd_556x45_Stanag {
 
 	ammo = "MEU_B_556x45_Mk262Mod1";
 	count = 30;
-	mass = 8;
+	mass = 10;
 
 	picture = QUOTE(PATHTOF(UI\m_30_stanag4179_mk262_ca.paa));
 	tracersEvery = 0;
@@ -88,7 +88,7 @@ class MEU_100Rnd_BetaCMag: MEU_30Rnd_STANAG4179_M855A1 {
 
 	ammo = "MEU_B_556x45_M855A1EPR";
 	count = 100;
-	mass = 46;
+	mass = 36;
 
 	picture = QUOTE(PATHTOF(UI\m_100_stanag4179_m855a1_ca.paa));
 	displayName = "100Rnd M855A1 C-Mag";
@@ -100,7 +100,7 @@ class MEU_100Rnd_BetaCMag: MEU_30Rnd_STANAG4179_M855A1 {
 
 class MEU_200Rnd_M249_M855A1: MEU_30Rnd_STANAG4179_M855A1 {
 	count = 200;
-	mass = 58;
+	mass = 38;
 
 	picture = QUOTE(PATHTOF(UI\m_100_M249_m855a1.paa));
 	displayName = "200Rnd M855A1 M249";
@@ -116,7 +116,7 @@ class MEU_200Rnd_M249_M855A1: MEU_30Rnd_STANAG4179_M855A1 {
 class MEU_200Rnd_M249_M856A1: MEU_200Rnd_M249_M855A1 {
 	tracersEvery = 1;
 	lastRoundsTracer = 200;
-	mass = 58;
+	mass = 38;
 
 	picture = QUOTE(PATHTOF(UI\m_100_M249_m856a1.paa));
 	displayName = "200Rnd M856A1 M249";
@@ -131,7 +131,7 @@ class MEU_200Rnd_M249_M856A1: MEU_200Rnd_M249_M855A1 {
 
 class MEU_100Rnd_M249_M855A1: MEU_30Rnd_STANAG4179_M855A1 {
 	count = 100;
-	mass = 33;
+	mass = 25;
 
 	picture = QUOTE(PATHTOF(UI\m_100_M249_m855a1.paa));
 	displayName = "100Rnd M855A1 M249";
@@ -147,7 +147,7 @@ class MEU_100Rnd_M249_M855A1: MEU_30Rnd_STANAG4179_M855A1 {
 class MEU_100Rnd_M249_M856A1: MEU_200Rnd_M249_M855A1 {
 	tracersEvery = 1;
 	lastRoundsTracer = 100;
-	mass = 33;
+	mass = 25;
 
 	picture = QUOTE(PATHTOF(UI\m_100_M249_m856a1.paa));
 	displayName = "100Rnd M856A1 M249";
