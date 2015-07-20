@@ -3,7 +3,7 @@ class MEU_Preset_CatName {
     picture = ""; // optional
 
     // list of presets
-    class Presets {
+    class Kits {
         class presetNameInternal {
             displayName = "";
             scope = 2;
