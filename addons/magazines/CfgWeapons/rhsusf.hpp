@@ -11,7 +11,7 @@ class rhs_weap_XM2010_Base_F: Rifle_Base_F
 class rhs_weap_m4_Base: arifle_MX_Base_F
 {
 	magazines[] = {MAGAZINES_STANAG};
-	
+
 	class M203_GL: UGL_F
 	{
 		magazines[] = {ROUNDS_M203};
@@ -28,6 +28,11 @@ class weap_m240_base: rhs_M249_base
 	magazines[] = {MAGAZINES_762_MG};
 };
 
+class rhs_weap_saw_base;
+class rhs_weap_lmg_minimipara : rhs_weap_saw_base
+{
+	magazines[] = {MAGAZINES_STANAG_MG};
+};
 class rhs_weap_m14ebrri: srifle_EBR_F
 {
 	magazines[] = {MAGAZINES_M14};
