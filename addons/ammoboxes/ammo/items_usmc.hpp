@@ -30,11 +30,14 @@ class TransportItems {
     MACRO_ADDITEM(ACE_MapTools,100);
     MACRO_ADDITEM(ACE_microDAGR,100);
     MACRO_ADDITEM(ACE_DAGR,100);
+    MACRO_ADDITEM(ACE_HuntIR_monitor,5);
     MACRO_ADDITEM(ACE_SpottingScope,20);
     MACRO_ADDITEM(ACE_Tripod,20);
     MACRO_ADDITEM(ACE_Sandbag_empty,100);
     MACRO_ADDITEM(ACE_ATragMX,10);
     MACRO_ADDITEM(ACE_Kestrel4500,10);
+    MACRO_ADDITEM(ACE_RangeCard,10);
+    MACRO_ADDITEM(ACE_RangeTable_82mm,10);
     MACRO_ADDITEM(ACE_SpareBarrel,20);
     MACRO_ADDITEM(ACE_IR_Strobe_Item,200);
     MACRO_ADDITEM(ToolKit,50);
@@ -62,4 +65,5 @@ class TransportItems {
 
 class TransportBackpacks {
     MACRO_ADDBACKPACK(B_rhsusf_B_BACKPACK,2);
+    MACRO_ADDBACKPACK(ACE_TacticalLadder_Pack,2);
 };
