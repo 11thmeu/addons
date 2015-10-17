@@ -2,10 +2,15 @@ class TransportWeapons {
     MACRO_ADDWEAPON(rhs_weap_M136,20);
     MACRO_ADDWEAPON(rhs_weap_M136_hedp,20);
     MACRO_ADDWEAPON(rhs_weap_M136_hp,20);
+    MACRO_ADDWEAPON(rhs_weap_fim92,5);
+    MACRO_ADDWEAPON(rhs_weap_fgm148,2);
 };
 
 class TransportMagazines {
+    MACRO_ADDMAGAZINE(rhs_fim92_mag,50);
+    MACRO_ADDMAGAZINE(rhs_fgm148_magazine_AT,50);
     MACRO_ADDMAGAZINE(1Rnd_HE_Grenade_shell,50);
+    MACRO_ADDMAGAZINE(ACE_HuntIR_M203,50);
     MACRO_ADDMAGAZINE(UGL_FlareWhite_F,50);
     MACRO_ADDMAGAZINE(UGL_FlareGreen_F,50);
     MACRO_ADDMAGAZINE(UGL_FlareRed_F,50);
