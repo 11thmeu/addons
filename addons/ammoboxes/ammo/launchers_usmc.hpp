@@ -23,6 +23,11 @@ class TransportMagazines {
     MACRO_ADDMAGAZINE(1Rnd_SmokePurple_Grenade_shell,50);
     MACRO_ADDMAGAZINE(1Rnd_SmokeBlue_Grenade_shell,50);
     MACRO_ADDMAGAZINE(1Rnd_SmokeOrange_Grenade_shell,50);
+    MACRO_ADDMAGAZINE(rhsusf_mag_6Rnd_M441_HE,50);
+    MACRO_ADDMAGAZINE(rhsusf_mag_6Rnd_M433_HEDP,50);
+    MACRO_ADDMAGAZINE(rhsusf_mag_6Rnd_M576_Buckshot,50);
+    MACRO_ADDMAGAZINE(rhsusf_mag_6Rnd_M781_Practice,50);
+    MACRO_ADDMAGAZINE(rhsusf_mag_6Rnd_M714_white,50);
 };
 
 class TransportItems {};
