@@ -2,8 +2,11 @@ class TransportWeapons {
     MACRO_ADDWEAPON(Binocular,50);
     MACRO_ADDWEAPON(ACE_Vector,20);
     MACRO_ADDWEAPON(Rangefinder,20);
-    MACRO_ADDWEAPON(Trixie_Rangefinder,20);
-    MACRO_ADDWEAPON(Trixie_Rangefinder_Tripod,20);
+    MACRO_ADDWEAPON(lerca_1200_black,20);
+    MACRO_ADDWEAPON(lerca_1200_tan,20);
+    MACRO_ADDWEAPON(ACE_Yardage450,20);
+    MACRO_ADDWEAPON(rhs_tr8_periscope_pip,10);
+    MACRO_ADDWEAPON(rhs_tr8_periscope,10);
     MACRO_ADDWEAPON(Trixie_SOFLAM,10);
     MACRO_ADDWEAPON(Trixie_SOFLAM_Tripod,10);
     MACRO_ADDWEAPON(Trixie_SOFLAM_Tripod_ANPVS4,10);
@@ -26,17 +29,28 @@ class TransportItems {
     MACRO_ADDITEM(ItemCompass,10);
     MACRO_ADDITEM(ACE_MapTools,100);
     MACRO_ADDITEM(ACE_microDAGR,100);
+    MACRO_ADDITEM(ACE_DAGR,100);
+    MACRO_ADDITEM(ACE_HuntIR_monitor,5);
+    MACRO_ADDITEM(ACE_SpottingScope,20);
+    MACRO_ADDITEM(ACE_Tripod,20);
+    MACRO_ADDITEM(ACE_Sandbag_empty,100);
     MACRO_ADDITEM(ACE_ATragMX,10);
     MACRO_ADDITEM(ACE_Kestrel4500,10);
+    MACRO_ADDITEM(ACE_RangeCard,10);
+    MACRO_ADDITEM(ACE_RangeTable_82mm,10);
     MACRO_ADDITEM(ACE_SpareBarrel,20);
     MACRO_ADDITEM(ACE_IR_Strobe_Item,200);
     MACRO_ADDITEM(ToolKit,50);
     MACRO_ADDITEM(ACE_CableTie,200);
     MACRO_ADDITEM(ACE_wirecutter,20);
+    MACRO_ADDITEM(ACE_key_master,5);
     MACRO_ADDITEM(ACE_key_west,100);
     MACRO_ADDITEM(ACE_key_lockpick,10);
     MACRO_ADDITEM(B_UavTerminal,50);
     MACRO_ADDITEM(ACE_UAVBattery,100);
+    MACRO_ADDITEM(ACE_Flashlight_KSF1,30);
+    MACRO_ADDITEM(ACE_Flashlight_XL50,30);
+    MACRO_ADDITEM(ACE_Flashlight_MX991,30);
     MACRO_ADDITEM(rhsusf_ANPVS_14,30);
     MACRO_ADDITEM(rhsusf_ANPVS_15,30);
     MACRO_ADDITEM(A3_GPNVG18_F,10);
@@ -51,4 +65,5 @@ class TransportItems {
 
 class TransportBackpacks {
     MACRO_ADDBACKPACK(B_rhsusf_B_BACKPACK,2);
+    MACRO_ADDBACKPACK(ACE_TacticalLadder_Pack,2);
 };
