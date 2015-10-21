@@ -1,6 +1,7 @@
 class TransportWeapons {
     MACRO_ADDWEAPON(rhs_weap_m4a1,3);
     MACRO_ADDWEAPON(rhs_weap_M136,2);
+    
 };
 
 class TransportMagazines {
