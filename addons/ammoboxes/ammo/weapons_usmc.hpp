@@ -35,6 +35,12 @@ class TransportWeapons {
     MACRO_ADDWEAPON(rhs_weap_m4a1_carryhandle_pmag,50);
     MACRO_ADDWEAPON(rhs_weap_m4a1_carryhandle_grip,50);
     MACRO_ADDWEAPON(rhs_weap_m4a1_carryhandle_m203,5);
+    MACRO_ADDWEAPON(arifle_mas_mk16,2);
+    MACRO_ADDWEAPON(arifle_mas_mk16_gl,1);
+    MACRO_ADDWEAPON(arifle_mas_mk16_l,2);
+    MACRO_ADDWEAPON(arifle_mas_mk16_l_gl,1);
+    MACRO_ADDWEAPON(arifle_mas_mk17,4);
+    MACRO_ADDWEAPON(arifle_mas_mk17_gl,2);
     MACRO_ADDWEAPON(hlc_rifle_RU556,20);
     MACRO_ADDWEAPON(hlc_rifle_RU5562,20);
     MACRO_ADDWEAPON(hlc_rifle_CQBR,20);
