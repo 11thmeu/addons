@@ -11,3 +11,5 @@ _This source is under heavy refactoring due to ACE Integration_
 ## Authors
  * [Thrax](https://github.com/Thraxs/)
  * [Kavinsky](https://github.com/kavinsky/)
+ * [Tuerkas](https://github.com/tuerkaz)
+ * [Lex](https://github.com/lex21/)
