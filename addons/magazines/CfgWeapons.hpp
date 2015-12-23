@@ -24,9 +24,8 @@ class CfgWeapons
     class UGL_F;
     class Binocular;
     class EBR_base_F;
-    
+
     #include "CfgWeapons\vanilla.hpp"
-    #include "CfgWeapons\c1987_mp7.hpp"
     #include "CfgWeapons\hlc_wp_ak.hpp"
     #include "CfgWeapons\hlc_wp_ar15.hpp"
     #include "CfgWeapons\hlc_wp_fal.hpp"
@@ -34,13 +33,8 @@ class CfgWeapons
     #include "CfgWeapons\hlc_wp_m14.hpp"
     #include "CfgWeapons\hlc_wp_m60e4.hpp"
     #include "CfgWeapons\hlc_wp_mp5.hpp"
-    #include "CfgWeapons\mas_us_rifle_ak.hpp"
-    #include "CfgWeapons\mas_us_rifle_m4.hpp"
-    #include "CfgWeapons\mas_us_rifle_nw.hpp"
     #include "CfgWeapons\rh_m4.hpp"
     #include "CfgWeapons\rhard_mk18.hpp"
     #include "CfgWeapons\rhs.hpp"
     #include "CfgWeapons\rhsusf.hpp"
-    #include "CfgWeapons\trixie_recon.hpp"
-    #include "CfgWeapons\trixie_rifles.hpp"
 };
