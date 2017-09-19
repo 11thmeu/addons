@@ -10,7 +10,7 @@ class CfgPatches {
             "ace_common",
             "meu_main",
         };
-        author[] = {"11thMEU Dev Team"};
+        author = "11thMEU Dev Team";
         authorUrl = "http://11thmeu.es";
         VERSION_CONFIG;
     };

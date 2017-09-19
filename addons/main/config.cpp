@@ -544,7 +544,7 @@ class CfgPatches {
             "extended_eventhandlers", "CBA_UI", "CBA_XEH", "CBA_XEH_A3",
             "ace_common"
         };
-        author[] = {"11thMEU Dev Team"};
+        author = "11thMEU Dev Team";
         authorUrl = "http://11thmeu.es";
         versionDesc = "11thMEU Addons";
         VERSION_CONFIG;

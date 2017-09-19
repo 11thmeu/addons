@@ -6,7 +6,7 @@ class CfgPatches {
         weapons[] = {"MEU_ModuleVehicleSpawner"};
         requiredVersion = REQUIRED_VERSION;
         requiredAddons[] = {"meu_main"};
-        author[] = {"11thMEU Dev Team"};
+        author = "11thMEU Dev Team";
         authorUrl = "http://11thmeu.es";
         versionDesc = "11thMEU Addons";
         VERSION_CONFIG;
