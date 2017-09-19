@@ -1,1 +1,0 @@
-#include "\z\meu\addons\pausemenu\script_component.hpp"
