@@ -37,9 +37,9 @@ GVAR(JIPTeleport) = false;
                 [QGVAR(JIPTeleport), "keydown"] call CBA_fnc_removeKeyHandler;
                 GVAR(JIPTeleport) = false;
             };
-        }, [], 600, 10] call ACEFUNC(common,waitAndExecute);
+        }, [], 600, 10] call CBA_fnc_waitAndExecute;
     };
-}, [], 30, 3] call ACEFUNC(common,waitAndExecute);
+}, [], 30, 3] call CBA_fnc_waitAndExecute;
 
 GVAR(JIPTeleportModule) = true;
 

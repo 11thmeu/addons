@@ -50,4 +50,4 @@ if(count _nearobj >= 1) then {
     if (_instructor) then {
         [[_vehicle], QFUNC(addActions), 2] call ACEFUNC(common,execRemoteFnc);
     };
-}, [_class, _position, _rotation, _instructor], 1, 0] call ACEFUNC(common,waitAndExecute);
+}, [_class, _position, _rotation, _instructor], 1, 0] call CBA_fnc_waitAndExecute;

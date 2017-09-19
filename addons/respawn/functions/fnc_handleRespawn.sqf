@@ -69,7 +69,7 @@ if (GVAR(Spectator)) exitWith {
     titleText [localize "STR_MEU_Respawn_SpectatorOn","PLAIN"];
 
     //Make sure the player doesn't join the group again
-    [{[_player] joinsilent grpnull}, [], 10, 0.25] call ACEFUNC(common,waitAndExecute);
+    [{[_player] joinsilent grpnull}, [], 10, 0.25] call CBA_fnc_waitAndExecute;
 
     LOG("[MEU]: Spectator mode initialized");
 };
@@ -78,7 +78,7 @@ if (GVAR(Spectator)) exitWith {
 titleText [localize "STR_MEU_Respawn_DeathMessage","BLACK"];
 
 //Show death screen and end mission
-[{cutText [localize "STR_MEU_Respawn_DeathMessage","BLACK FADED",2]}, [], 1, 0.25] call ACEFUNC(common,waitAndExecute);
-[{["end1", false, true] call BIS_fnc_endMission;}, [], 5, 0.25] call ACEFUNC(common,waitAndExecute);
+[{cutText [localize "STR_MEU_Respawn_DeathMessage","BLACK FADED",2]}, [], 1, 0.25] call CBA_fnc_waitAndExecute;
+[{["end1", false, true] call BIS_fnc_endMission;}, [], 5, 0.25] call CBA_fnc_waitAndExecute;
 
 LOG("[MEU]: Respawn handled");
