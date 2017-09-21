@@ -255,7 +255,6 @@ class RscMEU_Equipment {
             colorBackground[] = {0,0,0,0};
             colorBackground2[] = {0,0,0,0};
             colorBackgroundFocused[] = {0,0,0,0};
-            onButtonClick = QUOTE(call FUNC(copyLoadout););
             x = 0.425;
             y = -0.001;
             w = 0.064;
@@ -268,7 +267,6 @@ class RscMEU_Equipment {
             colorBackground[] = {0,0,0,0};
             colorBackground2[] = {0,0,0,0};
             colorBackgroundFocused[] = {0,0,0,0};
-            onButtonClick = QUOTE(call FUNC(pasteLoadout););
             x = 0.495;
             y = -0.001;
             w = 0.064;

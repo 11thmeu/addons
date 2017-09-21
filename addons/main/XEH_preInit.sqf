@@ -3,10 +3,6 @@
 ADDON = false;
 
 PREP(convertVirtualLoadout);
-PREP(copyFromClipboard);
-PREP(copyToClipboard);
-PREP(formatTime12);
-PREP(formatTime24);
 PREP(getAllRadiosSettings);
 PREP(getItemDetails);
 PREP(getUnitLoadout);
